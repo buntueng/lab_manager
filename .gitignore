@@ -1,0 +1,7 @@
+*.pyc
+*.yaml
+*.yml
+*.log
+*.ini
+*.conf
+
