@@ -1,5 +1,6 @@
 """Main Controller class"""
 import os
+import sys
 import yaml
 import mariadb
 from PySide6.QtWidgets import QMessageBox
@@ -10,16 +11,23 @@ class Main_Model:
 
     def __init__(self):
         self.model = None
+        # if run from script then the path is the current directory. If run from exe then the path is the path to the exe
+        config_path = None
+        if getattr(sys, 'frozen', False):
+            config_path = os.path.dirname(sys.executable)
+        elif __file__:
+            config_path = os.path.dirname(__file__)
+
         # read sql commands from the yaml file
         self.sql_cmd = None
-        sql_yml_path = os.path.join(os.path.dirname(__file__), "sql_cmd.yml")
+        sql_yml_path = os.path.join(config_path, "sql_cmd.yml")
         with open(sql_yml_path, "r", encoding='UTF8') as file:
             self.sql_cmd = yaml.safe_load(file)
 
         # read server config from the server_config.yml file
         self.server_config = None
         server_config_path = os.path.join(
-            os.path.dirname(__file__), "server_config.yml")
+            config_path, "server_config.yml")
         with open(server_config_path, "r", encoding='UTF8') as file:
             self.server_config = yaml.safe_load(file)
 
@@ -41,8 +49,8 @@ class Main_Model:
                 database=self.server_config["database"]
             )
             cur = conn.cursor()
-            (user_username,user_password) = data
-            cur.execute(sql_cmd, (user_username,user_password, True))
+            (user_username, user_password) = data
+            cur.execute(sql_cmd, (user_username, user_password, True))
             data = cur.fetchall()
             conn.close()
             return data
