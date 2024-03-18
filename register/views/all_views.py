@@ -8,6 +8,39 @@ class MainAppView(QMainWindow, Ui_main_app_view):
     def __init__(self):
         super(MainAppView, self).__init__()
         self.setupUi(self)
+        self.clear_information()
+        self.show_login_page()
+        self.disable_all_buttons()
+
+    def disable_all_buttons(self):
+        """Disable all buttons in the main page."""
+        self.sign_out_pushButton.setEnabled(False)
+        self.customer_reg_pushButton.setEnabled(False)
+
+        self.case_register_pushButton.setEnabled(False)
+        self.check_job_pushButton.setEnabled(False)
+        self.barcode_pushButton.setEnabled(False)
+        self.lab_order_pushButton.setEnabled(False)
+        self.bill_pushButton.setEnabled(False)
+        self.check_report_pushButton.setEnabled(False)
+        self.employee_pushButton.setEnabled(False)
+        self.personal_info_pushButton.setEnabled(False)
+        self.update_prog_pushButton.setEnabled(False)
+        self.sign_out_pushButton.setEnabled(False)
+
+    def enable_all_buttons(self):
+        """Enable all buttons in the main page."""
+        self.sign_out_pushButton.setEnabled(True)
+        self.customer_reg_pushButton.setEnabled(True)
+        self.case_register_pushButton.setEnabled(True)
+        self.check_job_pushButton.setEnabled(True)
+        self.barcode_pushButton.setEnabled(True)
+        self.lab_order_pushButton.setEnabled(True)
+        self.bill_pushButton.setEnabled(True)
+        self.check_report_pushButton.setEnabled(True)
+        self.employee_pushButton.setEnabled(True)
+        self.personal_info_pushButton.setEnabled(True)
+        self.update_prog_pushButton.setEnabled(True)
 
     def show_view(self):
         """Show the view."""
@@ -23,9 +56,10 @@ class MainAppView(QMainWindow, Ui_main_app_view):
 
     def clear_information(self):
         """Clear information in the main page."""
-        pass
+        self.clear_user_and_password()
 
     # ==================== login page ====================
+
     def clear_user_and_password(self):
         """Clear username and password in login page."""
         self.username_lineEdit.clear()
@@ -85,6 +119,10 @@ class MainAppView(QMainWindow, Ui_main_app_view):
     def show_update_page(self):
         """Show the update page."""
         self.stackedWidget.setCurrentIndex(10)
+
+    def show_current_user_information(self, user_info):
+        """Show the current user information."""
+        self.current_user_label.setText(user_info)
 
 
 if __name__ == '__main__':

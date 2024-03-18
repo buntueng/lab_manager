@@ -8,7 +8,6 @@ from models.main_model import Main_Model
 from controllers.main_controller import Main_Controller
 from views.all_views import MainAppView
 
-
 if __name__ == "__main__":
     main_application = QApplication(sys.argv)
     main_view = MainAppView()

@@ -261,7 +261,7 @@ class Ui_main_app_view(object):
 
         self.retranslateUi(main_app_view)
 
-        self.stackedWidget.setCurrentIndex(10)
+        self.stackedWidget.setCurrentIndex(6)
 
 
         QMetaObject.connectSlotsByName(main_app_view)

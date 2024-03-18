@@ -51,7 +51,14 @@ class Main_Controller:
         # if username and password are not empty
         if username != "" and password != "":
             self.view.clear_user_and_password()
-            self.model.user_sign_in(username, password)
+            login_info = self.model.user_sign_in(username, password)
+            if login_info:
+                current_name = login_info[0][3] + " " + \
+                    login_info[0][4] + " " + login_info[0][5]
+                self.view.show_current_user_information(current_name)
+                self.view.enable_all_buttons()
+                self.view.show_customer_register_page()
+
         elif username == "" and password != "":
             self.view.username_lineEdit.setFocus()
             QMessageBox.critical(self.view, "Error",
