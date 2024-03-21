@@ -16,3 +16,4 @@ if __name__ == "__main__":
     main_view.show_view()
 
     sys.exit(main_application.exec())
+    
