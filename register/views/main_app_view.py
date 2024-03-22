@@ -359,19 +359,19 @@ class Ui_main_app_view(object):
         self.new_job_page.setObjectName(u"new_job_page")
         self.search_label = QLabel(self.new_job_page)
         self.search_label.setObjectName(u"search_label")
-        self.search_label.setGeometry(QRect(0, 0, 181, 31))
+        self.search_label.setGeometry(QRect(10, 0, 181, 31))
         self.search_label.setFont(font3)
         self.search_name_entry = QLineEdit(self.new_job_page)
         self.search_name_entry.setObjectName(u"search_name_entry")
-        self.search_name_entry.setGeometry(QRect(140, 40, 391, 31))
+        self.search_name_entry.setGeometry(QRect(160, 40, 501, 31))
         self.search_name_entry.setFont(font)
         self.search_name_label = QLabel(self.new_job_page)
         self.search_name_label.setObjectName(u"search_name_label")
-        self.search_name_label.setGeometry(QRect(0, 40, 141, 31))
+        self.search_name_label.setGeometry(QRect(10, 40, 141, 31))
         self.search_name_label.setFont(font3)
         self.search_button = QPushButton(self.new_job_page)
         self.search_button.setObjectName(u"search_button")
-        self.search_button.setGeometry(QRect(540, 22, 111, 51))
+        self.search_button.setGeometry(QRect(670, 22, 111, 51))
         font4 = QFont()
         font4.setFamilies([u"TH Niramit AS"])
         font4.setPointSize(24)
@@ -387,11 +387,21 @@ class Ui_main_app_view(object):
         __qtreewidgetitem.setFont(0, font1);
         self.search_tree_view.setHeaderItem(__qtreewidgetitem)
         __qtreewidgetitem1 = QTreeWidgetItem(self.search_tree_view)
-        QTreeWidgetItem(__qtreewidgetitem1)
-        __qtreewidgetitem2 = QTreeWidgetItem(self.search_tree_view)
-        QTreeWidgetItem(__qtreewidgetitem2)
+        __qtreewidgetitem1.setTextAlignment(3, Qt.AlignCenter);
+        __qtreewidgetitem1.setTextAlignment(2, Qt.AlignCenter);
+        __qtreewidgetitem1.setTextAlignment(1, Qt.AlignCenter);
+        __qtreewidgetitem1.setTextAlignment(0, Qt.AlignCenter);
+        __qtreewidgetitem2 = QTreeWidgetItem(__qtreewidgetitem1)
+        __qtreewidgetitem2.setTextAlignment(0, Qt.AlignCenter);
+        __qtreewidgetitem3 = QTreeWidgetItem(self.search_tree_view)
+        __qtreewidgetitem3.setTextAlignment(3, Qt.AlignCenter);
+        __qtreewidgetitem3.setTextAlignment(2, Qt.AlignCenter);
+        __qtreewidgetitem3.setTextAlignment(1, Qt.AlignCenter);
+        __qtreewidgetitem3.setTextAlignment(0, Qt.AlignCenter);
+        __qtreewidgetitem4 = QTreeWidgetItem(__qtreewidgetitem3)
+        __qtreewidgetitem4.setTextAlignment(0, Qt.AlignCenter);
         self.search_tree_view.setObjectName(u"search_tree_view")
-        self.search_tree_view.setGeometry(QRect(0, 90, 651, 171))
+        self.search_tree_view.setGeometry(QRect(10, 90, 771, 171))
         font5 = QFont()
         font5.setFamilies([u"TH Niramit AS"])
         font5.setPointSize(14)
@@ -402,7 +412,7 @@ class Ui_main_app_view(object):
         self.search_tree_view.setIndentation(15)
         self.search_tree_view.setColumnCount(5)
         self.search_tree_view.header().setMinimumSectionSize(38)
-        self.search_tree_view.header().setDefaultSectionSize(129)
+        self.search_tree_view.header().setDefaultSectionSize(143)
         self.number_job_label = QLabel(self.new_job_page)
         self.number_job_label.setObjectName(u"number_job_label")
         self.number_job_label.setGeometry(QRect(0, 280, 91, 31))
@@ -484,19 +494,19 @@ class Ui_main_app_view(object):
         self.name_projact_entry.setGeometry(QRect(150, 410, 1031, 31))
         self.name_projact_entry.setFont(font)
         self.detail_case_tree_view = QTreeWidget(self.new_job_page)
-        __qtreewidgetitem3 = QTreeWidgetItem()
-        __qtreewidgetitem3.setTextAlignment(6, Qt.AlignCenter);
-        __qtreewidgetitem3.setTextAlignment(5, Qt.AlignCenter);
-        __qtreewidgetitem3.setTextAlignment(4, Qt.AlignCenter);
-        __qtreewidgetitem3.setTextAlignment(3, Qt.AlignCenter);
-        __qtreewidgetitem3.setTextAlignment(2, Qt.AlignCenter);
-        __qtreewidgetitem3.setTextAlignment(1, Qt.AlignCenter);
-        __qtreewidgetitem3.setTextAlignment(0, Qt.AlignCenter);
-        self.detail_case_tree_view.setHeaderItem(__qtreewidgetitem3)
-        __qtreewidgetitem4 = QTreeWidgetItem(self.detail_case_tree_view)
-        QTreeWidgetItem(__qtreewidgetitem4)
-        __qtreewidgetitem5 = QTreeWidgetItem(self.detail_case_tree_view)
-        QTreeWidgetItem(__qtreewidgetitem5)
+        __qtreewidgetitem5 = QTreeWidgetItem()
+        __qtreewidgetitem5.setTextAlignment(6, Qt.AlignCenter);
+        __qtreewidgetitem5.setTextAlignment(5, Qt.AlignCenter);
+        __qtreewidgetitem5.setTextAlignment(4, Qt.AlignCenter);
+        __qtreewidgetitem5.setTextAlignment(3, Qt.AlignCenter);
+        __qtreewidgetitem5.setTextAlignment(2, Qt.AlignCenter);
+        __qtreewidgetitem5.setTextAlignment(1, Qt.AlignCenter);
+        __qtreewidgetitem5.setTextAlignment(0, Qt.AlignCenter);
+        self.detail_case_tree_view.setHeaderItem(__qtreewidgetitem5)
+        __qtreewidgetitem6 = QTreeWidgetItem(self.detail_case_tree_view)
+        QTreeWidgetItem(__qtreewidgetitem6)
+        __qtreewidgetitem7 = QTreeWidgetItem(self.detail_case_tree_view)
+        QTreeWidgetItem(__qtreewidgetitem7)
         self.detail_case_tree_view.setObjectName(u"detail_case_tree_view")
         self.detail_case_tree_view.setGeometry(QRect(10, 460, 991, 371))
         self.detail_case_tree_view.setFont(font1)
@@ -580,22 +590,22 @@ class Ui_main_app_view(object):
         self.employee_result_search_label.setGeometry(QRect(10, 90, 111, 41))
         self.employee_result_search_label.setFont(font3)
         self.employee_result_search_treeview = QTreeWidget(self.employee_search_frame_2)
-        __qtreewidgetitem6 = QTreeWidgetItem()
-        __qtreewidgetitem6.setTextAlignment(2, Qt.AlignCenter);
-        __qtreewidgetitem6.setFont(2, font3);
-        __qtreewidgetitem6.setTextAlignment(1, Qt.AlignCenter);
-        __qtreewidgetitem6.setFont(1, font3);
-        __qtreewidgetitem6.setTextAlignment(0, Qt.AlignCenter);
-        __qtreewidgetitem6.setFont(0, font3);
-        self.employee_result_search_treeview.setHeaderItem(__qtreewidgetitem6)
-        __qtreewidgetitem7 = QTreeWidgetItem(self.employee_result_search_treeview)
-        __qtreewidgetitem7.setTextAlignment(2, Qt.AlignCenter);
-        __qtreewidgetitem7.setTextAlignment(1, Qt.AlignCenter);
-        __qtreewidgetitem7.setTextAlignment(0, Qt.AlignCenter);
-        __qtreewidgetitem8 = QTreeWidgetItem(self.employee_result_search_treeview)
+        __qtreewidgetitem8 = QTreeWidgetItem()
         __qtreewidgetitem8.setTextAlignment(2, Qt.AlignCenter);
+        __qtreewidgetitem8.setFont(2, font3);
         __qtreewidgetitem8.setTextAlignment(1, Qt.AlignCenter);
+        __qtreewidgetitem8.setFont(1, font3);
         __qtreewidgetitem8.setTextAlignment(0, Qt.AlignCenter);
+        __qtreewidgetitem8.setFont(0, font3);
+        self.employee_result_search_treeview.setHeaderItem(__qtreewidgetitem8)
+        __qtreewidgetitem9 = QTreeWidgetItem(self.employee_result_search_treeview)
+        __qtreewidgetitem9.setTextAlignment(2, Qt.AlignCenter);
+        __qtreewidgetitem9.setTextAlignment(1, Qt.AlignCenter);
+        __qtreewidgetitem9.setTextAlignment(0, Qt.AlignCenter);
+        __qtreewidgetitem10 = QTreeWidgetItem(self.employee_result_search_treeview)
+        __qtreewidgetitem10.setTextAlignment(2, Qt.AlignCenter);
+        __qtreewidgetitem10.setTextAlignment(1, Qt.AlignCenter);
+        __qtreewidgetitem10.setTextAlignment(0, Qt.AlignCenter);
         self.employee_result_search_treeview.setObjectName(u"employee_result_search_treeview")
         self.employee_result_search_treeview.setGeometry(QRect(140, 100, 791, 291))
         self.employee_result_search_treeview.setFont(font3)
@@ -763,8 +773,25 @@ class Ui_main_app_view(object):
         font6.setPointSize(12)
         self.label_11.setFont(font6)
         self.sticker_search_treeWidget = QTreeWidget(self.barcode_page)
+        __qtreewidgetitem11 = QTreeWidgetItem()
+        __qtreewidgetitem11.setTextAlignment(6, Qt.AlignCenter);
+        __qtreewidgetitem11.setFont(6, font3);
+        __qtreewidgetitem11.setTextAlignment(5, Qt.AlignCenter);
+        __qtreewidgetitem11.setFont(5, font3);
+        __qtreewidgetitem11.setTextAlignment(4, Qt.AlignCenter);
+        __qtreewidgetitem11.setFont(4, font3);
+        __qtreewidgetitem11.setTextAlignment(3, Qt.AlignCenter);
+        __qtreewidgetitem11.setFont(3, font3);
+        __qtreewidgetitem11.setTextAlignment(2, Qt.AlignCenter);
+        __qtreewidgetitem11.setFont(2, font3);
+        __qtreewidgetitem11.setTextAlignment(1, Qt.AlignCenter);
+        __qtreewidgetitem11.setFont(1, font3);
+        __qtreewidgetitem11.setTextAlignment(0, Qt.AlignCenter);
+        __qtreewidgetitem11.setFont(0, font3);
+        self.sticker_search_treeWidget.setHeaderItem(__qtreewidgetitem11)
         self.sticker_search_treeWidget.setObjectName(u"sticker_search_treeWidget")
         self.sticker_search_treeWidget.setGeometry(QRect(10, 101, 1161, 651))
+        self.sticker_search_treeWidget.header().setDefaultSectionSize(163)
         self.sticker_search_pushButton = QPushButton(self.barcode_page)
         self.sticker_search_pushButton.setObjectName(u"sticker_search_pushButton")
         self.sticker_search_pushButton.setGeometry(QRect(320, 40, 121, 41))
@@ -812,7 +839,7 @@ class Ui_main_app_view(object):
 
         self.retranslateUi(main_app_view)
 
-        self.stackedWidget.setCurrentIndex(4)
+        self.stackedWidget.setCurrentIndex(7)
 
 
         QMetaObject.connectSlotsByName(main_app_view)

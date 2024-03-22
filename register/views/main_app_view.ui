@@ -291,7 +291,7 @@
       </rect>
      </property>
      <property name="currentIndex">
-      <number>4</number>
+      <number>7</number>
      </property>
      <widget class="QWidget" name="login_page">
       <widget class="QLineEdit" name="username_lineEdit">
@@ -994,7 +994,7 @@
       <widget class="QLabel" name="search_label">
        <property name="geometry">
         <rect>
-         <x>0</x>
+         <x>10</x>
          <y>0</y>
          <width>181</width>
          <height>31</height>
@@ -1014,9 +1014,9 @@
       <widget class="QLineEdit" name="search_name_entry">
        <property name="geometry">
         <rect>
-         <x>140</x>
+         <x>160</x>
          <y>40</y>
-         <width>391</width>
+         <width>501</width>
          <height>31</height>
         </rect>
        </property>
@@ -1031,7 +1031,7 @@
       <widget class="QLabel" name="search_name_label">
        <property name="geometry">
         <rect>
-         <x>0</x>
+         <x>10</x>
          <y>40</y>
          <width>141</width>
          <height>31</height>
@@ -1051,7 +1051,7 @@
       <widget class="QPushButton" name="search_button">
        <property name="geometry">
         <rect>
-         <x>540</x>
+         <x>670</x>
          <y>22</y>
          <width>111</width>
          <height>51</height>
@@ -1071,9 +1071,9 @@
       <widget class="QTreeWidget" name="search_tree_view">
        <property name="geometry">
         <rect>
-         <x>0</x>
+         <x>10</x>
          <y>90</y>
-         <width>651</width>
+         <width>771</width>
          <height>171</height>
         </rect>
        </property>
@@ -1100,7 +1100,7 @@
         <number>38</number>
        </attribute>
        <attribute name="headerDefaultSectionSize">
-        <number>129</number>
+        <number>143</number>
        </attribute>
        <column>
         <property name="text">
@@ -1153,14 +1153,26 @@
         <property name="text">
          <string>ทดสอบ</string>
         </property>
-        <property name="text">
-         <string>ทดสอบ</string>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
         </property>
         <property name="text">
          <string>ทดสอบ</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+        <property name="text">
+         <string>ทดสอบ</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
         </property>
         <property name="text">
          <string>111</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
         </property>
         <property name="text">
          <string>ทดสอบ</string>
@@ -1168,6 +1180,9 @@
         <item>
          <property name="text">
           <string>ทดสอบ1</string>
+         </property>
+         <property name="textAlignment">
+          <set>AlignCenter</set>
          </property>
          <property name="text">
           <string/>
@@ -1187,14 +1202,26 @@
         <property name="text">
          <string>ทดสอบ2</string>
         </property>
-        <property name="text">
-         <string>ทดสอบ2</string>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
         </property>
         <property name="text">
          <string>ทดสอบ2</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+        <property name="text">
+         <string>ทดสอบ2</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
         </property>
         <property name="text">
          <string>222</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
         </property>
         <property name="text">
          <string>ทดสอบ2</string>
@@ -1202,6 +1229,9 @@
         <item>
          <property name="text">
           <string>ทดสอบ2</string>
+         </property>
+         <property name="textAlignment">
+          <set>AlignCenter</set>
          </property>
          <property name="text">
           <string/>
@@ -2860,39 +2890,112 @@
          <height>651</height>
         </rect>
        </property>
+       <attribute name="headerDefaultSectionSize">
+        <number>163</number>
+       </attribute>
        <column>
         <property name="text">
          <string>วันที่รับเคส</string>
+        </property>
+        <property name="font">
+         <font>
+          <family>TH Niramit AS</family>
+          <pointsize>20</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
         </property>
        </column>
        <column>
         <property name="text">
          <string>หมายเลขเคส</string>
         </property>
+        <property name="font">
+         <font>
+          <family>TH Niramit AS</family>
+          <pointsize>20</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
        </column>
        <column>
         <property name="text">
          <string>หมายเลขตัวอย่าง</string>
+        </property>
+        <property name="font">
+         <font>
+          <family>TH Niramit AS</family>
+          <pointsize>20</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
         </property>
        </column>
        <column>
         <property name="text">
          <string>ชนิดสัตว์</string>
         </property>
+        <property name="font">
+         <font>
+          <family>TH Niramit AS</family>
+          <pointsize>20</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
        </column>
        <column>
         <property name="text">
          <string>ห้องปฏิบัติการ</string>
+        </property>
+        <property name="font">
+         <font>
+          <family>TH Niramit AS</family>
+          <pointsize>20</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
         </property>
        </column>
        <column>
         <property name="text">
          <string>รายการทดสอบ</string>
         </property>
+        <property name="font">
+         <font>
+          <family>TH Niramit AS</family>
+          <pointsize>20</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
        </column>
        <column>
         <property name="text">
          <string>ข้อมูลเพิ่มเติม</string>
+        </property>
+        <property name="font">
+         <font>
+          <family>TH Niramit AS</family>
+          <pointsize>20</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
         </property>
        </column>
       </widget>

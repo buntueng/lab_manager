@@ -1,7 +1,6 @@
 from views.main_app_view import Ui_main_app_view
 from PySide6.QtWidgets import QMainWindow
 
-
 class MainAppView(QMainWindow, Ui_main_app_view):
     """"Main application view. Inherits from QMainWindow and Ui_main_app_view."""
 
@@ -41,6 +40,7 @@ class MainAppView(QMainWindow, Ui_main_app_view):
         self.employee_pushButton.setEnabled(True)
         self.personal_info_pushButton.setEnabled(True)
         self.update_prog_pushButton.setEnabled(True)
+
 
     def show_view(self):
         """Show the view."""
