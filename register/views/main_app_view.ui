@@ -291,7 +291,7 @@
       </rect>
      </property>
      <property name="currentIndex">
-      <number>2</number>
+      <number>7</number>
      </property>
      <widget class="QWidget" name="login_page">
       <widget class="QLineEdit" name="username_lineEdit">
@@ -2001,14 +2001,141 @@
       <widget class="QLabel" name="label_4">
        <property name="geometry">
         <rect>
-         <x>10</x>
-         <y>10</y>
+         <x>1090</x>
+         <y>20</y>
          <width>81</width>
          <height>16</height>
         </rect>
        </property>
        <property name="text">
         <string>Barcode page</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_11">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>81</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>ชื่อผู้นำส่ง</string>
+       </property>
+      </widget>
+      <widget class="QTreeWidget" name="treeWidget">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>101</y>
+         <width>1161</width>
+         <height>651</height>
+        </rect>
+       </property>
+       <column>
+        <property name="text">
+         <string>วันที่รับเคส</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>หมายเลขเคส</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>หมายเลขตัวอย่าง</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>ชนิดสัตว์</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>ห้องปฏิบัติการ</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>รายการทดสอบ</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>ข้อมูลเพิ่มเติม</string>
+        </property>
+       </column>
+      </widget>
+      <widget class="QPushButton" name="sticker_search_pushButton">
+       <property name="geometry">
+        <rect>
+         <x>320</x>
+         <y>40</y>
+         <width>121</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>ค้นหา</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>51</y>
+         <width>291</width>
+         <height>31</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="today_sticker_search_pushButton">
+       <property name="geometry">
+        <rect>
+         <x>1000</x>
+         <y>40</y>
+         <width>171</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>ค้นหาเคสในวันนี้</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton">
+       <property name="geometry">
+        <rect>
+         <x>1020</x>
+         <y>770</y>
+         <width>151</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>พิมพ์บาร์โคด</string>
        </property>
       </widget>
      </widget>
