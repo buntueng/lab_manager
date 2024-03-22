@@ -2029,7 +2029,7 @@
         <string>ชื่อผู้นำส่ง</string>
        </property>
       </widget>
-      <widget class="QTreeWidget" name="treeWidget">
+      <widget class="QTreeWidget" name="sticker_search_treeWidget">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -2092,7 +2092,7 @@
         <string>ค้นหา</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="lineEdit">
+      <widget class="QLineEdit" name="sticker_search_lineEdit">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -2120,7 +2120,7 @@
         <string>ค้นหาเคสในวันนี้</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="print_barcode_pushButton">
        <property name="geometry">
         <rect>
          <x>1020</x>

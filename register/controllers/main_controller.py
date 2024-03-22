@@ -1,5 +1,6 @@
 """ Main Controller class"""
 # import QMessageBox from PySide6.QtWidgets
+from typing import Any
 from PySide6.QtWidgets import QMessageBox
 
 
@@ -41,6 +42,25 @@ class Main_Controller:
 
         self.view.sign_out_pushButton.clicked.connect(
             self.view.show_login_page)
+        # ==================== print barcode page ====================
+        self.view.print_barcode_pushButton.clicked.connect(
+            self.print_barcode)
+        self.view.sticker_search_pushButton.clicked.connect(
+            self.search_sticker)
+        self.view.today_sticker_search_pushButton.clicked.connect(
+            self.search_today_sticker)
+
+    def search_today_sticker(self):
+        """ serach all case that registered today. Sorting the result by date and time"""
+        pass
+
+    def search_sticker(self):
+        """ serach customer name to get a sticker information"""
+        pass
+
+    def print_barcode(self):
+        """Print a selected information to barcode """
+        pass
 
     def user_sign_in(self):
         """User sign in method"""

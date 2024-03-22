@@ -566,7 +566,31 @@ class Ui_main_app_view(object):
         self.barcode_page.setObjectName(u"barcode_page")
         self.label_4 = QLabel(self.barcode_page)
         self.label_4.setObjectName(u"label_4")
-        self.label_4.setGeometry(QRect(10, 10, 81, 16))
+        self.label_4.setGeometry(QRect(1090, 20, 81, 16))
+        self.label_11 = QLabel(self.barcode_page)
+        self.label_11.setObjectName(u"label_11")
+        self.label_11.setGeometry(QRect(10, 20, 81, 31))
+        font6 = QFont()
+        font6.setPointSize(12)
+        self.label_11.setFont(font6)
+        self.sticker_search_treeWidget = QTreeWidget(self.barcode_page)
+        self.sticker_search_treeWidget.setObjectName(u"sticker_search_treeWidget")
+        self.sticker_search_treeWidget.setGeometry(QRect(10, 101, 1161, 651))
+        self.sticker_search_pushButton = QPushButton(self.barcode_page)
+        self.sticker_search_pushButton.setObjectName(u"sticker_search_pushButton")
+        self.sticker_search_pushButton.setGeometry(QRect(320, 40, 121, 41))
+        self.sticker_search_pushButton.setFont(font6)
+        self.sticker_search_lineEdit = QLineEdit(self.barcode_page)
+        self.sticker_search_lineEdit.setObjectName(u"sticker_search_lineEdit")
+        self.sticker_search_lineEdit.setGeometry(QRect(10, 51, 291, 31))
+        self.today_sticker_search_pushButton = QPushButton(self.barcode_page)
+        self.today_sticker_search_pushButton.setObjectName(u"today_sticker_search_pushButton")
+        self.today_sticker_search_pushButton.setGeometry(QRect(1000, 40, 171, 51))
+        self.today_sticker_search_pushButton.setFont(font6)
+        self.print_barcode_pushButton = QPushButton(self.barcode_page)
+        self.print_barcode_pushButton.setObjectName(u"print_barcode_pushButton")
+        self.print_barcode_pushButton.setGeometry(QRect(1020, 770, 151, 41))
+        self.print_barcode_pushButton.setFont(font6)
         self.stackedWidget.addWidget(self.barcode_page)
         self.lab_report_page = QWidget()
         self.lab_report_page.setObjectName(u"lab_report_page")
@@ -599,7 +623,7 @@ class Ui_main_app_view(object):
 
         self.retranslateUi(main_app_view)
 
-        self.stackedWidget.setCurrentIndex(2)
+        self.stackedWidget.setCurrentIndex(7)
 
 
         QMetaObject.connectSlotsByName(main_app_view)
@@ -748,6 +772,18 @@ class Ui_main_app_view(object):
         self.label_7.setText(QCoreApplication.translate("main_app_view", u"Check report", None))
         self.label_5.setText(QCoreApplication.translate("main_app_view", u"Bill page", None))
         self.label_4.setText(QCoreApplication.translate("main_app_view", u"Barcode page", None))
+        self.label_11.setText(QCoreApplication.translate("main_app_view", u"\u0e0a\u0e37\u0e48\u0e2d\u0e1c\u0e39\u0e49\u0e19\u0e33\u0e2a\u0e48\u0e07", None))
+        ___qtreewidgetitem10 = self.sticker_search_treeWidget.headerItem()
+        ___qtreewidgetitem10.setText(6, QCoreApplication.translate("main_app_view", u"\u0e02\u0e49\u0e2d\u0e21\u0e39\u0e25\u0e40\u0e1e\u0e34\u0e48\u0e21\u0e40\u0e15\u0e34\u0e21", None));
+        ___qtreewidgetitem10.setText(5, QCoreApplication.translate("main_app_view", u"\u0e23\u0e32\u0e22\u0e01\u0e32\u0e23\u0e17\u0e14\u0e2a\u0e2d\u0e1a", None));
+        ___qtreewidgetitem10.setText(4, QCoreApplication.translate("main_app_view", u"\u0e2b\u0e49\u0e2d\u0e07\u0e1b\u0e0f\u0e34\u0e1a\u0e31\u0e15\u0e34\u0e01\u0e32\u0e23", None));
+        ___qtreewidgetitem10.setText(3, QCoreApplication.translate("main_app_view", u"\u0e0a\u0e19\u0e34\u0e14\u0e2a\u0e31\u0e15\u0e27\u0e4c", None));
+        ___qtreewidgetitem10.setText(2, QCoreApplication.translate("main_app_view", u"\u0e2b\u0e21\u0e32\u0e22\u0e40\u0e25\u0e02\u0e15\u0e31\u0e27\u0e2d\u0e22\u0e48\u0e32\u0e07", None));
+        ___qtreewidgetitem10.setText(1, QCoreApplication.translate("main_app_view", u"\u0e2b\u0e21\u0e32\u0e22\u0e40\u0e25\u0e02\u0e40\u0e04\u0e2a", None));
+        ___qtreewidgetitem10.setText(0, QCoreApplication.translate("main_app_view", u"\u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e23\u0e31\u0e1a\u0e40\u0e04\u0e2a", None));
+        self.sticker_search_pushButton.setText(QCoreApplication.translate("main_app_view", u"\u0e04\u0e49\u0e19\u0e2b\u0e32", None))
+        self.today_sticker_search_pushButton.setText(QCoreApplication.translate("main_app_view", u"\u0e04\u0e49\u0e19\u0e2b\u0e32\u0e40\u0e04\u0e2a\u0e43\u0e19\u0e27\u0e31\u0e19\u0e19\u0e35\u0e49", None))
+        self.print_barcode_pushButton.setText(QCoreApplication.translate("main_app_view", u"\u0e1e\u0e34\u0e21\u0e1e\u0e4c\u0e1a\u0e32\u0e23\u0e4c\u0e42\u0e04\u0e14", None))
         self.label_10.setText(QCoreApplication.translate("main_app_view", u"Lab report", None))
         self.label_8.setText(QCoreApplication.translate("main_app_view", u"Personal", None))
         self.label_13.setText(QCoreApplication.translate("main_app_view", u"Update page", None))
