@@ -36,8 +36,8 @@ class Main_Model:
         # sql_cmd = self.sql_cmd["search_today_sticker"]
         # data = ()
         # today_sticker = self.select_data(sql_cmd, data)
-        today_sticker = [["SSSS", "DDDD", "DDDDDDD",
-                         "SSSS", "ร้อนป่าว", "หิวข้าว", "หมายเหตุ"]]
+        today_sticker = [["24-03-2024 10:00:00", "660000000001", "Avine",
+                         "D304(BAC)", "ไม่แช่เย็น (Chill)", "ด่วนที่สุด", "หมายเหตุ"]]
         return today_sticker
 
     def user_sign_in(self, username, password):

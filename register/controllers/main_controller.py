@@ -17,6 +17,8 @@ class Main_Controller:
     def event_bindings(self):
         """Event bindings for the main view"""
         self.view.login_pushButton.clicked.connect(self.user_sign_in)
+        # bind enter key in login page
+        self.view.password_lineEdit.returnPressed.connect(self.user_sign_in)
         self.view.sign_out_pushButton.clicked.connect(self.user_sign_out)
 
         self.view.customer_reg_pushButton.clicked.connect(

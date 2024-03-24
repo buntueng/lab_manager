@@ -21,7 +21,8 @@ class BarcodeGenerator:
 
     def generate(self, data):
         """Generate barcode image"""
-        [sample_code, species, date, lab_name, speed, collect, comments] = data[0]
+        # [sample_code, species, date, lab_name, speed, collect, comments] = data[0]
+        [date, sample_code, species, lab_name, collect, speed, comments] = data[0]
         label2 = self.generate_sticker_label(
             sample_code=sample_code, species=species, date=date, lab_name=lab_name, speed=speed, collect=collect)
         label2.save(self.barcode_file_path, 'PNG')
@@ -124,7 +125,7 @@ class BarcodeGenerator:
         print(self.barcode_file_path)
         if os.path.exists(self.barcode_file_path):
             # print("Deleting barcode image")
-            os.remove(self.barcode_path)
+            os.remove(self.barcode_file_path)
         else:
             print("The file does not exist")
 
