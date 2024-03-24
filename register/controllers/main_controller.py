@@ -52,7 +52,9 @@ class Main_Controller:
 
     def search_today_sticker(self):
         """ serach all case that registered today. Sorting the result by date and time"""
-        pass
+        # add data to listview
+        data = self.model.search_today_sticker()
+        self.view.add_data_to_listview_printerpage(data)
 
     def search_sticker(self):
         """ serach customer name to get a sticker information"""
@@ -60,7 +62,17 @@ class Main_Controller:
 
     def print_barcode(self):
         """Print a selected information to barcode """
-        pass
+        # get selected item from the QTreeWidget
+        selected_item = self.view.sticker_search_treeWidget.selectedItems()
+        row_list = []
+        for row in selected_item:
+            column_list = []
+            for col in range(self.view.sticker_search_treeWidget.columnCount()):
+                column_list.append(row.text(col))
+            row_list.append(column_list)
+
+        # generate barcode
+        
 
     def user_sign_in(self):
         """User sign in method"""

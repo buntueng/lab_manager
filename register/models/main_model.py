@@ -31,6 +31,15 @@ class Main_Model:
         with open(server_config_path, "r", encoding='UTF8') as file:
             self.server_config = yaml.safe_load(file)
 
+    def search_today_sticker(self):
+        # select all data from the database in table employee where the date is equal to the current date
+        # sql_cmd = self.sql_cmd["search_today_sticker"]
+        # data = ()
+        # today_sticker = self.select_data(sql_cmd, data)
+        today_sticker = [["SSSS", "DDDD", "DDDDDDD",
+                         "SSSS", "DDDD", "DDDDDDD", "HHHH"]]
+        return today_sticker
+
     def user_sign_in(self, username, password):
         # select user_info from the database in talbe employee where username and password are equal to the given username and password
         sql_cmd = self.sql_cmd["user_sign_in"]

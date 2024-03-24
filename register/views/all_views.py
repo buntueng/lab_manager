@@ -1,5 +1,8 @@
 from views.main_app_view import Ui_main_app_view
 from PySide6.QtWidgets import QMainWindow
+from PySide6.QtWidgets import QTreeWidgetItem
+# import QTreeWidgetItem
+
 
 class MainAppView(QMainWindow, Ui_main_app_view):
     """"Main application view. Inherits from QMainWindow and Ui_main_app_view."""
@@ -40,7 +43,6 @@ class MainAppView(QMainWindow, Ui_main_app_view):
         self.employee_pushButton.setEnabled(True)
         self.personal_info_pushButton.setEnabled(True)
         self.update_prog_pushButton.setEnabled(True)
-
 
     def show_view(self):
         """Show the view."""
@@ -123,6 +125,12 @@ class MainAppView(QMainWindow, Ui_main_app_view):
     def show_current_user_information(self, user_info):
         """Show the current user information."""
         self.current_user_label.setText(user_info)
+
+    def add_data_to_listview_printerpage(self, data):
+        """Add data to listview in printer page."""
+        self.sticker_search_treeWidget.clear()
+        for row in data:
+            QTreeWidgetItem(self.sticker_search_treeWidget, row)
 
 
 if __name__ == '__main__':
