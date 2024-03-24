@@ -2,6 +2,7 @@
 # import QMessageBox from PySide6.QtWidgets
 from typing import Any
 from PySide6.QtWidgets import QMessageBox
+from models.barcode_generator import BarcodeGenerator
 
 
 class Main_Controller:
@@ -64,15 +65,25 @@ class Main_Controller:
         """Print a selected information to barcode """
         # get selected item from the QTreeWidget
         selected_item = self.view.sticker_search_treeWidget.selectedItems()
-        row_list = []
-        for row in selected_item:
-            column_list = []
-            for col in range(self.view.sticker_search_treeWidget.columnCount()):
-                column_list.append(row.text(col))
-            row_list.append(column_list)
+        if selected_item == []:
+            QMessageBox.critical(self.view, "Error",
+                                 "Please select a row to print barcode")
+        else:
+            if len(selected_item) > 1:
+                QMessageBox.critical(self.view, "Error",
+                                     "Please select only one row to print barcode")
+            else:
+                barcode_obj = BarcodeGenerator()
+                row_list = []
+                for row in selected_item:
+                    column_list = []
+                    for col in range(self.view.sticker_search_treeWidget.columnCount()):
+                        column_list.append(row.text(col))
+                    row_list.append(column_list)
+                barcode_obj.generate(row_list)
+                barcode_obj.print_barcode()
 
         # generate barcode
-        
 
     def user_sign_in(self):
         """User sign in method"""

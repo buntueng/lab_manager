@@ -2900,7 +2900,7 @@
         <property name="font">
          <font>
           <family>TH Niramit AS</family>
-          <pointsize>20</pointsize>
+          <pointsize>16</pointsize>
           <bold>true</bold>
          </font>
         </property>
@@ -2910,27 +2910,12 @@
        </column>
        <column>
         <property name="text">
-         <string>หมายเลขเคส</string>
+         <string>หมายเลขการตรวจ</string>
         </property>
         <property name="font">
          <font>
           <family>TH Niramit AS</family>
-          <pointsize>20</pointsize>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="textAlignment">
-         <set>AlignCenter</set>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>หมายเลขตัวอย่าง</string>
-        </property>
-        <property name="font">
-         <font>
-          <family>TH Niramit AS</family>
-          <pointsize>20</pointsize>
+          <pointsize>16</pointsize>
           <bold>true</bold>
          </font>
         </property>
@@ -2945,7 +2930,7 @@
         <property name="font">
          <font>
           <family>TH Niramit AS</family>
-          <pointsize>20</pointsize>
+          <pointsize>16</pointsize>
           <bold>true</bold>
          </font>
         </property>
@@ -2960,7 +2945,7 @@
         <property name="font">
          <font>
           <family>TH Niramit AS</family>
-          <pointsize>20</pointsize>
+          <pointsize>16</pointsize>
           <bold>true</bold>
          </font>
         </property>
@@ -2970,12 +2955,27 @@
        </column>
        <column>
         <property name="text">
-         <string>รายการทดสอบ</string>
+         <string>การเก็บรักษา</string>
         </property>
         <property name="font">
          <font>
           <family>TH Niramit AS</family>
-          <pointsize>20</pointsize>
+          <pointsize>16</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>ระดับความด่วน</string>
+        </property>
+        <property name="font">
+         <font>
+          <family>TH Niramit AS</family>
+          <pointsize>16</pointsize>
           <bold>true</bold>
          </font>
         </property>
@@ -2990,7 +2990,7 @@
         <property name="font">
          <font>
           <family>TH Niramit AS</family>
-          <pointsize>20</pointsize>
+          <pointsize>16</pointsize>
           <bold>true</bold>
          </font>
         </property>

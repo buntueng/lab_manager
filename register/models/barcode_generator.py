@@ -1,34 +1,33 @@
 """Barcode Generator Class"""
 import tempfile
 import os
-from PIL import Image, ImageDraw, ImageFont, ImageWin
-from pathlib import Path
-from barcode import Code128
-from barcode.writer import ImageWriter
-import barcode
-
-from PySide6 import QtWidgets, QtPrintSupport
 from PIL.ImageQt import ImageQt
-from PIL import Image, ImageDraw
-from PySide6 import QtGui
-from PySide6 import QtCore
+from PIL import Image, ImageDraw, ImageFont
+
+import barcode
+from barcode.writer import ImageWriter
+
+
 from PySide6.QtGui import QPageSize
 from PySide6.QtCore import QSizeF
+from PySide6 import QtWidgets, QtPrintSupport, QtCore, QtGui
+from PySide6.QtPrintSupport import QPrintPreviewDialog
 
 
 class BarcodeGenerator:
     def __init__(self):
         self.temp_folder = tempfile.gettempdir()
+        self.barcode_file_path = os.path.join(self.temp_folder, "barcode.png")
 
     def generate(self, data):
         """Generate barcode image"""
-        [sample_code, species, date, lab_name, speed, collect] = data
+        [sample_code, species, date, lab_name, speed, collect, comments] = data[0]
         label2 = self.generate_sticker_label(
             sample_code=sample_code, species=species, date=date, lab_name=lab_name, speed=speed, collect=collect)
-        self.barcode_file_path = os.path.join(self.temp_folder, "barcode.png")
         label2.save(self.barcode_file_path, 'PNG')
 
     def generate_sticker_label(self, sample_code=" ", species=" ", date=" ", lab_name=" ", speed="ด่วนที่สุด", collect="ไม่แช่เย็น (Chill)"):
+        """Generate barcode image with sample code, species, date, lab name, speed, collect"""
         text_font = ImageFont.truetype(r'TH Niramit AS Bold.ttf', 120)
         text_font_big = ImageFont.truetype(r'TH Niramit AS Bold.ttf', 135)
         background_layer = Image.new('RGB', (2000, 2000), "white")
@@ -95,9 +94,16 @@ class BarcodeGenerator:
         printer = QtPrintSupport.QPrinter()
         pageSize = QPageSize(QSizeF(50, 30), QPageSize.Millimeter)
         printer.setPageSize(pageSize)
-        dialog = QtPrintSupport.QPrintDialog(printer)
-        if dialog.exec() == QtWidgets.QDialog.Accepted:
-            self.handle_paint_request(printer, im)
+
+        # # Create print preview dialog
+        preview = QPrintPreviewDialog(printer)
+        preview.paintRequested.connect(
+            lambda p: self.handle_paint_request(p, im))
+        preview.exec()
+
+        # dialog = QtPrintSupport.QPrintDialog(printer)
+        # if dialog.exec() == QtWidgets.QDialog.Accepted:
+        #     self.handle_paint_request(printer, im)
 
     def handle_paint_request(self, printer, im):
         """Handle paint request"""
@@ -107,10 +113,6 @@ class BarcodeGenerator:
             0, 0, 0, 0), QtGui.QPageLayout.Millimeter)
         im = ImageQt(im).copy()
         painter = QtGui.QPainter(printer)
-        # Get the page size in pixels
-        # pageRect = printer.pageRect(QtPrintSupport.QPrinter.DevicePixel)
-        # Convert the image to a QPixmap and scale it to the page size
-        # image = QtGui.QPixmap.fromImage(im).scaled(pageRect.width()+250, pageRect.height()+100, QtCore.Qt.KeepAspectRatio)
         image = QtGui.QPixmap.fromImage(im).scaled(
             2500, 1400, QtCore.Qt.KeepAspectRatio)
         # Draw the pixmap onto the printer
@@ -121,8 +123,8 @@ class BarcodeGenerator:
     def __del__(self):
         print(self.barcode_file_path)
         if os.path.exists(self.barcode_file_path):
-            print("Deleting barcode image")
-            # os.remove(self.barcode_path)
+            # print("Deleting barcode image")
+            os.remove(self.barcode_path)
         else:
             print("The file does not exist")
 
