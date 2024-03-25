@@ -1,6 +1,7 @@
 """ Main Controller class"""
 # import QMessageBox from PySide6.QtWidgets
 from typing import Any
+import time
 from PySide6.QtWidgets import QMessageBox
 from models.barcode_generator import BarcodeGenerator
 
@@ -57,7 +58,19 @@ class Main_Controller:
         """ serach all case that registered today. Sorting the result by date and time"""
         # add data to listview
         data = self.model.search_today_sticker()
-        self.view.add_data_to_listview_printerpage(data)
+        sticker_list = []
+        for item in data:
+            # reformat the date and time
+            lab_name = item[6] + "(" + item[5] + ")"
+            # barcode number format is "yy" + barcode_number where the barcode_number is 10 digits.
+            barcode_number = time.strftime(
+                "%Y", time.localtime())[-2:] + str(item[1]).zfill(10)
+
+            # barcode_number = + str(item[1])
+            reformat_data = [item[0].strftime(
+                "%d-%m-%Y %H:%M:%S"), barcode_number, item[2], lab_name, item[3], item[4], "Comments"]
+            sticker_list.append(reformat_data)
+        self.view.add_data_to_listview_printerpage(sticker_list)
 
     def search_sticker(self):
         """ serach customer name to get a sticker information"""
