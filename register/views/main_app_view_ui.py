@@ -230,71 +230,71 @@ class Ui_main_app_view(object):
 "}")
         self.title_name_label = QLabel(self.color_fram_new_custommer2)
         self.title_name_label.setObjectName(u"title_name_label")
-        self.title_name_label.setGeometry(QRect(10, 20, 111, 41))
-        font3 = QFont()
-        font3.setFamilies([u"TH Niramit AS"])
-        font3.setPointSize(20)
-        font3.setBold(True)
-        self.title_name_label.setFont(font3)
+        self.title_name_label.setGeometry(QRect(10, 30, 111, 41))
+        self.title_name_label.setFont(font1)
         self.name_label = QLabel(self.color_fram_new_custommer2)
         self.name_label.setObjectName(u"name_label")
-        self.name_label.setGeometry(QRect(390, 20, 111, 41))
-        self.name_label.setFont(font3)
+        self.name_label.setGeometry(QRect(10, 80, 61, 41))
+        self.name_label.setFont(font1)
         self.surename_label = QLabel(self.color_fram_new_custommer2)
         self.surename_label.setObjectName(u"surename_label")
-        self.surename_label.setGeometry(QRect(10, 90, 111, 41))
-        self.surename_label.setFont(font3)
+        self.surename_label.setGeometry(QRect(10, 120, 111, 41))
+        self.surename_label.setFont(font1)
         self.tax_label = QLabel(self.color_fram_new_custommer2)
         self.tax_label.setObjectName(u"tax_label")
         self.tax_label.setGeometry(QRect(10, 160, 201, 41))
-        self.tax_label.setFont(font3)
+        self.tax_label.setFont(font1)
         self.email_label = QLabel(self.color_fram_new_custommer2)
         self.email_label.setObjectName(u"email_label")
-        self.email_label.setGeometry(QRect(10, 280, 111, 41))
-        self.email_label.setFont(font3)
+        self.email_label.setGeometry(QRect(10, 260, 111, 41))
+        self.email_label.setFont(font1)
         self.line_id_label = QLabel(self.color_fram_new_custommer2)
         self.line_id_label.setObjectName(u"line_id_label")
-        self.line_id_label.setGeometry(QRect(500, 280, 111, 41))
-        self.line_id_label.setFont(font3)
+        self.line_id_label.setGeometry(QRect(10, 310, 111, 31))
+        self.line_id_label.setFont(font1)
         self.phone_label = QLabel(self.color_fram_new_custommer2)
         self.phone_label.setObjectName(u"phone_label")
         self.phone_label.setGeometry(QRect(10, 360, 111, 41))
-        self.phone_label.setFont(font3)
+        self.phone_label.setFont(font1)
         self.address_label = QLabel(self.color_fram_new_custommer2)
         self.address_label.setObjectName(u"address_label")
-        self.address_label.setGeometry(QRect(10, 430, 161, 41))
-        self.address_label.setFont(font3)
+        self.address_label.setGeometry(QRect(10, 410, 161, 41))
+        self.address_label.setFont(font1)
         self.address_for_bill_label = QLabel(self.color_fram_new_custommer2)
         self.address_for_bill_label.setObjectName(u"address_for_bill_label")
-        self.address_for_bill_label.setGeometry(QRect(10, 560, 201, 41))
-        self.address_for_bill_label.setFont(font3)
+        self.address_for_bill_label.setGeometry(QRect(10, 540, 201, 41))
+        self.address_for_bill_label.setFont(font1)
         self.title_name_entry = QLineEdit(self.color_fram_new_custommer2)
         self.title_name_entry.setObjectName(u"title_name_entry")
-        self.title_name_entry.setGeometry(QRect(170, 20, 211, 41))
-        self.title_name_entry.setFont(font3)
+        self.title_name_entry.setGeometry(QRect(170, 30, 211, 31))
+        self.title_name_entry.setFont(font1)
         self.title_name_entry.setAutoFillBackground(False)
         self.title_name_entry.setStyleSheet(u"QWidget{\n"
 "	background-color: rgb(255, 255, 255)\n"
 "}")
         self.name_entry = QLineEdit(self.color_fram_new_custommer2)
         self.name_entry.setObjectName(u"name_entry")
-        self.name_entry.setGeometry(QRect(480, 20, 431, 41))
-        self.name_entry.setFont(font3)
+        self.name_entry.setGeometry(QRect(170, 80, 561, 31))
+        self.name_entry.setFont(font1)
         self.name_entry.setAutoFillBackground(False)
         self.name_entry.setStyleSheet(u"QWidget{\n"
 "	background-color: rgb(255, 255, 255)\n"
 "}")
         self.surename_entry = QLineEdit(self.color_fram_new_custommer2)
         self.surename_entry.setObjectName(u"surename_entry")
-        self.surename_entry.setGeometry(QRect(170, 90, 561, 41))
-        self.surename_entry.setFont(font3)
+        self.surename_entry.setGeometry(QRect(170, 120, 561, 31))
+        self.surename_entry.setFont(font1)
         self.surename_entry.setAutoFillBackground(False)
         self.surename_entry.setStyleSheet(u"QWidget{\n"
 "	background-color: rgb(255, 255, 255)\n"
 "}")
         self.tax_entry = QLineEdit(self.color_fram_new_custommer2)
         self.tax_entry.setObjectName(u"tax_entry")
-        self.tax_entry.setGeometry(QRect(170, 210, 561, 41))
+        self.tax_entry.setGeometry(QRect(170, 200, 561, 41))
+        font3 = QFont()
+        font3.setFamilies([u"TH Niramit AS"])
+        font3.setPointSize(20)
+        font3.setBold(True)
         self.tax_entry.setFont(font3)
         self.tax_entry.setAutoFillBackground(False)
         self.tax_entry.setStyleSheet(u"QWidget{\n"
@@ -302,7 +302,7 @@ class Ui_main_app_view(object):
 "}")
         self.email_entry = QLineEdit(self.color_fram_new_custommer2)
         self.email_entry.setObjectName(u"email_entry")
-        self.email_entry.setGeometry(QRect(170, 280, 321, 41))
+        self.email_entry.setGeometry(QRect(170, 260, 561, 31))
         self.email_entry.setFont(font3)
         self.email_entry.setAutoFillBackground(False)
         self.email_entry.setStyleSheet(u"QWidget{\n"
@@ -310,42 +310,42 @@ class Ui_main_app_view(object):
 "}")
         self.line_entry = QLineEdit(self.color_fram_new_custommer2)
         self.line_entry.setObjectName(u"line_entry")
-        self.line_entry.setGeometry(QRect(580, 280, 321, 41))
-        self.line_entry.setFont(font3)
+        self.line_entry.setGeometry(QRect(170, 310, 561, 31))
+        self.line_entry.setFont(font1)
         self.line_entry.setAutoFillBackground(False)
         self.line_entry.setStyleSheet(u"QWidget{\n"
 "	background-color: rgb(255, 255, 255)\n"
 "}")
         self.phone_entry = QLineEdit(self.color_fram_new_custommer2)
         self.phone_entry.setObjectName(u"phone_entry")
-        self.phone_entry.setGeometry(QRect(170, 360, 561, 41))
-        self.phone_entry.setFont(font3)
+        self.phone_entry.setGeometry(QRect(170, 360, 561, 31))
+        self.phone_entry.setFont(font1)
         self.phone_entry.setAutoFillBackground(False)
         self.phone_entry.setStyleSheet(u"QWidget{\n"
 "	background-color: rgb(255, 255, 255)\n"
 "}")
         self.address_entry = QTextEdit(self.color_fram_new_custommer2)
         self.address_entry.setObjectName(u"address_entry")
-        self.address_entry.setGeometry(QRect(170, 440, 561, 101))
-        self.address_entry.setFont(font3)
+        self.address_entry.setGeometry(QRect(170, 420, 561, 101))
+        self.address_entry.setFont(font1)
         self.address_entry.setStyleSheet(u"QWidget{\n"
 "	background-color: rgb(255, 255, 255)\n"
 "}")
         self.address_for_bill_entry = QTextEdit(self.color_fram_new_custommer2)
         self.address_for_bill_entry.setObjectName(u"address_for_bill_entry")
-        self.address_for_bill_entry.setGeometry(QRect(170, 610, 561, 101))
-        self.address_for_bill_entry.setFont(font3)
+        self.address_for_bill_entry.setGeometry(QRect(170, 580, 561, 101))
+        self.address_for_bill_entry.setFont(font1)
         self.address_for_bill_entry.setStyleSheet(u"QWidget{\n"
 "	background-color: rgb(255, 255, 255)\n"
 "}")
         self.addres_for_bill_checkbox = QCheckBox(self.color_fram_new_custommer2)
         self.addres_for_bill_checkbox.setObjectName(u"addres_for_bill_checkbox")
-        self.addres_for_bill_checkbox.setGeometry(QRect(230, 560, 391, 41))
-        self.addres_for_bill_checkbox.setFont(font3)
+        self.addres_for_bill_checkbox.setGeometry(QRect(170, 540, 391, 41))
+        self.addres_for_bill_checkbox.setFont(font1)
         self.anonymous_tax_checkbox = QCheckBox(self.color_fram_new_custommer2)
         self.anonymous_tax_checkbox.setObjectName(u"anonymous_tax_checkbox")
-        self.anonymous_tax_checkbox.setGeometry(QRect(230, 160, 391, 41))
-        self.anonymous_tax_checkbox.setFont(font3)
+        self.anonymous_tax_checkbox.setGeometry(QRect(170, 160, 391, 41))
+        self.anonymous_tax_checkbox.setFont(font1)
         self.save_data_button = QPushButton(self.new_customer_page)
         self.save_data_button.setObjectName(u"save_data_button")
         self.save_data_button.setGeometry(QRect(1000, 90, 181, 81))
@@ -357,26 +357,18 @@ class Ui_main_app_view(object):
         self.stackedWidget.addWidget(self.new_customer_page)
         self.new_job_page = QWidget()
         self.new_job_page.setObjectName(u"new_job_page")
-        self.search_label = QLabel(self.new_job_page)
-        self.search_label.setObjectName(u"search_label")
-        self.search_label.setGeometry(QRect(10, 0, 181, 31))
-        self.search_label.setFont(font3)
         self.search_name_entry = QLineEdit(self.new_job_page)
         self.search_name_entry.setObjectName(u"search_name_entry")
-        self.search_name_entry.setGeometry(QRect(160, 40, 501, 31))
-        self.search_name_entry.setFont(font)
+        self.search_name_entry.setGeometry(QRect(10, 40, 491, 31))
+        self.search_name_entry.setFont(font1)
         self.search_name_label = QLabel(self.new_job_page)
         self.search_name_label.setObjectName(u"search_name_label")
-        self.search_name_label.setGeometry(QRect(10, 40, 141, 31))
-        self.search_name_label.setFont(font3)
+        self.search_name_label.setGeometry(QRect(10, 0, 211, 31))
+        self.search_name_label.setFont(font)
         self.search_button = QPushButton(self.new_job_page)
         self.search_button.setObjectName(u"search_button")
-        self.search_button.setGeometry(QRect(670, 22, 111, 51))
-        font4 = QFont()
-        font4.setFamilies([u"TH Niramit AS"])
-        font4.setPointSize(24)
-        font4.setBold(True)
-        self.search_button.setFont(font4)
+        self.search_button.setGeometry(QRect(520, 10, 161, 61))
+        self.search_button.setFont(font)
         self.search_tree_view = QTreeWidget(self.new_job_page)
         __qtreewidgetitem = QTreeWidgetItem()
         __qtreewidgetitem.setTextAlignment(4, Qt.AlignCenter);
@@ -386,27 +378,9 @@ class Ui_main_app_view(object):
         __qtreewidgetitem.setTextAlignment(0, Qt.AlignCenter);
         __qtreewidgetitem.setFont(0, font1);
         self.search_tree_view.setHeaderItem(__qtreewidgetitem)
-        __qtreewidgetitem1 = QTreeWidgetItem(self.search_tree_view)
-        __qtreewidgetitem1.setTextAlignment(3, Qt.AlignCenter);
-        __qtreewidgetitem1.setTextAlignment(2, Qt.AlignCenter);
-        __qtreewidgetitem1.setTextAlignment(1, Qt.AlignCenter);
-        __qtreewidgetitem1.setTextAlignment(0, Qt.AlignCenter);
-        __qtreewidgetitem2 = QTreeWidgetItem(__qtreewidgetitem1)
-        __qtreewidgetitem2.setTextAlignment(0, Qt.AlignCenter);
-        __qtreewidgetitem3 = QTreeWidgetItem(self.search_tree_view)
-        __qtreewidgetitem3.setTextAlignment(3, Qt.AlignCenter);
-        __qtreewidgetitem3.setTextAlignment(2, Qt.AlignCenter);
-        __qtreewidgetitem3.setTextAlignment(1, Qt.AlignCenter);
-        __qtreewidgetitem3.setTextAlignment(0, Qt.AlignCenter);
-        __qtreewidgetitem4 = QTreeWidgetItem(__qtreewidgetitem3)
-        __qtreewidgetitem4.setTextAlignment(0, Qt.AlignCenter);
         self.search_tree_view.setObjectName(u"search_tree_view")
-        self.search_tree_view.setGeometry(QRect(10, 90, 771, 171))
-        font5 = QFont()
-        font5.setFamilies([u"TH Niramit AS"])
-        font5.setPointSize(14)
-        font5.setBold(True)
-        self.search_tree_view.setFont(font5)
+        self.search_tree_view.setGeometry(QRect(10, 80, 1001, 191))
+        self.search_tree_view.setFont(font1)
         self.search_tree_view.setAutoScrollMargin(18)
         self.search_tree_view.setTextElideMode(Qt.ElideRight)
         self.search_tree_view.setIndentation(15)
@@ -415,118 +389,123 @@ class Ui_main_app_view(object):
         self.search_tree_view.header().setDefaultSectionSize(143)
         self.number_job_label = QLabel(self.new_job_page)
         self.number_job_label.setObjectName(u"number_job_label")
-        self.number_job_label.setGeometry(QRect(0, 280, 91, 31))
-        self.number_job_label.setFont(font3)
+        self.number_job_label.setGeometry(QRect(10, 280, 81, 31))
+        self.number_job_label.setFont(font1)
         self.number_job_entry = QLineEdit(self.new_job_page)
         self.number_job_entry.setObjectName(u"number_job_entry")
-        self.number_job_entry.setGeometry(QRect(150, 280, 151, 31))
-        self.number_job_entry.setFont(font)
+        self.number_job_entry.setGeometry(QRect(130, 280, 151, 31))
+        self.number_job_entry.setFont(font1)
+        self.number_job_entry.setReadOnly(True)
         self.number_sender_label = QLabel(self.new_job_page)
         self.number_sender_label.setObjectName(u"number_sender_label")
-        self.number_sender_label.setGeometry(QRect(0, 320, 121, 31))
-        self.number_sender_label.setFont(font3)
+        self.number_sender_label.setGeometry(QRect(10, 320, 111, 31))
+        self.number_sender_label.setFont(font1)
         self.number_sender_entry = QLineEdit(self.new_job_page)
         self.number_sender_entry.setObjectName(u"number_sender_entry")
-        self.number_sender_entry.setGeometry(QRect(150, 320, 131, 31))
-        self.number_sender_entry.setFont(font)
+        self.number_sender_entry.setGeometry(QRect(130, 320, 151, 31))
+        self.number_sender_entry.setFont(font1)
+        self.number_sender_entry.setReadOnly(True)
         self.name_sender_label = QLabel(self.new_job_page)
         self.name_sender_label.setObjectName(u"name_sender_label")
         self.name_sender_label.setGeometry(QRect(290, 320, 31, 31))
-        self.name_sender_label.setFont(font3)
+        self.name_sender_label.setFont(font1)
         self.name_sender_entry = QLineEdit(self.new_job_page)
         self.name_sender_entry.setObjectName(u"name_sender_entry")
         self.name_sender_entry.setGeometry(QRect(320, 320, 211, 31))
-        self.name_sender_entry.setFont(font)
+        self.name_sender_entry.setFont(font1)
+        self.name_sender_entry.setReadOnly(True)
         self.surename_sender_label = QLabel(self.new_job_page)
         self.surename_sender_label.setObjectName(u"surename_sender_label")
         self.surename_sender_label.setGeometry(QRect(540, 320, 81, 31))
-        self.surename_sender_label.setFont(font3)
+        self.surename_sender_label.setFont(font1)
         self.surename_sender_entry = QLineEdit(self.new_job_page)
         self.surename_sender_entry.setObjectName(u"surename_sender_entry")
         self.surename_sender_entry.setGeometry(QRect(620, 320, 231, 31))
-        self.surename_sender_entry.setFont(font)
+        self.surename_sender_entry.setFont(font1)
+        self.surename_sender_entry.setReadOnly(True)
         self.tax_sender_label = QLabel(self.new_job_page)
         self.tax_sender_label.setObjectName(u"tax_sender_label")
         self.tax_sender_label.setGeometry(QRect(860, 320, 101, 31))
-        self.tax_sender_label.setFont(font3)
+        self.tax_sender_label.setFont(font1)
         self.tax_sender_entry = QLineEdit(self.new_job_page)
         self.tax_sender_entry.setObjectName(u"tax_sender_entry")
         self.tax_sender_entry.setGeometry(QRect(970, 320, 211, 31))
-        self.tax_sender_entry.setFont(font)
+        self.tax_sender_entry.setFont(font1)
+        self.tax_sender_entry.setReadOnly(True)
         self.number_owner_label = QLabel(self.new_job_page)
         self.number_owner_label.setObjectName(u"number_owner_label")
-        self.number_owner_label.setGeometry(QRect(0, 360, 151, 31))
-        self.number_owner_label.setFont(font3)
+        self.number_owner_label.setGeometry(QRect(10, 360, 121, 31))
+        self.number_owner_label.setFont(font1)
         self.number_owner_entry = QLineEdit(self.new_job_page)
         self.number_owner_entry.setObjectName(u"number_owner_entry")
-        self.number_owner_entry.setGeometry(QRect(150, 360, 131, 31))
-        self.number_owner_entry.setFont(font)
+        self.number_owner_entry.setGeometry(QRect(130, 360, 151, 31))
+        self.number_owner_entry.setFont(font1)
+        self.number_owner_entry.setReadOnly(True)
         self.name_owner_label = QLabel(self.new_job_page)
         self.name_owner_label.setObjectName(u"name_owner_label")
         self.name_owner_label.setGeometry(QRect(290, 360, 31, 31))
-        self.name_owner_label.setFont(font3)
+        self.name_owner_label.setFont(font1)
         self.name_owner_entry = QLineEdit(self.new_job_page)
         self.name_owner_entry.setObjectName(u"name_owner_entry")
         self.name_owner_entry.setGeometry(QRect(320, 360, 211, 31))
-        self.name_owner_entry.setFont(font)
+        self.name_owner_entry.setFont(font1)
+        self.name_owner_entry.setReadOnly(True)
         self.surename_owner_label = QLabel(self.new_job_page)
         self.surename_owner_label.setObjectName(u"surename_owner_label")
         self.surename_owner_label.setGeometry(QRect(540, 360, 81, 31))
-        self.surename_owner_label.setFont(font3)
+        self.surename_owner_label.setFont(font1)
         self.surename_owner_entry = QLineEdit(self.new_job_page)
         self.surename_owner_entry.setObjectName(u"surename_owner_entry")
         self.surename_owner_entry.setGeometry(QRect(620, 360, 231, 31))
-        self.surename_owner_entry.setFont(font)
+        self.surename_owner_entry.setFont(font1)
+        self.surename_owner_entry.setReadOnly(True)
         self.tax_owner_label = QLabel(self.new_job_page)
         self.tax_owner_label.setObjectName(u"tax_owner_label")
         self.tax_owner_label.setGeometry(QRect(860, 360, 101, 31))
-        self.tax_owner_label.setFont(font3)
+        self.tax_owner_label.setFont(font1)
         self.tax_owner_entry = QLineEdit(self.new_job_page)
         self.tax_owner_entry.setObjectName(u"tax_owner_entry")
         self.tax_owner_entry.setGeometry(QRect(970, 360, 211, 31))
-        self.tax_owner_entry.setFont(font)
+        self.tax_owner_entry.setFont(font1)
+        self.tax_owner_entry.setReadOnly(True)
         self.name_projact_label = QLabel(self.new_job_page)
         self.name_projact_label.setObjectName(u"name_projact_label")
-        self.name_projact_label.setGeometry(QRect(0, 410, 101, 31))
-        self.name_projact_label.setFont(font3)
+        self.name_projact_label.setGeometry(QRect(10, 400, 91, 31))
+        self.name_projact_label.setFont(font1)
         self.name_projact_entry = QLineEdit(self.new_job_page)
         self.name_projact_entry.setObjectName(u"name_projact_entry")
-        self.name_projact_entry.setGeometry(QRect(150, 410, 1031, 31))
-        self.name_projact_entry.setFont(font)
+        self.name_projact_entry.setGeometry(QRect(130, 400, 1051, 31))
+        self.name_projact_entry.setFont(font1)
         self.detail_case_tree_view = QTreeWidget(self.new_job_page)
-        __qtreewidgetitem5 = QTreeWidgetItem()
-        __qtreewidgetitem5.setTextAlignment(6, Qt.AlignCenter);
-        __qtreewidgetitem5.setTextAlignment(5, Qt.AlignCenter);
-        __qtreewidgetitem5.setTextAlignment(4, Qt.AlignCenter);
-        __qtreewidgetitem5.setTextAlignment(3, Qt.AlignCenter);
-        __qtreewidgetitem5.setTextAlignment(2, Qt.AlignCenter);
-        __qtreewidgetitem5.setTextAlignment(1, Qt.AlignCenter);
-        __qtreewidgetitem5.setTextAlignment(0, Qt.AlignCenter);
-        self.detail_case_tree_view.setHeaderItem(__qtreewidgetitem5)
-        __qtreewidgetitem6 = QTreeWidgetItem(self.detail_case_tree_view)
-        QTreeWidgetItem(__qtreewidgetitem6)
-        __qtreewidgetitem7 = QTreeWidgetItem(self.detail_case_tree_view)
-        QTreeWidgetItem(__qtreewidgetitem7)
+        __qtreewidgetitem1 = QTreeWidgetItem()
+        __qtreewidgetitem1.setTextAlignment(6, Qt.AlignCenter);
+        __qtreewidgetitem1.setTextAlignment(5, Qt.AlignCenter);
+        __qtreewidgetitem1.setTextAlignment(4, Qt.AlignCenter);
+        __qtreewidgetitem1.setTextAlignment(3, Qt.AlignCenter);
+        __qtreewidgetitem1.setTextAlignment(2, Qt.AlignCenter);
+        __qtreewidgetitem1.setTextAlignment(1, Qt.AlignCenter);
+        __qtreewidgetitem1.setTextAlignment(0, Qt.AlignCenter);
+        self.detail_case_tree_view.setHeaderItem(__qtreewidgetitem1)
         self.detail_case_tree_view.setObjectName(u"detail_case_tree_view")
         self.detail_case_tree_view.setGeometry(QRect(10, 460, 991, 371))
         self.detail_case_tree_view.setFont(font1)
         self.detail_case_tree_view.header().setDefaultSectionSize(144)
         self.select_sender_button = QPushButton(self.new_job_page)
         self.select_sender_button.setObjectName(u"select_sender_button")
-        self.select_sender_button.setGeometry(QRect(790, 20, 181, 61))
-        self.select_sender_button.setFont(font4)
+        self.select_sender_button.setGeometry(QRect(1030, 30, 151, 51))
+        self.select_sender_button.setFont(font)
         self.select_owner_button = QPushButton(self.new_job_page)
         self.select_owner_button.setObjectName(u"select_owner_button")
-        self.select_owner_button.setGeometry(QRect(790, 110, 181, 61))
-        self.select_owner_button.setFont(font4)
+        self.select_owner_button.setGeometry(QRect(1030, 90, 151, 51))
+        self.select_owner_button.setFont(font)
         self.anonymous_owner_button = QPushButton(self.new_job_page)
         self.anonymous_owner_button.setObjectName(u"anonymous_owner_button")
-        self.anonymous_owner_button.setGeometry(QRect(790, 200, 181, 61))
-        self.anonymous_owner_button.setFont(font4)
+        self.anonymous_owner_button.setGeometry(QRect(1030, 150, 151, 51))
+        self.anonymous_owner_button.setFont(font)
         self.save_button = QPushButton(self.new_job_page)
         self.save_button.setObjectName(u"save_button")
-        self.save_button.setGeometry(QRect(990, 20, 181, 61))
-        self.save_button.setFont(font4)
+        self.save_button.setGeometry(QRect(1030, 260, 151, 51))
+        self.save_button.setFont(font)
         self.add_data_specimen_button = QPushButton(self.new_job_page)
         self.add_data_specimen_button.setObjectName(u"add_data_specimen_button")
         self.add_data_specimen_button.setGeometry(QRect(1010, 460, 171, 61))
@@ -573,63 +552,51 @@ class Ui_main_app_view(object):
         self.employee_search_frame_2.setLineWidth(2)
         self.employee_search_name_surename_label = QLabel(self.employee_search_frame_2)
         self.employee_search_name_surename_label.setObjectName(u"employee_search_name_surename_label")
-        self.employee_search_name_surename_label.setGeometry(QRect(10, 30, 261, 41))
-        self.employee_search_name_surename_label.setFont(font3)
+        self.employee_search_name_surename_label.setGeometry(QRect(20, 30, 261, 41))
+        self.employee_search_name_surename_label.setFont(font)
         self.employee_name_surename_entry = QLineEdit(self.employee_search_frame_2)
         self.employee_name_surename_entry.setObjectName(u"employee_name_surename_entry")
-        self.employee_name_surename_entry.setGeometry(QRect(280, 30, 651, 41))
-        self.employee_name_surename_entry.setFont(font3)
+        self.employee_name_surename_entry.setGeometry(QRect(280, 30, 681, 31))
+        self.employee_name_surename_entry.setFont(font1)
         self.employee_name_surename_entry.setStyleSheet(u"background-color:rgb(255, 255, 255)")
         self.employee_search_button = QPushButton(self.employee_search_frame_2)
         self.employee_search_button.setObjectName(u"employee_search_button")
-        self.employee_search_button.setGeometry(QRect(950, 10, 181, 61))
-        self.employee_search_button.setFont(font4)
+        self.employee_search_button.setGeometry(QRect(980, 20, 151, 51))
+        self.employee_search_button.setFont(font)
         self.employee_search_button.setStyleSheet(u"background-color:rgb(255, 255, 255)")
-        self.employee_result_search_label = QLabel(self.employee_search_frame_2)
-        self.employee_result_search_label.setObjectName(u"employee_result_search_label")
-        self.employee_result_search_label.setGeometry(QRect(10, 90, 111, 41))
-        self.employee_result_search_label.setFont(font3)
         self.employee_result_search_treeview = QTreeWidget(self.employee_search_frame_2)
-        __qtreewidgetitem8 = QTreeWidgetItem()
-        __qtreewidgetitem8.setTextAlignment(2, Qt.AlignCenter);
-        __qtreewidgetitem8.setFont(2, font3);
-        __qtreewidgetitem8.setTextAlignment(1, Qt.AlignCenter);
-        __qtreewidgetitem8.setFont(1, font3);
-        __qtreewidgetitem8.setTextAlignment(0, Qt.AlignCenter);
-        __qtreewidgetitem8.setFont(0, font3);
-        self.employee_result_search_treeview.setHeaderItem(__qtreewidgetitem8)
-        __qtreewidgetitem9 = QTreeWidgetItem(self.employee_result_search_treeview)
-        __qtreewidgetitem9.setTextAlignment(2, Qt.AlignCenter);
-        __qtreewidgetitem9.setTextAlignment(1, Qt.AlignCenter);
-        __qtreewidgetitem9.setTextAlignment(0, Qt.AlignCenter);
-        __qtreewidgetitem10 = QTreeWidgetItem(self.employee_result_search_treeview)
-        __qtreewidgetitem10.setTextAlignment(2, Qt.AlignCenter);
-        __qtreewidgetitem10.setTextAlignment(1, Qt.AlignCenter);
-        __qtreewidgetitem10.setTextAlignment(0, Qt.AlignCenter);
+        __qtreewidgetitem2 = QTreeWidgetItem()
+        __qtreewidgetitem2.setTextAlignment(2, Qt.AlignCenter);
+        __qtreewidgetitem2.setFont(2, font1);
+        __qtreewidgetitem2.setTextAlignment(1, Qt.AlignCenter);
+        __qtreewidgetitem2.setFont(1, font1);
+        __qtreewidgetitem2.setTextAlignment(0, Qt.AlignCenter);
+        __qtreewidgetitem2.setFont(0, font1);
+        self.employee_result_search_treeview.setHeaderItem(__qtreewidgetitem2)
         self.employee_result_search_treeview.setObjectName(u"employee_result_search_treeview")
-        self.employee_result_search_treeview.setGeometry(QRect(140, 100, 791, 291))
-        self.employee_result_search_treeview.setFont(font3)
+        self.employee_result_search_treeview.setGeometry(QRect(20, 70, 941, 311))
+        self.employee_result_search_treeview.setFont(font1)
         self.employee_result_search_treeview.setStyleSheet(u"background-color:rgb(255, 255, 255)")
         self.employee_result_search_treeview.header().setDefaultSectionSize(255)
         self.employee_new_employee_button = QPushButton(self.employee_search_frame_2)
         self.employee_new_employee_button.setObjectName(u"employee_new_employee_button")
-        self.employee_new_employee_button.setGeometry(QRect(950, 100, 181, 61))
-        self.employee_new_employee_button.setFont(font4)
+        self.employee_new_employee_button.setGeometry(QRect(980, 80, 151, 51))
+        self.employee_new_employee_button.setFont(font)
         self.employee_new_employee_button.setStyleSheet(u"background-color:rgb(255, 255, 255)")
         self.employee_edit_data_button = QPushButton(self.employee_search_frame_2)
         self.employee_edit_data_button.setObjectName(u"employee_edit_data_button")
-        self.employee_edit_data_button.setGeometry(QRect(950, 175, 181, 61))
-        self.employee_edit_data_button.setFont(font4)
+        self.employee_edit_data_button.setGeometry(QRect(980, 140, 151, 51))
+        self.employee_edit_data_button.setFont(font)
         self.employee_edit_data_button.setStyleSheet(u"background-color:rgb(255, 255, 255)")
         self.employee_back_to_home_button = QPushButton(self.employee_search_frame_2)
         self.employee_back_to_home_button.setObjectName(u"employee_back_to_home_button")
-        self.employee_back_to_home_button.setGeometry(QRect(950, 330, 181, 61))
-        self.employee_back_to_home_button.setFont(font4)
+        self.employee_back_to_home_button.setGeometry(QRect(980, 330, 151, 51))
+        self.employee_back_to_home_button.setFont(font)
         self.employee_back_to_home_button.setStyleSheet(u"background-color:rgb(255, 255, 255)")
         self.employee_delete_data_button = QPushButton(self.employee_search_frame_2)
         self.employee_delete_data_button.setObjectName(u"employee_delete_data_button")
-        self.employee_delete_data_button.setGeometry(QRect(950, 255, 181, 61))
-        self.employee_delete_data_button.setFont(font4)
+        self.employee_delete_data_button.setGeometry(QRect(980, 200, 151, 51))
+        self.employee_delete_data_button.setFont(font)
         self.employee_delete_data_button.setStyleSheet(u"background-color:rgb(255, 255, 255)")
         self.employee_edit_frame_1 = QFrame(self.employee_page)
         self.employee_edit_frame_1.setObjectName(u"employee_edit_frame_1")
@@ -642,6 +609,9 @@ class Ui_main_app_view(object):
         self.employee_edit_frame_2 = QFrame(self.employee_edit_frame_1)
         self.employee_edit_frame_2.setObjectName(u"employee_edit_frame_2")
         self.employee_edit_frame_2.setGeometry(QRect(10, 10, 1151, 361))
+        font4 = QFont()
+        font4.setPointSize(16)
+        self.employee_edit_frame_2.setFont(font4)
         self.employee_edit_frame_2.setStyleSheet(u"background-color:rgb(255, 253, 205)\n"
 "")
         self.employee_edit_frame_2.setFrameShape(QFrame.Box)
@@ -649,61 +619,61 @@ class Ui_main_app_view(object):
         self.employee_edit_frame_2.setLineWidth(2)
         self.employee_title_name_label = QLabel(self.employee_edit_frame_2)
         self.employee_title_name_label.setObjectName(u"employee_title_name_label")
-        self.employee_title_name_label.setGeometry(QRect(10, 10, 81, 41))
-        self.employee_title_name_label.setFont(font3)
+        self.employee_title_name_label.setGeometry(QRect(30, 10, 71, 41))
+        self.employee_title_name_label.setFont(font1)
         self.employee_name_label = QLabel(self.employee_edit_frame_2)
         self.employee_name_label.setObjectName(u"employee_name_label")
-        self.employee_name_label.setGeometry(QRect(10, 60, 81, 41))
-        self.employee_name_label.setFont(font3)
+        self.employee_name_label.setGeometry(QRect(30, 60, 71, 31))
+        self.employee_name_label.setFont(font1)
         self.employee_surename_label = QLabel(self.employee_edit_frame_2)
         self.employee_surename_label.setObjectName(u"employee_surename_label")
-        self.employee_surename_label.setGeometry(QRect(10, 110, 81, 41))
-        self.employee_surename_label.setFont(font3)
+        self.employee_surename_label.setGeometry(QRect(30, 100, 71, 31))
+        self.employee_surename_label.setFont(font1)
         self.employee_email_labels = QLabel(self.employee_edit_frame_2)
         self.employee_email_labels.setObjectName(u"employee_email_labels")
-        self.employee_email_labels.setGeometry(QRect(10, 160, 81, 41))
-        self.employee_email_labels.setFont(font3)
+        self.employee_email_labels.setGeometry(QRect(30, 140, 71, 31))
+        self.employee_email_labels.setFont(font1)
         self.employee_username_label = QLabel(self.employee_edit_frame_2)
         self.employee_username_label.setObjectName(u"employee_username_label")
-        self.employee_username_label.setGeometry(QRect(10, 210, 101, 41))
-        self.employee_username_label.setFont(font3)
+        self.employee_username_label.setGeometry(QRect(30, 180, 71, 31))
+        self.employee_username_label.setFont(font1)
         self.employee_password_label = QLabel(self.employee_edit_frame_2)
         self.employee_password_label.setObjectName(u"employee_password_label")
-        self.employee_password_label.setGeometry(QRect(10, 260, 101, 41))
-        self.employee_password_label.setFont(font3)
+        self.employee_password_label.setGeometry(QRect(30, 220, 71, 31))
+        self.employee_password_label.setFont(font1)
         self.employee_position_label = QLabel(self.employee_edit_frame_2)
         self.employee_position_label.setObjectName(u"employee_position_label")
-        self.employee_position_label.setGeometry(QRect(10, 310, 101, 41))
-        self.employee_position_label.setFont(font3)
+        self.employee_position_label.setGeometry(QRect(30, 260, 71, 31))
+        self.employee_position_label.setFont(font1)
         self.employee_title_name_entry = QLineEdit(self.employee_edit_frame_2)
         self.employee_title_name_entry.setObjectName(u"employee_title_name_entry")
-        self.employee_title_name_entry.setGeometry(QRect(140, 10, 351, 41))
-        self.employee_title_name_entry.setFont(font3)
+        self.employee_title_name_entry.setGeometry(QRect(100, 20, 441, 31))
+        self.employee_title_name_entry.setFont(font1)
         self.employee_title_name_entry.setStyleSheet(u"background-color:rgb(255, 255, 255)")
         self.employee_name_entry = QLineEdit(self.employee_edit_frame_2)
         self.employee_name_entry.setObjectName(u"employee_name_entry")
-        self.employee_name_entry.setGeometry(QRect(140, 60, 351, 41))
-        self.employee_name_entry.setFont(font3)
+        self.employee_name_entry.setGeometry(QRect(100, 60, 441, 31))
+        self.employee_name_entry.setFont(font1)
         self.employee_name_entry.setStyleSheet(u"background-color:rgb(255, 255, 255)")
         self.employee_surename_entry = QLineEdit(self.employee_edit_frame_2)
         self.employee_surename_entry.setObjectName(u"employee_surename_entry")
-        self.employee_surename_entry.setGeometry(QRect(140, 110, 351, 41))
-        self.employee_surename_entry.setFont(font3)
+        self.employee_surename_entry.setGeometry(QRect(100, 100, 441, 31))
+        self.employee_surename_entry.setFont(font1)
         self.employee_surename_entry.setStyleSheet(u"background-color:rgb(255, 255, 255)")
         self.employee_email_entry = QLineEdit(self.employee_edit_frame_2)
         self.employee_email_entry.setObjectName(u"employee_email_entry")
-        self.employee_email_entry.setGeometry(QRect(140, 160, 351, 41))
-        self.employee_email_entry.setFont(font3)
+        self.employee_email_entry.setGeometry(QRect(100, 140, 441, 31))
+        self.employee_email_entry.setFont(font1)
         self.employee_email_entry.setStyleSheet(u"background-color:rgb(255, 255, 255)")
         self.employee_username_entry = QLineEdit(self.employee_edit_frame_2)
         self.employee_username_entry.setObjectName(u"employee_username_entry")
-        self.employee_username_entry.setGeometry(QRect(140, 210, 351, 41))
-        self.employee_username_entry.setFont(font3)
+        self.employee_username_entry.setGeometry(QRect(100, 180, 441, 31))
+        self.employee_username_entry.setFont(font1)
         self.employee_username_entry.setStyleSheet(u"background-color:rgb(255, 255, 255)")
         self.employee_password_entry = QLineEdit(self.employee_edit_frame_2)
         self.employee_password_entry.setObjectName(u"employee_password_entry")
-        self.employee_password_entry.setGeometry(QRect(140, 260, 351, 41))
-        self.employee_password_entry.setFont(font3)
+        self.employee_password_entry.setGeometry(QRect(100, 220, 441, 31))
+        self.employee_password_entry.setFont(font1)
         self.employee_password_entry.setStyleSheet(u"background-color:rgb(255, 255, 255)")
         self.employee_position_combobox = QComboBox(self.employee_edit_frame_2)
         self.employee_position_combobox.addItem("")
@@ -727,26 +697,26 @@ class Ui_main_app_view(object):
         self.employee_position_combobox.addItem("")
         self.employee_position_combobox.addItem("")
         self.employee_position_combobox.setObjectName(u"employee_position_combobox")
-        self.employee_position_combobox.setGeometry(QRect(140, 310, 351, 41))
-        self.employee_position_combobox.setFont(font3)
+        self.employee_position_combobox.setGeometry(QRect(100, 260, 351, 31))
+        self.employee_position_combobox.setFont(font1)
         self.employee_position_combobox.setStyleSheet(u"background-color:rgb(255, 255, 255)\n"
 "")
         self.employee_position_combobox.setEditable(False)
         self.employee_signature_frame = QFrame(self.employee_edit_frame_2)
         self.employee_signature_frame.setObjectName(u"employee_signature_frame")
-        self.employee_signature_frame.setGeometry(QRect(509, 10, 421, 341))
+        self.employee_signature_frame.setGeometry(QRect(550, 10, 421, 341))
         self.employee_signature_frame.setStyleSheet(u"background-color:rgb(255, 255, 255)")
         self.employee_signature_frame.setFrameShape(QFrame.StyledPanel)
         self.employee_signature_frame.setFrameShadow(QFrame.Raised)
         self.employee_edit_signature_button = QPushButton(self.employee_edit_frame_2)
         self.employee_edit_signature_button.setObjectName(u"employee_edit_signature_button")
-        self.employee_edit_signature_button.setGeometry(QRect(950, 10, 181, 61))
-        self.employee_edit_signature_button.setFont(font4)
+        self.employee_edit_signature_button.setGeometry(QRect(980, 10, 151, 51))
+        self.employee_edit_signature_button.setFont(font1)
         self.employee_edit_signature_button.setStyleSheet(u"background-color:rgb(255, 255, 255)")
         self.employee_save_data_button = QPushButton(self.employee_edit_frame_2)
         self.employee_save_data_button.setObjectName(u"employee_save_data_button")
-        self.employee_save_data_button.setGeometry(QRect(950, 290, 181, 61))
-        self.employee_save_data_button.setFont(font4)
+        self.employee_save_data_button.setGeometry(QRect(980, 290, 151, 51))
+        self.employee_save_data_button.setFont(font1)
         self.employee_save_data_button.setStyleSheet(u"background-color:rgb(255, 255, 255)")
         self.stackedWidget.addWidget(self.employee_page)
         self.check_report_page = QWidget()
@@ -769,44 +739,44 @@ class Ui_main_app_view(object):
         self.label_11 = QLabel(self.barcode_page)
         self.label_11.setObjectName(u"label_11")
         self.label_11.setGeometry(QRect(10, 20, 81, 31))
-        font6 = QFont()
-        font6.setPointSize(12)
-        self.label_11.setFont(font6)
+        font5 = QFont()
+        font5.setPointSize(12)
+        self.label_11.setFont(font5)
         self.sticker_search_treeWidget = QTreeWidget(self.barcode_page)
-        __qtreewidgetitem11 = QTreeWidgetItem()
-        __qtreewidgetitem11.setTextAlignment(6, Qt.AlignCenter);
-        __qtreewidgetitem11.setFont(6, font1);
-        __qtreewidgetitem11.setTextAlignment(5, Qt.AlignCenter);
-        __qtreewidgetitem11.setFont(5, font1);
-        __qtreewidgetitem11.setTextAlignment(4, Qt.AlignCenter);
-        __qtreewidgetitem11.setFont(4, font1);
-        __qtreewidgetitem11.setTextAlignment(3, Qt.AlignCenter);
-        __qtreewidgetitem11.setFont(3, font1);
-        __qtreewidgetitem11.setTextAlignment(2, Qt.AlignCenter);
-        __qtreewidgetitem11.setFont(2, font1);
-        __qtreewidgetitem11.setTextAlignment(1, Qt.AlignCenter);
-        __qtreewidgetitem11.setFont(1, font1);
-        __qtreewidgetitem11.setTextAlignment(0, Qt.AlignCenter);
-        __qtreewidgetitem11.setFont(0, font1);
-        self.sticker_search_treeWidget.setHeaderItem(__qtreewidgetitem11)
+        __qtreewidgetitem3 = QTreeWidgetItem()
+        __qtreewidgetitem3.setTextAlignment(6, Qt.AlignCenter);
+        __qtreewidgetitem3.setFont(6, font1);
+        __qtreewidgetitem3.setTextAlignment(5, Qt.AlignCenter);
+        __qtreewidgetitem3.setFont(5, font1);
+        __qtreewidgetitem3.setTextAlignment(4, Qt.AlignCenter);
+        __qtreewidgetitem3.setFont(4, font1);
+        __qtreewidgetitem3.setTextAlignment(3, Qt.AlignCenter);
+        __qtreewidgetitem3.setFont(3, font1);
+        __qtreewidgetitem3.setTextAlignment(2, Qt.AlignCenter);
+        __qtreewidgetitem3.setFont(2, font1);
+        __qtreewidgetitem3.setTextAlignment(1, Qt.AlignCenter);
+        __qtreewidgetitem3.setFont(1, font1);
+        __qtreewidgetitem3.setTextAlignment(0, Qt.AlignCenter);
+        __qtreewidgetitem3.setFont(0, font1);
+        self.sticker_search_treeWidget.setHeaderItem(__qtreewidgetitem3)
         self.sticker_search_treeWidget.setObjectName(u"sticker_search_treeWidget")
         self.sticker_search_treeWidget.setGeometry(QRect(10, 101, 1161, 651))
         self.sticker_search_treeWidget.header().setDefaultSectionSize(163)
         self.sticker_search_pushButton = QPushButton(self.barcode_page)
         self.sticker_search_pushButton.setObjectName(u"sticker_search_pushButton")
         self.sticker_search_pushButton.setGeometry(QRect(320, 40, 121, 41))
-        self.sticker_search_pushButton.setFont(font6)
+        self.sticker_search_pushButton.setFont(font5)
         self.sticker_search_lineEdit = QLineEdit(self.barcode_page)
         self.sticker_search_lineEdit.setObjectName(u"sticker_search_lineEdit")
         self.sticker_search_lineEdit.setGeometry(QRect(10, 51, 291, 31))
         self.today_sticker_search_pushButton = QPushButton(self.barcode_page)
         self.today_sticker_search_pushButton.setObjectName(u"today_sticker_search_pushButton")
         self.today_sticker_search_pushButton.setGeometry(QRect(1000, 40, 171, 51))
-        self.today_sticker_search_pushButton.setFont(font6)
+        self.today_sticker_search_pushButton.setFont(font5)
         self.print_barcode_pushButton = QPushButton(self.barcode_page)
         self.print_barcode_pushButton.setObjectName(u"print_barcode_pushButton")
         self.print_barcode_pushButton.setGeometry(QRect(1020, 770, 151, 41))
-        self.print_barcode_pushButton.setFont(font6)
+        self.print_barcode_pushButton.setFont(font5)
         self.stackedWidget.addWidget(self.barcode_page)
         self.lab_report_page = QWidget()
         self.lab_report_page.setObjectName(u"lab_report_page")
@@ -839,7 +809,7 @@ class Ui_main_app_view(object):
 
         self.retranslateUi(main_app_view)
 
-        self.stackedWidget.setCurrentIndex(7)
+        self.stackedWidget.setCurrentIndex(4)
 
 
         QMetaObject.connectSlotsByName(main_app_view)
@@ -889,8 +859,7 @@ class Ui_main_app_view(object):
         self.anonymous_tax_checkbox.setText(QCoreApplication.translate("main_app_view", u"\u0e44\u0e21\u0e48\u0e23\u0e30\u0e1a\u0e38\u0e40\u0e25\u0e02\u0e1b\u0e23\u0e30\u0e08\u0e33\u0e15\u0e31\u0e27\u0e1c\u0e39\u0e49\u0e40\u0e2a\u0e35\u0e22\u0e20\u0e32\u0e29\u0e35", None))
         self.save_data_button.setText(QCoreApplication.translate("main_app_view", u"\u0e1a\u0e31\u0e19\u0e17\u0e36\u0e01\u0e02\u0e49\u0e2d\u0e21\u0e39\u0e25\u0e25\u0e39\u0e01\u0e04\u0e49\u0e32", None))
         self.back_to_home_button.setText(QCoreApplication.translate("main_app_view", u"\u0e01\u0e25\u0e31\u0e1a\u0e2b\u0e19\u0e49\u0e32\u0e2b\u0e25\u0e31\u0e01", None))
-        self.search_label.setText(QCoreApplication.translate("main_app_view", u"\u0e04\u0e49\u0e19\u0e2b\u0e32\u0e02\u0e49\u0e2d\u0e21\u0e39\u0e25\u0e25\u0e39\u0e01\u0e04\u0e49\u0e32", None))
-        self.search_name_label.setText(QCoreApplication.translate("main_app_view", u"\u0e0a\u0e37\u0e48\u0e2d\u0e2b\u0e23\u0e37\u0e2d\u0e19\u0e32\u0e21\u0e2a\u0e01\u0e38\u0e25", None))
+        self.search_name_label.setText(QCoreApplication.translate("main_app_view", u"\u0e04\u0e49\u0e19\u0e2b\u0e32\u0e0a\u0e37\u0e48\u0e2d\u0e2b\u0e23\u0e37\u0e2d\u0e19\u0e32\u0e21\u0e2a\u0e01\u0e38\u0e25\u0e25\u0e39\u0e01\u0e04\u0e49\u0e32", None))
         self.search_button.setText(QCoreApplication.translate("main_app_view", u"\u0e04\u0e49\u0e19\u0e2b\u0e32", None))
         ___qtreewidgetitem = self.search_tree_view.headerItem()
         ___qtreewidgetitem.setText(4, QCoreApplication.translate("main_app_view", u"\u0e40\u0e25\u0e02\u0e1c\u0e39\u0e49\u0e40\u0e2a\u0e35\u0e22\u0e20\u0e32\u0e29\u0e35", None));
@@ -898,27 +867,6 @@ class Ui_main_app_view(object):
         ___qtreewidgetitem.setText(2, QCoreApplication.translate("main_app_view", u"\u0e19\u0e32\u0e21\u0e2a\u0e01\u0e38\u0e25", None));
         ___qtreewidgetitem.setText(1, QCoreApplication.translate("main_app_view", u"\u0e0a\u0e37\u0e48\u0e2d", None));
         ___qtreewidgetitem.setText(0, QCoreApplication.translate("main_app_view", u"\u0e2b\u0e21\u0e32\u0e22\u0e40\u0e25\u0e02\u0e1b\u0e23\u0e30\u0e08\u0e33\u0e15\u0e31\u0e27", None));
-
-        __sortingEnabled = self.search_tree_view.isSortingEnabled()
-        self.search_tree_view.setSortingEnabled(False)
-        ___qtreewidgetitem1 = self.search_tree_view.topLevelItem(0)
-        ___qtreewidgetitem1.setText(4, QCoreApplication.translate("main_app_view", u"\u0e17\u0e14\u0e2a\u0e2d\u0e1a", None));
-        ___qtreewidgetitem1.setText(3, QCoreApplication.translate("main_app_view", u"111", None));
-        ___qtreewidgetitem1.setText(2, QCoreApplication.translate("main_app_view", u"\u0e17\u0e14\u0e2a\u0e2d\u0e1a", None));
-        ___qtreewidgetitem1.setText(1, QCoreApplication.translate("main_app_view", u"\u0e17\u0e14\u0e2a\u0e2d\u0e1a", None));
-        ___qtreewidgetitem1.setText(0, QCoreApplication.translate("main_app_view", u"\u0e17\u0e14\u0e2a\u0e2d\u0e1a", None));
-        ___qtreewidgetitem2 = ___qtreewidgetitem1.child(0)
-        ___qtreewidgetitem2.setText(0, QCoreApplication.translate("main_app_view", u"\u0e17\u0e14\u0e2a\u0e2d\u0e1a1", None));
-        ___qtreewidgetitem3 = self.search_tree_view.topLevelItem(1)
-        ___qtreewidgetitem3.setText(4, QCoreApplication.translate("main_app_view", u"\u0e17\u0e14\u0e2a\u0e2d\u0e1a2", None));
-        ___qtreewidgetitem3.setText(3, QCoreApplication.translate("main_app_view", u"222", None));
-        ___qtreewidgetitem3.setText(2, QCoreApplication.translate("main_app_view", u"\u0e17\u0e14\u0e2a\u0e2d\u0e1a2", None));
-        ___qtreewidgetitem3.setText(1, QCoreApplication.translate("main_app_view", u"\u0e17\u0e14\u0e2a\u0e2d\u0e1a2", None));
-        ___qtreewidgetitem3.setText(0, QCoreApplication.translate("main_app_view", u"\u0e17\u0e14\u0e2a\u0e2d\u0e1a2", None));
-        ___qtreewidgetitem4 = ___qtreewidgetitem3.child(0)
-        ___qtreewidgetitem4.setText(0, QCoreApplication.translate("main_app_view", u"\u0e17\u0e14\u0e2a\u0e2d\u0e1a2", None));
-        self.search_tree_view.setSortingEnabled(__sortingEnabled)
-
         self.number_job_label.setText(QCoreApplication.translate("main_app_view", u"\u0e40\u0e25\u0e02\u0e17\u0e35\u0e48\u0e07\u0e32\u0e19", None))
         self.number_sender_label.setText(QCoreApplication.translate("main_app_view", u"\u0e2b\u0e21\u0e32\u0e22\u0e40\u0e25\u0e02\u0e1c\u0e39\u0e49\u0e2a\u0e48\u0e07", None))
         self.name_sender_label.setText(QCoreApplication.translate("main_app_view", u"\u0e0a\u0e37\u0e48\u0e2d", None))
@@ -929,51 +877,14 @@ class Ui_main_app_view(object):
         self.surename_owner_label.setText(QCoreApplication.translate("main_app_view", u"\u0e19\u0e32\u0e21\u0e2a\u0e01\u0e38\u0e25", None))
         self.tax_owner_label.setText(QCoreApplication.translate("main_app_view", u"\u0e40\u0e25\u0e02\u0e40\u0e2a\u0e35\u0e22\u0e20\u0e32\u0e29\u0e35", None))
         self.name_projact_label.setText(QCoreApplication.translate("main_app_view", u"\u0e0a\u0e37\u0e48\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23", None))
-        ___qtreewidgetitem5 = self.detail_case_tree_view.headerItem()
-        ___qtreewidgetitem5.setText(6, QCoreApplication.translate("main_app_view", u"\u0e04\u0e33\u0e2d\u0e18\u0e34\u0e1a\u0e32\u0e22", None));
-        ___qtreewidgetitem5.setText(5, QCoreApplication.translate("main_app_view", u"\u0e2b\u0e49\u0e2d\u0e07\u0e1b\u0e0f\u0e34\u0e1a\u0e31\u0e15\u0e34\u0e01\u0e32\u0e23", None));
-        ___qtreewidgetitem5.setText(4, QCoreApplication.translate("main_app_view", u"\u0e01\u0e32\u0e23\u0e40\u0e01\u0e47\u0e1a\u0e23\u0e31\u0e01\u0e29\u0e32", None));
-        ___qtreewidgetitem5.setText(3, QCoreApplication.translate("main_app_view", u"\u0e2a\u0e16\u0e32\u0e19\u0e30", None));
-        ___qtreewidgetitem5.setText(2, QCoreApplication.translate("main_app_view", u"\u0e1b\u0e23\u0e30\u0e40\u0e20\u0e17\u0e2a\u0e31\u0e15\u0e27\u0e4c", None));
-        ___qtreewidgetitem5.setText(1, QCoreApplication.translate("main_app_view", u"Barcode", None));
-        ___qtreewidgetitem5.setText(0, QCoreApplication.translate("main_app_view", u"\u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e23\u0e31\u0e1a", None));
-
-        __sortingEnabled1 = self.detail_case_tree_view.isSortingEnabled()
-        self.detail_case_tree_view.setSortingEnabled(False)
-        ___qtreewidgetitem6 = self.detail_case_tree_view.topLevelItem(0)
-        ___qtreewidgetitem6.setText(6, QCoreApplication.translate("main_app_view", u"refsdfewf", None));
-        ___qtreewidgetitem6.setText(5, QCoreApplication.translate("main_app_view", u"eeeee", None));
-        ___qtreewidgetitem6.setText(4, QCoreApplication.translate("main_app_view", u"wwwww", None));
-        ___qtreewidgetitem6.setText(3, QCoreApplication.translate("main_app_view", u"qqqq", None));
-        ___qtreewidgetitem6.setText(2, QCoreApplication.translate("main_app_view", u"aaaaaa", None));
-        ___qtreewidgetitem6.setText(1, QCoreApplication.translate("main_app_view", u"02847493", None));
-        ___qtreewidgetitem6.setText(0, QCoreApplication.translate("main_app_view", u"1111", None));
-        ___qtreewidgetitem7 = ___qtreewidgetitem6.child(0)
-        ___qtreewidgetitem7.setText(6, QCoreApplication.translate("main_app_view", u"77", None));
-        ___qtreewidgetitem7.setText(5, QCoreApplication.translate("main_app_view", u"666", None));
-        ___qtreewidgetitem7.setText(4, QCoreApplication.translate("main_app_view", u"555", None));
-        ___qtreewidgetitem7.setText(3, QCoreApplication.translate("main_app_view", u"444", None));
-        ___qtreewidgetitem7.setText(2, QCoreApplication.translate("main_app_view", u"333", None));
-        ___qtreewidgetitem7.setText(1, QCoreApplication.translate("main_app_view", u"333", None));
-        ___qtreewidgetitem7.setText(0, QCoreApplication.translate("main_app_view", u"222", None));
-        ___qtreewidgetitem8 = self.detail_case_tree_view.topLevelItem(1)
-        ___qtreewidgetitem8.setText(6, QCoreApplication.translate("main_app_view", u"dfgdfg", None));
-        ___qtreewidgetitem8.setText(5, QCoreApplication.translate("main_app_view", u"jjjjj", None));
-        ___qtreewidgetitem8.setText(4, QCoreApplication.translate("main_app_view", u"hhhh", None));
-        ___qtreewidgetitem8.setText(3, QCoreApplication.translate("main_app_view", u"ggggg", None));
-        ___qtreewidgetitem8.setText(2, QCoreApplication.translate("main_app_view", u"fffff", None));
-        ___qtreewidgetitem8.setText(1, QCoreApplication.translate("main_app_view", u"324234234", None));
-        ___qtreewidgetitem8.setText(0, QCoreApplication.translate("main_app_view", u"2222", None));
-        ___qtreewidgetitem9 = ___qtreewidgetitem8.child(0)
-        ___qtreewidgetitem9.setText(6, QCoreApplication.translate("main_app_view", u"xxxx", None));
-        ___qtreewidgetitem9.setText(5, QCoreApplication.translate("main_app_view", u"cccc", None));
-        ___qtreewidgetitem9.setText(4, QCoreApplication.translate("main_app_view", u"hhhh", None));
-        ___qtreewidgetitem9.setText(3, QCoreApplication.translate("main_app_view", u"b  bbb", None));
-        ___qtreewidgetitem9.setText(2, QCoreApplication.translate("main_app_view", u"dddd", None));
-        ___qtreewidgetitem9.setText(1, QCoreApplication.translate("main_app_view", u"hfff", None));
-        ___qtreewidgetitem9.setText(0, QCoreApplication.translate("main_app_view", u"hhh", None));
-        self.detail_case_tree_view.setSortingEnabled(__sortingEnabled1)
-
+        ___qtreewidgetitem1 = self.detail_case_tree_view.headerItem()
+        ___qtreewidgetitem1.setText(6, QCoreApplication.translate("main_app_view", u"\u0e04\u0e33\u0e2d\u0e18\u0e34\u0e1a\u0e32\u0e22", None));
+        ___qtreewidgetitem1.setText(5, QCoreApplication.translate("main_app_view", u"\u0e2b\u0e49\u0e2d\u0e07\u0e1b\u0e0f\u0e34\u0e1a\u0e31\u0e15\u0e34\u0e01\u0e32\u0e23", None));
+        ___qtreewidgetitem1.setText(4, QCoreApplication.translate("main_app_view", u"\u0e01\u0e32\u0e23\u0e40\u0e01\u0e47\u0e1a\u0e23\u0e31\u0e01\u0e29\u0e32", None));
+        ___qtreewidgetitem1.setText(3, QCoreApplication.translate("main_app_view", u"\u0e2a\u0e16\u0e32\u0e19\u0e30", None));
+        ___qtreewidgetitem1.setText(2, QCoreApplication.translate("main_app_view", u"\u0e1b\u0e23\u0e30\u0e40\u0e20\u0e17\u0e2a\u0e31\u0e15\u0e27\u0e4c", None));
+        ___qtreewidgetitem1.setText(1, QCoreApplication.translate("main_app_view", u"Barcode", None));
+        ___qtreewidgetitem1.setText(0, QCoreApplication.translate("main_app_view", u"\u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e23\u0e31\u0e1a", None));
         self.select_sender_button.setText(QCoreApplication.translate("main_app_view", u"\u0e40\u0e25\u0e37\u0e2d\u0e01\u0e1c\u0e39\u0e49\u0e2a\u0e48\u0e07", None))
         self.select_owner_button.setText(QCoreApplication.translate("main_app_view", u"\u0e40\u0e25\u0e37\u0e2d\u0e01\u0e40\u0e08\u0e49\u0e32\u0e02\u0e2d\u0e07", None))
         self.anonymous_owner_button.setText(QCoreApplication.translate("main_app_view", u"\u0e44\u0e21\u0e48\u0e23\u0e30\u0e1a\u0e38\u0e40\u0e08\u0e49\u0e32\u0e02\u0e2d\u0e07", None))
@@ -986,24 +897,10 @@ class Ui_main_app_view(object):
         self.label_6.setText(QCoreApplication.translate("main_app_view", u"Check Job progress", None))
         self.employee_search_name_surename_label.setText(QCoreApplication.translate("main_app_view", u"\u0e0a\u0e37\u0e48\u0e2d\u0e2b\u0e23\u0e37\u0e2d\u0e19\u0e32\u0e21\u0e2a\u0e01\u0e38\u0e25\u0e17\u0e35\u0e48\u0e15\u0e49\u0e2d\u0e07\u0e01\u0e32\u0e23\u0e04\u0e49\u0e19\u0e2b\u0e32", None))
         self.employee_search_button.setText(QCoreApplication.translate("main_app_view", u"\u0e04\u0e49\u0e19\u0e2b\u0e32", None))
-        self.employee_result_search_label.setText(QCoreApplication.translate("main_app_view", u"\u0e1c\u0e25\u0e01\u0e32\u0e23\u0e04\u0e49\u0e19\u0e2b\u0e32", None))
-        ___qtreewidgetitem10 = self.employee_result_search_treeview.headerItem()
-        ___qtreewidgetitem10.setText(2, QCoreApplication.translate("main_app_view", u"\u0e19\u0e32\u0e21\u0e2a\u0e01\u0e38\u0e25", None));
-        ___qtreewidgetitem10.setText(1, QCoreApplication.translate("main_app_view", u"\u0e0a\u0e37\u0e48\u0e2d", None));
-        ___qtreewidgetitem10.setText(0, QCoreApplication.translate("main_app_view", u"\u0e04\u0e33\u0e19\u0e33\u0e2b\u0e19\u0e49\u0e32\u0e0a\u0e37\u0e48\u0e2d", None));
-
-        __sortingEnabled2 = self.employee_result_search_treeview.isSortingEnabled()
-        self.employee_result_search_treeview.setSortingEnabled(False)
-        ___qtreewidgetitem11 = self.employee_result_search_treeview.topLevelItem(0)
-        ___qtreewidgetitem11.setText(2, QCoreApplication.translate("main_app_view", u"\u0e17\u0e14\u0e2a\u0e2d\u0e1a", None));
-        ___qtreewidgetitem11.setText(1, QCoreApplication.translate("main_app_view", u"\u0e17\u0e14\u0e2a\u0e2d\u0e1a", None));
-        ___qtreewidgetitem11.setText(0, QCoreApplication.translate("main_app_view", u"\u0e19\u0e32\u0e22", None));
-        ___qtreewidgetitem12 = self.employee_result_search_treeview.topLevelItem(1)
-        ___qtreewidgetitem12.setText(2, QCoreApplication.translate("main_app_view", u"\u0e17\u0e14\u0e2a\u0e2d\u0e1a", None));
-        ___qtreewidgetitem12.setText(1, QCoreApplication.translate("main_app_view", u"\u0e17\u0e14\u0e2a\u0e2d\u0e1a", None));
-        ___qtreewidgetitem12.setText(0, QCoreApplication.translate("main_app_view", u"\u0e19\u0e32\u0e07\u0e2a\u0e32\u0e27", None));
-        self.employee_result_search_treeview.setSortingEnabled(__sortingEnabled2)
-
+        ___qtreewidgetitem2 = self.employee_result_search_treeview.headerItem()
+        ___qtreewidgetitem2.setText(2, QCoreApplication.translate("main_app_view", u"\u0e19\u0e32\u0e21\u0e2a\u0e01\u0e38\u0e25", None));
+        ___qtreewidgetitem2.setText(1, QCoreApplication.translate("main_app_view", u"\u0e0a\u0e37\u0e48\u0e2d", None));
+        ___qtreewidgetitem2.setText(0, QCoreApplication.translate("main_app_view", u"\u0e04\u0e33\u0e19\u0e33\u0e2b\u0e19\u0e49\u0e32\u0e0a\u0e37\u0e48\u0e2d", None));
         self.employee_new_employee_button.setText(QCoreApplication.translate("main_app_view", u"\u0e1a\u0e38\u0e04\u0e25\u0e32\u0e01\u0e23\u0e43\u0e2b\u0e21\u0e48", None))
         self.employee_edit_data_button.setText(QCoreApplication.translate("main_app_view", u"\u0e41\u0e01\u0e49\u0e44\u0e02\u0e02\u0e49\u0e2d\u0e21\u0e39\u0e25", None))
         self.employee_back_to_home_button.setText(QCoreApplication.translate("main_app_view", u"\u0e01\u0e25\u0e31\u0e1a\u0e2b\u0e19\u0e49\u0e32\u0e2b\u0e25\u0e31\u0e01", None))
@@ -1046,14 +943,14 @@ class Ui_main_app_view(object):
         self.label_5.setText(QCoreApplication.translate("main_app_view", u"Bill page", None))
         self.label_4.setText(QCoreApplication.translate("main_app_view", u"Barcode page", None))
         self.label_11.setText(QCoreApplication.translate("main_app_view", u"\u0e0a\u0e37\u0e48\u0e2d\u0e1c\u0e39\u0e49\u0e19\u0e33\u0e2a\u0e48\u0e07", None))
-        ___qtreewidgetitem13 = self.sticker_search_treeWidget.headerItem()
-        ___qtreewidgetitem13.setText(6, QCoreApplication.translate("main_app_view", u"\u0e02\u0e49\u0e2d\u0e21\u0e39\u0e25\u0e40\u0e1e\u0e34\u0e48\u0e21\u0e40\u0e15\u0e34\u0e21", None));
-        ___qtreewidgetitem13.setText(5, QCoreApplication.translate("main_app_view", u"\u0e23\u0e30\u0e14\u0e31\u0e1a\u0e04\u0e27\u0e32\u0e21\u0e14\u0e48\u0e27\u0e19", None));
-        ___qtreewidgetitem13.setText(4, QCoreApplication.translate("main_app_view", u"\u0e01\u0e32\u0e23\u0e40\u0e01\u0e47\u0e1a\u0e23\u0e31\u0e01\u0e29\u0e32", None));
-        ___qtreewidgetitem13.setText(3, QCoreApplication.translate("main_app_view", u"\u0e2b\u0e49\u0e2d\u0e07\u0e1b\u0e0f\u0e34\u0e1a\u0e31\u0e15\u0e34\u0e01\u0e32\u0e23", None));
-        ___qtreewidgetitem13.setText(2, QCoreApplication.translate("main_app_view", u"\u0e0a\u0e19\u0e34\u0e14\u0e2a\u0e31\u0e15\u0e27\u0e4c", None));
-        ___qtreewidgetitem13.setText(1, QCoreApplication.translate("main_app_view", u"\u0e2b\u0e21\u0e32\u0e22\u0e40\u0e25\u0e02\u0e01\u0e32\u0e23\u0e15\u0e23\u0e27\u0e08", None));
-        ___qtreewidgetitem13.setText(0, QCoreApplication.translate("main_app_view", u"\u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e23\u0e31\u0e1a\u0e40\u0e04\u0e2a", None));
+        ___qtreewidgetitem3 = self.sticker_search_treeWidget.headerItem()
+        ___qtreewidgetitem3.setText(6, QCoreApplication.translate("main_app_view", u"\u0e02\u0e49\u0e2d\u0e21\u0e39\u0e25\u0e40\u0e1e\u0e34\u0e48\u0e21\u0e40\u0e15\u0e34\u0e21", None));
+        ___qtreewidgetitem3.setText(5, QCoreApplication.translate("main_app_view", u"\u0e23\u0e30\u0e14\u0e31\u0e1a\u0e04\u0e27\u0e32\u0e21\u0e14\u0e48\u0e27\u0e19", None));
+        ___qtreewidgetitem3.setText(4, QCoreApplication.translate("main_app_view", u"\u0e01\u0e32\u0e23\u0e40\u0e01\u0e47\u0e1a\u0e23\u0e31\u0e01\u0e29\u0e32", None));
+        ___qtreewidgetitem3.setText(3, QCoreApplication.translate("main_app_view", u"\u0e2b\u0e49\u0e2d\u0e07\u0e1b\u0e0f\u0e34\u0e1a\u0e31\u0e15\u0e34\u0e01\u0e32\u0e23", None));
+        ___qtreewidgetitem3.setText(2, QCoreApplication.translate("main_app_view", u"\u0e0a\u0e19\u0e34\u0e14\u0e2a\u0e31\u0e15\u0e27\u0e4c", None));
+        ___qtreewidgetitem3.setText(1, QCoreApplication.translate("main_app_view", u"\u0e2b\u0e21\u0e32\u0e22\u0e40\u0e25\u0e02\u0e01\u0e32\u0e23\u0e15\u0e23\u0e27\u0e08", None));
+        ___qtreewidgetitem3.setText(0, QCoreApplication.translate("main_app_view", u"\u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e23\u0e31\u0e1a\u0e40\u0e04\u0e2a", None));
         self.sticker_search_pushButton.setText(QCoreApplication.translate("main_app_view", u"\u0e04\u0e49\u0e19\u0e2b\u0e32", None))
         self.today_sticker_search_pushButton.setText(QCoreApplication.translate("main_app_view", u"\u0e04\u0e49\u0e19\u0e2b\u0e32\u0e40\u0e04\u0e2a\u0e43\u0e19\u0e27\u0e31\u0e19\u0e19\u0e35\u0e49", None))
         self.print_barcode_pushButton.setText(QCoreApplication.translate("main_app_view", u"\u0e1e\u0e34\u0e21\u0e1e\u0e4c\u0e1a\u0e32\u0e23\u0e4c\u0e42\u0e04\u0e14", None))
