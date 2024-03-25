@@ -58,23 +58,44 @@ class Main_Controller:
         """ serach all case that registered today. Sorting the result by date and time"""
         # add data to listview
         data = self.model.search_today_sticker()
-        sticker_list = []
-        for item in data:
-            # reformat the date and time
-            lab_name = item[6] + "(" + item[5] + ")"
-            # barcode number format is "yy" + barcode_number where the barcode_number is 10 digits.
-            barcode_number = time.strftime(
-                "%Y", time.localtime())[-2:] + str(item[1]).zfill(10)
-
-            # barcode_number = + str(item[1])
-            reformat_data = [item[0].strftime(
-                "%d-%m-%Y %H:%M:%S"), barcode_number, item[2], lab_name, item[3], item[4], "Comments"]
-            sticker_list.append(reformat_data)
-        self.view.add_data_to_listview_printerpage(sticker_list)
+        self.add_customer_case_to_view(data)
 
     def search_sticker(self):
         """ serach customer name to get a sticker information"""
-        pass
+        keyword_search = self.view.sticker_search_lineEdit.text()
+        if keyword_search == "":
+            QMessageBox.critical(self.view, "Error",
+                                 "กรุณาป้อนชื่อหรือนามสกุลของลูกค้า")
+        else:
+            customer_information = self.model.search_customer_case(
+                keyword_search)
+            if customer_information == []:
+                QMessageBox.critical(self.view, "Error",
+                                     "ไม่พบข้อมูลลูกค้า")
+            else:
+                self.add_customer_case_to_view(customer_information)
+
+    def add_customer_case_to_view(self, data):
+        """Add customer case to the view"""
+        if data == None or data == []:
+            QMessageBox.critical(self.view, "Error",
+                                 "ไม่พบข้อมูลลูกค้า")
+            self.view.sticker_search_lineEdit.clear()
+
+        else:
+            sticker_list = []
+            for item in data:
+                # reformat the date and time
+                lab_name = item[6] + "(" + item[5] + ")"
+                # barcode number format is "yy" + barcode_number where the barcode_number is 10 digits.
+                barcode_number = time.strftime(
+                    "%Y", time.localtime())[-2:] + str(item[1]).zfill(10)
+
+                # barcode_number = + str(item[1])
+                reformat_data = [item[0].strftime(
+                    "%d-%m-%Y %H:%M:%S"), barcode_number, item[2], lab_name, item[3], item[4], "Comments"]
+                sticker_list.append(reformat_data)
+            self.view.add_data_to_listview_printerpage(sticker_list)
 
     def print_barcode(self):
         """Print a selected information to barcode """

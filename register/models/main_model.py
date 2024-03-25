@@ -87,3 +87,10 @@ class Main_Model:
         except mariadb.Error as e:
             QMessageBox.critical(None, "Error", f"Error: {e}")
             return []
+
+    def search_customer_case(self, keyword_search):
+        """Search customer case using customer name or surname"""
+        result = []
+        sql_cmd = self.sql_cmd["search_customer_case"]
+        result = self.select_data(sql_cmd, keyword_search)
+        return result
