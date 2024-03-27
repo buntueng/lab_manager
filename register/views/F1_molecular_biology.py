@@ -1327,10 +1327,10 @@ class Ui_MainWindow(object):
         self.laboratory_extraction_checkBox.setText(QCoreApplication.translate("MainWindow", u"Extraction", None))
     # retranslateUi
 
-if __name__ == "__main__":
-    app = QApplication([])
-    specimen_UI = QMainWindow()
-    ui = Ui_MainWindow()
-    ui.setupUi(specimen_UI)
-    specimen_UI.show()
-    app.exec()
+# if __name__ == "__main__":
+#     app = QApplication([])
+#     specimen_UI = QMainWindow()
+#     ui = Ui_MainWindow()
+#     ui.setupUi(specimen_UI)
+#     specimen_UI.show()
+#     app.exec()
