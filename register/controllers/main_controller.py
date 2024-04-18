@@ -13,6 +13,8 @@ class Main_Controller:
         self.model = main_model
         self.view = main_view
 
+        self.user_login_info = []
+
         self.event_bindings()
 
     def event_bindings(self):
@@ -111,10 +113,17 @@ class Main_Controller:
             # get data from qtexedit
             contact_address = self.view.new_customer_address_entry.toPlainText()
             bill_address = self.view.new_customer_address_for_bill_entry.toPlainText()
-            updater = 1
+            # get updater id from the user_login_info
+            updater = self.user_login_info[0][1]
             # save data to the database
-            self.model.save_new_customer(group_id, title, name, surname, tax_id,
-                                         email, line_id, phone, contact_address, bill_address, updater)
+            if self.model.save_new_customer(group_id, title, name, surname, tax_id,
+                                            email, line_id, phone, contact_address, bill_address, updater):
+                QMessageBox.information(self.view, "Success",
+                                        "บันทึกข้อมูลลูกค้าเรียบร้อย")
+                self.view.clear_new_customer_information()
+            else:
+                QMessageBox.critical(self.view, "Error",
+                                     "ไม่สามารถบันทึกข้อมูลลูกค้าได้")
 
     def search_today_sticker(self):
         """ serach all case that registered today. Sorting the result by date and time"""
@@ -194,6 +203,7 @@ class Main_Controller:
             self.view.clear_user_and_password()
             login_info = self.model.user_sign_in(username, password)
             if login_info:
+                self.user_login_info = login_info
                 current_name = login_info[0][3] + " " + \
                     login_info[0][4] + " " + login_info[0][5]
                 self.view.show_current_user_information(current_name)
@@ -220,3 +230,9 @@ class Main_Controller:
         """User sign out method"""
         self.view.clear_user_and_password()
         self.view.clear_information()
+        self.user_login_info = []
+        # disable all buttons
+        self.view.disable_all_buttons()
+        self.view.show_login_page()
+        # clear user information on top right corner
+        self.view.clear_current_user_information()

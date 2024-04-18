@@ -133,6 +133,21 @@ class MainAppView(QMainWindow, Ui_main_app_view):
         for row in data:
             QTreeWidgetItem(self.sticker_search_treeWidget, row)
 
+    def clear_new_customer_information(self):
+        """Clear new customer information in customer register page."""
+        self.new_customer_title_entry.clear()
+        self.new_customer_name_entry.clear()
+        self.new_customer_surname_entry.clear()
+        self.new_customer_tax_entry.clear()
+        self.new_customer_email_entry.clear()
+        self.new_customer_line_entry.clear()
+        self.new_customer_phone_entry.clear()
+        self.new_customer_address_entry.clear()
+        self.new_customer_address_for_bill_entry.clear()
+
+    def clear_current_user_information(self):
+        """Clear current user information."""
+        self.current_user_label.clear()
 
 if __name__ == '__main__':
     pass
