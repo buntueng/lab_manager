@@ -94,3 +94,29 @@ class Main_Model:
         sql_cmd = self.sql_cmd["search_customer_case"]
         result = self.select_data(sql_cmd, keyword_search)
         return result
+
+    def save_new_customer(self, group_id, title, name, surname, tax_id,
+                          email, line_id, phone, contact_address, bill_address, updater):
+        """Save new customer to the database"""
+        sql_cmd = self.sql_cmd["insert_new_customer"]
+        data = (group_id, title, name, surname, tax_id,
+                email, line_id, phone, contact_address, bill_address, updater)
+        self.insert_data(sql_cmd, data)
+
+    def insert_data(self, sql_cmd, data):
+        """Insert data to the database"""
+        try:
+            conn = mariadb.connect(
+                user=self.server_config["user"],
+                password=self.server_config["password"],
+                host=self.server_config["host"],
+                port=self.server_config["port"],
+                database=self.server_config["database"]
+            )
+            cur = conn.cursor()
+            cur.execute(sql_cmd, data)
+            conn.commit()
+            conn.close()
+        except mariadb.Error as e:
+            QMessageBox.critical(None, "Error", f"Error: {e}")
+            return []

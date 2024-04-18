@@ -76,6 +76,7 @@ class MainAppView(QMainWindow, Ui_main_app_view):
     def show_customer_register_page(self):
         """Show the customer register page."""
         self.stackedWidget.setCurrentIndex(1)
+        self.new_customer_private_radioBT.setChecked(True)
 
     # ==================== job register page =====================
     def show_job_register_page(self):

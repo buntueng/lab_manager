@@ -291,7 +291,7 @@
       </rect>
      </property>
      <property name="currentIndex">
-      <number>4</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="login_page">
       <widget class="QLineEdit" name="username_lineEdit">
@@ -380,7 +380,7 @@
       <zorder>label_3</zorder>
      </widget>
      <widget class="QWidget" name="new_customer_page">
-      <widget class="QRadioButton" name="legal_person_radioBT">
+      <widget class="QRadioButton" name="new_customer_public_radioBT">
        <property name="geometry">
         <rect>
          <x>250</x>
@@ -392,7 +392,7 @@
        <property name="font">
         <font>
          <family>TH Niramit AS</family>
-         <pointsize>22</pointsize>
+         <pointsize>16</pointsize>
          <bold>true</bold>
         </font>
        </property>
@@ -400,7 +400,7 @@
         <string>นิติบุคคล</string>
        </property>
       </widget>
-      <widget class="QRadioButton" name="nomal_person_radioBT">
+      <widget class="QRadioButton" name="new_customer_private_radioBT">
        <property name="geometry">
         <rect>
          <x>40</x>
@@ -412,7 +412,7 @@
        <property name="font">
         <font>
          <family>TH Niramit AS</family>
-         <pointsize>22</pointsize>
+         <pointsize>16</pointsize>
          <bold>true</bold>
         </font>
        </property>
@@ -420,7 +420,7 @@
         <string>บุคคลธรรมดา</string>
        </property>
       </widget>
-      <widget class="QRadioButton" name="internal_person_radioBT">
+      <widget class="QRadioButton" name="new_customer_internal_radioBT">
        <property name="geometry">
         <rect>
          <x>420</x>
@@ -432,7 +432,7 @@
        <property name="font">
         <font>
          <family>TH Niramit AS</family>
-         <pointsize>22</pointsize>
+         <pointsize>16</pointsize>
          <bold>true</bold>
         </font>
        </property>
@@ -440,7 +440,7 @@
         <string>หน่วยงานภายใน</string>
        </property>
       </widget>
-      <widget class="QRadioButton" name="professor_person_radioBT">
+      <widget class="QRadioButton" name="new_customer_professor_radioBT">
        <property name="geometry">
         <rect>
          <x>660</x>
@@ -452,7 +452,7 @@
        <property name="font">
         <font>
          <family>TH Niramit AS</family>
-         <pointsize>22</pointsize>
+         <pointsize>16</pointsize>
          <bold>true</bold>
         </font>
        </property>
@@ -460,7 +460,7 @@
         <string>อาจารย์ในคณะ</string>
        </property>
       </widget>
-      <widget class="QRadioButton" name="student_person_radioBT">
+      <widget class="QRadioButton" name="new_customer_student_radioBT">
        <property name="geometry">
         <rect>
          <x>880</x>
@@ -472,7 +472,7 @@
        <property name="font">
         <font>
          <family>TH Niramit AS</family>
-         <pointsize>22</pointsize>
+         <pointsize>16</pointsize>
          <bold>true</bold>
         </font>
        </property>
@@ -688,7 +688,7 @@
           <string>ที่อยู่สำหรับออกใบเสร็จ</string>
          </property>
         </widget>
-        <widget class="QLineEdit" name="title_name_entry">
+        <widget class="QLineEdit" name="new_customer_title_entry">
          <property name="geometry">
           <rect>
            <x>170</x>
@@ -713,7 +713,7 @@
 }</string>
          </property>
         </widget>
-        <widget class="QLineEdit" name="name_entry">
+        <widget class="QLineEdit" name="new_customer_name_entry">
          <property name="geometry">
           <rect>
            <x>170</x>
@@ -738,7 +738,7 @@
 }</string>
          </property>
         </widget>
-        <widget class="QLineEdit" name="surename_entry">
+        <widget class="QLineEdit" name="new_customer_surname_entry">
          <property name="geometry">
           <rect>
            <x>170</x>
@@ -763,7 +763,7 @@
 }</string>
          </property>
         </widget>
-        <widget class="QLineEdit" name="tax_entry">
+        <widget class="QLineEdit" name="new_customer_tax_entry">
          <property name="geometry">
           <rect>
            <x>170</x>
@@ -775,7 +775,7 @@
          <property name="font">
           <font>
            <family>TH Niramit AS</family>
-           <pointsize>20</pointsize>
+           <pointsize>16</pointsize>
            <bold>true</bold>
           </font>
          </property>
@@ -788,7 +788,7 @@
 }</string>
          </property>
         </widget>
-        <widget class="QLineEdit" name="email_entry">
+        <widget class="QLineEdit" name="new_customer_email_entry">
          <property name="geometry">
           <rect>
            <x>170</x>
@@ -800,7 +800,7 @@
          <property name="font">
           <font>
            <family>TH Niramit AS</family>
-           <pointsize>20</pointsize>
+           <pointsize>16</pointsize>
            <bold>true</bold>
           </font>
          </property>
@@ -813,7 +813,7 @@
 }</string>
          </property>
         </widget>
-        <widget class="QLineEdit" name="line_entry">
+        <widget class="QLineEdit" name="new_customer_line_entry">
          <property name="geometry">
           <rect>
            <x>170</x>
@@ -838,7 +838,7 @@
 }</string>
          </property>
         </widget>
-        <widget class="QLineEdit" name="phone_entry">
+        <widget class="QLineEdit" name="new_customer_phone_entry">
          <property name="geometry">
           <rect>
            <x>170</x>
@@ -863,7 +863,7 @@
 }</string>
          </property>
         </widget>
-        <widget class="QTextEdit" name="address_entry">
+        <widget class="QTextEdit" name="new_customer_address_entry">
          <property name="geometry">
           <rect>
            <x>170</x>
@@ -885,7 +885,7 @@
 }</string>
          </property>
         </widget>
-        <widget class="QTextEdit" name="address_for_bill_entry">
+        <widget class="QTextEdit" name="new_customer_address_for_bill_entry">
          <property name="geometry">
           <rect>
            <x>170</x>
@@ -907,7 +907,7 @@
 }</string>
          </property>
         </widget>
-        <widget class="QCheckBox" name="addres_for_bill_checkbox">
+        <widget class="QCheckBox" name="new_customer_addres_for_bill_checkbox">
          <property name="geometry">
           <rect>
            <x>170</x>
@@ -949,44 +949,24 @@
         </widget>
        </widget>
       </widget>
-      <widget class="QPushButton" name="save_data_button">
+      <widget class="QPushButton" name="save_new_customer_button">
        <property name="geometry">
         <rect>
          <x>1000</x>
          <y>90</y>
          <width>181</width>
-         <height>81</height>
+         <height>61</height>
         </rect>
        </property>
        <property name="font">
         <font>
          <family>TH Niramit AS</family>
-         <pointsize>20</pointsize>
+         <pointsize>16</pointsize>
          <bold>true</bold>
         </font>
        </property>
        <property name="text">
         <string>บันทึกข้อมูลลูกค้า</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="back_to_home_button">
-       <property name="geometry">
-        <rect>
-         <x>1000</x>
-         <y>180</y>
-         <width>181</width>
-         <height>81</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>TH Niramit AS</family>
-         <pointsize>20</pointsize>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>กลับหน้าหลัก</string>
        </property>
       </widget>
      </widget>
@@ -1020,7 +1000,7 @@
        <property name="font">
         <font>
          <family>TH Niramit AS</family>
-         <pointsize>18</pointsize>
+         <pointsize>16</pointsize>
          <bold>true</bold>
         </font>
        </property>
@@ -1032,15 +1012,15 @@
        <property name="geometry">
         <rect>
          <x>520</x>
-         <y>10</y>
+         <y>20</y>
          <width>161</width>
-         <height>61</height>
+         <height>51</height>
         </rect>
        </property>
        <property name="font">
         <font>
          <family>TH Niramit AS</family>
-         <pointsize>18</pointsize>
+         <pointsize>16</pointsize>
          <bold>true</bold>
         </font>
        </property>
@@ -1615,7 +1595,7 @@
        <property name="font">
         <font>
          <family>TH Niramit AS</family>
-         <pointsize>18</pointsize>
+         <pointsize>16</pointsize>
          <bold>true</bold>
         </font>
        </property>
@@ -1635,7 +1615,7 @@
        <property name="font">
         <font>
          <family>TH Niramit AS</family>
-         <pointsize>18</pointsize>
+         <pointsize>16</pointsize>
          <bold>true</bold>
         </font>
        </property>
@@ -1655,7 +1635,7 @@
        <property name="font">
         <font>
          <family>TH Niramit AS</family>
-         <pointsize>18</pointsize>
+         <pointsize>16</pointsize>
          <bold>true</bold>
         </font>
        </property>
@@ -1675,7 +1655,7 @@
        <property name="font">
         <font>
          <family>TH Niramit AS</family>
-         <pointsize>18</pointsize>
+         <pointsize>16</pointsize>
          <bold>true</bold>
         </font>
        </property>
@@ -1763,26 +1743,6 @@
         <string>พิมพ์ใบส่งแลป</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="back_to_home">
-       <property name="geometry">
-        <rect>
-         <x>1010</x>
-         <y>770</y>
-         <width>171</width>
-         <height>61</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>TH Niramit AS</family>
-         <pointsize>16</pointsize>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>กลับหน้าหลัก</string>
-       </property>
-      </widget>
      </widget>
      <widget class="QWidget" name="check_job_page">
       <widget class="QLabel" name="label_6">
@@ -1855,7 +1815,7 @@
          <property name="font">
           <font>
            <family>TH Niramit AS</family>
-           <pointsize>18</pointsize>
+           <pointsize>16</pointsize>
            <bold>true</bold>
           </font>
          </property>
@@ -1895,7 +1855,7 @@
          <property name="font">
           <font>
            <family>TH Niramit AS</family>
-           <pointsize>18</pointsize>
+           <pointsize>16</pointsize>
            <bold>true</bold>
           </font>
          </property>
@@ -1986,7 +1946,7 @@
          <property name="font">
           <font>
            <family>TH Niramit AS</family>
-           <pointsize>18</pointsize>
+           <pointsize>16</pointsize>
            <bold>true</bold>
           </font>
          </property>
@@ -2009,7 +1969,7 @@
          <property name="font">
           <font>
            <family>TH Niramit AS</family>
-           <pointsize>18</pointsize>
+           <pointsize>16</pointsize>
            <bold>true</bold>
           </font>
          </property>
@@ -2032,7 +1992,7 @@
          <property name="font">
           <font>
            <family>TH Niramit AS</family>
-           <pointsize>18</pointsize>
+           <pointsize>16</pointsize>
            <bold>true</bold>
           </font>
          </property>
@@ -2055,7 +2015,7 @@
          <property name="font">
           <font>
            <family>TH Niramit AS</family>
-           <pointsize>18</pointsize>
+           <pointsize>16</pointsize>
            <bold>true</bold>
           </font>
          </property>
@@ -2552,7 +2512,7 @@
           <string notr="true">background-color:rgb(255, 255, 255)</string>
          </property>
          <property name="text">
-          <string>แกไขลายเซนต์</string>
+          <string>แก้ไขลายเซนต์</string>
          </property>
         </widget>
         <widget class="QPushButton" name="employee_save_data_button">

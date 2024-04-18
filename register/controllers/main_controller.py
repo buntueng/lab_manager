@@ -54,6 +54,68 @@ class Main_Controller:
         self.view.today_sticker_search_pushButton.clicked.connect(
             self.search_today_sticker)
 
+        self.bind_event_in_new_customer_page()
+
+    def bind_event_in_new_customer_page(self):
+        """Bind event in new customer page"""
+        self.view.save_new_customer_button.clicked.connect(
+            self.save_new_customer)
+        self.view.anonymous_tax_checkbox.stateChanged.connect(
+            self.disable_tax_entry)
+        self.view.new_customer_addres_for_bill_checkbox.stateChanged.connect(
+            self.copy_address_to_bill_address)
+
+    def disable_tax_entry(self, state: int) -> None:
+        """Disable tax entry if the checkbox is checked"""
+        if state == 2:
+            self.view.new_customer_tax_entry.setEnabled(False)
+            self.view.new_customer_tax_entry.clear()
+        else:
+            self.view.new_customer_tax_entry.setEnabled(True)
+
+    def copy_address_to_bill_address(self, state: int) -> None:
+        """Copy address to bill address"""
+        if state == 2:
+            self.view.new_customer_address_for_bill_entry.setPlainText(
+                self.view.new_customer_address_entry.toPlainText())
+        else:
+            self.view.new_customer_address_for_bill_entry.clear()
+
+    def save_new_customer(self) -> None:
+        """Save new customer to the database"""
+        # check all fields are filled
+        if self.view.new_customer_title_entry.text() == "" or self.view.new_customer_name_entry.text() == "" or self.view.new_customer_surname_entry.text() == "" or self.view.new_customer_phone_entry.text() == "" or self.view.new_customer_email_entry.text() == "":
+            message = "กรุณากรอกข้อมูล \n คำนำหน้าชื่อ \n ชื่อ \n สกุล \n เบอร์โทร \n และ email ให้ครบถ้วน"
+            QMessageBox.critical(self.view, "Error", message)
+        else:
+            # get all data from the view
+            group_id = 0
+            if self.view.new_customer_private_radioBT.isChecked():
+                group_id = 1
+            elif self.view.new_customer_public_radioBT.isChecked():
+                group_id = 2
+            elif self.view.new_customer_internal_radioBT.isChecked():
+                group_id = 3
+            elif self.view.new_customer_professor_radioBT.isChecked():
+                group_id = 4
+            elif self.view.new_customer_student_radioBT.isChecked():
+                group_id = 5
+
+            title = self.view.new_customer_title_entry.text()
+            name = self.view.new_customer_name_entry.text()
+            surname = self.view.new_customer_surname_entry.text()
+            tax_id = self.view.new_customer_tax_entry.text()
+            email = self.view.new_customer_email_entry.text()
+            line_id = self.view.new_customer_line_entry.text()
+            phone = self.view.new_customer_phone_entry.text()
+            # get data from qtexedit
+            contact_address = self.view.new_customer_address_entry.toPlainText()
+            bill_address = self.view.new_customer_address_for_bill_entry.toPlainText()
+            updater = 1
+            # save data to the database
+            self.model.save_new_customer(group_id, title, name, surname, tax_id,
+                                         email, line_id, phone, contact_address, bill_address, updater)
+
     def search_today_sticker(self):
         """ serach all case that registered today. Sorting the result by date and time"""
         # add data to listview
