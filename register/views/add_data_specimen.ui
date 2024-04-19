@@ -515,9 +515,9 @@
       </property>
       <property name="font">
        <font>
-        <family>TH Niramit AS</family>
-        <pointsize>22</pointsize>
-        <bold>true</bold>
+        <family>Times New Roman</family>
+        <pointsize>16</pointsize>
+        <bold>false</bold>
        </font>
       </property>
       <property name="layoutDirection">
@@ -575,9 +575,9 @@
       </property>
       <property name="font">
        <font>
-        <family>TH Niramit AS</family>
-        <pointsize>22</pointsize>
-        <bold>true</bold>
+        <family>Times New Roman</family>
+        <pointsize>16</pointsize>
+        <bold>false</bold>
        </font>
       </property>
       <property name="layoutDirection">

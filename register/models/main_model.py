@@ -95,6 +95,12 @@ class Main_Model:
         result = self.select_data(sql_cmd, [keyword_search, keyword_search])
         return result
 
+    def new_case_search_customer(self, keyword_search):
+        result = []
+        sql_cmd = self.sql_cmd["new_case_search_customer"]
+        result = self.select_data(sql_cmd, [keyword_search, keyword_search])
+        return result
+
     def save_new_customer(self, group_id, title, name, surname, tax_id,
                           email, line_id, phone, contact_address, bill_address, updater) -> bool:
         """Save new customer to the database"""
@@ -105,6 +111,11 @@ class Main_Model:
             return True
         else:
             return False
+
+    def save_case_register(self, row_list, updater) -> bool:
+        """Save new case to the database"""
+        print("save_case_register")
+        return True
 
     def insert_data(self, sql_cmd, data) -> bool:
         """Insert data to the database"""
@@ -123,4 +134,24 @@ class Main_Model:
             return True
         except mariadb.Error as e:
             QMessageBox.critical(None, "Error", f"Error: {e}")
+            return False
+
+    def get_last_case_number(self) -> str:
+        """Get the last case number from the database"""
+        sql_cmd = self.sql_cmd["get_last_case_number"]
+        last_case_number = self.select_data(sql_cmd, [])
+        return last_case_number[0][0]
+
+    def save_new_case_register(self, case_data, updater) -> bool:
+        """Save case register to the database"""
+        sql_cmd = self.sql_cmd["get_customer_id_from_name_and_tax"]
+        sender_id = self.select_data(
+            sql_cmd, [case_data[1], case_data[2], case_data[3]])[0][0]
+        owner_id = self.select_data(
+            sql_cmd, [case_data[4], case_data[5], case_data[6]])[0][0]
+        sql_cmd = self.sql_cmd["insert_new_case"]
+        case_data = [case_data[0], sender_id, owner_id, case_data[7], updater]
+        if self.insert_data(sql_cmd, case_data):
+            return True
+        else:
             return False

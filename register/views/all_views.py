@@ -14,6 +14,8 @@ class MainAppView(QMainWindow, Ui_main_app_view):
         self.show_login_page()
         self.disable_all_buttons()
 
+        self.reset_widgets_in_job_register_page()
+
     def disable_all_buttons(self):
         """Disable all buttons in the main page."""
         self.sign_out_pushButton.setEnabled(False)
@@ -82,6 +84,8 @@ class MainAppView(QMainWindow, Ui_main_app_view):
     def show_job_register_page(self):
         """Show the job register page."""
         self.stackedWidget.setCurrentIndex(2)
+        # reset state of all widgets in the job register page
+        self.reset_widgets_in_job_register_page()
     # ==================== check job progress ======================
 
     def show_check_job_progress_page(self):
@@ -148,6 +152,66 @@ class MainAppView(QMainWindow, Ui_main_app_view):
     def clear_current_user_information(self):
         """Clear current user information."""
         self.current_user_label.clear()
+
+    def add_customer_info_new_case(self, data):
+        """Add customer information to new case page."""
+        self.new_case_search_tree_view.clear()
+        for row in data:
+            QTreeWidgetItem(self.new_case_search_tree_view, row)
+
+    def reset_widgets_in_job_register_page(self):
+        # clear data in search tree view
+        self.new_case_search_tree_view.clear()
+        self.new_case_search_name_entry.setText("")
+
+        # enable entry name and tree view
+        self.new_case_search_name_entry.setEnabled(True)
+        self.new_case_search_tree_view.setEnabled(True)
+
+        # clear case number entry
+        self.new_case_number_job_entry.setText("")
+
+        # enable search button
+        self.new_case_search_button.setEnabled(True)
+
+        # disable sender and owner information
+        self.new_case_name_sender_entry.setEnabled(False)
+        self.new_case_surename_sender_entry.setEnabled(False)
+        self.new_case_tax_sender_entry.setEnabled(False)
+        self.new_case_name_owner_entry.setEnabled(False)
+        self.new_case_surename_owner_entry.setEnabled(False)
+        self.new_case_tax_owner_entry.setEnabled(False)
+
+        # clear sender and owner information
+        self.new_case_name_sender_entry.clear()
+        self.new_case_surename_sender_entry.clear()
+        self.new_case_tax_sender_entry.clear()
+        self.new_case_name_owner_entry.clear()
+        self.new_case_surename_owner_entry.clear()
+        self.new_case_tax_owner_entry.clear()
+
+        # enable project name entry
+        self.new_case_name_project_entry.setEnabled(True)
+        self.new_case_name_project_entry.clear()
+
+        # enable buttons
+        self.new_case_select_owner_button.setEnabled(True)
+        self.new_case_select_sender_button.setEnabled(True)
+        self.new_case_anonymous_owner_button.setEnabled(True)
+        self.new_case_save_button.setEnabled(True)
+
+        # disable add lab button
+        self.new_case_add_data_specimen_button.setEnabled(
+            False)
+        self.new_case_delete_data_specimen_button.setEnabled(
+            False)
+        self.new_case_print_sticker_button.setEnabled(False)
+        self.new_case_print_lab_report_button.setEnabled(False)
+
+
+    def show_add_data_specimen_page(self):
+        """Show the add data specimen page."""
+        pass
 
 if __name__ == '__main__':
     pass

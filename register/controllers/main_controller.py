@@ -5,6 +5,8 @@ import time
 from PySide6.QtWidgets import QMessageBox
 from models.barcode_generator import BarcodeGenerator
 
+from views.lab_forms import Molecular_Biology_Form, Bacterie_Biology_Form, Parasite_Biology_Form
+
 
 class Main_Controller:
     """Main Controller class"""
@@ -57,6 +59,7 @@ class Main_Controller:
             self.search_today_sticker)
 
         self.bind_event_in_new_customer_page()
+        self.bind_event_in_case_register_page()
 
     def bind_event_in_new_customer_page(self):
         """Bind event in new customer page"""
@@ -66,6 +69,196 @@ class Main_Controller:
             self.disable_tax_entry)
         self.view.new_customer_addres_for_bill_checkbox.stateChanged.connect(
             self.copy_address_to_bill_address)
+
+    def bind_event_in_case_register_page(self):
+        """Bind event in case register page"""
+        self.view.new_case_search_button.clicked.connect(
+            self.new_case_search_user)
+        # self.view.new_case_save_button.clicked.connect(
+        # self.save_case_register)
+        self.view.new_case_select_sender_button.clicked.connect(
+            self.new_case_add_sender_info)
+        self.view.new_case_select_owner_button.clicked.connect(
+            self.new_case_add_owner_info)
+        self.view.new_case_anonymous_owner_button.clicked.connect(
+            self.clear_new_case_owner_info)
+        self.view.new_case_save_button.clicked.connect(
+            self.register_new_case)
+
+        self.view.new_case_add_data_specimen_button.clicked.connect(
+            self.add_data_specimen)
+
+    def add_data_specimen(self):
+        """add data specimen to the database"""
+        # open new ui to add data specimen
+        self.molecular_biology_form = Molecular_Biology_Form()
+        self.bacterie_biology_form = Bacterie_Biology_Form()
+        self.parasite_biology_form = Parasite_Biology_Form()
+
+        self.molecular_biology_form.show()
+        self.bacterie_biology_form.hide()
+        self.parasite_biology_form.hide()
+
+    def register_new_case(self):
+        """register new case to the database"""
+        skip = False
+        # if project name is empty, show warning message to confirm
+        if self.view.new_case_name_project_entry.text() == "":
+            reply = QMessageBox.warning(self.view, "Warning",
+                                        "ต้องการดำเนินการต่อโดยไม่บันทึกชื่อโครงการหรือไม่?",
+                                        QMessageBox.Yes | QMessageBox.No)
+            if reply == QMessageBox.No:
+                self.view.new_case_name_project_entry.setFocus()
+                skip = True
+        if not skip:
+            # disable all add button
+            self.view.new_case_select_sender_button.setEnabled(False)
+            self.view.new_case_select_owner_button.setEnabled(False)
+            self.view.new_case_anonymous_owner_button.setEnabled(False)
+            self.view.new_case_save_button.setEnabled(False)
+
+            # get data from the view
+            case_data = []
+            case_data.append(self.view.new_case_number_job_entry.text())
+            case_data.append(self.view.new_case_name_sender_entry.text())
+            case_data.append(
+                self.view.new_case_surename_sender_entry.text())
+            case_data.append(self.view.new_case_tax_sender_entry.text())
+            case_data.append(self.view.new_case_name_owner_entry.text())
+            case_data.append(
+                self.view.new_case_surename_owner_entry.text())
+            case_data.append(self.view.new_case_tax_owner_entry.text())
+            case_data.append(self.view.new_case_name_project_entry.text())
+            if self.model.save_new_case_register(case_data, self.user_login_info[0][1]):
+                QMessageBox.information(self.view, "Success",
+                                        "บันทึกข้อมูลเรียบร้อย")
+                # clear data in search tree view
+                self.view.new_case_search_tree_view.clear()
+                self.view.new_case_search_name_entry.setText("")
+
+                # disable entry name and tree view
+                self.view.new_case_search_name_entry.setEnabled(False)
+                self.view.new_case_search_tree_view.setEnabled(False)
+
+                # disable case number entry
+                self.view.new_case_number_job_entry.setEnabled(False)
+
+                # disable search button
+                self.view.new_case_search_button.setEnabled(False)
+
+                # disable sender and owner information
+                self.view.new_case_name_sender_entry.setEnabled(False)
+                self.view.new_case_surename_sender_entry.setEnabled(False)
+                self.view.new_case_tax_sender_entry.setEnabled(False)
+                self.view.new_case_name_owner_entry.setEnabled(False)
+                self.view.new_case_surename_owner_entry.setEnabled(False)
+                self.view.new_case_tax_owner_entry.setEnabled(False)
+                self.view.new_case_name_project_entry.setEnabled(False)
+
+                # enable add lab button
+                self.view.new_case_add_data_specimen_button.setEnabled(
+                    True)
+                self.view.new_case_delete_data_specimen_button.setEnabled(
+                    True)
+                self.view.new_case_print_sticker_button.setEnabled(True)
+                self.view.new_case_print_lab_report_button.setEnabled(True)
+
+    def clear_new_case_owner_info(self) -> None:
+        """Clear owner information in the case register page"""
+        self.view.new_case_name_owner_entry.setText("")
+        self.view.new_case_surename_owner_entry.setText("")
+        self.view.new_case_tax_owner_entry.setText("")
+
+    def new_case_add_owner_info(self):
+        """Add owner information to the case register"""
+        # if case number is empty, read the last case number from the database
+        if self.view.new_case_number_job_entry.text() == "":
+            last_case_number = self.model.get_last_case_number()
+            last_case_number = int(last_case_number) + 1
+            self.view.new_case_number_job_entry.setText(str(last_case_number))
+
+        if self.view.new_case_search_tree_view.selectedItems() == []:
+            QMessageBox.critical(self.view, "Error",
+                                 "Please select a row to add owner information")
+        else:
+            selected_item = self.view.new_case_search_tree_view.selectedItems()
+            if len(selected_item) > 1:
+                QMessageBox.critical(self.view, "Error",
+                                     "Please select only one row to add owner information")
+            else:
+                for row in selected_item:
+                    self.view.new_case_name_owner_entry.setText(row.text(0))
+                    self.view.new_case_surename_owner_entry.setText(
+                        row.text(1))
+                    self.view.new_case_tax_owner_entry.setText(row.text(2))
+
+    def new_case_add_sender_info(self):
+        """Add sender information to the case register"""
+        # if case number is empty, read the last case number from the database
+        if self.view.new_case_number_job_entry.text() == "":
+            last_case_number = self.model.get_last_case_number()
+            last_case_number = int(last_case_number) + 1
+            self.view.new_case_number_job_entry.setText(str(last_case_number))
+
+        if self.view.new_case_search_tree_view.selectedItems() == []:
+            QMessageBox.critical(self.view, "Error",
+                                 "Please select a row to add sender information")
+        else:
+            selected_item = self.view.new_case_search_tree_view.selectedItems()
+            if len(selected_item) > 1:
+                QMessageBox.critical(self.view, "Error",
+                                     "Please select only one row to add sender information")
+            else:
+                for row in selected_item:
+                    self.view.new_case_name_sender_entry.setText(row.text(0))
+                    self.view.new_case_surename_sender_entry.setText(
+                        row.text(1))
+                    self.view.new_case_tax_sender_entry.setText(row.text(2))
+
+    def new_case_search_user(self):
+        """Search case register"""
+        keyword_search = self.view.new_case_search_name_entry.text()
+        if keyword_search == "":
+            QMessageBox.critical(self.view, "Error",
+                                 "กรุณาป้อนชื่อหรือนามสกุลของลูกค้า")
+        else:
+            customer_information = self.model.new_case_search_customer(
+                keyword_search)
+            if customer_information == []:
+                QMessageBox.critical(self.view, "Error",
+                                     "ไม่พบข้อมูลลูกค้า")
+            else:
+                self.view.add_customer_info_new_case(customer_information)
+
+    def save_case_register(self):
+        """Save case register"""
+        # get selected item from the QTreeWidget
+        selected_item = self.view.new_case_detail_case_tree_view.selectedItems()
+        if selected_item == []:
+            QMessageBox.critical(self.view, "Error",
+                                 "Please select a row to save case register")
+        else:
+            if len(selected_item) > 1:
+                QMessageBox.critical(self.view, "Error",
+                                     "Please select only one row to save case register")
+            else:
+                # get data from the selected item
+                row_list = []
+                for row in selected_item:
+                    column_list = []
+                    for col in range(self.view.new_case_detail_case_tree_view.columnCount()):
+                        column_list.append(row.text(col))
+                    row_list.append(column_list)
+                # get updater id from the user_login_info
+                updater = self.user_login_info[0][1]
+                # save data to the database
+                if self.model.save_case_register(row_list, updater):
+                    QMessageBox.information(self.view, "Success",
+                                            "บันทึกข้อมูลลูกค้าเรียบร้อย")
+                    self.view.clear_information()
+                else:
+                    QMessageBox.critical(self.view, "Error",
+                                         "ไม่สามารถบันทึกข้อมูลลูกค้าได้")
 
     def disable_tax_entry(self, state: int) -> None:
         """Disable tax entry if the checkbox is checked"""

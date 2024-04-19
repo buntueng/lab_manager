@@ -291,7 +291,7 @@
       </rect>
      </property>
      <property name="currentIndex">
-      <number>1</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="login_page">
       <widget class="QLineEdit" name="username_lineEdit">
@@ -971,11 +971,11 @@
       </widget>
      </widget>
      <widget class="QWidget" name="new_job_page">
-      <widget class="QLineEdit" name="search_name_entry">
+      <widget class="QLineEdit" name="new_case_search_name_entry">
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>40</y>
+         <y>30</y>
          <width>491</width>
          <height>31</height>
         </rect>
@@ -1008,13 +1008,13 @@
         <string>ค้นหาชื่อหรือนามสกุลลูกค้า</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="search_button">
+      <widget class="QPushButton" name="new_case_search_button">
        <property name="geometry">
         <rect>
-         <x>520</x>
+         <x>510</x>
          <y>20</y>
-         <width>161</width>
-         <height>51</height>
+         <width>141</width>
+         <height>41</height>
         </rect>
        </property>
        <property name="font">
@@ -1028,13 +1028,13 @@
         <string>ค้นหา</string>
        </property>
       </widget>
-      <widget class="QTreeWidget" name="search_tree_view">
+      <widget class="QTreeWidget" name="new_case_search_tree_view">
        <property name="geometry">
         <rect>
          <x>10</x>
          <y>80</y>
          <width>1001</width>
-         <height>191</height>
+         <height>141</height>
         </rect>
        </property>
        <property name="font">
@@ -1054,7 +1054,7 @@
         <number>15</number>
        </property>
        <property name="columnCount">
-        <number>5</number>
+        <number>3</number>
        </property>
        <attribute name="headerMinimumSectionSize">
         <number>38</number>
@@ -1062,21 +1062,6 @@
        <attribute name="headerDefaultSectionSize">
         <number>143</number>
        </attribute>
-       <column>
-        <property name="text">
-         <string>หมายเลขประจำตัว</string>
-        </property>
-        <property name="font">
-         <font>
-          <family>TH Niramit AS</family>
-          <pointsize>16</pointsize>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="textAlignment">
-         <set>AlignCenter</set>
-        </property>
-       </column>
        <column>
         <property name="text">
          <string>ชื่อ</string>
@@ -1095,14 +1080,6 @@
        </column>
        <column>
         <property name="text">
-         <string>อายุ</string>
-        </property>
-        <property name="textAlignment">
-         <set>AlignCenter</set>
-        </property>
-       </column>
-       <column>
-        <property name="text">
          <string>เลขผู้เสียภาษี</string>
         </property>
         <property name="textAlignment">
@@ -1114,7 +1091,7 @@
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>280</y>
+         <y>230</y>
          <width>81</width>
          <height>31</height>
         </rect>
@@ -1130,51 +1107,11 @@
         <string>เลขที่งาน</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="number_job_entry">
+      <widget class="QLineEdit" name="new_case_number_job_entry">
        <property name="geometry">
         <rect>
          <x>130</x>
-         <y>280</y>
-         <width>151</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>TH Niramit AS</family>
-         <pointsize>16</pointsize>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="readOnly">
-        <bool>true</bool>
-       </property>
-      </widget>
-      <widget class="QLabel" name="number_sender_label">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>320</y>
-         <width>111</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>TH Niramit AS</family>
-         <pointsize>16</pointsize>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>หมายเลขผู้ส่ง</string>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="number_sender_entry">
-       <property name="geometry">
-        <rect>
-         <x>130</x>
-         <y>320</y>
+         <y>230</y>
          <width>151</width>
          <height>31</height>
         </rect>
@@ -1193,9 +1130,9 @@
       <widget class="QLabel" name="name_sender_label">
        <property name="geometry">
         <rect>
-         <x>290</x>
-         <y>320</y>
-         <width>31</width>
+         <x>10</x>
+         <y>270</y>
+         <width>51</width>
          <height>31</height>
         </rect>
        </property>
@@ -1207,15 +1144,15 @@
         </font>
        </property>
        <property name="text">
-        <string>ชื่อ</string>
+        <string>ชื่อผู้ส่ง</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="name_sender_entry">
+      <widget class="QLineEdit" name="new_case_name_sender_entry">
        <property name="geometry">
         <rect>
-         <x>320</x>
-         <y>320</y>
-         <width>211</width>
+         <x>130</x>
+         <y>270</y>
+         <width>281</width>
          <height>31</height>
         </rect>
        </property>
@@ -1233,8 +1170,8 @@
       <widget class="QLabel" name="surename_sender_label">
        <property name="geometry">
         <rect>
-         <x>540</x>
-         <y>320</y>
+         <x>420</x>
+         <y>270</y>
          <width>81</width>
          <height>31</height>
         </rect>
@@ -1250,11 +1187,11 @@
         <string>นามสกุล</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="surename_sender_entry">
+      <widget class="QLineEdit" name="new_case_surename_sender_entry">
        <property name="geometry">
         <rect>
-         <x>620</x>
-         <y>320</y>
+         <x>490</x>
+         <y>270</y>
          <width>231</width>
          <height>31</height>
         </rect>
@@ -1273,8 +1210,8 @@
       <widget class="QLabel" name="tax_sender_label">
        <property name="geometry">
         <rect>
-         <x>860</x>
-         <y>320</y>
+         <x>730</x>
+         <y>270</y>
          <width>101</width>
          <height>31</height>
         </rect>
@@ -1287,55 +1224,15 @@
         </font>
        </property>
        <property name="text">
-        <string>เลขเสียภาษี</string>
+        <string>เลขผู้เสียภาษี</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="tax_sender_entry">
+      <widget class="QLineEdit" name="new_case_tax_sender_entry">
        <property name="geometry">
         <rect>
-         <x>970</x>
-         <y>320</y>
-         <width>211</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>TH Niramit AS</family>
-         <pointsize>16</pointsize>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="readOnly">
-        <bool>true</bool>
-       </property>
-      </widget>
-      <widget class="QLabel" name="number_owner_label">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>360</y>
-         <width>121</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>TH Niramit AS</family>
-         <pointsize>16</pointsize>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>หมายเลขเจ้าของ</string>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="number_owner_entry">
-       <property name="geometry">
-        <rect>
-         <x>130</x>
-         <y>360</y>
-         <width>151</width>
+         <x>830</x>
+         <y>270</y>
+         <width>351</width>
          <height>31</height>
         </rect>
        </property>
@@ -1353,9 +1250,9 @@
       <widget class="QLabel" name="name_owner_label">
        <property name="geometry">
         <rect>
-         <x>290</x>
-         <y>360</y>
-         <width>31</width>
+         <x>10</x>
+         <y>310</y>
+         <width>71</width>
          <height>31</height>
         </rect>
        </property>
@@ -1367,15 +1264,15 @@
         </font>
        </property>
        <property name="text">
-        <string>ชื่อ</string>
+        <string>ชื่อเจ้าของ</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="name_owner_entry">
+      <widget class="QLineEdit" name="new_case_name_owner_entry">
        <property name="geometry">
         <rect>
-         <x>320</x>
-         <y>360</y>
-         <width>211</width>
+         <x>130</x>
+         <y>310</y>
+         <width>281</width>
          <height>31</height>
         </rect>
        </property>
@@ -1393,8 +1290,8 @@
       <widget class="QLabel" name="surename_owner_label">
        <property name="geometry">
         <rect>
-         <x>540</x>
-         <y>360</y>
+         <x>420</x>
+         <y>310</y>
          <width>81</width>
          <height>31</height>
         </rect>
@@ -1410,11 +1307,11 @@
         <string>นามสกุล</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="surename_owner_entry">
+      <widget class="QLineEdit" name="new_case_surename_owner_entry">
        <property name="geometry">
         <rect>
-         <x>620</x>
-         <y>360</y>
+         <x>490</x>
+         <y>310</y>
          <width>231</width>
          <height>31</height>
         </rect>
@@ -1433,8 +1330,8 @@
       <widget class="QLabel" name="tax_owner_label">
        <property name="geometry">
         <rect>
-         <x>860</x>
-         <y>360</y>
+         <x>730</x>
+         <y>310</y>
          <width>101</width>
          <height>31</height>
         </rect>
@@ -1447,15 +1344,15 @@
         </font>
        </property>
        <property name="text">
-        <string>เลขเสียภาษี</string>
+        <string>เลขผู้เสียภาษี</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="tax_owner_entry">
+      <widget class="QLineEdit" name="new_case_tax_owner_entry">
        <property name="geometry">
         <rect>
-         <x>970</x>
-         <y>360</y>
-         <width>211</width>
+         <x>830</x>
+         <y>310</y>
+         <width>351</width>
          <height>31</height>
         </rect>
        </property>
@@ -1474,7 +1371,7 @@
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>400</y>
+         <y>350</y>
          <width>91</width>
          <height>31</height>
         </rect>
@@ -1490,11 +1387,11 @@
         <string>ชื่อโครงการ</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="name_projact_entry">
+      <widget class="QLineEdit" name="new_case_name_project_entry">
        <property name="geometry">
         <rect>
          <x>130</x>
-         <y>400</y>
+         <y>350</y>
          <width>1051</width>
          <height>31</height>
         </rect>
@@ -1507,13 +1404,13 @@
         </font>
        </property>
       </widget>
-      <widget class="QTreeWidget" name="detail_case_tree_view">
+      <widget class="QTreeWidget" name="new_case_detail_case_tree_view">
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>460</y>
+         <y>400</y>
          <width>991</width>
-         <height>371</height>
+         <height>431</height>
         </rect>
        </property>
        <property name="font">
@@ -1583,13 +1480,13 @@
         </property>
        </column>
       </widget>
-      <widget class="QPushButton" name="select_sender_button">
+      <widget class="QPushButton" name="new_case_select_sender_button">
        <property name="geometry">
         <rect>
          <x>1030</x>
-         <y>30</y>
+         <y>20</y>
          <width>151</width>
-         <height>51</height>
+         <height>41</height>
         </rect>
        </property>
        <property name="font">
@@ -1603,13 +1500,13 @@
         <string>เลือกผู้ส่ง</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="select_owner_button">
+      <widget class="QPushButton" name="new_case_select_owner_button">
        <property name="geometry">
         <rect>
          <x>1030</x>
-         <y>90</y>
+         <y>70</y>
          <width>151</width>
-         <height>51</height>
+         <height>41</height>
         </rect>
        </property>
        <property name="font">
@@ -1623,13 +1520,13 @@
         <string>เลือกเจ้าของ</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="anonymous_owner_button">
+      <widget class="QPushButton" name="new_case_anonymous_owner_button">
        <property name="geometry">
         <rect>
          <x>1030</x>
-         <y>150</y>
+         <y>120</y>
          <width>151</width>
-         <height>51</height>
+         <height>41</height>
         </rect>
        </property>
        <property name="font">
@@ -1643,11 +1540,11 @@
         <string>ไม่ระบุเจ้าของ</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="save_button">
+      <widget class="QPushButton" name="new_case_save_button">
        <property name="geometry">
         <rect>
          <x>1030</x>
-         <y>260</y>
+         <y>170</y>
          <width>151</width>
          <height>51</height>
         </rect>
@@ -1660,14 +1557,14 @@
         </font>
        </property>
        <property name="text">
-        <string>บันทึก</string>
+        <string>บันทึกงาน</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="add_data_specimen_button">
+      <widget class="QPushButton" name="new_case_add_data_specimen_button">
        <property name="geometry">
         <rect>
          <x>1010</x>
-         <y>460</y>
+         <y>400</y>
          <width>171</width>
          <height>61</height>
         </rect>
@@ -1683,11 +1580,11 @@
         <string>เพิ่มข้อมูลสิ่งส่งตรวจ</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="delete_data_specimen_button">
+      <widget class="QPushButton" name="new_case_delete_data_specimen_button">
        <property name="geometry">
         <rect>
          <x>1010</x>
-         <y>530</y>
+         <y>470</y>
          <width>171</width>
          <height>61</height>
         </rect>
@@ -1703,11 +1600,11 @@
         <string>ลบรายการสิ่งส่งตรวจ</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="print_sticker_button">
+      <widget class="QPushButton" name="new_case_print_sticker_button">
        <property name="geometry">
         <rect>
          <x>1010</x>
-         <y>600</y>
+         <y>540</y>
          <width>171</width>
          <height>61</height>
         </rect>
@@ -1723,11 +1620,11 @@
         <string>พิมพ์สติกเกอร์</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="print_lab_report_button">
+      <widget class="QPushButton" name="new_case_print_lab_report_button">
        <property name="geometry">
         <rect>
          <x>1010</x>
-         <y>670</y>
+         <y>610</y>
          <width>171</width>
          <height>61</height>
         </rect>
