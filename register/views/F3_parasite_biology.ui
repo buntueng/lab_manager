@@ -32,16 +32,16 @@
    <widget class="QLabel" name="test_label">
     <property name="geometry">
      <rect>
-      <x>5</x>
+      <x>10</x>
       <y>5</y>
-      <width>791</width>
-      <height>61</height>
+      <width>771</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>TH Niramit AS</family>
-      <pointsize>36</pointsize>
+      <family>Times New Roman</family>
+      <pointsize>10</pointsize>
       <bold>true</bold>
      </font>
     </property>
@@ -64,11 +64,17 @@
    <widget class="QFrame" name="test_frame">
     <property name="geometry">
      <rect>
-      <x>5</x>
-      <y>70</y>
-      <width>791</width>
-      <height>501</height>
+      <x>10</x>
+      <y>50</y>
+      <width>771</width>
+      <height>231</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>10</pointsize>
+     </font>
     </property>
     <property name="styleSheet">
      <string notr="true">background:rgb(255, 255, 255)</string>
@@ -85,16 +91,16 @@
     <widget class="QCheckBox" name="PCV_checkBox">
      <property name="geometry">
       <rect>
-       <x>20</x>
+       <x>10</x>
        <y>10</y>
        <width>321</width>
-       <height>31</height>
+       <height>21</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <family>TH Niramit AS</family>
-       <pointsize>20</pointsize>
+       <family>Times New Roman</family>
+       <pointsize>10</pointsize>
        <bold>true</bold>
       </font>
      </property>
@@ -105,16 +111,16 @@
     <widget class="QCheckBox" name="Stained_checkBox">
      <property name="geometry">
       <rect>
-       <x>220</x>
+       <x>210</x>
        <y>10</y>
        <width>321</width>
-       <height>31</height>
+       <height>21</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <family>TH Niramit AS</family>
-       <pointsize>20</pointsize>
+       <family>Times New Roman</family>
+       <pointsize>10</pointsize>
        <bold>true</bold>
       </font>
      </property>
@@ -125,16 +131,16 @@
     <widget class="QCheckBox" name="woo_s_checkBox">
      <property name="geometry">
       <rect>
-       <x>520</x>
+       <x>510</x>
        <y>10</y>
        <width>231</width>
-       <height>31</height>
+       <height>21</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <family>TH Niramit AS</family>
-       <pointsize>20</pointsize>
+       <family>Times New Roman</family>
+       <pointsize>10</pointsize>
        <bold>true</bold>
       </font>
      </property>
@@ -145,16 +151,16 @@
     <widget class="QCheckBox" name="Stained_blood_smear_checkBox">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>310</y>
+       <x>10</x>
+       <y>140</y>
        <width>391</width>
-       <height>31</height>
+       <height>21</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <family>TH Niramit AS</family>
-       <pointsize>20</pointsize>
+       <family>Times New Roman</family>
+       <pointsize>10</pointsize>
        <bold>true</bold>
       </font>
      </property>
@@ -165,16 +171,16 @@
     <widget class="QCheckBox" name="Floatation_centrifugal_checkBox">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>430</y>
-       <width>591</width>
-       <height>31</height>
+       <x>10</x>
+       <y>190</y>
+       <width>401</width>
+       <height>21</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <family>TH Niramit AS</family>
-       <pointsize>20</pointsize>
+       <family>Times New Roman</family>
+       <pointsize>10</pointsize>
        <bold>true</bold>
       </font>
      </property>
@@ -185,16 +191,16 @@
     <widget class="QCheckBox" name="Floatation_checkBox">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>70</y>
+       <x>10</x>
+       <y>30</y>
        <width>321</width>
        <height>31</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <family>TH Niramit AS</family>
-       <pointsize>20</pointsize>
+       <family>Times New Roman</family>
+       <pointsize>10</pointsize>
        <bold>true</bold>
       </font>
      </property>
@@ -205,16 +211,16 @@
     <widget class="QCheckBox" name="Sedimentation_checkBox">
      <property name="geometry">
       <rect>
-       <x>220</x>
-       <y>70</y>
+       <x>210</x>
+       <y>30</y>
        <width>271</width>
        <height>31</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <family>TH Niramit AS</family>
-       <pointsize>20</pointsize>
+       <family>Times New Roman</family>
+       <pointsize>10</pointsize>
        <bold>true</bold>
       </font>
      </property>
@@ -225,16 +231,16 @@
     <widget class="QCheckBox" name="MC_master_checkBox">
      <property name="geometry">
       <rect>
-       <x>520</x>
-       <y>70</y>
-       <width>261</width>
+       <x>510</x>
+       <y>30</y>
+       <width>241</width>
        <height>31</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <family>TH Niramit AS</family>
-       <pointsize>20</pointsize>
+       <family>Times New Roman</family>
+       <pointsize>10</pointsize>
        <bold>true</bold>
       </font>
      </property>
@@ -245,16 +251,16 @@
     <widget class="QCheckBox" name="Centrifugal_checkBox">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>370</y>
-       <width>451</width>
+       <x>10</x>
+       <y>160</y>
+       <width>401</width>
        <height>31</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <family>TH Niramit AS</family>
-       <pointsize>20</pointsize>
+       <family>Times New Roman</family>
+       <pointsize>10</pointsize>
        <bold>true</bold>
       </font>
      </property>
@@ -265,16 +271,16 @@
     <widget class="QCheckBox" name="Floatation_for_dog_checkBox">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>250</y>
-       <width>451</width>
-       <height>31</height>
+       <x>10</x>
+       <y>110</y>
+       <width>411</width>
+       <height>21</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <family>TH Niramit AS</family>
-       <pointsize>20</pointsize>
+       <family>Times New Roman</family>
+       <pointsize>10</pointsize>
        <bold>true</bold>
       </font>
      </property>
@@ -285,16 +291,16 @@
     <widget class="QCheckBox" name="Parasite_in_meat_checkBox">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>130</y>
+       <x>10</x>
+       <y>60</y>
        <width>321</width>
-       <height>31</height>
+       <height>21</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <family>TH Niramit AS</family>
-       <pointsize>20</pointsize>
+       <family>Times New Roman</family>
+       <pointsize>10</pointsize>
        <bold>true</bold>
       </font>
      </property>
@@ -305,16 +311,16 @@
     <widget class="QCheckBox" name="Parasite_iden_checkBox">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>190</y>
+       <x>10</x>
+       <y>80</y>
        <width>321</width>
        <height>31</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <family>TH Niramit AS</family>
-       <pointsize>20</pointsize>
+       <family>Times New Roman</family>
+       <pointsize>10</pointsize>
        <bold>true</bold>
       </font>
      </property>
@@ -329,8 +335,14 @@
       <x>799</x>
       <y>5</y>
       <width>295</width>
-      <height>566</height>
+      <height>371</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>10</pointsize>
+     </font>
     </property>
     <property name="styleSheet">
      <string notr="true">background:rgb(255, 255, 255)</string>
@@ -347,16 +359,16 @@
     <widget class="QPushButton" name="parasite_summary_pushButton">
      <property name="geometry">
       <rect>
-       <x>70</x>
+       <x>20</x>
        <y>10</y>
-       <width>181</width>
-       <height>91</height>
+       <width>261</width>
+       <height>41</height>
       </rect>
      </property>
      <property name="font">
       <font>
        <family>TH Niramit AS</family>
-       <pointsize>24</pointsize>
+       <pointsize>16</pointsize>
        <bold>true</bold>
       </font>
      </property>
@@ -364,17 +376,23 @@
       <string notr="true">background:rgb(170, 255, 255)</string>
      </property>
      <property name="text">
-      <string>สรุปรายการ</string>
+      <string>ประเมินรายการทดสอบ</string>
      </property>
     </widget>
     <widget class="QFrame" name="parasite_cost_frame">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>140</y>
-       <width>271</width>
-       <height>131</height>
+       <x>20</x>
+       <y>60</y>
+       <width>261</width>
+       <height>171</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>10</pointsize>
+      </font>
      </property>
      <property name="frameShape">
       <enum>QFrame::Box</enum>
@@ -389,7 +407,7 @@
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>20</y>
+        <y>10</y>
         <width>61</width>
         <height>31</height>
        </rect>
@@ -397,7 +415,7 @@
       <property name="font">
        <font>
         <family>TH Niramit AS</family>
-        <pointsize>18</pointsize>
+        <pointsize>16</pointsize>
         <bold>true</bold>
        </font>
       </property>
@@ -408,16 +426,16 @@
      <widget class="QLineEdit" name="parasite_amount_lineEdit">
       <property name="geometry">
        <rect>
-        <x>90</x>
-        <y>10</y>
-        <width>101</width>
-        <height>41</height>
+        <x>10</x>
+        <y>40</y>
+        <width>171</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>TH Niramit AS</family>
-        <pointsize>14</pointsize>
+        <family>Times New Roman</family>
+        <pointsize>10</pointsize>
         <bold>true</bold>
        </font>
       </property>
@@ -428,8 +446,8 @@
      <widget class="QLabel" name="parasite_number_amount_label">
       <property name="geometry">
        <rect>
-        <x>200</x>
-        <y>20</y>
+        <x>190</x>
+        <y>40</y>
         <width>61</width>
         <height>31</height>
        </rect>
@@ -437,7 +455,7 @@
       <property name="font">
        <font>
         <family>TH Niramit AS</family>
-        <pointsize>18</pointsize>
+        <pointsize>16</pointsize>
         <bold>true</bold>
        </font>
       </property>
@@ -457,7 +475,7 @@
       <property name="font">
        <font>
         <family>TH Niramit AS</family>
-        <pointsize>18</pointsize>
+        <pointsize>16</pointsize>
         <bold>true</bold>
        </font>
       </property>
@@ -468,16 +486,16 @@
      <widget class="QLineEdit" name="parasite_cost_lineEdit">
       <property name="geometry">
        <rect>
-        <x>90</x>
-        <y>80</y>
-        <width>101</width>
-        <height>41</height>
+        <x>10</x>
+        <y>120</y>
+        <width>171</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>TH Niramit AS</family>
-        <pointsize>14</pointsize>
+        <family>Times New Roman</family>
+        <pointsize>10</pointsize>
         <bold>true</bold>
        </font>
       </property>
@@ -488,8 +506,8 @@
      <widget class="QLabel" name="parasite_cost_unit_label">
       <property name="geometry">
        <rect>
-        <x>200</x>
-        <y>90</y>
+        <x>190</x>
+        <y>120</y>
         <width>41</width>
         <height>31</height>
        </rect>
@@ -497,7 +515,7 @@
       <property name="font">
        <font>
         <family>TH Niramit AS</family>
-        <pointsize>18</pointsize>
+        <pointsize>16</pointsize>
         <bold>true</bold>
        </font>
       </property>
@@ -509,16 +527,16 @@
     <widget class="QPushButton" name="parasite_save_data_pushButton">
      <property name="geometry">
       <rect>
-       <x>5</x>
-       <y>470</y>
-       <width>141</width>
-       <height>91</height>
+       <x>20</x>
+       <y>240</y>
+       <width>261</width>
+       <height>51</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <family>TH Niramit AS</family>
-       <pointsize>24</pointsize>
+       <family>Times New Roman</family>
+       <pointsize>10</pointsize>
        <bold>true</bold>
       </font>
      </property>
@@ -532,16 +550,16 @@
     <widget class="QPushButton" name="parasite_cancel_pushButton">
      <property name="geometry">
       <rect>
-       <x>150</x>
-       <y>470</y>
-       <width>141</width>
-       <height>91</height>
+       <x>20</x>
+       <y>300</y>
+       <width>261</width>
+       <height>51</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <family>TH Niramit AS</family>
-       <pointsize>24</pointsize>
+       <family>Times New Roman</family>
+       <pointsize>10</pointsize>
        <bold>true</bold>
       </font>
      </property>
