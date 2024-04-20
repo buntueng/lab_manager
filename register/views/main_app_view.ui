@@ -291,7 +291,7 @@
       </rect>
      </property>
      <property name="currentIndex">
-      <number>3</number>
+      <number>12</number>
      </property>
      <widget class="QWidget" name="login_page">
       <widget class="QLineEdit" name="username_lineEdit">
@@ -4332,6 +4332,7 @@
        </property>
       </widget>
      </widget>
+     <widget class="QWidget" name="lab_page"/>
     </widget>
    </widget>
    <widget class="QLabel" name="current_user_label">

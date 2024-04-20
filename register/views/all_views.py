@@ -69,6 +69,20 @@ class MainAppView(QMainWindow, Ui_main_app_view):
         self.username_lineEdit.clear()
         self.password_lineEdit.clear()
 
+    # page order follow the order in the stacked widget
+    # Index0 - login page
+    # Index1 - new customer page
+    # Index2 - new job page
+    # Index3 - specimen page
+    # Index4 - check job page
+    # Index5 - employee page
+    # Index6 - check report page
+    # Index7 - bill page
+    # Index8 - barcode page
+    # Index9 - lab report page
+    # Index10 - edit personal page
+    # Index11 - update page
+
     # ==================== login page ====================
     def show_login_page(self):
         """Show the login page."""
@@ -94,47 +108,50 @@ class MainAppView(QMainWindow, Ui_main_app_view):
 
     def show_check_job_progress_page(self):
         """Show the check job progress page."""
-        self.stackedWidget.setCurrentIndex(3)
+        self.stackedWidget.setCurrentIndex(4)
 
     # ===================== employee page ========================
     def show_employee_page(self):
         """Show the employee page."""
-        self.stackedWidget.setCurrentIndex(4)
+        self.stackedWidget.setCurrentIndex(5)
 
     # ===================== check report page =====================
     def show_check_report_page(self):
         """Show the check report page."""
-        self.stackedWidget.setCurrentIndex(5)
+        self.stackedWidget.setCurrentIndex(6)
 
     # ========================= bill page ========================
     def show_bill_page(self):
         """Show the bill page."""
-        self.stackedWidget.setCurrentIndex(6)
+        self.stackedWidget.setCurrentIndex(7)
 
     # ====================== print barcode page ========================
     def show_print_barcode_page(self):
         """Show the print barcode page."""
-        self.stackedWidget.setCurrentIndex(7)
+        self.stackedWidget.setCurrentIndex(8)
     # ====================== lab report page =========================
 
     def show_lab_order_report_page(self):
         """Show the lab report page."""
-        self.stackedWidget.setCurrentIndex(8)
+        self.stackedWidget.setCurrentIndex(9)
 
     # ====================== personal information page ====================
     def show_personal_information_page(self):
         """Show the personal information page."""
-        self.stackedWidget.setCurrentIndex(9)
+        self.stackedWidget.setCurrentIndex(10)
     # ======================= specimen page ========================
 
     def show_specimen_page(self):
         """Show the specimen page."""
         self.stackedWidget.setCurrentIndex(3)
+        self.clear_specimen_information()
+        self.specimen_page_save_pushButton.setEnabled(True)
+        self.disable_lab_buttons()
     # ==================== update page ====================
 
     def show_update_page(self):
         """Show the update page."""
-        self.stackedWidget.setCurrentIndex(10)
+        self.stackedWidget.setCurrentIndex(11)
 
     def show_current_user_information(self, user_info):
         """Show the current user information."""
@@ -220,6 +237,67 @@ class MainAppView(QMainWindow, Ui_main_app_view):
     def show_add_data_specimen_page(self):
         """Show the add data specimen page."""
         pass
+
+    def clear_specimen_information(self):
+        """Clear specimen information."""
+        self.specimen_page_name_animal_entry.clear()
+        self.specimen_page_number_id_opd_entry.clear()
+        self.specimen_page_year_animal_entry.clear()
+        self.specimen_page_month_animal_entry.clear()
+        self.specimen_page_day_animal_entry.clear()
+        self.another_type_animal_entry.clear()
+
+        self.swine_radioButton.setChecked(True)
+        self.specimen_page_normal_radioButton.setChecked(True)
+        self.specimen_page_chill_specimen_radioButton.setChecked(True)
+
+        self.specimen_page_record_heal_textEdit.clear()
+
+    def enable_lab_buttons(self):
+        """Enable lab buttons."""
+        self.specimen_page_Fungal_pushButton.setEnabled(True)
+        self.specimen_page_Serology_pushButton.setEnabled(True)
+        self.specimen_page_water_quality_pushButton.setEnabled(True)
+        self.specimen_page_Immunohistochemistry_pushButton.setEnabled(True)
+        self.specimen_page_Necropsy_pushButton.setEnabled(True)
+        self.specimen_page_histopathology_research_recut_pushButton.setEnabled(
+            True)
+
+        self.specimen_page_Microbiology_pushButton.setEnabled(True)
+        self.specimen_page_Parasitology_pushButton.setEnabled(True)
+        self.specimen_page_molecular_pushButton.setEnabled(True)
+        self.specimen_page_surgical_pushButton.setEnabled(True)
+        self.specimen_page_cytology_pushButton.setEnabled(True)
+        self.specimen_page_histopathology_research_pushButton.setEnabled(True)
+
+        self.virology_pushButton.setEnabled(True)
+        self.specimen_page_feed_analysis_pushButton.setEnabled(True)
+        self.specimen_page_hematology_pushButton.setEnabled(True)
+        self.specimen_page_histopatology_pushButton.setEnabled(True)
+        self.specimen_page_food_safty_pushButton.setEnabled(True)
+
+    def disable_lab_buttons(self):
+        """Disable lab buttons."""
+        self.specimen_page_Fungal_pushButton.setEnabled(False)
+        self.specimen_page_Serology_pushButton.setEnabled(False)
+        self.specimen_page_water_quality_pushButton.setEnabled(False)
+        self.specimen_page_Immunohistochemistry_pushButton.setEnabled(False)
+        self.specimen_page_Necropsy_pushButton.setEnabled(False)
+        self.specimen_page_histopathology_research_recut_pushButton.setEnabled(
+            False)
+
+        self.specimen_page_Microbiology_pushButton.setEnabled(False)
+        self.specimen_page_Parasitology_pushButton.setEnabled(False)
+        self.specimen_page_molecular_pushButton.setEnabled(False)
+        self.specimen_page_surgical_pushButton.setEnabled(False)
+        self.specimen_page_cytology_pushButton.setEnabled(False)
+        self.specimen_page_histopathology_research_pushButton.setEnabled(False)
+
+        self.virology_pushButton.setEnabled(False)
+        self.specimen_page_feed_analysis_pushButton.setEnabled(False)
+        self.specimen_page_hematology_pushButton.setEnabled(False)
+        self.specimen_page_histopatology_pushButton.setEnabled(False)
+        self.specimen_page_food_safty_pushButton.setEnabled(False)
 
 
 if __name__ == '__main__':

@@ -176,6 +176,12 @@ class Main_Controller:
         if self.model.save_specimen_information(specimen_data):
             QMessageBox.information(self.view, "Success",
                                     "บันทึกข้อมูลตัวอย่างเรียบร้อย")
+            # disable save button
+            self.view.specimen_page_save_pushButton.setEnabled(False)
+            # clear all entry
+            self.view.clear_specimen_information()
+            self.view.enable_lab_buttons()
+            # ==================== enable lab buttons ====================
         else:
             QMessageBox.critical(self.view, "Error",
                                  "ไม่สามารถบันทึกข้อมูลตัวอย่างได้")

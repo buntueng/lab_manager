@@ -1129,6 +1129,9 @@ class Ui_main_app_view(object):
         self.label_13.setObjectName(u"label_13")
         self.label_13.setGeometry(QRect(10, 10, 71, 16))
         self.stackedWidget.addWidget(self.update_page)
+        self.lab_page = QWidget()
+        self.lab_page.setObjectName(u"lab_page")
+        self.stackedWidget.addWidget(self.lab_page)
         self.current_user_label = QLabel(self.centralwidget)
         self.current_user_label.setObjectName(u"current_user_label")
         self.current_user_label.setGeometry(QRect(1098, 10, 291, 20))
@@ -1141,7 +1144,7 @@ class Ui_main_app_view(object):
 
         self.retranslateUi(main_app_view)
 
-        self.stackedWidget.setCurrentIndex(3)
+        self.stackedWidget.setCurrentIndex(12)
 
 
         QMetaObject.connectSlotsByName(main_app_view)
