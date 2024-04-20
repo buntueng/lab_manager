@@ -5,8 +5,6 @@ import time
 from PySide6.QtWidgets import QMessageBox
 from models.barcode_generator import BarcodeGenerator
 
-from views.lab_forms import Molecular_Biology_Form, Bacterie_Biology_Form, Parasite_Biology_Form
-
 
 class Main_Controller:
     """Main Controller class"""
@@ -60,6 +58,7 @@ class Main_Controller:
 
         self.bind_event_in_new_customer_page()
         self.bind_event_in_case_register_page()
+        self.bind_event_in_specimen_page()
 
     def bind_event_in_new_customer_page(self):
         """Bind event in new customer page"""
@@ -86,82 +85,169 @@ class Main_Controller:
             self.register_new_case)
 
         self.view.new_case_add_data_specimen_button.clicked.connect(
-            self.add_data_specimen)
+            self.view.show_specimen_page)
 
-    def add_data_specimen(self):
-        """add data specimen to the database"""
-        # open new ui to add data specimen
-        self.molecular_biology_form = Molecular_Biology_Form()
-        self.bacterie_biology_form = Bacterie_Biology_Form()
-        self.parasite_biology_form = Parasite_Biology_Form()
+    def bind_event_in_specimen_page(self):
+        """Bind event in specimen page"""
+        self.view.specimen_page_save_pushButton.clicked.connect(
+            self.save_specimen_information)
+        self.view.specimen_page_back_pushButton.clicked.connect(
+            self.view.backto_job_register_page)
 
-        self.molecular_biology_form.show()
-        self.bacterie_biology_form.hide()
-        self.parasite_biology_form.hide()
+    def save_specimen_information(self):
+        """Save specimen information
+        """
+        # get data from the view
+        specimen_data = []
+        specimen_data.append(int(self.view.new_case_number_job_entry.text()))
+        specimen_data.append(
+            self.view.specimen_page_name_animal_entry.text())
+        specimen_data.append(
+            self.view.specimen_page_number_id_opd_entry.text())
+        specimen_data.append(
+            self.view.specimen_page_sex_animal_comboBox.currentText())
+        specimen_data.append(self.view.specimen_page_year_animal_entry.text())
+        specimen_data.append(self.view.specimen_page_month_animal_entry.text())
+        specimen_data.append(self.view.specimen_page_day_animal_entry.text())
+        specimen_data.append(
+            self.view.specimen_page_cause_of_death_comboBox.currentText())
+        species = ""
+        if self.view.swine_radioButton.isChecked():
+            species = self.view.swine_radioButton.text()
+        elif self.view.avian_radioButton.isChecked():
+            species = self.view.avian_radioButton.text()
+        elif self.view.bovine_radioButton.isChecked():
+            species = self.view.bovine_radioButton.text()
+        elif self.view.equine_radioButton.isChecked():
+            species = self.view.equine_radioButton.text()
+        elif self.view.canine_radioButton.isChecked():
+            species = self.view.canine_radioButton.text()
+        elif self.view.feline_radioButton.isChecked():
+            species = self.view.feline_radioButton.text()
+        elif self.view.elephant_radioButton.isChecked():
+            species = self.view.elephant_radioButton.text()
+        elif self.view.another_radioButton.isChecked():
+            species = self.view.another_type_animal_entry.text()
+        elif self.view.unknow_radioButton.isChecked():
+            species = self.view.unknow_radioButton.text()
+        else:
+            species = "Unknow"
+        specimen_data.append(species)
+        specimen_data.append(self.view.specimen_page_breed_entry.text())
+
+        sample_type = ""
+        if self.view.specimen_page_most_argent_radioButton.isChecked():
+            sample_type = self.view.specimen_page_most_argent_radioButton.text()
+        elif self.view.specimen_page_normal_radioButton.isChecked():
+            sample_type = self.view.specimen_page_normal_radioButton.text()
+        specimen_data.append(sample_type)
+
+        specimen_data.append(
+            self.view.specimen_page_weight_animal_entry.text())
+        specimen_data.append(
+            self.view.specimen_page_day_of_death_dateTime.text())
+        specimen_data.append(
+            self.view.specimen_page_day_keep_sample_dateTime.text())
+
+        keep_method = ""
+        if self.view.specimen_page_chill_specimen_radioButton.isChecked():
+            keep_method = self.view.specimen_page_chill_specimen_radioButton.text()
+        elif self.view.specimen_page_freeze_specimen_radioButton.isChecked():
+            keep_method = self.view.specimen_page_freeze_specimen_radioButton.text()
+        elif self.view.specimen_page_room_temp_specimen_radioButton.isChecked():
+            keep_method = self.view.specimen_page_room_temp_specimen_radioButton.text()
+        else:
+            keep_method = "Unknow"
+        specimen_data.append(keep_method)
+
+        sample_test_speed = ""
+        if self.view.specimen_page_normal_radioButton.isChecked():
+            sample_test_speed = self.view.specimen_page_normal_radioButton.text()
+        elif self.view.specimen_page_most_argent_radioButton.isChecked():
+            sample_test_speed = self.view.specimen_page_most_argent_radioButton.text()
+        else:
+            sample_test_speed = "Unknow"
+        specimen_data.append(sample_test_speed)
+
+        specimen_data.append(
+            self.view.specimen_page_record_heal_textEdit.toPlainText())
+
+        specimen_data.append(int(self.user_login_info[0][1]))
+        if self.model.save_specimen_information(specimen_data):
+            QMessageBox.information(self.view, "Success",
+                                    "บันทึกข้อมูลตัวอย่างเรียบร้อย")
+        else:
+            QMessageBox.critical(self.view, "Error",
+                                 "ไม่สามารถบันทึกข้อมูลตัวอย่างได้")
 
     def register_new_case(self):
         """register new case to the database"""
         skip = False
-        # if project name is empty, show warning message to confirm
-        if self.view.new_case_name_project_entry.text() == "":
-            reply = QMessageBox.warning(self.view, "Warning",
-                                        "ต้องการดำเนินการต่อโดยไม่บันทึกชื่อโครงการหรือไม่?",
-                                        QMessageBox.Yes | QMessageBox.No)
-            if reply == QMessageBox.No:
-                self.view.new_case_name_project_entry.setFocus()
-                skip = True
-        if not skip:
-            # disable all add button
-            self.view.new_case_select_sender_button.setEnabled(False)
-            self.view.new_case_select_owner_button.setEnabled(False)
-            self.view.new_case_anonymous_owner_button.setEnabled(False)
-            self.view.new_case_save_button.setEnabled(False)
+        # check if case number is empty
+        if self.view.new_case_number_job_entry.text() == "":
+            QMessageBox.critical(self.view, "Error",
+                                 "กรุณาบันทึกข้อมูลลูกค้าก่อน")
+        else:
+            # if project name is empty, show warning message to confirm
+            if self.view.new_case_name_project_entry.text() == "":
+                reply = QMessageBox.warning(self.view, "Warning",
+                                            "ต้องการดำเนินการต่อโดยไม่บันทึกชื่อโครงการหรือไม่?",
+                                            QMessageBox.Yes | QMessageBox.No)
+                if reply == QMessageBox.No:
+                    self.view.new_case_name_project_entry.setFocus()
+                    skip = True
+            if not skip:
+                # disable all add button
+                self.view.new_case_select_sender_button.setEnabled(False)
+                self.view.new_case_select_owner_button.setEnabled(False)
+                self.view.new_case_anonymous_owner_button.setEnabled(False)
+                self.view.new_case_save_button.setEnabled(False)
 
-            # get data from the view
-            case_data = []
-            case_data.append(self.view.new_case_number_job_entry.text())
-            case_data.append(self.view.new_case_name_sender_entry.text())
-            case_data.append(
-                self.view.new_case_surename_sender_entry.text())
-            case_data.append(self.view.new_case_tax_sender_entry.text())
-            case_data.append(self.view.new_case_name_owner_entry.text())
-            case_data.append(
-                self.view.new_case_surename_owner_entry.text())
-            case_data.append(self.view.new_case_tax_owner_entry.text())
-            case_data.append(self.view.new_case_name_project_entry.text())
-            if self.model.save_new_case_register(case_data, self.user_login_info[0][1]):
-                QMessageBox.information(self.view, "Success",
-                                        "บันทึกข้อมูลเรียบร้อย")
-                # clear data in search tree view
-                self.view.new_case_search_tree_view.clear()
-                self.view.new_case_search_name_entry.setText("")
+                # get data from the view
+                case_data = []
+                case_data.append(self.view.new_case_number_job_entry.text())
+                case_data.append(self.view.new_case_name_sender_entry.text())
+                case_data.append(
+                    self.view.new_case_surename_sender_entry.text())
+                case_data.append(self.view.new_case_tax_sender_entry.text())
+                case_data.append(self.view.new_case_name_owner_entry.text())
+                case_data.append(
+                    self.view.new_case_surename_owner_entry.text())
+                case_data.append(self.view.new_case_tax_owner_entry.text())
+                case_data.append(self.view.new_case_name_project_entry.text())
+                if self.model.save_new_case_register(case_data, self.user_login_info[0][1]):
+                    QMessageBox.information(self.view, "Success",
+                                            "บันทึกข้อมูลเรียบร้อย")
+                    # clear data in search tree view
+                    self.view.new_case_search_tree_view.clear()
+                    self.view.new_case_search_name_entry.setText("")
 
-                # disable entry name and tree view
-                self.view.new_case_search_name_entry.setEnabled(False)
-                self.view.new_case_search_tree_view.setEnabled(False)
+                    # disable entry name and tree view
+                    self.view.new_case_search_name_entry.setEnabled(False)
+                    self.view.new_case_search_tree_view.setEnabled(False)
 
-                # disable case number entry
-                self.view.new_case_number_job_entry.setEnabled(False)
+                    # disable case number entry
+                    self.view.new_case_number_job_entry.setEnabled(False)
 
-                # disable search button
-                self.view.new_case_search_button.setEnabled(False)
+                    # disable search button
+                    self.view.new_case_search_button.setEnabled(False)
 
-                # disable sender and owner information
-                self.view.new_case_name_sender_entry.setEnabled(False)
-                self.view.new_case_surename_sender_entry.setEnabled(False)
-                self.view.new_case_tax_sender_entry.setEnabled(False)
-                self.view.new_case_name_owner_entry.setEnabled(False)
-                self.view.new_case_surename_owner_entry.setEnabled(False)
-                self.view.new_case_tax_owner_entry.setEnabled(False)
-                self.view.new_case_name_project_entry.setEnabled(False)
+                    # disable sender and owner information
+                    self.view.new_case_name_sender_entry.setEnabled(False)
+                    self.view.new_case_surename_sender_entry.setEnabled(False)
+                    self.view.new_case_tax_sender_entry.setEnabled(False)
+                    self.view.new_case_name_owner_entry.setEnabled(False)
+                    self.view.new_case_surename_owner_entry.setEnabled(False)
+                    self.view.new_case_tax_owner_entry.setEnabled(False)
+                    self.view.new_case_name_project_entry.setEnabled(False)
 
-                # enable add lab button
-                self.view.new_case_add_data_specimen_button.setEnabled(
-                    True)
-                self.view.new_case_delete_data_specimen_button.setEnabled(
-                    True)
-                self.view.new_case_print_sticker_button.setEnabled(True)
-                self.view.new_case_print_lab_report_button.setEnabled(True)
+                    # enable add lab button
+                    self.view.new_case_add_data_specimen_button.setEnabled(
+                        True)
+                    self.view.new_case_delete_data_specimen_button.setEnabled(
+                        True)
+                    self.view.new_case_print_sticker_button.setEnabled(True)
+                    self.view.new_case_print_lab_report_button.setEnabled(True)
 
     def clear_new_case_owner_info(self) -> None:
         """Clear owner information in the case register page"""

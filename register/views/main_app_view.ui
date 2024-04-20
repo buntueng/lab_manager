@@ -291,7 +291,7 @@
       </rect>
      </property>
      <property name="currentIndex">
-      <number>2</number>
+      <number>3</number>
      </property>
      <widget class="QWidget" name="login_page">
       <widget class="QLineEdit" name="username_lineEdit">
@@ -1641,6 +1641,1610 @@
        </property>
       </widget>
      </widget>
+     <widget class="QWidget" name="specimen_page">
+      <widget class="QLabel" name="specimen_page_label">
+       <property name="geometry">
+        <rect>
+         <x>1078</x>
+         <y>10</y>
+         <width>61</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Specimen</string>
+       </property>
+      </widget>
+      <widget class="QFrame" name="info_sample_specimen_frame1">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>50</y>
+         <width>1031</width>
+         <height>711</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background:qlineargradient(spread:reflect, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(197, 255, 225, 255), stop:0.55 rgba(224, 235, 188, 255), stop:0.98 rgba(204, 200, 127, 255), stop:1 rgba(0, 0, 0, 0))</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Box</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+       <property name="lineWidth">
+        <number>2</number>
+       </property>
+       <widget class="QFrame" name="info_sample_specimen_frame2">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>1011</width>
+          <height>691</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>16</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background:rgb(239, 239, 239)</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Box</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Plain</enum>
+        </property>
+        <property name="lineWidth">
+         <number>2</number>
+        </property>
+        <widget class="QLabel" name="name_animal_label">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>20</y>
+           <width>61</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>TH Niramit AS</family>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>ชื่อสัตว์</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="number_id_opd_label">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>60</y>
+           <width>151</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>TH Niramit AS</family>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>หมายเลข (ID/OPD)</string>
+         </property>
+        </widget>
+        <widget class="QFrame" name="animal_type_frame">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>90</y>
+           <width>841</width>
+           <height>81</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>16</pointsize>
+          </font>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Box</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Plain</enum>
+         </property>
+         <widget class="QLabel" name="animal_type_label">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>10</y>
+            <width>71</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>TH Niramit AS</family>
+            <pointsize>16</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>ชนิดสัตว์</string>
+          </property>
+         </widget>
+         <widget class="QRadioButton" name="swine_radioButton">
+          <property name="geometry">
+           <rect>
+            <x>100</x>
+            <y>7</y>
+            <width>111</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>TH Niramit AS</family>
+            <pointsize>16</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>สุกร(Swine)</string>
+          </property>
+         </widget>
+         <widget class="QRadioButton" name="avian_radioButton">
+          <property name="geometry">
+           <rect>
+            <x>240</x>
+            <y>7</y>
+            <width>141</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>TH Niramit AS</family>
+            <pointsize>16</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>สัตว์ปีก(Avian)</string>
+          </property>
+         </widget>
+         <widget class="QRadioButton" name="bovine_radioButton">
+          <property name="geometry">
+           <rect>
+            <x>410</x>
+            <y>7</y>
+            <width>141</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>TH Niramit AS</family>
+            <pointsize>16</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>โค(Bovine)</string>
+          </property>
+         </widget>
+         <widget class="QRadioButton" name="equine_radioButton">
+          <property name="geometry">
+           <rect>
+            <x>550</x>
+            <y>7</y>
+            <width>141</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>TH Niramit AS</family>
+            <pointsize>16</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>ม้า(Equine)</string>
+          </property>
+         </widget>
+         <widget class="QRadioButton" name="canine_radioButton">
+          <property name="geometry">
+           <rect>
+            <x>690</x>
+            <y>7</y>
+            <width>141</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>TH Niramit AS</family>
+            <pointsize>16</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>สุนัข(Canine)</string>
+          </property>
+         </widget>
+         <widget class="QRadioButton" name="feline_radioButton">
+          <property name="geometry">
+           <rect>
+            <x>240</x>
+            <y>40</y>
+            <width>131</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>TH Niramit AS</family>
+            <pointsize>16</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>แมว(Feline)</string>
+          </property>
+         </widget>
+         <widget class="QRadioButton" name="elephant_radioButton">
+          <property name="geometry">
+           <rect>
+            <x>100</x>
+            <y>40</y>
+            <width>121</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>TH Niramit AS</family>
+            <pointsize>16</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>ช้าง(Elephant)</string>
+          </property>
+         </widget>
+         <widget class="QRadioButton" name="another_radioButton">
+          <property name="geometry">
+           <rect>
+            <x>410</x>
+            <y>40</y>
+            <width>141</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>TH Niramit AS</family>
+            <pointsize>16</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>อื่นๆ</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="another_type_animal_entry">
+          <property name="geometry">
+           <rect>
+            <x>450</x>
+            <y>40</y>
+            <width>211</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>TH Niramit AS</family>
+            <pointsize>16</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background:rgb(255, 255, 255)</string>
+          </property>
+         </widget>
+         <widget class="QRadioButton" name="unknow_radioButton">
+          <property name="geometry">
+           <rect>
+            <x>690</x>
+            <y>40</y>
+            <width>141</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>TH Niramit AS</family>
+            <pointsize>16</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>ไม่ทราบชนิด</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QLabel" name="breed_label">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>180</y>
+           <width>101</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>TH Niramit AS</family>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>พันธุ์ (Breed)</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="day_of_death_label">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>220</y>
+           <width>101</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>TH Niramit AS</family>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>วันที่เสียชีวิต</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="day_keep_sample_label">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>260</y>
+           <width>131</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>TH Niramit AS</family>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>วันที่เก็บตัวอย่าง</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="record_heal_label">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>300</y>
+           <width>131</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>TH Niramit AS</family>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>ประวัติการรักษา</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="specimen_page_name_animal_entry">
+         <property name="geometry">
+          <rect>
+           <x>160</x>
+           <y>10</y>
+           <width>301</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>TH Niramit AS</family>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:rgb(255, 255, 255)</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="specimen_page_number_id_opd_entry">
+         <property name="geometry">
+          <rect>
+           <x>160</x>
+           <y>50</y>
+           <width>301</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>TH Niramit AS</family>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:rgb(255, 255, 255)</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="specimen_page_breed_entry">
+         <property name="geometry">
+          <rect>
+           <x>160</x>
+           <y>180</y>
+           <width>301</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>TH Niramit AS</family>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:rgb(255, 255, 255)</string>
+         </property>
+        </widget>
+        <widget class="QDateTimeEdit" name="specimen_page_day_of_death_dateTime">
+         <property name="geometry">
+          <rect>
+           <x>160</x>
+           <y>220</y>
+           <width>171</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Times New Roman</family>
+           <pointsize>10</pointsize>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="layoutDirection">
+          <enum>Qt::LeftToRight</enum>
+         </property>
+         <property name="autoFillBackground">
+          <bool>false</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:rgb(192, 207, 255)</string>
+         </property>
+         <property name="locale">
+          <locale language="Thai" country="Thailand"/>
+         </property>
+         <property name="wrapping">
+          <bool>false</bool>
+         </property>
+         <property name="readOnly">
+          <bool>false</bool>
+         </property>
+         <property name="buttonSymbols">
+          <enum>QAbstractSpinBox::NoButtons</enum>
+         </property>
+         <property name="maximumTime">
+          <time>
+           <hour>23</hour>
+           <minute>59</minute>
+           <second>59</second>
+          </time>
+         </property>
+         <property name="currentSection">
+          <enum>QDateTimeEdit::DaySection</enum>
+         </property>
+         <property name="displayFormat">
+          <string>d/M/yyyy h:mm </string>
+         </property>
+         <property name="calendarPopup">
+          <bool>true</bool>
+         </property>
+         <property name="currentSectionIndex">
+          <number>0</number>
+         </property>
+         <property name="timeSpec">
+          <enum>Qt::LocalTime</enum>
+         </property>
+        </widget>
+        <widget class="QDateTimeEdit" name="specimen_page_day_keep_sample_dateTime">
+         <property name="geometry">
+          <rect>
+           <x>160</x>
+           <y>260</y>
+           <width>171</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Times New Roman</family>
+           <pointsize>10</pointsize>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="layoutDirection">
+          <enum>Qt::LeftToRight</enum>
+         </property>
+         <property name="autoFillBackground">
+          <bool>false</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:rgb(192, 207, 255)</string>
+         </property>
+         <property name="locale">
+          <locale language="Thai" country="Thailand"/>
+         </property>
+         <property name="wrapping">
+          <bool>false</bool>
+         </property>
+         <property name="readOnly">
+          <bool>false</bool>
+         </property>
+         <property name="buttonSymbols">
+          <enum>QAbstractSpinBox::NoButtons</enum>
+         </property>
+         <property name="maximumTime">
+          <time>
+           <hour>23</hour>
+           <minute>59</minute>
+           <second>59</second>
+          </time>
+         </property>
+         <property name="currentSection">
+          <enum>QDateTimeEdit::DaySection</enum>
+         </property>
+         <property name="displayFormat">
+          <string>d/M/yyyy h:mm </string>
+         </property>
+         <property name="calendarPopup">
+          <bool>true</bool>
+         </property>
+         <property name="currentSectionIndex">
+          <number>0</number>
+         </property>
+         <property name="timeSpec">
+          <enum>Qt::LocalTime</enum>
+         </property>
+        </widget>
+        <widget class="QTextEdit" name="specimen_page_record_heal_textEdit">
+         <property name="geometry">
+          <rect>
+           <x>160</x>
+           <y>300</y>
+           <width>681</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>TH Niramit AS</family>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:rgb(255, 255, 255)</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="sex_animal_label">
+         <property name="geometry">
+          <rect>
+           <x>480</x>
+           <y>10</y>
+           <width>81</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>TH Niramit AS</family>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>เพศ (SEX)</string>
+         </property>
+        </widget>
+        <widget class="QComboBox" name="specimen_page_sex_animal_comboBox">
+         <property name="geometry">
+          <rect>
+           <x>570</x>
+           <y>10</y>
+           <width>141</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>TH Niramit AS</family>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:rgb(255, 255, 255)</string>
+         </property>
+         <item>
+          <property name="text">
+           <string>ผู้ (Male)</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>เมีย (Female)</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>ไม่ทราบ (Unknow)</string>
+          </property>
+         </item>
+        </widget>
+        <widget class="QLabel" name="cause_of_death_label">
+         <property name="geometry">
+          <rect>
+           <x>720</x>
+           <y>10</y>
+           <width>141</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>TH Niramit AS</family>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>สาเหตุการเสียชีวิต</string>
+         </property>
+        </widget>
+        <widget class="QComboBox" name="specimen_page_cause_of_death_comboBox">
+         <property name="geometry">
+          <rect>
+           <x>870</x>
+           <y>10</y>
+           <width>121</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>TH Niramit AS</family>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:rgb(255, 255, 255)</string>
+         </property>
+         <item>
+          <property name="text">
+           <string>ยังมีชีวิต (Alive)</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>โรคชรา (Senile)</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>ติดเชื้อ (Infectious Disease)</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>ไม่ทราบสาเหตุ (Unknow)</string>
+          </property>
+         </item>
+        </widget>
+        <widget class="QLabel" name="age_animal_label">
+         <property name="geometry">
+          <rect>
+           <x>480</x>
+           <y>50</y>
+           <width>81</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>TH Niramit AS</family>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>อายุ (Age)</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="specimen_page_year_animal_entry">
+         <property name="geometry">
+          <rect>
+           <x>570</x>
+           <y>50</y>
+           <width>61</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>TH Niramit AS</family>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:rgb(255, 255, 255)</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="year_animal_label">
+         <property name="geometry">
+          <rect>
+           <x>640</x>
+           <y>50</y>
+           <width>21</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>TH Niramit AS</family>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>ปี</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="month_animal_label">
+         <property name="geometry">
+          <rect>
+           <x>730</x>
+           <y>50</y>
+           <width>41</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>TH Niramit AS</family>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>เดือน</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="specimen_page_month_animal_entry">
+         <property name="geometry">
+          <rect>
+           <x>660</x>
+           <y>50</y>
+           <width>61</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>TH Niramit AS</family>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:rgb(255, 255, 255)</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="day_animal_label">
+         <property name="geometry">
+          <rect>
+           <x>840</x>
+           <y>50</y>
+           <width>21</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>TH Niramit AS</family>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>วัน</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="specimen_page_day_animal_entry">
+         <property name="geometry">
+          <rect>
+           <x>770</x>
+           <y>50</y>
+           <width>61</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>TH Niramit AS</family>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:rgb(255, 255, 255)</string>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="specimen_page_unknow_age_animal_checkbox">
+         <property name="geometry">
+          <rect>
+           <x>890</x>
+           <y>60</y>
+           <width>101</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>TH Niramit AS</family>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>ไม่ทราบอายุ</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="specimen_page_weight_animal_entry">
+         <property name="geometry">
+          <rect>
+           <x>540</x>
+           <y>180</y>
+           <width>121</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>TH Niramit AS</family>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:rgb(255, 255, 255)</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="weight_animal_label">
+         <property name="geometry">
+          <rect>
+           <x>470</x>
+           <y>180</y>
+           <width>61</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>TH Niramit AS</family>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>น้ำหนัก</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="kilogram_animal_label">
+         <property name="geometry">
+          <rect>
+           <x>700</x>
+           <y>180</y>
+           <width>61</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>TH Niramit AS</family>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>กิโลกรัม</string>
+         </property>
+        </widget>
+        <widget class="QFrame" name="keeping_specimen_frame">
+         <property name="geometry">
+          <rect>
+           <x>350</x>
+           <y>220</y>
+           <width>491</width>
+           <height>71</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>16</pointsize>
+          </font>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Box</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Plain</enum>
+         </property>
+         <widget class="QLabel" name="keeping_specimen_label">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>0</y>
+            <width>161</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>TH Niramit AS</family>
+            <pointsize>16</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>การเก็บรักษาตัวอย่าง</string>
+          </property>
+         </widget>
+         <widget class="QRadioButton" name="specimen_page_chill_specimen_radioButton">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>30</y>
+            <width>111</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>TH Niramit AS</family>
+            <pointsize>16</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>แช่เย็น (Chill)</string>
+          </property>
+         </widget>
+         <widget class="QRadioButton" name="specimen_page_freeze_specimen_radioButton">
+          <property name="geometry">
+           <rect>
+            <x>130</x>
+            <y>30</y>
+            <width>141</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>TH Niramit AS</family>
+            <pointsize>16</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>แช่แข็ง (Freeze)</string>
+          </property>
+         </widget>
+         <widget class="QRadioButton" name="specimen_page_room_temp_specimen_radioButton">
+          <property name="geometry">
+           <rect>
+            <x>270</x>
+            <y>30</y>
+            <width>201</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>TH Niramit AS</family>
+            <pointsize>16</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>ไม่แช่ (Room Temperature)</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QFrame" name="speed_frame">
+         <property name="geometry">
+          <rect>
+           <x>860</x>
+           <y>90</y>
+           <width>131</width>
+           <height>111</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>16</pointsize>
+          </font>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Box</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Plain</enum>
+         </property>
+         <widget class="QLabel" name="speed_label">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>10</y>
+            <width>101</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>TH Niramit AS</family>
+            <pointsize>16</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>สถานะตัวอย่าง</string>
+          </property>
+         </widget>
+         <widget class="QRadioButton" name="specimen_page_normal_radioButton">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>40</y>
+            <width>101</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>TH Niramit AS</family>
+            <pointsize>16</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>ปกติ</string>
+          </property>
+         </widget>
+         <widget class="QRadioButton" name="specimen_page_most_argent_radioButton">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>70</y>
+            <width>101</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>TH Niramit AS</family>
+            <pointsize>16</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>ด่วนที่สุด</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QPushButton" name="specimen_page_save_pushButton">
+         <property name="geometry">
+          <rect>
+           <x>860</x>
+           <y>220</y>
+           <width>131</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>TH Niramit AS</family>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:rgb(255, 255, 255)</string>
+         </property>
+         <property name="text">
+          <string>บันทึก</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="specimen_page_back_pushButton">
+         <property name="geometry">
+          <rect>
+           <x>860</x>
+           <y>300</y>
+           <width>131</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>TH Niramit AS</family>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:rgb(255, 255, 255)</string>
+         </property>
+         <property name="text">
+          <string>ย้อนกลับ</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="specimen_page_food_safty_pushButton">
+         <property name="geometry">
+          <rect>
+           <x>670</x>
+           <y>590</y>
+           <width>321</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>TH Niramit AS</family>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:rgb(255, 255, 255)</string>
+         </property>
+         <property name="text">
+          <string>อาหารปลอดภัย (Food safty)</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="specimen_page_Parasitology_pushButton">
+         <property name="geometry">
+          <rect>
+           <x>340</x>
+           <y>440</y>
+           <width>321</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>TH Niramit AS</family>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:rgb(255, 255, 255)</string>
+         </property>
+         <property name="text">
+          <string>ปรสิตวิทยา (Parasitology)</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="specimen_page_histopatology_pushButton">
+         <property name="geometry">
+          <rect>
+           <x>670</x>
+           <y>540</y>
+           <width>321</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>TH Niramit AS</family>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:rgb(255, 255, 255)</string>
+         </property>
+         <property name="text">
+          <string>พยาธิวิทยา (Histopathology)</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="sample_lab_label">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>355</y>
+           <width>211</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>TH Niramit AS</family>
+           <pointsize>14</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>ห้องปฏิบัติการที่ต้องการส่งตรวจ</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="specimen_page_cytology_pushButton">
+         <property name="geometry">
+          <rect>
+           <x>340</x>
+           <y>590</y>
+           <width>321</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>TH Niramit AS</family>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:rgb(255, 255, 255)</string>
+         </property>
+         <property name="text">
+          <string>พยาธิวิทยา (Cytology)</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="specimen_page_surgical_pushButton">
+         <property name="geometry">
+          <rect>
+           <x>340</x>
+           <y>540</y>
+           <width>321</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>TH Niramit AS</family>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:rgb(255, 255, 255)</string>
+         </property>
+         <property name="text">
+          <string>พยาธิวิทยา (Surgical biopsy)</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="virology_pushButton">
+         <property name="geometry">
+          <rect>
+           <x>670</x>
+           <y>390</y>
+           <width>321</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>TH Niramit AS</family>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:rgb(255, 255, 255)</string>
+         </property>
+         <property name="text">
+          <string>ไวรัสวิทยา (Virology)</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="specimen_page_hematology_pushButton">
+         <property name="geometry">
+          <rect>
+           <x>670</x>
+           <y>490</y>
+           <width>321</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>TH Niramit AS</family>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:rgb(255, 255, 255)</string>
+         </property>
+         <property name="text">
+          <string>โลหิตวิทยา(Hematology)</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="specimen_page_Microbiology_pushButton">
+         <property name="geometry">
+          <rect>
+           <x>340</x>
+           <y>390</y>
+           <width>321</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>TH Niramit AS</family>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:rgb(255, 255, 255)</string>
+         </property>
+         <property name="text">
+          <string>จุลชีววิทยา (Microbiology)</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="specimen_page_histopathology_research_pushButton">
+         <property name="geometry">
+          <rect>
+           <x>340</x>
+           <y>640</y>
+           <width>321</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>TH Niramit AS</family>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:rgb(255, 255, 255)</string>
+         </property>
+         <property name="text">
+          <string>พยาธิวิทยา (Histopathology Research)</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="specimen_page_Serology_pushButton">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>440</y>
+           <width>321</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>TH Niramit AS</family>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:rgb(255, 255, 255)</string>
+         </property>
+         <property name="text">
+          <string>ซีรัมวิทยา (Serology)</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="specimen_page_Immunohistochemistry_pushButton">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>540</y>
+           <width>321</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>TH Niramit AS</family>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:rgb(255, 255, 255)</string>
+         </property>
+         <property name="text">
+          <string>พยาธิวิทยา (Immunohistochemistry)</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="specimen_page_molecular_pushButton">
+         <property name="geometry">
+          <rect>
+           <x>340</x>
+           <y>490</y>
+           <width>321</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>TH Niramit AS</family>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:rgb(255, 255, 255)</string>
+         </property>
+         <property name="text">
+          <string>อณูชีววิทยา (Molecular biology)</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="specimen_page_feed_analysis_pushButton">
+         <property name="geometry">
+          <rect>
+           <x>670</x>
+           <y>440</y>
+           <width>321</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>TH Niramit AS</family>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:rgb(255, 255, 255)</string>
+         </property>
+         <property name="text">
+          <string>เคมีวิเคราะห์ (Feed analysis)</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="specimen_page_Necropsy_pushButton">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>590</y>
+           <width>321</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>TH Niramit AS</family>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:rgb(255, 255, 255)</string>
+         </property>
+         <property name="text">
+          <string>พยาธิวิทยา (Necropsy)</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="specimen_page_histopathology_research_recut_pushButton">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>640</y>
+           <width>321</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>TH Niramit AS</family>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:rgb(255, 255, 255)</string>
+         </property>
+         <property name="text">
+          <string>พยาธิวิทยา (Histopathology Research Recut)</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="specimen_page_Fungal_pushButton">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>390</y>
+           <width>321</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>TH Niramit AS</family>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:rgb(255, 255, 255)</string>
+         </property>
+         <property name="text">
+          <string>ราวิทยา (Fungal)</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="specimen_page_water_quality_pushButton">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>490</y>
+           <width>321</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>TH Niramit AS</family>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:rgb(255, 255, 255)</string>
+         </property>
+         <property name="text">
+          <string>ตรวจคุณภาพน้ำ (Water quality)</string>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+     </widget>
      <widget class="QWidget" name="check_job_page">
       <widget class="QLabel" name="label_6">
        <property name="geometry">
@@ -2730,37 +4334,27 @@
      </widget>
     </widget>
    </widget>
-   <widget class="QFrame" name="top_frame">
+   <widget class="QLabel" name="current_user_label">
     <property name="geometry">
      <rect>
-      <x>190</x>
+      <x>1098</x>
       <y>10</y>
-      <width>1201</width>
-      <height>31</height>
+      <width>291</width>
+      <height>20</height>
      </rect>
     </property>
-    <property name="frameShape">
-     <enum>QFrame::StyledPanel</enum>
+    <property name="font">
+     <font>
+      <family>TH Niramit AS</family>
+      <pointsize>16</pointsize>
+     </font>
     </property>
-    <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
+    <property name="text">
+     <string/>
     </property>
-    <widget class="QLabel" name="current_user_label">
-     <property name="geometry">
-      <rect>
-       <x>748</x>
-       <y>10</y>
-       <width>441</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-     </property>
-    </widget>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
    </widget>
   </widget>
   <action name="actionCytology_Report">

@@ -86,6 +86,10 @@ class MainAppView(QMainWindow, Ui_main_app_view):
         self.stackedWidget.setCurrentIndex(2)
         # reset state of all widgets in the job register page
         self.reset_widgets_in_job_register_page()
+
+    def backto_job_register_page(self):
+        """Back to the job register page."""
+        self.stackedWidget.setCurrentIndex(2)
     # ==================== check job progress ======================
 
     def show_check_job_progress_page(self):
@@ -121,6 +125,11 @@ class MainAppView(QMainWindow, Ui_main_app_view):
     def show_personal_information_page(self):
         """Show the personal information page."""
         self.stackedWidget.setCurrentIndex(9)
+    # ======================= specimen page ========================
+
+    def show_specimen_page(self):
+        """Show the specimen page."""
+        self.stackedWidget.setCurrentIndex(3)
     # ==================== update page ====================
 
     def show_update_page(self):
@@ -208,10 +217,10 @@ class MainAppView(QMainWindow, Ui_main_app_view):
         self.new_case_print_sticker_button.setEnabled(False)
         self.new_case_print_lab_report_button.setEnabled(False)
 
-
     def show_add_data_specimen_page(self):
         """Show the add data specimen page."""
         pass
+
 
 if __name__ == '__main__':
     pass

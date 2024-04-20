@@ -155,3 +155,11 @@ class Main_Model:
             return True
         else:
             return False
+
+    def save_specimen_information(self, specimen_data) -> bool:
+        """Save specimen information"""
+        sql_cmd = self.sql_cmd["insert_new_sample"]
+        if self.insert_data(sql_cmd, specimen_data):
+            return True
+        else:
+            return False
