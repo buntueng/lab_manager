@@ -156,10 +156,42 @@ class Main_Model:
         else:
             return False
 
-    def save_specimen_information(self, specimen_data) -> bool:
+    def save_specimen_information(self, specimen_data) -> int:
         """Save specimen information"""
         sql_cmd = self.sql_cmd["insert_new_sample"]
-        if self.insert_data(sql_cmd, specimen_data):
+        current_id = self.insert_data_return_id(sql_cmd, specimen_data)
+        return current_id
+
+    def insert_data_return_id(self, sql_cmd, data) -> int:
+        """Insert data to the database"""
+        try:
+            conn = mariadb.connect(
+                user=self.server_config["user"],
+                password=self.server_config["password"],
+                host=self.server_config["host"],
+                port=self.server_config["port"],
+                database=self.server_config["database"]
+            )
+            cur = conn.cursor()
+            cur.execute(sql_cmd, data)
+            cur.execute("SELECT LAST_INSERT_ID()")
+            current_id = cur.fetchone()[0]
+            conn.commit()
+            conn.close()
+            return current_id
+        except mariadb.Error as e:
+            QMessageBox.critical(None, "Error", f"Error: {e}")
+            return 0
+
+    def save_molecular_biology_information(self, sample_id, molecular_biology_data, updater) -> bool:
+        """Save molecular biology information."""
+        sql_cmd = self.sql_cmd["insert_new_molecular_biology_tests"]
+        molecular_biology_data = [sample_id] + \
+            molecular_biology_data + [updater]
+        print(type(molecular_biology_data))
+        # molecular_biology_data.insert(0, sample_id)
+        # molecular_biology_data.append(updater)
+        if self.insert_data(sql_cmd, molecular_biology_data):
             return True
         else:
             return False

@@ -59,6 +59,7 @@ class Main_Controller:
         self.bind_event_in_new_customer_page()
         self.bind_event_in_case_register_page()
         self.bind_event_in_specimen_page()
+        self.bind_event_in_molecular_biology_page()
 
     def bind_event_in_new_customer_page(self):
         """Bind event in new customer page"""
@@ -93,6 +94,47 @@ class Main_Controller:
             self.save_specimen_information)
         self.view.specimen_page_back_pushButton.clicked.connect(
             self.view.backto_job_register_page)
+
+        self.view.specimen_page_molecular_pushButton.clicked.connect(
+            self.view.show_molecular_biology_page)
+
+    def bind_event_in_molecular_biology_page(self):
+        """Bind event in molecular biology page"""
+        self.view.molecular_biology_summary_pushButton.clicked.connect(
+            self.compute_molecular_biology_summary)
+
+        # self.view.molecular_biology_back_pushButton.clicked.connect(
+        # self.view.backto_specimen_page)
+
+        self.view.molecular_biology_save_data_pushButton.clicked.connect(
+            self.save_molecular_biology_information)
+
+    def save_molecular_biology_information(self):
+        """Save molecular biology information"""
+        # get data from the view
+        data, error_message, checkbox_state = self.view.get_molecular_biology_data()
+        # save data to the database
+        sample_id = self.view.specimen_page_label.text().split(":")[1]
+        if self.model.save_molecular_biology_information(sample_id, data, self.user_login_info[0][1]):
+            QMessageBox.information(self.view, "Success",
+                                    "บันทึกข้อมูลเรียบร้อย")
+            # # disable save button
+            # self.view.molecular_biology_save_data_pushButton.setEnabled(False)
+            # # clear all entry
+            # self.view.clear_molecular_biology_information()
+            # self.view.enable_lab_buttons()
+            # # set specimen page label
+            # specimen_page_label = "Specimen:" + str(data[0])
+            # self.view.specimen_page_label.setText(specimen_page_label)
+            # ==================== enable lab buttons ====================
+        else:
+            QMessageBox.critical(self.view, "Error",
+                                 "ไม่สามารถบันทึกข้อมูลได้")
+
+    def compute_molecular_biology_summary(self):
+        """Compute molecular biology summary"""
+        # get data from the view
+        data = self.view.get_molecular_biology_data()
 
     def save_specimen_information(self):
         """Save specimen information
@@ -173,7 +215,8 @@ class Main_Controller:
             self.view.specimen_page_record_heal_textEdit.toPlainText())
 
         specimen_data.append(int(self.user_login_info[0][1]))
-        if self.model.save_specimen_information(specimen_data):
+        current_id = self.model.save_specimen_information(specimen_data)
+        if current_id > 0:
             QMessageBox.information(self.view, "Success",
                                     "บันทึกข้อมูลตัวอย่างเรียบร้อย")
             # disable save button
@@ -181,6 +224,9 @@ class Main_Controller:
             # clear all entry
             self.view.clear_specimen_information()
             self.view.enable_lab_buttons()
+            # set specimen page label
+            specimen_page_label = "Specimen:" + str(current_id)
+            self.view.specimen_page_label.setText(specimen_page_label)
             # ==================== enable lab buttons ====================
         else:
             QMessageBox.critical(self.view, "Error",
@@ -493,7 +539,8 @@ class Main_Controller:
                     login_info[0][4] + " " + login_info[0][5]
                 self.view.show_current_user_information(current_name)
                 self.view.enable_all_buttons()
-                self.view.show_customer_register_page()
+                self.view.show_molecular_biology_page()
+                # self.view.show_job_register_page()
 
         elif username == "" and password != "":
             self.view.username_lineEdit.setFocus()

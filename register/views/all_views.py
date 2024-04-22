@@ -3,6 +3,8 @@ from PySide6.QtWidgets import QMainWindow
 from PySide6.QtWidgets import QTreeWidgetItem
 # import QTreeWidgetItem
 
+import re
+
 
 class MainAppView(QMainWindow, Ui_main_app_view):
     """"Main application view. Inherits from QMainWindow and Ui_main_app_view."""
@@ -82,6 +84,9 @@ class MainAppView(QMainWindow, Ui_main_app_view):
     # Index9 - lab report page
     # Index10 - edit personal page
     # Index11 - update page
+    # Index12 - Molucular biology page
+    # Index13 - Bacteria biology page
+    # Index14 - Parasite biology page
 
     # ==================== login page ====================
     def show_login_page(self):
@@ -152,6 +157,933 @@ class MainAppView(QMainWindow, Ui_main_app_view):
     def show_update_page(self):
         """Show the update page."""
         self.stackedWidget.setCurrentIndex(11)
+    # =======================================================
+
+    def get_molecular_biology_data(self) -> list:
+        """Get molecular biology data."""
+        data = []
+        checkbox_state = []
+        error_message = []
+
+        # first test in the lab
+        checkbox_state.append(self.avian_AI_1_checkBox.isChecked())
+        data.append(self.avian_AI_1_checkBox.text())
+        # integer from lineEdit if blank return 0
+        if self.avian_AI_1_lineEdit.text() == "":
+            data.append(0)
+        else:
+            # try to add integer to list if not integer add error message
+            try:
+                data.append(int(self.avian_AI_1_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.avian_AI_1_lineEdit.text() + " is not integer")
+        price = re.findall("\(.*\)", self.avian_AI_1_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # second test in the lab
+        checkbox_state.append(self.avian_AI_2_checkBox.isChecked())
+        data.append(self.avian_AI_2_checkBox.text())
+        if self.avian_AI_2_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.avian_AI_2_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.avian_AI_2_lineEdit.text() + " is not integer")
+        price = re.findall("\(.*\)", self.avian_AI_2_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # third test in the lab
+        checkbox_state.append(self.avian_ibv_checkBox.isChecked())
+        data.append(self.avian_ibv_checkBox.text())
+        if self.avian_ibv_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.avian_ibv_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.avian_ibv_lineEdit.text() + " is not integer")
+        price = re.findall("\(.*\)", self.avian_ibv_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # forth test in the lab
+        checkbox_state.append(self.avian_ibdv_checkBox.isChecked())
+        data.append(self.avian_ibdv_checkBox.text())
+        if self.avian_ibdv_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.avian_ibdv_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.avian_ibdv_lineEdit.text() + " is not integer")
+        price = re.findall("\(.*\)", self.avian_ibdv_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # fifth test in the lab
+        checkbox_state.append(self.avian_ilt_checkBox.isChecked())
+        data.append(self.avian_ilt_checkBox.text())
+        if self.avian_ilt_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.avian_ilt_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.avian_ilt_lineEdit.text() + " is not integer")
+        price = re.findall("\(.*\)", self.avian_ilt_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # sixth test in the lab
+        checkbox_state.append(self.avian_ndv_checkBox.isChecked())
+        data.append(self.avian_ndv_checkBox.text())
+        if self.avian_ndv_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.avian_ndv_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.avian_ndv_lineEdit.text() + " is not integer")
+        price = re.findall("\(.*\)", self.avian_ndv_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # seventh test in the lab
+        checkbox_state.append(self.avian_ndv_2_checkBox.isChecked())
+        data.append(self.avian_ndv_2_checkBox.text())
+        if self.avian_ndv_2_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.avian_ndv_2_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.avian_ndv_2_lineEdit.text() + " is not integer")
+        price = re.findall("\(.*\)", self.avian_ndv_2_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # eighth test in the lab
+        checkbox_state.append(self.avian_pdd_checkBox.isChecked())
+        data.append(self.avian_pdd_checkBox.text())
+        if self.avian_pdd_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.avian_pdd_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.avian_pdd_lineEdit.text() + " is not integer")
+        price = re.findall("\(.*\)", self.avian_pdd_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # ninth test in the lab
+        checkbox_state.append(self.avian_pbfdv_checkBox.isChecked())
+        data.append(self.avian_pbfdv_checkBox.text())
+        if self.avian_pbfdv_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.avian_pbfdv_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.avian_pbfdv_lineEdit.text() + " is not integer")
+        price = re.findall("\(.*\)", self.avian_pbfdv_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # tenth test in the lab
+        checkbox_state.append(self.avian_chlamydia_checkBox.isChecked())
+        data.append(self.avian_chlamydia_checkBox.text())
+        if self.avian_chlamydia_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.avian_chlamydia_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.avian_chlamydia_lineEdit.text() + " is not integer")
+        price = re.findall(
+            "\(.*\)", self.avian_chlamydia_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # eleventh test in the lab
+        checkbox_state.append(self.avian_pasteurella_checkBox.isChecked())
+        data.append(self.avian_pasteurella_checkBox.text())
+        if self.avian_pasteurella_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.avian_pasteurella_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.avian_pasteurella_lineEdit.text() + " is not integer")
+        price = re.findall(
+            "\(.*\)", self.avian_pasteurella_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # twelfth test in the lab
+        checkbox_state.append(self.avian_mg_checkBox.isChecked())
+        data.append(self.avian_mg_checkBox.text())
+        if self.avian_mg_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.avian_mg_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.avian_mg_lineEdit.text() + " is not integer")
+        price = re.findall("\(.*\)", self.avian_mg_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # thirteenth test in the lab
+        checkbox_state.append(self.feline_felv_checkBox.isChecked())
+        data.append(self.feline_felv_checkBox.text())
+        if self.feline_felv_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.feline_felv_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.feline_felv_lineEdit.text() + " is not integer")
+        price = re.findall("\(.*\)", self.feline_felv_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # fourteenth test in the lab
+        checkbox_state.append(self.feline_fip_checkBox.isChecked())
+        data.append(self.feline_fip_checkBox.text())
+        if self.feline_fip_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.feline_fip_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.feline_fip_lineEdit.text() + " is not integer")
+        price = re.findall("\(.*\)", self.feline_fip_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # fifteenth test in the lab
+        checkbox_state.append(self.feline_fiv_checkBox.isChecked())
+        data.append(self.feline_fiv_checkBox.text())
+        if self.feline_fiv_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.feline_fiv_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.feline_fiv_lineEdit.text() + " is not integer")
+        price = re.findall("\(.*\)", self.feline_fiv_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # sixteenth test in the lab
+        checkbox_state.append(self.feline_panleukopenia_checkBox.isChecked())
+        data.append(self.feline_panleukopenia_checkBox.text())
+        if self.feline_panleukopenia_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.feline_panleukopenia_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.feline_panleukopenia_lineEdit.text() + " is not integer")
+        price = re.findall(
+            "\(.*\)", self.feline_panleukopenia_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # seventeenth test in the lab
+        checkbox_state.append(self.canine_cdv_checkBox.isChecked())
+        data.append(self.canine_cdv_checkBox.text())
+        if self.canine_cdv_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.canine_cdv_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.canine_cdv_lineEdit.text() + " is not integer")
+
+        price = re.findall("\(.*\)", self.canine_cdv_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # eighteenth test in the lab
+        checkbox_state.append(self.canine_cpv_checkBox.isChecked())
+        data.append(self.canine_cpv_checkBox.text())
+        if self.canine_cpv_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.canine_cpv_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.canine_cpv_lineEdit.text() + " is not integer")
+        price = re.findall("\(.*\)", self.canine_cpv_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # nineteenth test in the lab
+        checkbox_state.append(self.equine_ehv_checkBox.isChecked())
+        data.append(self.equine_ehv_checkBox.text())
+        if self.equine_ehv_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.equine_ehv_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.equine_ehv_lineEdit.text() + " is not integer")
+        price = re.findall("\(.*\)", self.equine_ehv_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # twentieth test in the lab
+        checkbox_state.append(self.equine_ahs_checkBox.isChecked())
+        data.append(self.equine_ahs_checkBox.text())
+        if self.equine_ahs_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.equine_ahs_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.equine_ahs_lineEdit.text() + " is not integer")
+        price = re.findall("\(.*\)", self.equine_ahs_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # twenty-first test in the lab
+        checkbox_state.append(self.blood_1_ana_checkBox.isChecked())
+        data.append(self.blood_1_ana_checkBox.text())
+        if self.blood_1_ana_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.blood_1_ana_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.blood_1_ana_lineEdit.text() + " is not integer")
+        price = re.findall("\(.*\)", self.blood_1_ana_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # twenty-second test in the lab
+        checkbox_state.append(self.blood_1_babe_checkBox.isChecked())
+        data.append(self.blood_1_babe_checkBox.text())
+        if self.blood_1_babe_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.blood_1_babe_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.blood_1_babe_lineEdit.text() + " is not integer")
+        price = re.findall(
+            "\(.*\)", self.blood_1_babe_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # twenty-third test in the lab
+        checkbox_state.append(self.blood_1_ehr_checkBox.isChecked())
+        data.append(self.blood_1_ehr_checkBox.text())
+        if self.blood_1_ehr_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.blood_1_ehr_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.blood_1_ehr_lineEdit.text() + " is not integer")
+        price = re.findall("\(.*\)", self.blood_1_ehr_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # twenty-fourth test in the lab
+        checkbox_state.append(self.blood_1_the_checkBox.isChecked())
+        data.append(self.blood_1_the_checkBox.text())
+        if self.blood_1_the_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.blood_1_the_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.blood_1_the_lineEdit.text() + " is not integer")
+        price = re.findall("\(.*\)", self.blood_1_the_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # twenty-fifth test in the lab
+        checkbox_state.append(self.blood_1_haem_checkBox.isChecked())
+        data.append(self.blood_1_haem_checkBox.text())
+        if self.blood_1_haem_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.blood_1_haem_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.blood_1_haem_lineEdit.text() + " is not integer")
+        price = re.findall(
+            "\(.*\)", self.blood_1_haem_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # twenty-sixth test in the lab
+        checkbox_state.append(self.blood_1_ecanis_checkBox.isChecked())
+        data.append(self.blood_1_ecanis_checkBox.text())
+        if self.blood_1_ecanis_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.blood_1_ecanis_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.blood_1_ecanis_lineEdit.text() + " is not integer")
+        price = re.findall(
+            "\(.*\)", self.blood_1_ecanis_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # twenty-seventh test in the lab
+        checkbox_state.append(self.blood_1_leis_checkBox.isChecked())
+        data.append(self.blood_1_leis_checkBox.text())
+        if self.blood_1_leis_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.blood_1_leis_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.blood_1_leis_lineEdit.text() + " is not integer")
+        price = re.findall(
+            "\(.*\)", self.blood_1_leis_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # twenty-eighth test in the lab
+        checkbox_state.append(self.blood_1_try_checkBox.isChecked())
+        data.append(self.blood_1_try_checkBox.text())
+        if self.blood_1_try_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.blood_1_try_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.blood_1_try_lineEdit.text() + " is not integer")
+        price = re.findall(
+            "\(.*\)", self.blood_1_try_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # twenty-ninth test in the lab
+        checkbox_state.append(self.blood_2_asf_1_checkBox.isChecked())
+        data.append(self.blood_2_asf_1_checkBox.text())
+        if self.blood_2_asf_1_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.blood_2_asf_1_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.blood_2_asf_1_lineEdit.text() + " is not integer")
+        price = re.findall(
+            "\(.*\)", self.blood_2_asf_1_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # thirtieth test in the lab
+        checkbox_state.append(self.blood_2_asf_2_checkBox.isChecked())
+        data.append(self.blood_2_asf_2_checkBox.text())
+        if self.blood_2_asf_2_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.blood_2_asf_2_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.blood_2_asf_2_lineEdit.text() + " is not integer")
+        price = re.findall(
+            "\(.*\)", self.blood_2_asf_2_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # thirty-first test in the lab
+        checkbox_state.append(self.blood_2_asf_3_checkBox.isChecked())
+        data.append(self.blood_2_asf_3_checkBox.text())
+        if self.blood_2_asf_3_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.blood_2_asf_3_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.blood_2_asf_3_lineEdit.text() + " is not integer")
+        price = re.findall(
+            "\(.*\)", self.blood_2_asf_3_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # thirty-second test in the lab
+        checkbox_state.append(self.blood_2_csf_checkBox.isChecked())
+        data.append(self.blood_2_csf_checkBox.text())
+        if self.blood_2_csf_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.blood_2_csf_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.blood_2_csf_lineEdit.text() + " is not integer")
+        price = re.findall(
+            "\(.*\)", self.blood_2_csf_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # thirty-third test in the lab
+        checkbox_state.append(self.blood_2_hp_checkBox.isChecked())
+        data.append(self.blood_2_hp_checkBox.text())
+        if self.blood_2_hp_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.blood_2_hp_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.blood_2_hp_lineEdit.text() + " is not integer")
+        price = re.findall(
+            "\(.*\)", self.blood_2_hp_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # thirty-fourth test in the lab
+        checkbox_state.append(self.blood_2_prrsv_checkBox.isChecked())
+        data.append(self.blood_2_prrsv_checkBox.text())
+        if self.blood_2_prrsv_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.blood_2_prrsv_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.blood_2_prrsv_lineEdit.text() + " is not integer")
+        price = re.findall(
+            "\(.*\)", self.blood_2_prrsv_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # thirty-fifth test in the lab
+        checkbox_state.append(self.blood_2_pcv_checkBox.isChecked())
+        data.append(self.blood_2_pcv_checkBox.text())
+        if self.blood_2_pcv_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.blood_2_pcv_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.blood_2_pcv_lineEdit.text() + " is not integer")
+        price = re.findall(
+            "\(.*\)", self.blood_2_pcv_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # thirty-sixth test in the lab
+        checkbox_state.append(self.blood_2_ped_checkBox.isChecked())
+        data.append(self.blood_2_ped_checkBox.text())
+        if self.blood_2_ped_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.blood_2_ped_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.blood_2_ped_lineEdit.text() + " is not integer")
+        price = re.findall(
+            "\(.*\)", self.blood_2_ped_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # thirty-seventh test in the lab
+        checkbox_state.append(self.elephant_eehv1a_4_checkBox.isChecked())
+        data.append(self.elephant_eehv1a_4_checkBox.text())
+        if self.elephant_eehv1a_4_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.elephant_eehv1a_4_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.elephant_eehv1a_4_lineEdit.text() + " is not integer")
+        price = re.findall(
+            "\(.*\)", self.elephant_eehv1a_4_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # thirty-eighth test in the lab
+        checkbox_state.append(self.elephant_eehv1a_1_checkBox.isChecked())
+        data.append(self.elephant_eehv1a_1_checkBox.text())
+        if self.elephant_eehv1a_1_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.elephant_eehv1a_1_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.elephant_eehv1a_1_lineEdit.text() + " is not integer")
+        price = re.findall(
+            "\(.*\)", self.elephant_eehv1a_1_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # thirty-ninth test in the lab
+        checkbox_state.append(self.elephant_eehv1a_2_checkBox.isChecked())
+        data.append(self.elephant_eehv1a_2_checkBox.text())
+        if self.elephant_eehv1a_2_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.elephant_eehv1a_2_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.elephant_eehv1a_2_lineEdit.text() + " is not integer")
+        price = re.findall(
+            "\(.*\)", self.elephant_eehv1a_2_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # fortieth test in the lab
+        checkbox_state.append(self.elephant_eehv4_1_checkBox.isChecked())
+        data.append(self.elephant_eehv4_1_checkBox.text())
+        if self.elephant_eehv4_1_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.elephant_eehv4_1_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.elephant_eehv4_1_lineEdit.text() + " is not integer")
+        price = re.findall(
+            "\(.*\)", self.elephant_eehv4_1_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # forty-first test in the lab
+        checkbox_state.append(self.elephant_eehv4_2_checkBox.isChecked())
+        data.append(self.elephant_eehv4_2_checkBox.text())
+        if self.elephant_eehv4_2_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.elephant_eehv4_2_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.elephant_eehv4_2_lineEdit.text() + " is not integer")
+        price = re.findall(
+            "\(.*\)", self.elephant_eehv4_2_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # third column
+        # forty-second test in the lab
+        checkbox_state.append(self.others_bird_1_checkBox.isChecked())
+        data.append(self.others_bird_1_checkBox.text())
+        if self.others_bird_1_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.others_bird_1_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.others_bird_1_lineEdit.text() + " is not integer")
+        price = re.findall(
+            "\(.*\)", self.others_bird_1_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # forty-third test in the lab
+        checkbox_state.append(self.others_bird_2_checkBox.isChecked())
+        data.append(self.others_bird_2_checkBox.text())
+        if self.others_bird_2_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.others_bird_2_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.others_bird_2_lineEdit.text() + " is not integer")
+        price = re.findall(
+            "\(.*\)", self.others_bird_2_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # forty-fourth test in the lab
+        checkbox_state.append(self.others_clos_checkBox.isChecked())
+        data.append(self.others_clos_checkBox.text())
+        if self.others_clos_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.others_clos_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.others_clos_lineEdit.text() + " is not integer")
+        price = re.findall(
+            "\(.*\)", self.others_clos_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # forty-fifth test in the lab
+        checkbox_state.append(self.others_lep_checkBox.isChecked())
+        data.append(self.others_lep_checkBox.text())
+        if self.others_lep_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.others_lep_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.others_lep_lineEdit.text() + " is not integer")
+        price = re.findall(
+            "\(.*\)", self.others_lep_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # forty-sixth test in the lab
+        checkbox_state.append(self.others_toxo_checkBox.isChecked())
+        data.append(self.others_toxo_checkBox.text())
+        if self.others_toxo_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.others_toxo_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.others_toxo_lineEdit.text() + " is not integer")
+        price = re.findall(
+            "\(.*\)", self.others_toxo_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # forty-seventh test in the lab
+        checkbox_state.append(self.others_melio_checkBox.isChecked())
+        data.append(self.others_melio_checkBox.text())
+        if self.others_melio_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.others_melio_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.others_melio_lineEdit.text() + " is not integer")
+        price = re.findall(
+            "\(.*\)", self.others_melio_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # forty-eighth test in the lab
+        checkbox_state.append(self.others_myco_checkBox.isChecked())
+        data.append(self.others_myco_checkBox.text())
+        if self.others_myco_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.others_myco_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.others_myco_lineEdit.text() + " is not integer")
+        price = re.findall(
+            "\(.*\)", self.others_myco_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # forty-ninth test in the lab
+        checkbox_state.append(self.others_mavium_checkBox.isChecked())
+        data.append(self.others_mavium_checkBox.text())
+        if self.others_mavium_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.others_mavium_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.others_mavium_lineEdit.text() + " is not integer")
+        price = re.findall(
+            "\(.*\)", self.others_mavium_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # fiftieth test in the lab
+        checkbox_state.append(self.others_mbovis_checkBox.isChecked())
+        data.append(self.others_mbovis_checkBox.text())
+        if self.others_mbovis_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.others_mbovis_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.others_mbovis_lineEdit.text() + " is not integer")
+        price = re.findall(
+            "\(.*\)", self.others_mbovis_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # fifty-first test in the lab
+        checkbox_state.append(self.others_mtube_checkBox.isChecked())
+        data.append(self.others_mtube_checkBox.text())
+        if self.others_mtube_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.others_mtube_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.others_mtube_lineEdit.text() + " is not integer")
+        price = re.findall(
+            "\(.*\)", self.others_mtube_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # fifty-second test in the lab
+        checkbox_state.append(self.others_ahs_checkBox.isChecked())
+        data.append(self.others_ahs_checkBox.text())
+        if self.others_ahs_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.others_ahs_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.others_ahs_lineEdit.text() + " is not integer")
+        price = re.findall(
+            "\(.*\)", self.others_ahs_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # fifty-third test in the lab
+        checkbox_state.append(self.others_others_1_checkBox.isChecked())
+        data.append(self.others_others_1_lineEdit.text())
+        if self.others_others_1_lineEdit_2.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.others_others_1_lineEdit_2.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.others_others_1_lineEdit_2.text() + " is not integer")
+        if self.others_others_1_price_lineEdit.text() == "":
+            price = 0
+        else:
+            price = int(self.others_others_1_price_lineEdit.text())
+        data.append(int(price))
+
+        # fifty-fourth test in the lab
+        checkbox_state.append(self.others_others_2_checkBox.isChecked())
+        data.append(self.others_others_2_lineEdit.text())
+        if self.others_others_2_lineEdit_2.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.others_others_2_lineEdit_2.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.others_others_2_lineEdit_2.text() + " is not integer")
+        if self.others_others_2_price_lineEdit.text() == "":
+            price = 0
+        else:
+            price = int(self.others_others_2_price_lineEdit.text())
+        data.append(int(price))
+
+        # fifty-fifth test in the lab
+        checkbox_state.append(self.bovin_blv_checkBox.isChecked())
+        data.append(self.bovin_blv_checkBox.text())
+        if self.bovin_blv_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.bovin_blv_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.bovin_blv_lineEdit.text() + " is not integer")
+        price = re.findall("\(.*\)", self.bovin_blv_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # fifty-sixth test in the lab
+        checkbox_state.append(self.bovin_fmdv_checkBox.isChecked())
+        data.append(self.bovin_fmdv_checkBox.text())
+        if self.bovin_fmdv_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.bovin_fmdv_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.bovin_fmdv_lineEdit.text() + " is not integer")
+        price = re.findall(
+            "\(.*\)", self.bovin_fmdv_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # fifty-seventh test in the lab
+        checkbox_state.append(self.bovin_lsdv_checkBox.isChecked())
+        data.append(self.bovin_lsdv_checkBox.text())
+        if self.bovin_lsdv_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.bovin_lsdv_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.bovin_lsdv_lineEdit.text() + " is not integer")
+        price = re.findall(
+            "\(.*\)", self.bovin_lsdv_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # fifty-eighth test in the lab
+        checkbox_state.append(self.bovin_bvd_checkBox.isChecked())
+        data.append(self.bovin_bvd_checkBox.text())
+        if self.bovin_bvd_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.bovin_bvd_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.bovin_bvd_lineEdit.text() + " is not integer")
+        price = re.findall(
+            "\(.*\)", self.bovin_bvd_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # fifty-ninth test in the lab
+        checkbox_state.append(self.aquatic_animal_khv_checkBox.isChecked())
+        data.append(self.aquatic_animal_khv_checkBox.text())
+        if self.aquatic_animal_khv_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.aquatic_animal_khv_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.aquatic_animal_khv_lineEdit.text() + " is not integer")
+        price = re.findall(
+            "\(.*\)", self.aquatic_animal_khv_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # sixtieth test in the lab
+        checkbox_state.append(self.aquatic_animal_tilv_checkBox.isChecked())
+        data.append(self.aquatic_animal_tilv_checkBox.text())
+        if self.aquatic_animal_tilv_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.aquatic_animal_tilv_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.aquatic_animal_tilv_lineEdit.text() + " is not integer")
+        price = re.findall(
+            "\(.*\)", self.aquatic_animal_tilv_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # sixty-first test in the lab
+        checkbox_state.append(self.aquatic_animal_cev_checkBox.isChecked())
+        data.append(self.aquatic_animal_cev_checkBox.text())
+        if self.aquatic_animal_cev_lineEdit.text() == "":
+            data.append(0)
+        else:
+            try:
+                data.append(int(self.aquatic_animal_cev_lineEdit.text()))
+            except ValueError:
+                error_message.append(
+                    "value in " + self.aquatic_animal_cev_lineEdit.text() + " is not integer")
+        price = re.findall(
+            "\(.*\)", self.aquatic_animal_cev_checkBox.text())[0][1:-1]
+        data.append(int(price))
+
+        # special request
+        data.append(self.laboratory_cpcr_checkBox.isChecked())
+        data.append(self.laboratory_pcr_checkBox.isChecked())
+        data.append(self.laboratory_extraction_checkBox.isChecked())
+        return data, error_message, checkbox_state
+
+    def show_molecular_biology_page(self):
+        """Show the molecular biology page."""
+        self.stackedWidget.setCurrentIndex(12)
+
+    def show_bacteria_biology_page(self):
+        """Show the bacteria biology page."""
+        self.stackedWidget.setCurrentIndex(13)
+
+    def show_parasite_biology_page(self):
+        """Show the parasite biology page."""
+        self.stackedWidget.setCurrentIndex(14)
 
     def show_current_user_information(self, user_info):
         """Show the current user information."""

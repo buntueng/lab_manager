@@ -291,7 +291,7 @@
       </rect>
      </property>
      <property name="currentIndex">
-      <number>14</number>
+      <number>12</number>
      </property>
      <widget class="QWidget" name="login_page">
       <widget class="QLineEdit" name="username_lineEdit">
@@ -1645,14 +1645,17 @@
       <widget class="QLabel" name="specimen_page_label">
        <property name="geometry">
         <rect>
-         <x>1078</x>
+         <x>950</x>
          <y>10</y>
-         <width>61</width>
+         <width>161</width>
          <height>20</height>
         </rect>
        </property>
        <property name="text">
         <string>Specimen</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
       </widget>
       <widget class="QFrame" name="info_sample_specimen_frame1">
@@ -3265,7 +3268,7 @@
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>10</y>
+         <y>20</y>
          <width>1171</width>
          <height>421</height>
         </rect>
@@ -4336,14 +4339,14 @@
       <widget class="QLabel" name="label_9">
        <property name="geometry">
         <rect>
-         <x>1070</x>
+         <x>1030</x>
          <y>10</y>
-         <width>81</width>
-         <height>16</height>
+         <width>121</width>
+         <height>20</height>
         </rect>
        </property>
        <property name="text">
-        <string>Molecular Bio</string>
+        <string>Molecular Biology</string>
        </property>
       </widget>
       <widget class="QFrame" name="blood_1_frame">
@@ -5225,7 +5228,7 @@
          </font>
         </property>
         <property name="text">
-         <string>EHV (1,4) (700)</string>
+         <string>EHV [1,4] (700)</string>
         </property>
        </widget>
        <widget class="QCheckBox" name="equine_ahs_checkBox">
@@ -5690,7 +5693,7 @@
        <property name="lineWidth">
         <number>2</number>
        </property>
-       <widget class="QPushButton" name="summary_pushButton">
+       <widget class="QPushButton" name="molecular_biology_summary_pushButton">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -5852,7 +5855,7 @@
          <set>Qt::AlignCenter</set>
         </property>
        </widget>
-       <widget class="QPushButton" name="save_data_pushButton">
+       <widget class="QPushButton" name="molecular_biology_save_data_pushButton">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -6520,6 +6523,9 @@
           <pointsize>10</pointsize>
           <bold>true</bold>
          </font>
+        </property>
+        <property name="inputMethodHints">
+         <set>Qt::ImhDigitsOnly</set>
         </property>
         <property name="inputMask">
          <string/>
@@ -8760,7 +8766,7 @@
        <zorder>bovin_bvd_lineEdit</zorder>
       </widget>
      </widget>
-     <widget class="QWidget" name="bacteria_biology_page">
+     <widget class="QWidget" name="bacteria_biology_lab_page">
       <widget class="QLabel" name="label_12">
        <property name="geometry">
         <rect>
@@ -11350,7 +11356,7 @@
        </widget>
       </widget>
      </widget>
-     <widget class="QWidget" name="page">
+     <widget class="QWidget" name="parasite_biology_lab_page">
       <widget class="QLabel" name="label_14">
        <property name="geometry">
         <rect>
