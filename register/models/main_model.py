@@ -188,10 +188,32 @@ class Main_Model:
         sql_cmd = self.sql_cmd["insert_new_molecular_biology_tests"]
         molecular_biology_data = [sample_id] + \
             molecular_biology_data + [updater]
-        print(type(molecular_biology_data))
-        # molecular_biology_data.insert(0, sample_id)
-        # molecular_biology_data.append(updater)
         if self.insert_data(sql_cmd, molecular_biology_data):
+            return True
+        else:
+            return False
+
+    def save_parasite_information(self, sample_id, parasite_data, checkbox_state, updater) -> bool:
+        """Save parasite information."""
+        sql_cmd = self.sql_cmd["insert_new_parasite_biology_test"]
+        reformat_data = []
+        for i in range(len(checkbox_state)):
+            reformat_data.append(parasite_data[2*i])
+            reformat_data.append(checkbox_state[i])
+            reformat_data.append(parasite_data[2*i+1])
+        data = [sample_id] + reformat_data + [updater]
+        if self.insert_data(sql_cmd, data):
+            return True
+        else:
+            return False
+
+    def save_bacteria_lab_information(self, sample_id, bacteria_data, updater) -> bool:
+        """Save bacteria lab information."""
+        sql_cmd = self.sql_cmd["insert_new_bacteria_biology_test"]
+        bacteria_data = [sample_id] + bacteria_data + [updater]
+        print(len(bacteria_data))
+        print(bacteria_data)
+        if self.insert_data(sql_cmd, bacteria_data):
             return True
         else:
             return False

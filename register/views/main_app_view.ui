@@ -291,7 +291,7 @@
       </rect>
      </property>
      <property name="currentIndex">
-      <number>12</number>
+      <number>13</number>
      </property>
      <widget class="QWidget" name="login_page">
       <widget class="QLineEdit" name="username_lineEdit">
@@ -9270,7 +9270,7 @@
        <property name="lineWidth">
         <number>2</number>
        </property>
-       <widget class="QTextEdit" name="remark_textEdit">
+       <widget class="QTextEdit" name="bacteria_page_remark_textEdit">
         <property name="geometry">
          <rect>
           <x>9</x>
@@ -9357,7 +9357,7 @@
        <property name="lineWidth">
         <number>2</number>
        </property>
-       <widget class="QPushButton" name="summary_Button">
+       <widget class="QPushButton" name="bacteria_lab_summary_Button">
         <property name="geometry">
          <rect>
           <x>30</x>
@@ -9376,7 +9376,7 @@
          <string notr="true">background:rgb(170, 255, 255)</string>
         </property>
         <property name="text">
-         <string>คำนวณรายการตรวจ</string>
+         <string>คำนวณค่าใช้จ่าย</string>
         </property>
        </widget>
        <widget class="QLabel" name="amount_label">
@@ -9398,7 +9398,7 @@
          <string>จำนวน</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="amount_lineEdit">
+       <widget class="QLineEdit" name="bacteria_page_amount_lineEdit">
         <property name="geometry">
          <rect>
           <x>30</x>
@@ -9458,7 +9458,7 @@
          <string>ค่าใช้จ่าย</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="cost_lineEdit">
+       <widget class="QLineEdit" name="bacteria_page_cost_lineEdit">
         <property name="geometry">
          <rect>
           <x>30</x>
@@ -9499,7 +9499,7 @@
          <string>บาท</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="save_data_pushButton_2">
+       <widget class="QPushButton" name="bacteria_page_save_data_pushButton">
         <property name="geometry">
          <rect>
           <x>30</x>
@@ -9521,7 +9521,7 @@
          <string>บันทึกข้อมูล</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="cancel_pushButton">
+       <widget class="QPushButton" name="bacteria_page_cancel_pushButton">
         <property name="geometry">
          <rect>
           <x>30</x>
@@ -10381,7 +10381,7 @@
          <string/>
         </property>
        </widget>
-       <widget class="QLineEdit" name="others_lineEdit">
+       <widget class="QLineEdit" name="bacteria_page_others_lineEdit">
         <property name="geometry">
          <rect>
           <x>220</x>
@@ -11414,10 +11414,10 @@
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">background:rgb(170, 255, 255)</string>
+         <string notr="true">background:rgb(100, 200, 255)</string>
         </property>
         <property name="text">
-         <string>ประเมินรายการทดสอบ</string>
+         <string>คำนวณค่าใช้จ่าย</string>
         </property>
        </widget>
        <widget class="QFrame" name="parasite_cost_frame">
@@ -11676,7 +11676,7 @@
          <rect>
           <x>10</x>
           <y>10</y>
-          <width>321</width>
+          <width>171</width>
           <height>21</height>
          </rect>
         </property>
@@ -11776,7 +11776,7 @@
          <rect>
           <x>10</x>
           <y>30</y>
-          <width>321</width>
+          <width>181</width>
           <height>31</height>
          </rect>
         </property>

@@ -60,6 +60,8 @@ class Main_Controller:
         self.bind_event_in_case_register_page()
         self.bind_event_in_specimen_page()
         self.bind_event_in_molecular_biology_page()
+        self.bind_event_in_parasitology_page()
+        self.bind_event_in_microbiology_page()
 
     def bind_event_in_new_customer_page(self):
         """Bind event in new customer page"""
@@ -97,6 +99,103 @@ class Main_Controller:
 
         self.view.specimen_page_molecular_pushButton.clicked.connect(
             self.view.show_molecular_biology_page)
+
+        self.view.specimen_page_Parasitology_pushButton.clicked.connect(
+            self.view.show_Parasitology_page)
+
+        self.view.specimen_page_Microbiology_pushButton.clicked.connect(
+            self.view.show_Microbiology_page)
+
+    def bind_event_in_parasitology_page(self):
+        self.view.parasite_summary_pushButton.clicked.connect(
+            self.compute_parasite_test_summary)
+        self.view.parasite_save_data_pushButton.clicked.connect(
+            self.save_parasite_information)
+
+    def save_parasite_information(self):
+        """Save parasite information"""
+        # get data from the view
+        data_list, checkbox_state = self.view.get_parasite_data()
+        # save data to the database
+        sample_id = self.view.specimen_page_label.text().split(":")[1]
+        if self.model.save_parasite_information(int(sample_id), data_list, checkbox_state, self.user_login_info[0][1]):
+            QMessageBox.information(self.view, "Success",
+                                    "บันทึกข้อมูลเรียบร้อย")
+        else:
+            QMessageBox.critical(self.view, "Error",
+                                 "ไม่สามารถบันทึกข้อมูลได้")
+
+    def compute_parasite_test_summary(self):
+        """Compute parasite test summary"""
+        # get data from the view
+        data_list, checkbox_state = self.view.get_parasite_data()
+        self.view.parasite_amount_lineEdit.setText(str(sum(checkbox_state)))
+        total_cost = 0
+        for i in range(len(checkbox_state)):
+            if checkbox_state[i] == 1:
+                total_cost += int(data_list[2*i+1])
+        self.view.parasite_cost_lineEdit.setText(str(total_cost))
+
+    def bind_event_in_microbiology_page(self):
+        """Bind event in microbiology page"""
+        self.view.bacteria_lab_summary_Button.clicked.connect(
+            self.compute_bacteria_lab_summary)
+        self.view.bacteria_page_save_data_pushButton.clicked.connect(
+            self.save_bacteria_lab_information)
+
+    def save_bacteria_lab_information(self):
+        """Save bacteria lab information"""
+        sample_preparation, preparation_name, preparation_amount, drug_sensitivity_status, drug_sensitivity_name, bacteria_identification_name, bacteria_identification_status, lab_request_name, lab_request_status, lab_request_price, remark = self.view.get_bacteria_lab_data()
+
+        preparation_data = []
+        for i in range(len(preparation_name)):
+            preparation_data.append(preparation_name[i])
+            preparation_data.append(sample_preparation[i])
+            preparation_data.append(preparation_amount[i])
+
+        drug_sensitivity_data = []
+        for i in range(len(drug_sensitivity_name)):
+            drug_sensitivity_data.append(drug_sensitivity_name[i])
+            drug_sensitivity_data.append(drug_sensitivity_status[i])
+
+        bacteria_identification_data = []
+        for i in range(len(bacteria_identification_name)):
+            bacteria_identification_data.append(
+                bacteria_identification_name[i])
+            bacteria_identification_data.append(
+                bacteria_identification_status[i])
+
+        lab_request_data = []
+        for i in range(len(lab_request_name)):
+            lab_request_data.append(lab_request_name[i])
+            lab_request_data.append(lab_request_status[i])
+            lab_request_data.append(lab_request_price[i])
+
+        data = preparation_data + drug_sensitivity_data + \
+            bacteria_identification_data + lab_request_data + [remark]
+
+        if self.model.save_bacteria_lab_information(
+                self.view.specimen_page_label.text().split(":")[1], data, self.user_login_info[0][1]):
+            QMessageBox.information(self.view, "Success",
+                                    "บันทึกข้อมูลเรียบร้อย")
+        else:
+            QMessageBox.critical(self.view, "Error",
+                                 "ไม่สามารถบันทึกข้อมูลได้")
+
+    def compute_bacteria_lab_summary(self):
+        """Compute bacteria lab summary"""
+        # get data from the view
+        sample_preparation, preparation_name, preparation_amount, drug_sensitivity_status, drug_sensitivity_name, bacteria_identification_name, bacteria_identification_status, lab_request_name, lab_request_status, lab_request_price, remark = self.view.get_bacteria_lab_data()
+
+        count = sum(sample_preparation) + sum(drug_sensitivity_status) + \
+            sum(bacteria_identification_status) + sum(lab_request_status)
+        total_cost = 0
+        for index, lab_request in enumerate(lab_request_status):
+            if lab_request == 1:
+                total_cost += lab_request_price[index]
+
+        self.view.bacteria_page_amount_lineEdit.setText(str(count))
+        self.view.bacteria_page_cost_lineEdit.setText(str(total_cost))
 
     def bind_event_in_molecular_biology_page(self):
         """Bind event in molecular biology page"""

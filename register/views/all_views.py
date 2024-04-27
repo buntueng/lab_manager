@@ -157,7 +157,92 @@ class MainAppView(QMainWindow, Ui_main_app_view):
     def show_update_page(self):
         """Show the update page."""
         self.stackedWidget.setCurrentIndex(11)
+    # ==================== Molecular biology page ====================
+
+    def show_Microbiology_page(self):
+        """Show the Molecular biology page."""
+        self.stackedWidget.setCurrentIndex(13)
     # =======================================================
+
+    def show_Parasitology_page(self):
+        """Show the Parasitology page."""
+        self.stackedWidget.setCurrentIndex(14)
+
+    def get_parasite_data(self) -> list:
+        data_list = []
+        checkbox_state = []
+
+        data_list.append(self.PCV_checkBox.text())
+        price = re.findall("\(.*\)", self.PCV_checkBox.text())[0][1:-1]
+        data_list.append(int(price))
+        checkbox_state.append(self.PCV_checkBox.isChecked())
+
+        data_list.append(self.Floatation_checkBox.text())
+        price = re.findall("\(.*\)", self.Floatation_checkBox.text())[0][1:-1]
+        data_list.append(int(price))
+        checkbox_state.append(self.Floatation_checkBox.isChecked())
+
+        data_list.append(self.Parasite_in_meat_checkBox.text())
+        price = re.findall(
+            "\(.*\)", self.Parasite_in_meat_checkBox.text())[0][1:-1]
+        data_list.append(int(price))
+        checkbox_state.append(self.Parasite_in_meat_checkBox.isChecked())
+
+        data_list.append(self.Parasite_iden_checkBox.text())
+        price = re.findall(
+            "\(.*\)", self.Parasite_iden_checkBox.text())[0][1:-1]
+        data_list.append(int(price))
+        checkbox_state.append(self.Parasite_iden_checkBox.isChecked())
+
+        data_list.append(self.Floatation_for_dog_checkBox.text())
+        price = re.findall(
+            "\(.*\)", self.Floatation_for_dog_checkBox.text())[0][1:-1]
+        data_list.append(int(price))
+        checkbox_state.append(self.Floatation_for_dog_checkBox.isChecked())
+
+        data_list.append(self.Stained_blood_smear_checkBox.text())
+        price = re.findall(
+            "\(.*\)", self.Stained_blood_smear_checkBox.text())[0][1:-1]
+        data_list.append(int(price))
+        checkbox_state.append(self.Stained_blood_smear_checkBox.isChecked())
+
+        data_list.append(self.Centrifugal_checkBox.text())
+        price = re.findall(
+            "\(.*\)", self.Centrifugal_checkBox.text())[0][1:-1]
+        data_list.append(int(price))
+        checkbox_state.append(self.Centrifugal_checkBox.isChecked())
+
+        data_list.append(self.Floatation_centrifugal_checkBox.text())
+        price = re.findall(
+            "\(.*\)", self.Floatation_centrifugal_checkBox.text())[0][1:-1]
+        data_list.append(int(price))
+        checkbox_state.append(self.Floatation_centrifugal_checkBox.isChecked())
+
+        data_list.append(self.Stained_checkBox.text())
+        price = re.findall(
+            "\(.*\)", self.Stained_checkBox.text())[0][1:-1]
+        data_list.append(int(price))
+        checkbox_state.append(self.Stained_checkBox.isChecked())
+
+        data_list.append(self.Sedimentation_checkBox.text())
+        price = re.findall(
+            "\(.*\)", self.Sedimentation_checkBox.text())[0][1:-1]
+        data_list.append(int(price))
+        checkbox_state.append(self.Sedimentation_checkBox.isChecked())
+
+        data_list.append(self.woo_s_checkBox.text())
+        price = re.findall(
+            "\(.*\)", self.woo_s_checkBox.text())[0][1:-1]
+        data_list.append(int(price))
+        checkbox_state.append(self.woo_s_checkBox.isChecked())
+
+        data_list.append(self.MC_master_checkBox.text())
+        price = re.findall(
+            "\(.*\)", self.MC_master_checkBox.text())[0][1:-1]
+        data_list.append(int(price))
+        checkbox_state.append(self.MC_master_checkBox.isChecked())
+
+        return data_list, checkbox_state
 
     def get_molecular_biology_data(self) -> list:
         """Get molecular biology data."""
@@ -1230,6 +1315,398 @@ class MainAppView(QMainWindow, Ui_main_app_view):
         self.specimen_page_hematology_pushButton.setEnabled(False)
         self.specimen_page_histopatology_pushButton.setEnabled(False)
         self.specimen_page_food_safty_pushButton.setEnabled(False)
+
+    def get_bacteria_lab_data(self):
+        sample_preparation = []
+        preparation_name = []
+        preparation_amount = []
+        sample_preparation.append(self.swab_LT_checkBox.isChecked())
+        preparation_name.append(self.swab_LT_checkBox.text())
+        if self.swab_LT_lineEdit.text() == "":
+            preparation_amount.append(0)
+        else:
+            preparation_amount.append(self.swab_LT_lineEdit.text())
+
+        sample_preparation.append(self.swab_RT_checkBox.isChecked())
+        preparation_name.append(self.swab_RT_checkBox.text())
+        if self.swab_RT_lineEdit.text() == "":
+            preparation_amount.append(0)
+        else:
+            preparation_amount.append(self.swab_RT_lineEdit.text())
+
+        sample_preparation.append(self.wound_checkBox.isChecked())
+        preparation_name.append(self.wound_checkBox.text())
+        if self.wound_lineEdit.text() == "":
+            preparation_amount.append(0)
+        else:
+            preparation_amount.append(self.wound_lineEdit.text())
+
+        sample_preparation.append(self.Aspirate_LT_checkBox.isChecked())
+        preparation_name.append(self.Aspirate_LT_checkBox.text())
+        if self.Aspirate_LT_lineEdit.text() == "":
+            preparation_amount.append(0)
+        else:
+            preparation_amount.append(self.Aspirate_LT_lineEdit.text())
+
+        sample_preparation.append(self.Aspirate_RT_checkBox.isChecked())
+        preparation_name.append(self.Aspirate_RT_checkBox.text())
+        if self.Aspirate_RT_lineEdit.text() == "":
+            preparation_amount.append(0)
+        else:    
+            preparation_amount.append(self.Aspirate_RT_lineEdit.text())
+
+        sample_preparation.append(self.urine_checkBox.isChecked())
+        preparation_name.append(self.urine_checkBox.text())
+        if self.urine_lineEdit.text() == "":
+            preparation_amount.append(0)
+        else:
+            preparation_amount.append(self.urine_lineEdit.text())
+
+        sample_preparation.append(self.Midstream_checkBox.isChecked())
+        preparation_name.append(self.Midstream_checkBox.text())
+        if self.Midstream_lineEdit.text() == "":
+            preparation_amount.append(0)
+        else:
+            preparation_amount.append(self.Midstream_lineEdit.text())
+
+        sample_preparation.append(self.Catheterization_checkBox.isChecked())
+        preparation_name.append(self.Catheterization_checkBox.text())
+        if self.Catheterization_lineEdit.text() == "":
+            preparation_amount.append(0)
+        else:
+            preparation_amount.append(self.Catheterization_lineEdit.text())
+
+        sample_preparation.append(self.Cystocentesis_checkBox.isChecked())
+        preparation_name.append(self.Cystocentesis_checkBox.text())
+        if self.Cystocentesis_lineEdit.text() == "":
+            preparation_amount.append(0)
+        else:
+            preparation_amount.append(self.Cystocentesis_lineEdit.text())
+
+        sample_preparation.append(self.Tissues_LT_checkBox.isChecked())
+        preparation_name.append(self.Tissues_LT_checkBox.text())
+        if self.Tissues_LT_lineEdit.text() == "":
+            preparation_amount.append(0)
+        else:
+            preparation_amount.append(self.Tissues_LT_lineEdit.text())
+
+        sample_preparation.append(self.Tissues_RT_checkBox.isChecked())
+        preparation_name.append(self.Tissues_RT_checkBox.text())
+        if self.Tissues_RT_lineEdit.text() == "":
+            preparation_amount.append(0)
+        else:
+            preparation_amount.append(self.Tissues_RT_lineEdit.text())
+
+        sample_preparation.append(self.biopsy_LT_checkBox.isChecked())
+        preparation_name.append(self.biopsy_LT_checkBox.text())
+        if self.biopsy_LT_lineEdit.text() == "":
+            preparation_amount.append(0)
+        else:
+            preparation_amount.append(self.biopsy_LT_lineEdit.text())
+
+        sample_preparation.append(self.biopsy_RT_checkBox.isChecked())
+        preparation_name.append(self.biopsy_RT_checkBox.text())
+        if self.biopsy_RT_lineEdit.text() == "":
+            preparation_amount.append(0)
+        else:
+            preparation_amount.append(self.biopsy_RT_lineEdit.text())
+
+        sample_preparation.append(self.body_fluid_LT_checkBox.isChecked())
+        preparation_name.append(self.body_fluid_LT_checkBox.text())
+        if self.body_fluid_LT_lineEdit.text() == "":
+            preparation_amount.append(0)
+        else:
+            preparation_amount.append(self.body_fluid_LT_lineEdit.text())
+
+        sample_preparation.append(self.body_fluid_RT_checkBox.isChecked())
+        preparation_name.append(self.body_fluid_RT_checkBox.text())
+        if self.body_fluid_RT_lineEdit.text() == "":
+            preparation_amount.append(0)
+        else:
+            preparation_amount.append(self.body_fluid_RT_lineEdit.text())
+
+        sample_preparation.append(self.csf_checkBox.isChecked())
+        preparation_name.append(self.csf_checkBox.text())
+        if self.csf_lineEdit.text() == "":
+            preparation_amount.append(0)
+        else:
+            preparation_amount.append(self.csf_lineEdit.text())
+
+        sample_preparation.append(self.feces_checkBox.isChecked())
+        preparation_name.append(self.feces_checkBox.text())
+        if self.feces_lineEdit.text() == "":
+            preparation_amount.append(0)
+        else:
+            preparation_amount.append(self.feces_lineEdit.text())
+
+        sample_preparation.append(self.PUS_checkBox.isChecked())
+        preparation_name.append(self.PUS_checkBox.text())
+        if self.PUS_lineEdit.text() == "":
+            preparation_amount.append(0)
+        else:
+            preparation_amount.append(self.PUS_lineEdit.text())
+
+        sample_preparation.append(self.Blood_checkBox.isChecked())
+        preparation_name.append(self.Blood_checkBox.text())
+        if self.Blood_lineEdit.text() == "":
+            preparation_amount.append(0)
+        else:
+            preparation_amount.append(self.Blood_lineEdit.text())
+
+        sample_preparation.append(self.Blood_agar_checkBox.isChecked())
+        preparation_name.append(self.Blood_agar_checkBox.text())
+        if self.Blood_agar_lineEdit.text() == "":
+            preparation_amount.append(0)
+        else:
+            preparation_amount.append(self.Blood_agar_lineEdit.text())
+
+        sample_preparation.append(self.Skin_scraping_checkBox.isChecked())
+        preparation_name.append(self.Skin_scraping_checkBox.text())
+        if self.Skin_scraping_lineEdit.text() == "":
+            preparation_amount.append(0)
+        else:
+            preparation_amount.append(self.Skin_scraping_lineEdit.text())
+
+        drug_sensitivity_status = []
+        drug_sensitivity_name = []
+
+        drug_sensitivity_status.append(self.amikacin_AK_checkBox.isChecked())
+        drug_sensitivity_name.append(self.amikacin_AK_checkBox.text())
+
+        drug_sensitivity_status.append(
+            self.Ampicillin_AMP_checkBox.isChecked())
+        drug_sensitivity_name.append(self.Ampicillin_AMP_checkBox.text())
+
+        drug_sensitivity_status.append(
+            self.Ceftazidime_CAZ_checkBox.isChecked())
+        drug_sensitivity_name.append(self.Ceftazidime_CAZ_checkBox.text())
+
+        drug_sensitivity_status.append(self.Cephalexin_CL_checkBox.isChecked())
+        drug_sensitivity_name.append(self.Cephalexin_CL_checkBox.text())
+
+        drug_sensitivity_status.append(
+            self.Chloramphenicol_C_checkBox.isChecked())
+        drug_sensitivity_name.append(self.Chloramphenicol_C_checkBox.text())
+
+        drug_sensitivity_status.append(
+            self.Cloxacillin_OB_checkBox.isChecked())
+        drug_sensitivity_name.append(self.Cloxacillin_OB_checkBox.text())
+
+        drug_sensitivity_status.append(
+            self.Enrofloxacin_ENR_checkBox.isChecked())
+        drug_sensitivity_name.append(self.Enrofloxacin_ENR_checkBox.text())
+
+        drug_sensitivity_status.append(self.Gentamycin_CN_checkBox.isChecked())
+        drug_sensitivity_name.append(self.Gentamycin_CN_checkBox.text())
+
+        drug_sensitivity_status.append(self.Lincomycin_MY_checkBox.isChecked())
+        drug_sensitivity_name.append(self.Lincomycin_MY_checkBox.text())
+
+        drug_sensitivity_status.append(
+            self.Norfloxacin_NOR_checkBox.isChecked())
+        drug_sensitivity_name.append(self.Norfloxacin_NOR_checkBox.text())
+
+        drug_sensitivity_status.append(self.Oxacillin_OX_checkBox.isChecked())
+        drug_sensitivity_name.append(self.Oxacillin_OX_checkBox.text())
+
+        drug_sensitivity_status.append(
+            self.PolymyxcinB_PB_checkBox.isChecked())
+        drug_sensitivity_name.append(self.PolymyxcinB_PB_checkBox.text())
+
+        drug_sensitivity_status.append(
+            self.Sulfa_trimetroprom_STX_checkBox.isChecked())
+        drug_sensitivity_name.append(
+            self.Sulfa_trimetroprom_STX_checkBox.text())
+
+        drug_sensitivity_status.append(self.Vancomycin_VA_checkBox.isChecked())
+        drug_sensitivity_name.append(self.Vancomycin_VA_checkBox.text())
+
+        drug_sensitivity_status.append(
+            self.Amoxycillin_AML_checkBox.isChecked())
+        drug_sensitivity_name.append(self.Amoxycillin_AML_checkBox.text())
+
+        drug_sensitivity_status.append(self.Bactracin_B_checkBox.isChecked())
+        drug_sensitivity_name.append(self.Bactracin_B_checkBox.text())
+
+        drug_sensitivity_status.append(self.Ceftiofur_EFT_checkBox.isChecked())
+        drug_sensitivity_name.append(self.Ceftiofur_EFT_checkBox.text())
+
+        drug_sensitivity_status.append(
+            self.Cephalothin_KF_checkBox.isChecked())
+        drug_sensitivity_name.append(self.Cephalothin_KF_checkBox.text())
+
+        drug_sensitivity_status.append(
+            self.Ciprofloxacin_CIP_checkBox.isChecked())
+        drug_sensitivity_name.append(self.Ciprofloxacin_CIP_checkBox.text())
+
+        drug_sensitivity_status.append(self.Colistin_CT_checkBox.isChecked())
+        drug_sensitivity_name.append(self.Colistin_CT_checkBox.text())
+
+        drug_sensitivity_status.append(
+            self.Erythromycin_E_checkBox.isChecked())
+        drug_sensitivity_name.append(self.Erythromycin_E_checkBox.text())
+
+        drug_sensitivity_status.append(self.Imipenem_IPM_checkBox.isChecked())
+        drug_sensitivity_name.append(self.Imipenem_IPM_checkBox.text())
+
+        drug_sensitivity_status.append(self.Neomycin_N_checkBox.isChecked())
+        drug_sensitivity_name.append(self.Neomycin_N_checkBox.text())
+
+        drug_sensitivity_status.append(self.Novobiocin_NV_checkBox.isChecked())
+        drug_sensitivity_name.append(self.Novobiocin_NV_checkBox.text())
+
+        drug_sensitivity_status.append(
+            self.Oxytetracycline_OT_checkBox.isChecked())
+        drug_sensitivity_name.append(self.Oxytetracycline_OT_checkBox.text())
+
+        drug_sensitivity_status.append(self.Rifampicin_RD_checkBox.isChecked())
+        drug_sensitivity_name.append(self.Rifampicin_RD_checkBox.text())
+
+        drug_sensitivity_status.append(
+            self.Tetracycline_TE_checkBox.isChecked())
+        drug_sensitivity_name.append(self.Tetracycline_TE_checkBox.text())
+
+        drug_sensitivity_status.append(self.others_checkBox.isChecked())
+        drug_sensitivity_name.append(self.bacteria_page_others_lineEdit.text())
+
+        drug_sensitivity_status.append(self.Amoxy_AMC_checkBox.isChecked())
+        drug_sensitivity_name.append(self.Amoxy_AMC_checkBox.text())
+
+        drug_sensitivity_status.append(self.Clav_AMC_checkBox.isChecked())
+        drug_sensitivity_name.append(self.Clav_AMC_checkBox.text())
+
+        drug_sensitivity_status.append(
+            self.Ceftriaxone_cro_checkBox.isChecked())
+        drug_sensitivity_name.append(self.Ceftriaxone_cro_checkBox.text())
+
+        drug_sensitivity_status.append(self.Cephazolin_KZ_checkBox.isChecked())
+        drug_sensitivity_name.append(self.Cephazolin_KZ_checkBox.text())
+
+        drug_sensitivity_status.append(
+            self.Clindamicin_DA_checkBox.isChecked())
+        drug_sensitivity_name.append(self.Clindamicin_DA_checkBox.text())
+
+        drug_sensitivity_status.append(
+            self.Doxycycline_DO_checkBox.isChecked())
+        drug_sensitivity_name.append(self.Doxycycline_DO_checkBox.text())
+
+        drug_sensitivity_status.append(
+            self.Fosfomycin_FOS_checkBox.isChecked())
+        drug_sensitivity_name.append(self.Fosfomycin_FOS_checkBox.text())
+
+        drug_sensitivity_status.append(self.Kanamycin_K_checkBox.isChecked())
+        drug_sensitivity_name.append(self.Kanamycin_K_checkBox.text())
+
+        drug_sensitivity_status.append(
+            self.Nitrofurantoin_F_checkBox.isChecked())
+        drug_sensitivity_name.append(self.Nitrofurantoin_F_checkBox.text())
+
+        drug_sensitivity_status.append(self.Optocin_OP_checkBox.isChecked())
+        drug_sensitivity_name.append(self.Optocin_OP_checkBox.text())
+
+        drug_sensitivity_status.append(self.PeniciliinG_P_checkBox.isChecked())
+        drug_sensitivity_name.append(self.PeniciliinG_P_checkBox.text())
+
+        drug_sensitivity_status.append(
+            self.Streptomycin_S_checkBox.isChecked())
+        drug_sensitivity_name.append(self.Streptomycin_S_checkBox.text())
+
+        drug_sensitivity_status.append(
+            self.Tobramycin_TOB_checkBox.isChecked())
+        drug_sensitivity_name.append(self.Tobramycin_TOB_checkBox.text())
+
+        bacteria_identification_name = []
+        bacteria_identification_status = []
+
+        bacteria_identification_status.append(
+            self.Actinobacillus_checkBox.isChecked())
+        bacteria_identification_name.append(
+            self.Actinobacillus_checkBox.text())
+
+        bacteria_identification_status.append(
+            self.Corynebacterium_checkBox.isChecked())
+        bacteria_identification_name.append(
+            self.Corynebacterium_checkBox.text())
+
+        bacteria_identification_status.append(
+            self.Klebsiella_checkBox.isChecked())
+        bacteria_identification_name.append(self.Klebsiella_checkBox.text())
+
+        bacteria_identification_status.append(
+            self.Streptococus_checkBox.isChecked())
+        bacteria_identification_name.append(self.Streptococus_checkBox.text())
+
+        bacteria_identification_status.append(
+            self.Aeromonas_checkBox.isChecked())
+        bacteria_identification_name.append(self.Aeromonas_checkBox.text())
+
+        bacteria_identification_status.append(
+            self.Enterobacter_checkBox.isChecked())
+        bacteria_identification_name.append(self.Enterobacter_checkBox.text())
+
+        bacteria_identification_status.append(
+            self.Pasteurella_checkBox.isChecked())
+        bacteria_identification_name.append(self.Pasteurella_checkBox.text())
+
+        bacteria_identification_status.append(
+            self.Staphylococcus_checkBox.isChecked())
+        bacteria_identification_name.append(
+            self.Staphylococcus_checkBox.text())
+
+        bacteria_identification_status.append(
+            self.Bordetella_checkBox.isChecked())
+        bacteria_identification_name.append(self.Bordetella_checkBox.text())
+
+        bacteria_identification_status.append(
+            self.Escherichia_checkBox.isChecked())
+        bacteria_identification_name.append(self.Escherichia_checkBox.text())
+
+        bacteria_identification_status.append(
+            self.Salmonella_checkBox.isChecked())
+        bacteria_identification_name.append(self.Salmonella_checkBox.text())
+
+        bacteria_identification_status.append(
+            self.iden_others_checkBox.isChecked())
+        bacteria_identification_name.append(
+            self.bacterial_others_lineEdit.text())
+
+        lab_request_name = []
+        lab_request_status = []
+        lab_request_price = []
+
+        lab_request_status.append(self.Fungal_cul_checkBox.isChecked())
+        lab_request_name.append(self.Fungal_cul_checkBox.text())
+        price = re.findall(
+            "\(.*\)", self.Fungal_cul_checkBox.text())[0][1:-1]
+        lab_request_price.append(int(price))
+
+        lab_request_status.append(self.Bacterial_iden_checkBox.isChecked())
+        lab_request_name.append(self.Bacterial_iden_checkBox.text())
+        price = re.findall(
+            "\(.*\)", self.Bacterial_iden_checkBox.text())[0][1:-1]
+        lab_request_price.append(int(price))
+
+        lab_request_status.append(self.VITEK2_with_checkBox.isChecked())
+        lab_request_name.append(self.VITEK2_with_checkBox.text())
+        price = re.findall(
+            "\(.*\)", self.VITEK2_with_checkBox.text())[0][1:-1]
+        lab_request_price.append(int(price))
+
+        lab_request_status.append(self.VITEK2_iden_checkBox.isChecked())
+        lab_request_name.append(self.VITEK2_iden_checkBox.text())
+        price = re.findall(
+            "\(.*\)", self.VITEK2_iden_checkBox.text())[0][1:-1]
+        lab_request_price.append(int(price))
+
+        lab_request_status.append(self.MIC_checkBox.isChecked())
+        lab_request_name.append(self.MIC_checkBox.text())
+        price = re.findall(
+            "\(.*\)", self.MIC_checkBox.text())[0][1:-1]
+        lab_request_price.append(int(price))
+
+        remark = self.bacteria_page_remark_textEdit.toPlainText()
+
+        return sample_preparation, preparation_name, preparation_amount, drug_sensitivity_status, drug_sensitivity_name, bacteria_identification_name, bacteria_identification_status, lab_request_name, lab_request_status, lab_request_price, remark
 
 
 if __name__ == '__main__':
