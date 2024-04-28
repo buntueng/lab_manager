@@ -95,7 +95,15 @@ class Main_Model:
         result = self.select_data(sql_cmd, [keyword_search, keyword_search])
         return result
 
+    def get_all_customer_names(self):
+        """Get all customer names"""
+        result = []
+        sql_cmd = self.sql_cmd["get_all_customer_names"]
+        result = self.select_data(sql_cmd, [])
+        return result
+
     def new_case_search_customer(self, keyword_search):
+        """Search customer case using customer name or surname"""
         result = []
         sql_cmd = self.sql_cmd["new_case_search_customer"]
         result = self.select_data(sql_cmd, [keyword_search, keyword_search])
@@ -197,9 +205,9 @@ class Main_Model:
         """Save parasite information."""
         sql_cmd = self.sql_cmd["insert_new_parasite_biology_test"]
         reformat_data = []
-        for i in range(len(checkbox_state)):
+        for i, cb_state in enumerate(checkbox_state):
             reformat_data.append(parasite_data[2*i])
-            reformat_data.append(checkbox_state[i])
+            reformat_data.append(cb_state)
             reformat_data.append(parasite_data[2*i+1])
         data = [sample_id] + reformat_data + [updater]
         if self.insert_data(sql_cmd, data):

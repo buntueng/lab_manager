@@ -17,6 +17,8 @@ class Main_Controller:
 
         self.event_bindings()
 
+        self.all_customer_names = []
+
     def event_bindings(self):
         """Event bindings for the main view"""
         self.view.login_pushButton.clicked.connect(self.user_sign_in)
@@ -74,8 +76,8 @@ class Main_Controller:
 
     def bind_event_in_case_register_page(self):
         """Bind event in case register page"""
-        self.view.new_case_search_button.clicked.connect(
-            self.new_case_search_user)
+        # self.view.new_case_search_button.clicked.connect(
+        # self.new_case_search_user)
         # self.view.new_case_save_button.clicked.connect(
         # self.save_case_register)
         self.view.new_case_select_sender_button.clicked.connect(
@@ -89,6 +91,22 @@ class Main_Controller:
 
         self.view.new_case_add_data_specimen_button.clicked.connect(
             self.view.show_specimen_page)
+
+        self.view.new_case_search_name_entry.textChanged.connect(
+            self.new_case_search_user_change)
+
+    def new_case_search_user_change(self):
+        """"Auto complete search name in the new case register page"""
+        search_word = self.view.new_case_search_name_entry.text()
+        show_customer_names = []
+        if search_word != "":
+            for current_customer_info in self.all_customer_names:
+                if search_word in current_customer_info[0] or search_word in current_customer_info[1] or search_word in current_customer_info[2]:
+                    show_customer_names.append(current_customer_info)
+
+        self.view.new_case_search_tree_view.clear()
+        if len(show_customer_names) > 0:
+            self.view.add_customer_info_new_case(show_customer_names)
 
     def bind_event_in_specimen_page(self):
         """Bind event in specimen page"""
@@ -107,6 +125,7 @@ class Main_Controller:
             self.view.show_Microbiology_page)
 
     def bind_event_in_parasitology_page(self):
+        """Bind event in parasitology page"""
         self.view.parasite_summary_pushButton.clicked.connect(
             self.compute_parasite_test_summary)
         self.view.parasite_save_data_pushButton.clicked.connect(
@@ -131,8 +150,8 @@ class Main_Controller:
         data_list, checkbox_state = self.view.get_parasite_data()
         self.view.parasite_amount_lineEdit.setText(str(sum(checkbox_state)))
         total_cost = 0
-        for i in range(len(checkbox_state)):
-            if checkbox_state[i] == 1:
+        for i, cb_state in enumerate(checkbox_state):
+            if cb_state == 1:
                 total_cost += int(data_list[2*i+1])
         self.view.parasite_cost_lineEdit.setText(str(total_cost))
 
@@ -148,26 +167,26 @@ class Main_Controller:
         sample_preparation, preparation_name, preparation_amount, drug_sensitivity_status, drug_sensitivity_name, bacteria_identification_name, bacteria_identification_status, lab_request_name, lab_request_status, lab_request_price, remark = self.view.get_bacteria_lab_data()
 
         preparation_data = []
-        for i in range(len(preparation_name)):
-            preparation_data.append(preparation_name[i])
+        for i, p_name in enumerate(preparation_name):
+            preparation_data.append(p_name)
             preparation_data.append(sample_preparation[i])
             preparation_data.append(preparation_amount[i])
 
         drug_sensitivity_data = []
-        for i in range(len(drug_sensitivity_name)):
-            drug_sensitivity_data.append(drug_sensitivity_name[i])
+        for i, ds_name in enumerate(drug_sensitivity_name):
+            drug_sensitivity_data.append(ds_name)
             drug_sensitivity_data.append(drug_sensitivity_status[i])
 
         bacteria_identification_data = []
-        for i in range(len(bacteria_identification_name)):
+        for i, bi_name in enumerate(bacteria_identification_name):
             bacteria_identification_data.append(
-                bacteria_identification_name[i])
+                bi_name)
             bacteria_identification_data.append(
                 bacteria_identification_status[i])
 
         lab_request_data = []
-        for i in range(len(lab_request_name)):
-            lab_request_data.append(lab_request_name[i])
+        for i, lr_name in enumerate(lab_request_name):
+            lab_request_data.append(lr_name)
             lab_request_data.append(lab_request_status[i])
             lab_request_data.append(lab_request_price[i])
 
@@ -408,11 +427,11 @@ class Main_Controller:
 
     def new_case_add_owner_info(self):
         """Add owner information to the case register"""
-        # if case number is empty, read the last case number from the database
-        if self.view.new_case_number_job_entry.text() == "":
-            last_case_number = self.model.get_last_case_number()
-            last_case_number = int(last_case_number) + 1
-            self.view.new_case_number_job_entry.setText(str(last_case_number))
+        # # if case number is empty, read the last case number from the database
+        # if self.view.new_case_number_job_entry.text() == "":
+        #     last_case_number = self.model.get_last_case_number()
+        #     last_case_number = int(last_case_number) + 1
+        #     self.view.new_case_number_job_entry.setText(str(last_case_number))
 
         if self.view.new_case_search_tree_view.selectedItems() == []:
             QMessageBox.critical(self.view, "Error",
@@ -431,11 +450,11 @@ class Main_Controller:
 
     def new_case_add_sender_info(self):
         """Add sender information to the case register"""
-        # if case number is empty, read the last case number from the database
-        if self.view.new_case_number_job_entry.text() == "":
-            last_case_number = self.model.get_last_case_number()
-            last_case_number = int(last_case_number) + 1
-            self.view.new_case_number_job_entry.setText(str(last_case_number))
+        # # if case number is empty, read the last case number from the database
+        # if self.view.new_case_number_job_entry.text() == "":
+        #     last_case_number = self.model.get_last_case_number()
+        #     last_case_number = int(last_case_number) + 1
+        #     self.view.new_case_number_job_entry.setText(str(last_case_number))
 
         if self.view.new_case_search_tree_view.selectedItems() == []:
             QMessageBox.critical(self.view, "Error",
@@ -638,8 +657,9 @@ class Main_Controller:
                     login_info[0][4] + " " + login_info[0][5]
                 self.view.show_current_user_information(current_name)
                 self.view.enable_all_buttons()
-                self.view.show_molecular_biology_page()
-                # self.view.show_job_register_page()
+                # self.view.show_molecular_biology_page()
+                self.all_customer_names = self.model.get_all_customer_names()
+                self.view.show_job_register_page()
 
         elif username == "" and password != "":
             self.view.username_lineEdit.setFocus()
