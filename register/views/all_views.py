@@ -119,6 +119,10 @@ class MainAppView(QMainWindow, Ui_main_app_view):
         self.stackedWidget.setCurrentIndex(2)
     # ==================== check job progress ======================
 
+    def back_to_specimen_page(self):
+        """Back to the specimen page."""
+        self.stackedWidget.setCurrentIndex(3)
+
     def show_check_job_progress_page(self):
         """Show the check job progress page."""
         self.stackedWidget.setCurrentIndex(4)
@@ -158,6 +162,7 @@ class MainAppView(QMainWindow, Ui_main_app_view):
         """Show the specimen page."""
         self.stackedWidget.setCurrentIndex(3)
         self.clear_specimen_information()
+        self.enable_widgets_in_specimen_page()
         self.specimen_page_save_pushButton.setEnabled(True)
         self.disable_lab_buttons()
 
@@ -1265,6 +1270,8 @@ class MainAppView(QMainWindow, Ui_main_app_view):
             False)
         self.new_case_print_sticker_button.setEnabled(False)
         self.new_case_print_lab_report_button.setEnabled(False)
+
+        self.new_case_detail_case_tree_view.clear()
 
     def show_add_data_specimen_page(self):
         """Show the add data specimen page."""

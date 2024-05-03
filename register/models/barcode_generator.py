@@ -122,12 +122,15 @@ class BarcodeGenerator:
         painter.end()
 
     def __del__(self):
-        print(self.barcode_file_path)
-        if os.path.exists(self.barcode_file_path):
-            # print("Deleting barcode image")
-            os.remove(self.barcode_file_path)
-        else:
-            print("The file does not exist")
+        # print(self.barcode_file_path)
+        try:
+            if os.path.exists(self.barcode_file_path):
+                # print("Deleting barcode image")
+                os.remove(self.barcode_file_path)
+            else:
+                print("The file does not exist")
+        except Exception as e:
+            print(f"Error: {e}")
 
 
 if __name__ == "__main__":

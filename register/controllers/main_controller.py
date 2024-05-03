@@ -60,6 +60,7 @@ class Main_Controller:
         self.bind_event_in_barcode_page()
 
     def bind_event_in_barcode_page(self):
+        """"Bind event in barcode page"""
         self.view.sticker_search_lineEdit.textChanged.connect(
             self.search_customer_in_barcode_page)
         self.view.print_barcode_pushButton.clicked.connect(
@@ -70,6 +71,7 @@ class Main_Controller:
             self.search_today_sticker)
 
     def search_customer_in_barcode_page(self):
+        """Search customer in barcode page"""
         input_text = self.view.sticker_search_lineEdit.text()
         if input_text == "":
             self.view.barcode_page_customertreeWidget.clear()
@@ -108,6 +110,51 @@ class Main_Controller:
 
         self.view.new_case_search_name_entry.textChanged.connect(
             self.new_case_search_user_change)
+        self.view.new_case_print_sticker_button.clicked.connect(
+            self.print_barcode_in_new_case_page)
+
+        self.view.new_case_delete_data_specimen_button.clicked.connect(
+            self.delete_specimen_in_new_case_page)
+
+    def delete_specimen_in_new_case_page(self):
+        """Delete specimen in new case
+        """
+        selected_item = self.view.new_case_detail_case_tree_view.selectedItems()
+        if selected_item == []:
+            QMessageBox.critical(self.view, "Error",
+                                 "Please select a row to delete")
+        else:
+            if len(selected_item) > 1:
+                QMessageBox.critical(self.view, "Error",
+                                     "Please select only one row to delete")
+            else:
+                case_id = int(selected_item[0].text(1))
+                if self.model.delete_specimen_in_new_case_page(case_id):
+                    QMessageBox.information(self.view, "Success",
+                                            "ลบข้อมูลเรียบร้อย")
+                    self.reload_new_job_page()
+
+    def print_barcode_in_new_case_page(self):
+        """Print barcode in new case page"""
+
+        selected_item = self.view.new_case_detail_case_tree_view.selectedItems()
+        if selected_item == []:
+            QMessageBox.critical(self.view, "Error",
+                                 "Please select a row to print barcode")
+        else:
+            if len(selected_item) > 1:
+                QMessageBox.critical(self.view, "Error",
+                                     "Please select only one row to print barcode")
+            else:
+                barcode_obj = BarcodeGenerator()
+                row_list = []
+                for row in selected_item:
+                    column_list = []
+                    for col in range(self.view.new_case_detail_case_tree_view.columnCount()):
+                        column_list.append(row.text(col))
+                    row_list.append(column_list)
+                barcode_obj.generate(row_list)
+                barcode_obj.print_barcode()
 
     def new_case_search_user_change(self):
         """"Auto complete search name in the new case register page"""
@@ -144,6 +191,10 @@ class Main_Controller:
             self.compute_parasite_test_summary)
         self.view.parasite_save_data_pushButton.clicked.connect(
             self.save_parasite_information)
+        self.view.parasite_cancel_pushButton.clicked.connect(
+            self.view.back_to_specimen_page)
+        self.view.back_to_home_pushButton.clicked.connect(
+            self.view.back_to_specimen_page)
 
     def save_parasite_information(self):
         """Save parasite information"""
@@ -157,7 +208,7 @@ class Main_Controller:
                 sample_id, lab_id, "", self.user_login_info[0][1])  # save lab order
             QMessageBox.information(self.view, "Success",
                                     "บันทึกข้อมูลเรียบร้อย")
-            self.reload_specimen_page()
+            self.reload_new_job_page()
         else:
             QMessageBox.critical(self.view, "Error",
                                  "ไม่สามารถบันทึกข้อมูลได้")
@@ -179,6 +230,8 @@ class Main_Controller:
             self.compute_bacteria_lab_summary)
         self.view.bacteria_page_save_data_pushButton.clicked.connect(
             self.save_bacteria_lab_information)
+        self.view.bacteria_page_cancel_pushButton.clicked.connect(
+            self.view.back_to_specimen_page)
 
     def save_bacteria_lab_information(self):
         """Save bacteria lab information"""
@@ -218,7 +271,7 @@ class Main_Controller:
                 sample_id, lab_id, "", self.user_login_info[0][1])
             QMessageBox.information(self.view, "Success",
                                     "บันทึกข้อมูลเรียบร้อย")
-            self.reload_specimen_page()
+            self.reload_new_job_page()
         else:
             QMessageBox.critical(self.view, "Error",
                                  "ไม่สามารถบันทึกข้อมูลได้")
@@ -261,7 +314,7 @@ class Main_Controller:
                 sample_id, lab_id, "", self.user_login_info[0][1])
             QMessageBox.information(self.view, "Success",
                                     "บันทึกข้อมูลเรียบร้อย")
-            self.reload_specimen_page()
+            self.reload_new_job_page()
             # ==================== enable lab buttons ====================
         else:
             QMessageBox.critical(self.view, "Error",
@@ -556,9 +609,22 @@ class Main_Controller:
 
     def search_today_sticker(self):
         """ serach all case that registered today. Sorting the result by date and time"""
-        # add data to listview
-        data = self.model.search_today_sticker()
-        self.add_customer_case_to_view(data)
+        data = self.model.get_today_case_detail()
+        self.view.sticker_search_treeWidget.clear()
+
+        data_list = []
+        for item in data:
+            data_item = []
+            data_item.append(item[0].strftime("%d-%m-%Y %H:%M:%S"))
+            data_item.append(str(item[1]).zfill(10))
+            data_item.append(item[2])
+            lab_name = item[3] + "(" + item[4] + ")"
+            data_item.append(lab_name)
+            data_item.append(item[5])
+            data_item.append(item[6])
+            data_item.append("")
+            data_list.append(data_item)
+        self.add_customer_case_to_view(data_list)
 
     def search_sticker(self):
         """ serach customer name to get a sticker information"""
@@ -569,13 +635,25 @@ class Main_Controller:
             QMessageBox.critical(self.view, "Error",
                                  "กรุณาเลือกข้อมูลของลูกค้า")
         else:
-            customer_information = self.model.search_customer_case(
-                selected_item)
-            if customer_information == []:
-                QMessageBox.critical(self.view, "Error",
-                                     "ไม่พบข้อมูลลูกค้า")
-            else:
-                self.add_customer_case_to_view(customer_information)
+            selected_name = selected_item[0].text(0)
+            selected_surname = selected_item[0].text(1)
+            data = self.model.get_case_detail_by_customer_name(
+                selected_name, selected_surname)
+            self.view.sticker_search_treeWidget.clear()
+
+            data_list = []
+            for item in data:
+                data_item = []
+                data_item.append(item[0].strftime("%d-%m-%Y %H:%M:%S"))
+                data_item.append(str(item[1]).zfill(10))
+                data_item.append(item[2])
+                lab_name = item[3] + "(" + item[4] + ")"
+                data_item.append(lab_name)
+                data_item.append(item[5])
+                data_item.append(item[6])
+                data_item.append("")
+                data_list.append(data_item)
+            self.add_customer_case_to_view(data_list)
 
     def add_customer_case_to_view(self, data):
         """Add customer case to the view"""
@@ -583,21 +661,8 @@ class Main_Controller:
             QMessageBox.critical(self.view, "Error",
                                  "ไม่พบข้อมูลลูกค้า")
             self.view.sticker_search_lineEdit.clear()
-
         else:
-            sticker_list = []
-            for item in data:
-                # reformat the date and time
-                lab_name = item[6] + "(" + item[5] + ")"
-                # barcode number format is "yy" + barcode_number where the barcode_number is 10 digits.
-                barcode_number = time.strftime(
-                    "%Y", time.localtime())[-2:] + str(item[1]).zfill(10)
-
-                # barcode_number = + str(item[1])
-                reformat_data = [item[0].strftime(
-                    "%d-%m-%Y %H:%M:%S"), barcode_number, item[2], lab_name, item[3], item[4], "Comments"]
-                sticker_list.append(reformat_data)
-            self.view.add_data_to_listview_printerpage(sticker_list)
+            self.view.add_data_to_listview_printerpage(data)
 
     def print_barcode(self):
         """Print a selected information to barcode """
@@ -670,14 +735,13 @@ class Main_Controller:
         # clear user information on top right corner
         self.view.clear_current_user_information()
 
-    def reload_specimen_page(self):
+    def reload_new_job_page(self):
         """Reload specimen page"""
         # clear list views and load all labs to the tree view
         self.view.new_case_detail_case_tree_view.clear()
         # read all lab_order from the current case
         case_id = self.view.new_case_number_job_entry.text()
         lab_order_details = self.model.get_lab_order_details(case_id)
-        print(lab_order_details)
         lab_info = []
         for lab_order_detail in lab_order_details:
             info = []

@@ -245,3 +245,22 @@ class Main_Model:
         data = self.select_data(sql_cmd, [case_id])
         return data
 
+    def get_case_detail_by_customer_name(self, customer_name, customer_surname) -> list:
+        """Get case detail by customer name."""
+        sql_cmd = self.sql_cmd["get_case_detail_by_customer_name"]
+        data = self.select_data(sql_cmd, [customer_name, customer_surname])
+        return data
+
+    def get_today_case_detail(self):
+        """Get today case detail."""
+        sql_cmd = self.sql_cmd["get_today_case_detail"]
+        data = self.select_data(sql_cmd, [])
+        return data
+
+    def delete_specimen_in_new_case_page(self, sample_id) -> bool:
+        """Delete specimen in new case page."""
+        sql_cmd = self.sql_cmd["remove_case_detail"]
+        if self.insert_data(sql_cmd, [sample_id]):
+            return True
+        else:
+            return False
