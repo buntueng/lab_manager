@@ -348,16 +348,12 @@ class Ui_main_app_view(object):
         self.new_job_page.setObjectName(u"new_job_page")
         self.new_case_search_name_entry = QLineEdit(self.new_job_page)
         self.new_case_search_name_entry.setObjectName(u"new_case_search_name_entry")
-        self.new_case_search_name_entry.setGeometry(QRect(10, 30, 491, 31))
+        self.new_case_search_name_entry.setGeometry(QRect(10, 30, 641, 31))
         self.new_case_search_name_entry.setFont(font1)
         self.search_name_label = QLabel(self.new_job_page)
         self.search_name_label.setObjectName(u"search_name_label")
         self.search_name_label.setGeometry(QRect(10, 0, 211, 31))
         self.search_name_label.setFont(font1)
-        self.new_case_search_button = QPushButton(self.new_job_page)
-        self.new_case_search_button.setObjectName(u"new_case_search_button")
-        self.new_case_search_button.setGeometry(QRect(510, 20, 141, 41))
-        self.new_case_search_button.setFont(font1)
         self.new_case_search_tree_view = QTreeWidget(self.new_job_page)
         __qtreewidgetitem = QTreeWidgetItem()
         __qtreewidgetitem.setTextAlignment(2, Qt.AlignCenter);
@@ -366,6 +362,7 @@ class Ui_main_app_view(object):
         self.new_case_search_tree_view.setHeaderItem(__qtreewidgetitem)
         self.new_case_search_tree_view.setObjectName(u"new_case_search_tree_view")
         self.new_case_search_tree_view.setGeometry(QRect(10, 80, 1001, 141))
+        self.new_case_search_tree_view.setMinimumSize(QSize(1001, 0))
         self.new_case_search_tree_view.setFont(font1)
         self.new_case_search_tree_view.setAutoScrollMargin(18)
         self.new_case_search_tree_view.setTextElideMode(Qt.ElideRight)
@@ -455,7 +452,7 @@ class Ui_main_app_view(object):
         __qtreewidgetitem1.setTextAlignment(0, Qt.AlignCenter);
         self.new_case_detail_case_tree_view.setHeaderItem(__qtreewidgetitem1)
         self.new_case_detail_case_tree_view.setObjectName(u"new_case_detail_case_tree_view")
-        self.new_case_detail_case_tree_view.setGeometry(QRect(10, 400, 991, 431))
+        self.new_case_detail_case_tree_view.setGeometry(QRect(10, 400, 1001, 431))
         self.new_case_detail_case_tree_view.setFont(font1)
         self.new_case_detail_case_tree_view.header().setDefaultSectionSize(144)
         self.new_case_select_sender_button = QPushButton(self.new_job_page)
@@ -476,19 +473,19 @@ class Ui_main_app_view(object):
         self.new_case_save_button.setFont(font1)
         self.new_case_add_data_specimen_button = QPushButton(self.new_job_page)
         self.new_case_add_data_specimen_button.setObjectName(u"new_case_add_data_specimen_button")
-        self.new_case_add_data_specimen_button.setGeometry(QRect(1010, 400, 171, 61))
+        self.new_case_add_data_specimen_button.setGeometry(QRect(1020, 400, 161, 61))
         self.new_case_add_data_specimen_button.setFont(font1)
         self.new_case_delete_data_specimen_button = QPushButton(self.new_job_page)
         self.new_case_delete_data_specimen_button.setObjectName(u"new_case_delete_data_specimen_button")
-        self.new_case_delete_data_specimen_button.setGeometry(QRect(1010, 470, 171, 61))
+        self.new_case_delete_data_specimen_button.setGeometry(QRect(1020, 470, 161, 61))
         self.new_case_delete_data_specimen_button.setFont(font1)
         self.new_case_print_sticker_button = QPushButton(self.new_job_page)
         self.new_case_print_sticker_button.setObjectName(u"new_case_print_sticker_button")
-        self.new_case_print_sticker_button.setGeometry(QRect(1010, 540, 171, 61))
+        self.new_case_print_sticker_button.setGeometry(QRect(1020, 540, 161, 61))
         self.new_case_print_sticker_button.setFont(font1)
         self.new_case_print_lab_report_button = QPushButton(self.new_job_page)
         self.new_case_print_lab_report_button.setObjectName(u"new_case_print_lab_report_button")
-        self.new_case_print_lab_report_button.setGeometry(QRect(1010, 610, 171, 61))
+        self.new_case_print_lab_report_button.setGeometry(QRect(1020, 610, 161, 61))
         self.new_case_print_lab_report_button.setFont(font1)
         self.stackedWidget.addWidget(self.new_job_page)
         self.specimen_page = QWidget()
@@ -1094,23 +1091,27 @@ class Ui_main_app_view(object):
         __qtreewidgetitem3.setFont(0, font1);
         self.sticker_search_treeWidget.setHeaderItem(__qtreewidgetitem3)
         self.sticker_search_treeWidget.setObjectName(u"sticker_search_treeWidget")
-        self.sticker_search_treeWidget.setGeometry(QRect(10, 101, 1161, 651))
+        self.sticker_search_treeWidget.setGeometry(QRect(10, 231, 1161, 521))
         self.sticker_search_treeWidget.header().setDefaultSectionSize(163)
         self.sticker_search_pushButton = QPushButton(self.barcode_page)
         self.sticker_search_pushButton.setObjectName(u"sticker_search_pushButton")
-        self.sticker_search_pushButton.setGeometry(QRect(320, 40, 121, 41))
+        self.sticker_search_pushButton.setGeometry(QRect(1010, 160, 161, 51))
         self.sticker_search_pushButton.setFont(font5)
         self.sticker_search_lineEdit = QLineEdit(self.barcode_page)
         self.sticker_search_lineEdit.setObjectName(u"sticker_search_lineEdit")
-        self.sticker_search_lineEdit.setGeometry(QRect(10, 51, 291, 31))
+        self.sticker_search_lineEdit.setGeometry(QRect(10, 51, 491, 31))
         self.today_sticker_search_pushButton = QPushButton(self.barcode_page)
         self.today_sticker_search_pushButton.setObjectName(u"today_sticker_search_pushButton")
-        self.today_sticker_search_pushButton.setGeometry(QRect(1000, 40, 171, 51))
+        self.today_sticker_search_pushButton.setGeometry(QRect(1010, 100, 161, 51))
         self.today_sticker_search_pushButton.setFont(font5)
         self.print_barcode_pushButton = QPushButton(self.barcode_page)
         self.print_barcode_pushButton.setObjectName(u"print_barcode_pushButton")
         self.print_barcode_pushButton.setGeometry(QRect(1020, 770, 151, 41))
         self.print_barcode_pushButton.setFont(font5)
+        self.barcode_page_customertreeWidget = QTreeWidget(self.barcode_page)
+        self.barcode_page_customertreeWidget.setObjectName(u"barcode_page_customertreeWidget")
+        self.barcode_page_customertreeWidget.setGeometry(QRect(10, 100, 981, 111))
+        self.barcode_page_customertreeWidget.setFont(font1)
         self.stackedWidget.addWidget(self.barcode_page)
         self.lab_report_page = QWidget()
         self.lab_report_page.setObjectName(u"lab_report_page")
@@ -3012,7 +3013,7 @@ class Ui_main_app_view(object):
 
         self.retranslateUi(main_app_view)
 
-        self.stackedWidget.setCurrentIndex(13)
+        self.stackedWidget.setCurrentIndex(8)
         self.molecular_biology_summary_pushButton.setDefault(False)
         self.molecular_biology_save_data_pushButton.setDefault(False)
         self.back_to_home_pushButton.setDefault(False)
@@ -3065,7 +3066,6 @@ class Ui_main_app_view(object):
         self.anonymous_tax_checkbox.setText(QCoreApplication.translate("main_app_view", u"\u0e44\u0e21\u0e48\u0e23\u0e30\u0e1a\u0e38\u0e40\u0e25\u0e02\u0e1b\u0e23\u0e30\u0e08\u0e33\u0e15\u0e31\u0e27\u0e1c\u0e39\u0e49\u0e40\u0e2a\u0e35\u0e22\u0e20\u0e32\u0e29\u0e35", None))
         self.save_new_customer_button.setText(QCoreApplication.translate("main_app_view", u"\u0e1a\u0e31\u0e19\u0e17\u0e36\u0e01\u0e02\u0e49\u0e2d\u0e21\u0e39\u0e25\u0e25\u0e39\u0e01\u0e04\u0e49\u0e32", None))
         self.search_name_label.setText(QCoreApplication.translate("main_app_view", u"\u0e04\u0e49\u0e19\u0e2b\u0e32\u0e0a\u0e37\u0e48\u0e2d\u0e2b\u0e23\u0e37\u0e2d\u0e19\u0e32\u0e21\u0e2a\u0e01\u0e38\u0e25\u0e25\u0e39\u0e01\u0e04\u0e49\u0e32", None))
-        self.new_case_search_button.setText(QCoreApplication.translate("main_app_view", u"\u0e04\u0e49\u0e19\u0e2b\u0e32", None))
         ___qtreewidgetitem = self.new_case_search_tree_view.headerItem()
         ___qtreewidgetitem.setText(2, QCoreApplication.translate("main_app_view", u"\u0e40\u0e25\u0e02\u0e1c\u0e39\u0e49\u0e40\u0e2a\u0e35\u0e22\u0e20\u0e32\u0e29\u0e35", None));
         ___qtreewidgetitem.setText(1, QCoreApplication.translate("main_app_view", u"\u0e19\u0e32\u0e21\u0e2a\u0e01\u0e38\u0e25", None));
@@ -3079,13 +3079,13 @@ class Ui_main_app_view(object):
         self.tax_owner_label.setText(QCoreApplication.translate("main_app_view", u"\u0e40\u0e25\u0e02\u0e1c\u0e39\u0e49\u0e40\u0e2a\u0e35\u0e22\u0e20\u0e32\u0e29\u0e35", None))
         self.name_projact_label.setText(QCoreApplication.translate("main_app_view", u"\u0e0a\u0e37\u0e48\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23", None))
         ___qtreewidgetitem1 = self.new_case_detail_case_tree_view.headerItem()
-        ___qtreewidgetitem1.setText(6, QCoreApplication.translate("main_app_view", u"\u0e04\u0e33\u0e2d\u0e18\u0e34\u0e1a\u0e32\u0e22", None));
-        ___qtreewidgetitem1.setText(5, QCoreApplication.translate("main_app_view", u"\u0e2b\u0e49\u0e2d\u0e07\u0e1b\u0e0f\u0e34\u0e1a\u0e31\u0e15\u0e34\u0e01\u0e32\u0e23", None));
+        ___qtreewidgetitem1.setText(6, QCoreApplication.translate("main_app_view", u"\u0e02\u0e49\u0e2d\u0e21\u0e39\u0e25\u0e40\u0e1e\u0e34\u0e48\u0e21\u0e40\u0e15\u0e34\u0e21", None));
+        ___qtreewidgetitem1.setText(5, QCoreApplication.translate("main_app_view", u"\u0e23\u0e30\u0e14\u0e31\u0e1a\u0e04\u0e27\u0e32\u0e21\u0e14\u0e48\u0e27\u0e19", None));
         ___qtreewidgetitem1.setText(4, QCoreApplication.translate("main_app_view", u"\u0e01\u0e32\u0e23\u0e40\u0e01\u0e47\u0e1a\u0e23\u0e31\u0e01\u0e29\u0e32", None));
-        ___qtreewidgetitem1.setText(3, QCoreApplication.translate("main_app_view", u"\u0e2a\u0e16\u0e32\u0e19\u0e30", None));
-        ___qtreewidgetitem1.setText(2, QCoreApplication.translate("main_app_view", u"\u0e1b\u0e23\u0e30\u0e40\u0e20\u0e17\u0e2a\u0e31\u0e15\u0e27\u0e4c", None));
-        ___qtreewidgetitem1.setText(1, QCoreApplication.translate("main_app_view", u"Barcode", None));
-        ___qtreewidgetitem1.setText(0, QCoreApplication.translate("main_app_view", u"\u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e23\u0e31\u0e1a", None));
+        ___qtreewidgetitem1.setText(3, QCoreApplication.translate("main_app_view", u"\u0e2b\u0e49\u0e2d\u0e07\u0e1b\u0e0f\u0e34\u0e1a\u0e31\u0e15\u0e34\u0e01\u0e32\u0e23", None));
+        ___qtreewidgetitem1.setText(2, QCoreApplication.translate("main_app_view", u"\u0e0a\u0e19\u0e34\u0e14\u0e2a\u0e31\u0e15\u0e27\u0e4c", None));
+        ___qtreewidgetitem1.setText(1, QCoreApplication.translate("main_app_view", u"\u0e2b\u0e21\u0e32\u0e22\u0e40\u0e25\u0e02\u0e01\u0e32\u0e23\u0e15\u0e23\u0e27\u0e08", None));
+        ___qtreewidgetitem1.setText(0, QCoreApplication.translate("main_app_view", u"\u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e23\u0e31\u0e1a\u0e40\u0e04\u0e2a", None));
         self.new_case_select_sender_button.setText(QCoreApplication.translate("main_app_view", u"\u0e40\u0e25\u0e37\u0e2d\u0e01\u0e1c\u0e39\u0e49\u0e2a\u0e48\u0e07", None))
         self.new_case_select_owner_button.setText(QCoreApplication.translate("main_app_view", u"\u0e40\u0e25\u0e37\u0e2d\u0e01\u0e40\u0e08\u0e49\u0e32\u0e02\u0e2d\u0e07", None))
         self.new_case_anonymous_owner_button.setText(QCoreApplication.translate("main_app_view", u"\u0e44\u0e21\u0e48\u0e23\u0e30\u0e1a\u0e38\u0e40\u0e08\u0e49\u0e32\u0e02\u0e2d\u0e07", None))
@@ -3215,9 +3215,13 @@ class Ui_main_app_view(object):
         ___qtreewidgetitem3.setText(2, QCoreApplication.translate("main_app_view", u"\u0e0a\u0e19\u0e34\u0e14\u0e2a\u0e31\u0e15\u0e27\u0e4c", None));
         ___qtreewidgetitem3.setText(1, QCoreApplication.translate("main_app_view", u"\u0e2b\u0e21\u0e32\u0e22\u0e40\u0e25\u0e02\u0e01\u0e32\u0e23\u0e15\u0e23\u0e27\u0e08", None));
         ___qtreewidgetitem3.setText(0, QCoreApplication.translate("main_app_view", u"\u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e23\u0e31\u0e1a\u0e40\u0e04\u0e2a", None));
-        self.sticker_search_pushButton.setText(QCoreApplication.translate("main_app_view", u"\u0e04\u0e49\u0e19\u0e2b\u0e32", None))
+        self.sticker_search_pushButton.setText(QCoreApplication.translate("main_app_view", u"\u0e04\u0e49\u0e19\u0e2b\u0e32\u0e14\u0e49\u0e27\u0e22\u0e0a\u0e37\u0e48\u0e2d\u0e25\u0e39\u0e01\u0e04\u0e49\u0e32", None))
         self.today_sticker_search_pushButton.setText(QCoreApplication.translate("main_app_view", u"\u0e04\u0e49\u0e19\u0e2b\u0e32\u0e40\u0e04\u0e2a\u0e43\u0e19\u0e27\u0e31\u0e19\u0e19\u0e35\u0e49", None))
         self.print_barcode_pushButton.setText(QCoreApplication.translate("main_app_view", u"\u0e1e\u0e34\u0e21\u0e1e\u0e4c\u0e1a\u0e32\u0e23\u0e4c\u0e42\u0e04\u0e14", None))
+        ___qtreewidgetitem4 = self.barcode_page_customertreeWidget.headerItem()
+        ___qtreewidgetitem4.setText(2, QCoreApplication.translate("main_app_view", u"\u0e2b\u0e21\u0e32\u0e22\u0e40\u0e25\u0e02\u0e1c\u0e39\u0e49\u0e40\u0e2a\u0e35\u0e22\u0e20\u0e32\u0e29\u0e35", None));
+        ___qtreewidgetitem4.setText(1, QCoreApplication.translate("main_app_view", u"\u0e2a\u0e01\u0e38\u0e25", None));
+        ___qtreewidgetitem4.setText(0, QCoreApplication.translate("main_app_view", u"\u0e0a\u0e37\u0e48\u0e2d", None));
         self.label_10.setText(QCoreApplication.translate("main_app_view", u"Lab report", None))
         self.label_8.setText(QCoreApplication.translate("main_app_view", u"edit_personal_page", None))
         self.label_13.setText(QCoreApplication.translate("main_app_view", u"Update page", None))

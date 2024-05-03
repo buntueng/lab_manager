@@ -50,13 +50,6 @@ class Main_Controller:
 
         self.view.sign_out_pushButton.clicked.connect(
             self.view.show_login_page)
-        # ==================== print barcode page ====================
-        self.view.print_barcode_pushButton.clicked.connect(
-            self.print_barcode)
-        self.view.sticker_search_pushButton.clicked.connect(
-            self.search_sticker)
-        self.view.today_sticker_search_pushButton.clicked.connect(
-            self.search_today_sticker)
 
         self.bind_event_in_new_customer_page()
         self.bind_event_in_case_register_page()
@@ -64,6 +57,31 @@ class Main_Controller:
         self.bind_event_in_molecular_biology_page()
         self.bind_event_in_parasitology_page()
         self.bind_event_in_microbiology_page()
+        self.bind_event_in_barcode_page()
+
+    def bind_event_in_barcode_page(self):
+        self.view.sticker_search_lineEdit.textChanged.connect(
+            self.search_customer_in_barcode_page)
+        self.view.print_barcode_pushButton.clicked.connect(
+            self.print_barcode)
+        self.view.sticker_search_pushButton.clicked.connect(
+            self.search_sticker)
+        self.view.today_sticker_search_pushButton.clicked.connect(
+            self.search_today_sticker)
+
+    def search_customer_in_barcode_page(self):
+        input_text = self.view.sticker_search_lineEdit.text()
+        if input_text == "":
+            self.view.barcode_page_customertreeWidget.clear()
+        else:
+            customer_detial = []
+            for cs_detail in self.all_customer_names:
+                if input_text in cs_detail[0] or input_text in cs_detail[1]:
+                    customer_detial.append(cs_detail)
+
+            if len(customer_detial) > 0:
+                # insert data to Qtreeview
+                self.view.add_customer_info_to_barcode_page(customer_detial)
 
     def bind_event_in_new_customer_page(self):
         """Bind event in new customer page"""
@@ -76,10 +94,6 @@ class Main_Controller:
 
     def bind_event_in_case_register_page(self):
         """Bind event in case register page"""
-        # self.view.new_case_search_button.clicked.connect(
-        # self.new_case_search_user)
-        # self.view.new_case_save_button.clicked.connect(
-        # self.save_case_register)
         self.view.new_case_select_sender_button.clicked.connect(
             self.new_case_add_sender_info)
         self.view.new_case_select_owner_button.clicked.connect(
@@ -138,8 +152,12 @@ class Main_Controller:
         # save data to the database
         sample_id = self.view.specimen_page_label.text().split(":")[1]
         if self.model.save_parasite_information(int(sample_id), data_list, checkbox_state, self.user_login_info[0][1]):
+            lab_id = "5"            # 5 is the lab id for parasite lab
+            self.model.save_lab_order(
+                sample_id, lab_id, "", self.user_login_info[0][1])  # save lab order
             QMessageBox.information(self.view, "Success",
                                     "บันทึกข้อมูลเรียบร้อย")
+            self.reload_specimen_page()
         else:
             QMessageBox.critical(self.view, "Error",
                                  "ไม่สามารถบันทึกข้อมูลได้")
@@ -193,10 +211,14 @@ class Main_Controller:
         data = preparation_data + drug_sensitivity_data + \
             bacteria_identification_data + lab_request_data + [remark]
 
-        if self.model.save_bacteria_lab_information(
-                self.view.specimen_page_label.text().split(":")[1], data, self.user_login_info[0][1]):
+        sample_id = self.view.specimen_page_label.text().split(":")[1]
+        if self.model.save_bacteria_lab_information(sample_id, data, self.user_login_info[0][1]):
+            lab_id = "2"            # 2 is the lab id for bacteria lab
+            self.model.save_lab_order(
+                sample_id, lab_id, "", self.user_login_info[0][1])
             QMessageBox.information(self.view, "Success",
                                     "บันทึกข้อมูลเรียบร้อย")
+            self.reload_specimen_page()
         else:
             QMessageBox.critical(self.view, "Error",
                                  "ไม่สามารถบันทึกข้อมูลได้")
@@ -234,16 +256,12 @@ class Main_Controller:
         # save data to the database
         sample_id = self.view.specimen_page_label.text().split(":")[1]
         if self.model.save_molecular_biology_information(sample_id, data, self.user_login_info[0][1]):
+            lab_id = "8"            # 8 is the lab id for molecular biology
+            self.model.save_lab_order(
+                sample_id, lab_id, "", self.user_login_info[0][1])
             QMessageBox.information(self.view, "Success",
                                     "บันทึกข้อมูลเรียบร้อย")
-            # # disable save button
-            # self.view.molecular_biology_save_data_pushButton.setEnabled(False)
-            # # clear all entry
-            # self.view.clear_molecular_biology_information()
-            # self.view.enable_lab_buttons()
-            # # set specimen page label
-            # specimen_page_label = "Specimen:" + str(data[0])
-            # self.view.specimen_page_label.setText(specimen_page_label)
+            self.reload_specimen_page()
             # ==================== enable lab buttons ====================
         else:
             QMessageBox.critical(self.view, "Error",
@@ -337,8 +355,9 @@ class Main_Controller:
         if current_id > 0:
             QMessageBox.information(self.view, "Success",
                                     "บันทึกข้อมูลตัวอย่างเรียบร้อย")
-            # disable save button
-            self.view.specimen_page_save_pushButton.setEnabled(False)
+            # disable widgets
+            self.view.disable_widgets_in_specimen_page()
+
             # clear all entry
             self.view.clear_specimen_information()
             self.view.enable_lab_buttons()
@@ -353,12 +372,11 @@ class Main_Controller:
     def register_new_case(self):
         """register new case to the database"""
         skip = False
-        # check if case number is empty
-        if self.view.new_case_number_job_entry.text() == "":
+
+        if self.view.new_case_name_sender_entry.text() == "":
             QMessageBox.critical(self.view, "Error",
-                                 "กรุณาบันทึกข้อมูลลูกค้าก่อน")
+                                 "กรุณาเลือกผู้ส่งตัวอย่าง")
         else:
-            # if project name is empty, show warning message to confirm
             if self.view.new_case_name_project_entry.text() == "":
                 reply = QMessageBox.warning(self.view, "Warning",
                                             "ต้องการดำเนินการต่อโดยไม่บันทึกชื่อโครงการหรือไม่?",
@@ -375,7 +393,6 @@ class Main_Controller:
 
                 # get data from the view
                 case_data = []
-                case_data.append(self.view.new_case_number_job_entry.text())
                 case_data.append(self.view.new_case_name_sender_entry.text())
                 case_data.append(
                     self.view.new_case_surename_sender_entry.text())
@@ -385,7 +402,10 @@ class Main_Controller:
                     self.view.new_case_surename_owner_entry.text())
                 case_data.append(self.view.new_case_tax_owner_entry.text())
                 case_data.append(self.view.new_case_name_project_entry.text())
-                if self.model.save_new_case_register(case_data, self.user_login_info[0][1]):
+                case_id = self.model.save_new_case_register(
+                    case_data, self.user_login_info[0][1])
+                if case_id > 0:
+                    self.view.new_case_number_job_entry.setText(str(case_id))
                     QMessageBox.information(self.view, "Success",
                                             "บันทึกข้อมูลเรียบร้อย")
                     # clear data in search tree view
@@ -395,12 +415,6 @@ class Main_Controller:
                     # disable entry name and tree view
                     self.view.new_case_search_name_entry.setEnabled(False)
                     self.view.new_case_search_tree_view.setEnabled(False)
-
-                    # disable case number entry
-                    self.view.new_case_number_job_entry.setEnabled(False)
-
-                    # disable search button
-                    self.view.new_case_search_button.setEnabled(False)
 
                     # disable sender and owner information
                     self.view.new_case_name_sender_entry.setEnabled(False)
@@ -427,12 +441,6 @@ class Main_Controller:
 
     def new_case_add_owner_info(self):
         """Add owner information to the case register"""
-        # # if case number is empty, read the last case number from the database
-        # if self.view.new_case_number_job_entry.text() == "":
-        #     last_case_number = self.model.get_last_case_number()
-        #     last_case_number = int(last_case_number) + 1
-        #     self.view.new_case_number_job_entry.setText(str(last_case_number))
-
         if self.view.new_case_search_tree_view.selectedItems() == []:
             QMessageBox.critical(self.view, "Error",
                                  "Please select a row to add owner information")
@@ -485,36 +493,6 @@ class Main_Controller:
                                      "ไม่พบข้อมูลลูกค้า")
             else:
                 self.view.add_customer_info_new_case(customer_information)
-
-    def save_case_register(self):
-        """Save case register"""
-        # get selected item from the QTreeWidget
-        selected_item = self.view.new_case_detail_case_tree_view.selectedItems()
-        if selected_item == []:
-            QMessageBox.critical(self.view, "Error",
-                                 "Please select a row to save case register")
-        else:
-            if len(selected_item) > 1:
-                QMessageBox.critical(self.view, "Error",
-                                     "Please select only one row to save case register")
-            else:
-                # get data from the selected item
-                row_list = []
-                for row in selected_item:
-                    column_list = []
-                    for col in range(self.view.new_case_detail_case_tree_view.columnCount()):
-                        column_list.append(row.text(col))
-                    row_list.append(column_list)
-                # get updater id from the user_login_info
-                updater = self.user_login_info[0][1]
-                # save data to the database
-                if self.model.save_case_register(row_list, updater):
-                    QMessageBox.information(self.view, "Success",
-                                            "บันทึกข้อมูลลูกค้าเรียบร้อย")
-                    self.view.clear_information()
-                else:
-                    QMessageBox.critical(self.view, "Error",
-                                         "ไม่สามารถบันทึกข้อมูลลูกค้าได้")
 
     def disable_tax_entry(self, state: int) -> None:
         """Disable tax entry if the checkbox is checked"""
@@ -570,6 +548,8 @@ class Main_Controller:
                 QMessageBox.information(self.view, "Success",
                                         "บันทึกข้อมูลลูกค้าเรียบร้อย")
                 self.view.clear_new_customer_information()
+                # reload all customer names
+                self.all_customer_names = self.model.get_all_customer_names()
             else:
                 QMessageBox.critical(self.view, "Error",
                                      "ไม่สามารถบันทึกข้อมูลลูกค้าได้")
@@ -582,13 +562,15 @@ class Main_Controller:
 
     def search_sticker(self):
         """ serach customer name to get a sticker information"""
-        keyword_search = self.view.sticker_search_lineEdit.text()
-        if keyword_search == "":
+        # keyword_search = self.view.sticker_search_lineEdit.text()
+        # get name from selected first column in QTreeWidget
+        selected_item = self.view.barcode_page_customertreeWidget.selectedItems()
+        if selected_item == []:
             QMessageBox.critical(self.view, "Error",
-                                 "กรุณาป้อนชื่อหรือนามสกุลของลูกค้า")
+                                 "กรุณาเลือกข้อมูลของลูกค้า")
         else:
             customer_information = self.model.search_customer_case(
-                keyword_search)
+                selected_item)
             if customer_information == []:
                 QMessageBox.critical(self.view, "Error",
                                      "ไม่พบข้อมูลลูกค้า")
@@ -687,3 +669,27 @@ class Main_Controller:
         self.view.show_login_page()
         # clear user information on top right corner
         self.view.clear_current_user_information()
+
+    def reload_specimen_page(self):
+        """Reload specimen page"""
+        # clear list views and load all labs to the tree view
+        self.view.new_case_detail_case_tree_view.clear()
+        # read all lab_order from the current case
+        case_id = self.view.new_case_number_job_entry.text()
+        lab_order_details = self.model.get_lab_order_details(case_id)
+        print(lab_order_details)
+        lab_info = []
+        for lab_order_detail in lab_order_details:
+            info = []
+            # convert timestamp to string
+            info.append(str(lab_order_detail[0]))
+            # if lab order is intger less than 10, add 0 in front of the number
+            info.append(str(lab_order_detail[1]).zfill(12))
+            info.append(lab_order_detail[2])
+            room_code = lab_order_detail[3] + "(" + lab_order_detail[4] + ")"
+            info.append(room_code)
+            info.append(lab_order_detail[5])
+            info.append(lab_order_detail[6])
+            lab_info.append(info)
+        self.view.reload_lab_order_detail_to_tree_view(lab_info)
+        self.view.reload_new_job_page()

@@ -291,7 +291,7 @@
       </rect>
      </property>
      <property name="currentIndex">
-      <number>13</number>
+      <number>8</number>
      </property>
      <widget class="QWidget" name="login_page">
       <widget class="QLineEdit" name="username_lineEdit">
@@ -976,7 +976,7 @@
         <rect>
          <x>10</x>
          <y>30</y>
-         <width>491</width>
+         <width>641</width>
          <height>31</height>
         </rect>
        </property>
@@ -1008,26 +1008,6 @@
         <string>ค้นหาชื่อหรือนามสกุลลูกค้า</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="new_case_search_button">
-       <property name="geometry">
-        <rect>
-         <x>510</x>
-         <y>20</y>
-         <width>141</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>TH Niramit AS</family>
-         <pointsize>16</pointsize>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>ค้นหา</string>
-       </property>
-      </widget>
       <widget class="QTreeWidget" name="new_case_search_tree_view">
        <property name="geometry">
         <rect>
@@ -1036,6 +1016,12 @@
          <width>1001</width>
          <height>141</height>
         </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>1001</width>
+         <height>0</height>
+        </size>
        </property>
        <property name="font">
         <font>
@@ -1409,7 +1395,7 @@
         <rect>
          <x>10</x>
          <y>400</y>
-         <width>991</width>
+         <width>1001</width>
          <height>431</height>
         </rect>
        </property>
@@ -1425,7 +1411,7 @@
        </attribute>
        <column>
         <property name="text">
-         <string>วันที่รับ</string>
+         <string>วันที่รับเคส</string>
         </property>
         <property name="textAlignment">
          <set>AlignCenter</set>
@@ -1433,7 +1419,7 @@
        </column>
        <column>
         <property name="text">
-         <string>Barcode</string>
+         <string>หมายเลขการตรวจ</string>
         </property>
         <property name="textAlignment">
          <set>AlignCenter</set>
@@ -1441,23 +1427,7 @@
        </column>
        <column>
         <property name="text">
-         <string>ประเภทสัตว์</string>
-        </property>
-        <property name="textAlignment">
-         <set>AlignCenter</set>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>สถานะ</string>
-        </property>
-        <property name="textAlignment">
-         <set>AlignCenter</set>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>การเก็บรักษา</string>
+         <string>ชนิดสัตว์</string>
         </property>
         <property name="textAlignment">
          <set>AlignCenter</set>
@@ -1473,7 +1443,23 @@
        </column>
        <column>
         <property name="text">
-         <string>คำอธิบาย</string>
+         <string>การเก็บรักษา</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>ระดับความด่วน</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>ข้อมูลเพิ่มเติม</string>
         </property>
         <property name="textAlignment">
          <set>AlignCenter</set>
@@ -1563,9 +1549,9 @@
       <widget class="QPushButton" name="new_case_add_data_specimen_button">
        <property name="geometry">
         <rect>
-         <x>1010</x>
+         <x>1020</x>
          <y>400</y>
-         <width>171</width>
+         <width>161</width>
          <height>61</height>
         </rect>
        </property>
@@ -1583,9 +1569,9 @@
       <widget class="QPushButton" name="new_case_delete_data_specimen_button">
        <property name="geometry">
         <rect>
-         <x>1010</x>
+         <x>1020</x>
          <y>470</y>
-         <width>171</width>
+         <width>161</width>
          <height>61</height>
         </rect>
        </property>
@@ -1603,9 +1589,9 @@
       <widget class="QPushButton" name="new_case_print_sticker_button">
        <property name="geometry">
         <rect>
-         <x>1010</x>
+         <x>1020</x>
          <y>540</y>
-         <width>171</width>
+         <width>161</width>
          <height>61</height>
         </rect>
        </property>
@@ -1623,9 +1609,9 @@
       <widget class="QPushButton" name="new_case_print_lab_report_button">
        <property name="geometry">
         <rect>
-         <x>1010</x>
+         <x>1020</x>
          <y>610</y>
-         <width>171</width>
+         <width>161</width>
          <height>61</height>
         </rect>
        </property>
@@ -4111,9 +4097,9 @@
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>101</y>
+         <y>231</y>
          <width>1161</width>
-         <height>651</height>
+         <height>521</height>
         </rect>
        </property>
        <attribute name="headerDefaultSectionSize">
@@ -4228,10 +4214,10 @@
       <widget class="QPushButton" name="sticker_search_pushButton">
        <property name="geometry">
         <rect>
-         <x>320</x>
-         <y>40</y>
-         <width>121</width>
-         <height>41</height>
+         <x>1010</x>
+         <y>160</y>
+         <width>161</width>
+         <height>51</height>
         </rect>
        </property>
        <property name="font">
@@ -4240,7 +4226,7 @@
         </font>
        </property>
        <property name="text">
-        <string>ค้นหา</string>
+        <string>ค้นหาด้วยชื่อลูกค้า</string>
        </property>
       </widget>
       <widget class="QLineEdit" name="sticker_search_lineEdit">
@@ -4248,7 +4234,7 @@
         <rect>
          <x>10</x>
          <y>51</y>
-         <width>291</width>
+         <width>491</width>
          <height>31</height>
         </rect>
        </property>
@@ -4256,9 +4242,9 @@
       <widget class="QPushButton" name="today_sticker_search_pushButton">
        <property name="geometry">
         <rect>
-         <x>1000</x>
-         <y>40</y>
-         <width>171</width>
+         <x>1010</x>
+         <y>100</y>
+         <width>161</width>
          <height>51</height>
         </rect>
        </property>
@@ -4288,6 +4274,38 @@
        <property name="text">
         <string>พิมพ์บาร์โคด</string>
        </property>
+      </widget>
+      <widget class="QTreeWidget" name="barcode_page_customertreeWidget">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>100</y>
+         <width>981</width>
+         <height>111</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>TH Niramit AS</family>
+         <pointsize>16</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <column>
+        <property name="text">
+         <string>ชื่อ</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>สกุล</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>หมายเลขผู้เสียภาษี</string>
+        </property>
+       </column>
       </widget>
      </widget>
      <widget class="QWidget" name="lab_report_page">

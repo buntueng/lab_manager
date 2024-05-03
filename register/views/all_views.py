@@ -18,6 +18,14 @@ class MainAppView(QMainWindow, Ui_main_app_view):
 
         self.reset_widgets_in_job_register_page()
 
+        # set treewidget column width
+        self.new_case_search_tree_view.setColumnWidth(0, 300)
+        self.new_case_search_tree_view.setColumnWidth(1, 300)
+
+        # set treewidget column width
+        self.barcode_page_customertreeWidget.setColumnWidth(0, 300)
+        self.barcode_page_customertreeWidget.setColumnWidth(1, 300)
+
     def disable_all_buttons(self):
         """Disable all buttons in the main page."""
         self.sign_out_pushButton.setEnabled(False)
@@ -152,6 +160,10 @@ class MainAppView(QMainWindow, Ui_main_app_view):
         self.clear_specimen_information()
         self.specimen_page_save_pushButton.setEnabled(True)
         self.disable_lab_buttons()
+
+    def reload_specimen_page(self):
+        """Reload the specimen page."""
+        self.stackedWidget.setCurrentIndex(3)
     # ==================== update page ====================
 
     def show_update_page(self):
@@ -163,6 +175,10 @@ class MainAppView(QMainWindow, Ui_main_app_view):
         """Show the Molecular biology page."""
         self.stackedWidget.setCurrentIndex(13)
     # =======================================================
+
+    def reload_new_job_page(self):
+        """Reload the new job page."""
+        self.stackedWidget.setCurrentIndex(2)
 
     def show_Parasitology_page(self):
         """Show the Parasitology page."""
@@ -1203,6 +1219,7 @@ class MainAppView(QMainWindow, Ui_main_app_view):
             QTreeWidgetItem(self.new_case_search_tree_view, row)
 
     def reset_widgets_in_job_register_page(self):
+        """Reset widgets in job register page."""
         # clear data in search tree view
         self.new_case_search_tree_view.clear()
         self.new_case_search_name_entry.setText("")
@@ -1212,10 +1229,8 @@ class MainAppView(QMainWindow, Ui_main_app_view):
         self.new_case_search_tree_view.setEnabled(True)
 
         # clear case number entry
-        self.new_case_number_job_entry.setText("")
-
-        # enable search button
-        self.new_case_search_button.setEnabled(True)
+        self.new_case_number_job_entry.setEnabled(False)
+        self.new_case_number_job_entry.clear()
 
         # disable sender and owner information
         self.new_case_name_sender_entry.setEnabled(False)
@@ -1352,7 +1367,7 @@ class MainAppView(QMainWindow, Ui_main_app_view):
         preparation_name.append(self.Aspirate_RT_checkBox.text())
         if self.Aspirate_RT_lineEdit.text() == "":
             preparation_amount.append(0)
-        else:    
+        else:
             preparation_amount.append(self.Aspirate_RT_lineEdit.text())
 
         sample_preparation.append(self.urine_checkBox.isChecked())
@@ -1707,6 +1722,82 @@ class MainAppView(QMainWindow, Ui_main_app_view):
         remark = self.bacteria_page_remark_textEdit.toPlainText()
 
         return sample_preparation, preparation_name, preparation_amount, drug_sensitivity_status, drug_sensitivity_name, bacteria_identification_name, bacteria_identification_status, lab_request_name, lab_request_status, lab_request_price, remark
+
+    def disable_widgets_in_specimen_page(self):
+        """Disable widgets in specimen page."""
+        self.specimen_page_name_animal_entry.setEnabled(False)
+        self.specimen_page_sex_animal_comboBox.setEnabled(False)
+        self.specimen_page_cause_of_death_comboBox.setEnabled(False)
+        self.specimen_page_number_id_opd_entry.setEnabled(False)
+        self.specimen_page_year_animal_entry.setEnabled(False)
+        self.specimen_page_month_animal_entry.setEnabled(False)
+        self.specimen_page_day_animal_entry.setEnabled(False)
+        self.specimen_page_unknow_age_animal_checkbox.setEnabled(False)
+        self.swine_radioButton.setEnabled(False)
+        self.avian_radioButton.setEnabled(False)
+        self.bovine_radioButton.setEnabled(False)
+        self.equine_radioButton.setEnabled(False)
+        self.canine_radioButton.setEnabled(False)
+        self.elephant_radioButton.setEnabled(False)
+        self.feline_radioButton.setEnabled(False)
+        self.another_radioButton.setEnabled(False)
+        self.another_type_animal_entry.setEnabled(False)
+        self.unknow_radioButton.setEnabled(False)
+        self.specimen_page_normal_radioButton.setEnabled(False)
+        self.specimen_page_most_argent_radioButton.setEnabled(False)
+        self.specimen_page_breed_entry.setEnabled(False)
+        self.specimen_page_weight_animal_entry.setEnabled(False)
+        self.specimen_page_day_of_death_dateTime.setEnabled(False)
+        self.specimen_page_day_keep_sample_dateTime.setEnabled(False)
+        self.specimen_page_chill_specimen_radioButton.setEnabled(False)
+        self.specimen_page_freeze_specimen_radioButton.setEnabled(False)
+        self.specimen_page_room_temp_specimen_radioButton.setEnabled(False)
+        self.specimen_page_record_heal_textEdit.setEnabled(False)
+        self.specimen_page_save_pushButton.setEnabled(False)
+
+    def enable_widgets_in_specimen_page(self):
+        """Enable widgets in specimen page."""
+        self.specimen_page_name_animal_entry.setEnabled(True)
+        self.specimen_page_cause_of_death_comboBox.setEnabled(True)
+        self.specimen_page_sex_animal_comboBox.setEnabled(True)
+        self.specimen_page_number_id_opd_entry.setEnabled(True)
+        self.specimen_page_year_animal_entry.setEnabled(True)
+        self.specimen_page_month_animal_entry.setEnabled(True)
+        self.specimen_page_day_animal_entry.setEnabled(True)
+        self.specimen_page_unknow_age_animal_checkbox.setEnabled(True)
+        self.swine_radioButton.setEnabled(True)
+        self.avian_radioButton.setEnabled(True)
+        self.bovine_radioButton.setEnabled(True)
+        self.equine_radioButton.setEnabled(True)
+        self.canine_radioButton.setEnabled(True)
+        self.elephant_radioButton.setEnabled(True)
+        self.feline_radioButton.setEnabled(True)
+        self.another_radioButton.setEnabled(True)
+        self.another_type_animal_entry.setEnabled(True)
+        self.unknow_radioButton.setEnabled(True)
+        self.specimen_page_normal_radioButton.setEnabled(True)
+        self.specimen_page_most_argent_radioButton.setEnabled(True)
+        self.specimen_page_breed_entry.setEnabled(True)
+        self.specimen_page_weight_animal_entry.setEnabled(True)
+        self.specimen_page_day_of_death_dateTime.setEnabled(True)
+        self.specimen_page_day_keep_sample_dateTime.setEnabled(True)
+        self.specimen_page_chill_specimen_radioButton.setEnabled(True)
+        self.specimen_page_freeze_specimen_radioButton.setEnabled(True)
+        self.specimen_page_room_temp_specimen_radioButton.setEnabled(True)
+        self.specimen_page_record_heal_textEdit.setEnabled(True)
+        self.specimen_page_save_pushButton.setEnabled(True)
+
+    def add_customer_info_to_barcode_page(self, data):
+        """Add customer information to barcode page."""
+        self.barcode_page_customertreeWidget.clear()
+        for row in data:
+            QTreeWidgetItem(self.barcode_page_customertreeWidget, row)
+
+    def reload_lab_order_detail_to_tree_view(self, data):
+        """Reload lab order detail to tree view."""
+        self.new_case_detail_case_tree_view.clear()
+        for row in data:
+            QTreeWidgetItem(self.new_case_detail_case_tree_view, row)
 
 
 if __name__ == '__main__':

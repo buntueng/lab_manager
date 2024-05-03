@@ -90,9 +90,11 @@ class Main_Model:
 
     def search_customer_case(self, keyword_search):
         """Search customer case using customer name or surname"""
+        customer_name = keyword_search[0].text(0)
+        customer_surname = keyword_search[0].text(1)
         result = []
         sql_cmd = self.sql_cmd["search_customer_case"]
-        result = self.select_data(sql_cmd, [keyword_search, keyword_search])
+        result = self.select_data(sql_cmd, [customer_name, customer_surname])
         return result
 
     def get_all_customer_names(self):
@@ -150,19 +152,17 @@ class Main_Model:
         last_case_number = self.select_data(sql_cmd, [])
         return last_case_number[0][0]
 
-    def save_new_case_register(self, case_data, updater) -> bool:
+    def save_new_case_register(self, case_data, updater) -> int:
         """Save case register to the database"""
         sql_cmd = self.sql_cmd["get_customer_id_from_name_and_tax"]
         sender_id = self.select_data(
-            sql_cmd, [case_data[1], case_data[2], case_data[3]])[0][0]
+            sql_cmd, [case_data[0], case_data[1], case_data[2]])[0][0]
         owner_id = self.select_data(
-            sql_cmd, [case_data[4], case_data[5], case_data[6]])[0][0]
+            sql_cmd, [case_data[3], case_data[4], case_data[5]])[0][0]
         sql_cmd = self.sql_cmd["insert_new_case"]
-        case_data = [case_data[0], sender_id, owner_id, case_data[7], updater]
-        if self.insert_data(sql_cmd, case_data):
-            return True
-        else:
-            return False
+        case_data = [sender_id, owner_id, case_data[6], updater]
+        current_id = self.insert_data_return_id(sql_cmd, case_data)
+        return current_id
 
     def save_specimen_information(self, specimen_data) -> int:
         """Save specimen information"""
@@ -219,9 +219,29 @@ class Main_Model:
         """Save bacteria lab information."""
         sql_cmd = self.sql_cmd["insert_new_bacteria_biology_test"]
         bacteria_data = [sample_id] + bacteria_data + [updater]
-        print(len(bacteria_data))
-        print(bacteria_data)
         if self.insert_data(sql_cmd, bacteria_data):
             return True
         else:
             return False
+
+    def get_parasite_data(self, sample_id) -> list:
+        """Get parasite data."""
+        sql_cmd = self.sql_cmd["get_parasite_data"]
+        data = self.select_data(sql_cmd, [sample_id])
+        return data
+
+    def save_lab_order(self, case_id, lab_id, comments, updater) -> bool:
+        """Save lab order."""
+        sql_cmd = self.sql_cmd["save_lab_order"]
+        lab_order_data = [case_id, lab_id, comments, updater]
+        if self.insert_data(sql_cmd, lab_order_data):
+            return True
+        else:
+            return False
+
+    def get_lab_order_details(self, case_id) -> list:
+        """Get lab order details."""
+        sql_cmd = self.sql_cmd["reload_case_detail"]
+        data = self.select_data(sql_cmd, [case_id])
+        return data
+
