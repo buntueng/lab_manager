@@ -33,7 +33,7 @@ class Main_Controller:
         self.view.check_job_pushButton.clicked.connect(
             self.view.show_check_job_progress_page)
         self.view.barcode_pushButton.clicked.connect(
-            self.view.show_print_barcode_page)
+            self.barcode_pushButton_clicked)
         self.view.lab_order_pushButton.clicked.connect(
             self.view.show_lab_order_report_page)
         self.view.bill_pushButton.clicked.connect(self.view.show_bill_page)
@@ -58,6 +58,11 @@ class Main_Controller:
         self.bind_event_in_parasitology_page()
         self.bind_event_in_microbiology_page()
         self.bind_event_in_barcode_page()
+
+    def barcode_pushButton_clicked(self):
+        """Barcode push button clicked"""
+        self.view.reset_print_barcode_page()
+        self.view.show_print_barcode_page()
 
     def bind_event_in_barcode_page(self):
         """"Bind event in barcode page"""

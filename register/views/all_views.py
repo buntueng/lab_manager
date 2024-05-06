@@ -1807,5 +1807,16 @@ class MainAppView(QMainWindow, Ui_main_app_view):
             QTreeWidgetItem(self.new_case_detail_case_tree_view, row)
 
 
+    def reset_print_barcode_page(self):
+        """Reset print barcode page."""
+        self.sticker_search_lineEdit.clear()
+        self.barcode_page_customertreeWidget.clear()
+        self.sticker_search_treeWidget.clear()
+
+        self.today_sticker_search_pushButton.setEnabled(True)
+        self.sticker_search_pushButton.setEnabled(True)
+        self.print_barcode_pushButton.setEnabled(True)
+
+
 if __name__ == '__main__':
     pass

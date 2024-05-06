@@ -4312,7 +4312,7 @@
       <widget class="QLabel" name="label_10">
        <property name="geometry">
         <rect>
-         <x>10</x>
+         <x>1070</x>
          <y>10</y>
          <width>71</width>
          <height>16</height>
@@ -4321,6 +4321,93 @@
        <property name="text">
         <string>Lab report</string>
        </property>
+      </widget>
+      <widget class="QLabel" name="label_16">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>10</y>
+         <width>121</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>TH Niramit AS</family>
+         <pointsize>16</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>หมายเลขบาร์โคด</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lab_report_page_barcode_lineEdit">
+       <property name="geometry">
+        <rect>
+         <x>140</x>
+         <y>11</y>
+         <width>271</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>TH Niramit AS</family>
+         <pointsize>16</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="lab_report_page_print_pushButton">
+       <property name="geometry">
+        <rect>
+         <x>1030</x>
+         <y>60</y>
+         <width>151</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>TH Niramit AS</family>
+         <pointsize>16</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>พิมพ์ใบส่งแลป</string>
+       </property>
+      </widget>
+      <widget class="QTreeWidget" name="lab_report_page_printing_treeWidget">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>60</y>
+         <width>1001</width>
+         <height>192</height>
+        </rect>
+       </property>
+       <column>
+        <property name="text">
+         <string>วันเดือนปีที่รับงาน</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>หมายเลขบาร์โคด</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>ชื่อผู้ส่ง</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>ชื่อสัตว์</string>
+        </property>
+       </column>
       </widget>
      </widget>
      <widget class="QWidget" name="edit_personal_page">
@@ -11929,6 +12016,21 @@
          <string>Parasite identification (100)</string>
         </property>
        </widget>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="page">
+      <widget class="QLabel" name="label_15">
+       <property name="geometry">
+        <rect>
+         <x>1080</x>
+         <y>10</y>
+         <width>49</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
       </widget>
      </widget>
     </widget>

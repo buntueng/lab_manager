@@ -1117,7 +1117,22 @@ class Ui_main_app_view(object):
         self.lab_report_page.setObjectName(u"lab_report_page")
         self.label_10 = QLabel(self.lab_report_page)
         self.label_10.setObjectName(u"label_10")
-        self.label_10.setGeometry(QRect(10, 10, 71, 16))
+        self.label_10.setGeometry(QRect(1070, 10, 71, 16))
+        self.label_16 = QLabel(self.lab_report_page)
+        self.label_16.setObjectName(u"label_16")
+        self.label_16.setGeometry(QRect(20, 10, 121, 31))
+        self.label_16.setFont(font1)
+        self.lab_report_page_barcode_lineEdit = QLineEdit(self.lab_report_page)
+        self.lab_report_page_barcode_lineEdit.setObjectName(u"lab_report_page_barcode_lineEdit")
+        self.lab_report_page_barcode_lineEdit.setGeometry(QRect(140, 11, 271, 31))
+        self.lab_report_page_barcode_lineEdit.setFont(font1)
+        self.lab_report_page_print_pushButton = QPushButton(self.lab_report_page)
+        self.lab_report_page_print_pushButton.setObjectName(u"lab_report_page_print_pushButton")
+        self.lab_report_page_print_pushButton.setGeometry(QRect(1030, 60, 151, 51))
+        self.lab_report_page_print_pushButton.setFont(font1)
+        self.lab_report_page_printing_treeWidget = QTreeWidget(self.lab_report_page)
+        self.lab_report_page_printing_treeWidget.setObjectName(u"lab_report_page_printing_treeWidget")
+        self.lab_report_page_printing_treeWidget.setGeometry(QRect(20, 60, 1001, 192))
         self.stackedWidget.addWidget(self.lab_report_page)
         self.edit_personal_page = QWidget()
         self.edit_personal_page.setObjectName(u"edit_personal_page")
@@ -3004,6 +3019,12 @@ class Ui_main_app_view(object):
         self.Parasite_iden_checkBox.setGeometry(QRect(10, 80, 321, 31))
         self.Parasite_iden_checkBox.setFont(font7)
         self.stackedWidget.addWidget(self.parasite_biology_lab_page)
+        self.page = QWidget()
+        self.page.setObjectName(u"page")
+        self.label_15 = QLabel(self.page)
+        self.label_15.setObjectName(u"label_15")
+        self.label_15.setGeometry(QRect(1080, 10, 49, 16))
+        self.stackedWidget.addWidget(self.page)
         self.current_user_label = QLabel(self.centralwidget)
         self.current_user_label.setObjectName(u"current_user_label")
         self.current_user_label.setGeometry(QRect(1098, 10, 291, 20))
@@ -3223,6 +3244,13 @@ class Ui_main_app_view(object):
         ___qtreewidgetitem4.setText(1, QCoreApplication.translate("main_app_view", u"\u0e2a\u0e01\u0e38\u0e25", None));
         ___qtreewidgetitem4.setText(0, QCoreApplication.translate("main_app_view", u"\u0e0a\u0e37\u0e48\u0e2d", None));
         self.label_10.setText(QCoreApplication.translate("main_app_view", u"Lab report", None))
+        self.label_16.setText(QCoreApplication.translate("main_app_view", u"\u0e2b\u0e21\u0e32\u0e22\u0e40\u0e25\u0e02\u0e1a\u0e32\u0e23\u0e4c\u0e42\u0e04\u0e14", None))
+        self.lab_report_page_print_pushButton.setText(QCoreApplication.translate("main_app_view", u"\u0e1e\u0e34\u0e21\u0e1e\u0e4c\u0e43\u0e1a\u0e2a\u0e48\u0e07\u0e41\u0e25\u0e1b", None))
+        ___qtreewidgetitem5 = self.lab_report_page_printing_treeWidget.headerItem()
+        ___qtreewidgetitem5.setText(3, QCoreApplication.translate("main_app_view", u"\u0e0a\u0e37\u0e48\u0e2d\u0e2a\u0e31\u0e15\u0e27\u0e4c", None));
+        ___qtreewidgetitem5.setText(2, QCoreApplication.translate("main_app_view", u"\u0e0a\u0e37\u0e48\u0e2d\u0e1c\u0e39\u0e49\u0e2a\u0e48\u0e07", None));
+        ___qtreewidgetitem5.setText(1, QCoreApplication.translate("main_app_view", u"\u0e2b\u0e21\u0e32\u0e22\u0e40\u0e25\u0e02\u0e1a\u0e32\u0e23\u0e4c\u0e42\u0e04\u0e14", None));
+        ___qtreewidgetitem5.setText(0, QCoreApplication.translate("main_app_view", u"\u0e27\u0e31\u0e19\u0e40\u0e14\u0e37\u0e2d\u0e19\u0e1b\u0e35\u0e17\u0e35\u0e48\u0e23\u0e31\u0e1a\u0e07\u0e32\u0e19", None));
         self.label_8.setText(QCoreApplication.translate("main_app_view", u"edit_personal_page", None))
         self.label_13.setText(QCoreApplication.translate("main_app_view", u"Update page", None))
         self.label_9.setText(QCoreApplication.translate("main_app_view", u"Molecular Biology", None))
@@ -3506,6 +3534,7 @@ class Ui_main_app_view(object):
         self.Floatation_for_dog_checkBox.setText(QCoreApplication.translate("main_app_view", u"Floatation for dog and cat (100)", None))
         self.Parasite_in_meat_checkBox.setText(QCoreApplication.translate("main_app_view", u"Parasite in meat (300)", None))
         self.Parasite_iden_checkBox.setText(QCoreApplication.translate("main_app_view", u"Parasite identification (100)", None))
+        self.label_15.setText(QCoreApplication.translate("main_app_view", u"TextLabel", None))
         self.current_user_label.setText("")
     # retranslateUi
 
