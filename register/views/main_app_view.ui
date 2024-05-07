@@ -291,7 +291,7 @@
       </rect>
      </property>
      <property name="currentIndex">
-      <number>8</number>
+      <number>3</number>
      </property>
      <widget class="QWidget" name="login_page">
       <widget class="QLineEdit" name="username_lineEdit">
@@ -2309,6 +2309,31 @@
          <item>
           <property name="text">
            <string>ไม่ทราบ (Unknow)</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>ม้า (Foal)</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>ม้า (Filly)</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>ม้า (Mare)</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>ม้า (Gelding)</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>ม้า (Stallion)</string>
           </property>
          </item>
         </widget>

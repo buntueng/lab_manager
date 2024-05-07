@@ -182,13 +182,18 @@ class Main_Controller:
             self.view.backto_job_register_page)
 
         self.view.specimen_page_molecular_pushButton.clicked.connect(
-            self.view.show_molecular_biology_page)
+            self.show_molecular_biology_page)
 
         self.view.specimen_page_Parasitology_pushButton.clicked.connect(
             self.view.show_Parasitology_page)
 
         self.view.specimen_page_Microbiology_pushButton.clicked.connect(
             self.view.show_Microbiology_page)
+
+    def show_molecular_biology_page(self):
+        """" Clear and show molecular biology page"""
+        self.view.clear_molecular_biology_page()
+        self.view.show_molecular_biology_page()
 
     def bind_event_in_parasitology_page(self):
         """Bind event in parasitology page"""

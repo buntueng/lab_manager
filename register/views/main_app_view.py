@@ -651,6 +651,11 @@ class Ui_main_app_view(object):
         self.specimen_page_sex_animal_comboBox.addItem("")
         self.specimen_page_sex_animal_comboBox.addItem("")
         self.specimen_page_sex_animal_comboBox.addItem("")
+        self.specimen_page_sex_animal_comboBox.addItem("")
+        self.specimen_page_sex_animal_comboBox.addItem("")
+        self.specimen_page_sex_animal_comboBox.addItem("")
+        self.specimen_page_sex_animal_comboBox.addItem("")
+        self.specimen_page_sex_animal_comboBox.addItem("")
         self.specimen_page_sex_animal_comboBox.setObjectName(u"specimen_page_sex_animal_comboBox")
         self.specimen_page_sex_animal_comboBox.setGeometry(QRect(570, 10, 141, 31))
         self.specimen_page_sex_animal_comboBox.setFont(font1)
@@ -3034,7 +3039,7 @@ class Ui_main_app_view(object):
 
         self.retranslateUi(main_app_view)
 
-        self.stackedWidget.setCurrentIndex(8)
+        self.stackedWidget.setCurrentIndex(3)
         self.molecular_biology_summary_pushButton.setDefault(False)
         self.molecular_biology_save_data_pushButton.setDefault(False)
         self.back_to_home_pushButton.setDefault(False)
@@ -3138,6 +3143,11 @@ class Ui_main_app_view(object):
         self.specimen_page_sex_animal_comboBox.setItemText(0, QCoreApplication.translate("main_app_view", u"\u0e1c\u0e39\u0e49 (Male)", None))
         self.specimen_page_sex_animal_comboBox.setItemText(1, QCoreApplication.translate("main_app_view", u"\u0e40\u0e21\u0e35\u0e22 (Female)", None))
         self.specimen_page_sex_animal_comboBox.setItemText(2, QCoreApplication.translate("main_app_view", u"\u0e44\u0e21\u0e48\u0e17\u0e23\u0e32\u0e1a (Unknow)", None))
+        self.specimen_page_sex_animal_comboBox.setItemText(3, QCoreApplication.translate("main_app_view", u"\u0e21\u0e49\u0e32 (Foal)", None))
+        self.specimen_page_sex_animal_comboBox.setItemText(4, QCoreApplication.translate("main_app_view", u"\u0e21\u0e49\u0e32 (Filly)", None))
+        self.specimen_page_sex_animal_comboBox.setItemText(5, QCoreApplication.translate("main_app_view", u"\u0e21\u0e49\u0e32 (Mare)", None))
+        self.specimen_page_sex_animal_comboBox.setItemText(6, QCoreApplication.translate("main_app_view", u"\u0e21\u0e49\u0e32 (Gelding)", None))
+        self.specimen_page_sex_animal_comboBox.setItemText(7, QCoreApplication.translate("main_app_view", u"\u0e21\u0e49\u0e32 (Stallion)", None))
 
         self.cause_of_death_label.setText(QCoreApplication.translate("main_app_view", u"\u0e2a\u0e32\u0e40\u0e2b\u0e15\u0e38\u0e01\u0e32\u0e23\u0e40\u0e2a\u0e35\u0e22\u0e0a\u0e35\u0e27\u0e34\u0e15", None))
         self.specimen_page_cause_of_death_comboBox.setItemText(0, QCoreApplication.translate("main_app_view", u"\u0e22\u0e31\u0e07\u0e21\u0e35\u0e0a\u0e35\u0e27\u0e34\u0e15 (Alive)", None))
