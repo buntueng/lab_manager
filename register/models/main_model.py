@@ -264,3 +264,18 @@ class Main_Model:
             return True
         else:
             return False
+
+    def get_all_employee_detail(self) -> list:
+        """Get all employee detail."""
+        sql_cmd = self.sql_cmd["get_all_employee_detail"]
+        data = self.select_data(sql_cmd, [])
+        return data
+
+    def save_tracking_information(self, barcode_id, employee_id, updater, tracking_info) -> bool:
+        """Save lab received sample information."""
+        sql_cmd = self.sql_cmd["save_lab_received_sample_information"]
+        data = [barcode_id, employee_id, updater, tracking_info]
+        if self.insert_data(sql_cmd, data):
+            return True
+        else:
+            return False

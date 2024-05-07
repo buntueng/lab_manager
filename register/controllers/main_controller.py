@@ -18,6 +18,7 @@ class Main_Controller:
         self.event_bindings()
 
         self.all_customer_names = []
+        self.all_employee_names = []
 
     def event_bindings(self):
         """Event bindings for the main view"""
@@ -51,6 +52,9 @@ class Main_Controller:
         self.view.sign_out_pushButton.clicked.connect(
             self.view.show_login_page)
 
+        self.view.received_order_pushButton.clicked.connect(
+            self.show_received_order_page)
+
         self.bind_event_in_new_customer_page()
         self.bind_event_in_case_register_page()
         self.bind_event_in_specimen_page()
@@ -58,6 +62,85 @@ class Main_Controller:
         self.bind_event_in_parasitology_page()
         self.bind_event_in_microbiology_page()
         self.bind_event_in_barcode_page()
+        self.bind_event_in_lab_received_sample_page()
+
+    def bind_event_in_lab_received_sample_page(self):
+        """Bind event in lab received sample page"""
+        self.view.lab_received_sample_search_employee_lineEdit.textChanged.connect(
+            self.search_employee_in_lab_received_sample_page)
+        self.view.lab_received_sample_select_pushButton.clicked.connect(
+            self.select_employee_in_lab_received_sample_page)
+        self.view.lab_received_sample_save_pushButton.clicked.connect(
+            self.save_lab_received_sample_information)
+
+    def save_lab_received_sample_information(self):
+        if self.view.lab_received_sample_barcode_lineEdit.text() == "":
+            QMessageBox.critical(self.view, "Error",
+                                 "กรุณากรอกหมายเลข Barcode")
+        elif self.view.lab_received_sample_employee_lineEdit.text() == "":
+            QMessageBox.critical(self.view, "Error",
+                                 "กรุณาเลือกพนักงานที่รับตัวอย่าง")
+        else:
+            barcode_id = self.view.lab_received_sample_barcode_lineEdit.text()
+            if barcode_id.isdigit():
+                barcode_id = int(barcode_id)
+                employee_id = int(
+                    self.view.lab_received_sample_personal_code_lineEdit.text())
+                if self.model.save_tracking_information(barcode_id, employee_id, self.user_login_info[0][1], "ห้องปฏิบัติการรับตัวอย่างสิ่งส่งตรวจแล้ว"):
+                    QMessageBox.information(self.view, "Success",
+                                            "บันทึกข้อมูลเรียบร้อย")
+                    self.view.lab_received_sample_barcode_lineEdit.clear()
+                    self.view.lab_received_sample_employee_lineEdit.clear()
+                    self.view.lab_received_sample_personal_code_lineEdit.clear()
+                    self.view.lab_received_sample_treeWidget.clear()
+                    self.view.lab_received_sample_search_employee_lineEdit.clear()
+
+                else:
+                    QMessageBox.critical(self.view, "Error",
+                                         "ไม่สามารถบันทึกข้อมูลได้")
+            else:
+                QMessageBox.critical(self.view, "Error",
+                                     "กรุณาใส่หมายเลข Barcode เป็นตัวเลข")
+
+    def select_employee_in_lab_received_sample_page(self):
+        """ select employee from treeview"""
+        selected_item = self.view.lab_received_sample_treeWidget.selectedItems()
+        if selected_item == []:
+            QMessageBox.critical(self.view, "Error",
+                                 "Please select a row to add employee information")
+        else:
+            if len(selected_item) > 1:
+                QMessageBox.critical(self.view, "Error",
+                                     "Please select only one row to add employee information")
+            else:
+                for row in selected_item:
+                    self.view.lab_received_sample_employee_lineEdit.setText(
+                        row.text(0) + " " + row.text(1))
+                    self.view.lab_received_sample_personal_code_lineEdit.setText(
+                        row.text(2))
+
+    def search_employee_in_lab_received_sample_page(self):
+        """search employee in lab received sample page by name"""
+        input_text = self.view.lab_received_sample_search_employee_lineEdit.text()
+        if input_text == "":
+            self.view.lab_received_sample_treeWidget.clear()
+        else:
+            employee_info = []
+            for employee_detail in self.all_employee_names:
+                if input_text in employee_detail[0] or input_text in employee_detail[1]:
+                    employee_info.append(
+                        [employee_detail[0], employee_detail[1], str(employee_detail[2]).zfill(5)])
+
+            if len(employee_info) > 0:
+                # insert data to Qtreeview
+                self.view.add_employee_info_to_lab_received_sample_page(
+                    employee_info)
+
+    def show_received_order_page(self):
+        """Show received order page"""
+        self.all_employee_names = self.model.get_all_employee_detail()
+        self.view.clear_received_order_page()
+        self.view.show_received_order_page()
 
     def barcode_pushButton_clicked(self):
         """Barcode push button clicked"""
@@ -188,7 +271,12 @@ class Main_Controller:
             self.view.show_Parasitology_page)
 
         self.view.specimen_page_Microbiology_pushButton.clicked.connect(
-            self.view.show_Microbiology_page)
+            self.load_parasite_page)
+
+    def load_parasite_page(self):
+        """Load microbiology page"""
+        self.view.clear_parasite_page()
+        self.view.show_parasite_biology_page()
 
     def show_molecular_biology_page(self):
         """" Clear and show molecular biology page"""
@@ -218,6 +306,8 @@ class Main_Controller:
                 sample_id, lab_id, "", self.user_login_info[0][1])  # save lab order
             QMessageBox.information(self.view, "Success",
                                     "บันทึกข้อมูลเรียบร้อย")
+            self.model.save_tracking_information(
+                sample_id, self.user_login_info[0][1], self.user_login_info[0][1], "รับงานเข้าระบบ")
             self.reload_new_job_page()
         else:
             QMessageBox.critical(self.view, "Error",
@@ -281,6 +371,8 @@ class Main_Controller:
                 sample_id, lab_id, "", self.user_login_info[0][1])
             QMessageBox.information(self.view, "Success",
                                     "บันทึกข้อมูลเรียบร้อย")
+            self.model.save_tracking_information(
+                sample_id, self.user_login_info[0][1], self.user_login_info[0][1], "รับงานเข้าระบบ")
             self.reload_new_job_page()
         else:
             QMessageBox.critical(self.view, "Error",
@@ -324,6 +416,8 @@ class Main_Controller:
                 sample_id, lab_id, "", self.user_login_info[0][1])
             QMessageBox.information(self.view, "Success",
                                     "บันทึกข้อมูลเรียบร้อย")
+            self.model.save_tracking_information(
+                sample_id, self.user_login_info[0][1], self.user_login_info[0][1], "รับงานเข้าระบบ")
             self.reload_new_job_page()
             # ==================== enable lab buttons ====================
         else:

@@ -192,6 +192,20 @@
       </spacer>
      </item>
      <item>
+      <widget class="QPushButton" name="received_order_pushButton">
+       <property name="font">
+        <font>
+         <family>TH Niramit AS</family>
+         <pointsize>16</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>รับสิ่งส่งตรวจ</string>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QPushButton" name="employee_pushButton">
        <property name="font">
         <font>
@@ -291,7 +305,7 @@
       </rect>
      </property>
      <property name="currentIndex">
-      <number>3</number>
+      <number>14</number>
      </property>
      <widget class="QWidget" name="login_page">
       <widget class="QLineEdit" name="username_lineEdit">
@@ -4412,6 +4426,13 @@
          <width>1001</width>
          <height>192</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>TH Niramit AS</family>
+         <pointsize>16</pointsize>
+         <bold>true</bold>
+        </font>
        </property>
        <column>
         <property name="text">
@@ -12055,6 +12076,279 @@
        </property>
        <property name="text">
         <string>TextLabel</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="lab_received_sample">
+      <widget class="QLabel" name="label_17">
+       <property name="geometry">
+        <rect>
+         <x>998</x>
+         <y>10</y>
+         <width>121</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Lab Received sample</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_18">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>310</y>
+         <width>161</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>TH Niramit AS</family>
+         <pointsize>16</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>รหัสบาร์โคดสิ่งส่งตรวจ</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lab_received_sample_barcode_lineEdit">
+       <property name="geometry">
+        <rect>
+         <x>190</x>
+         <y>310</y>
+         <width>281</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Times New Roman</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+      </widget>
+      <widget class="QDateTimeEdit" name="lab_received_sample_dateTimeEdit">
+       <property name="geometry">
+        <rect>
+         <x>190</x>
+         <y>350</y>
+         <width>194</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Times New Roman</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_19">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>20</y>
+         <width>121</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>TH Niramit AS</family>
+         <pointsize>16</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>ค้นหาชื่อเจ้าหน้าที่</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lab_received_sample_search_employee_lineEdit">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>20</y>
+         <width>301</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>TH Niramit AS</family>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+      </widget>
+      <widget class="QTreeWidget" name="lab_received_sample_treeWidget">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>70</y>
+         <width>961</width>
+         <height>141</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>TH Niramit AS</family>
+         <pointsize>16</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <column>
+        <property name="text">
+         <string>ชื่อ</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>นามสกุล</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>หมายเลขประจำตัว</string>
+        </property>
+       </column>
+      </widget>
+      <widget class="QPushButton" name="lab_received_sample_select_pushButton">
+       <property name="geometry">
+        <rect>
+         <x>990</x>
+         <y>70</y>
+         <width>171</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>TH Niramit AS</family>
+         <pointsize>16</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>เลือกรายชื่อ</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_20">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>350</y>
+         <width>151</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>TH Niramit AS</family>
+         <pointsize>16</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>วันเวาลาที่รับสิ่งส่งตรวจ</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_21">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>390</y>
+         <width>131</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>TH Niramit AS</family>
+         <pointsize>16</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>ผู้รับสิ่งส่งตรวจ</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lab_received_sample_employee_lineEdit">
+       <property name="geometry">
+        <rect>
+         <x>190</x>
+         <y>390</y>
+         <width>371</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>TH Niramit AS</family>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_22">
+       <property name="geometry">
+        <rect>
+         <x>600</x>
+         <y>390</y>
+         <width>131</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>TH Niramit AS</family>
+         <pointsize>16</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>หมายเลขประจำตัว</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lab_received_sample_personal_code_lineEdit">
+       <property name="geometry">
+        <rect>
+         <x>740</x>
+         <y>390</y>
+         <width>241</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Times New Roman</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="lab_received_sample_save_pushButton">
+       <property name="geometry">
+        <rect>
+         <x>1000</x>
+         <y>360</y>
+         <width>161</width>
+         <height>61</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>TH Niramit AS</family>
+         <pointsize>16</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>บันทึกข้อมูล</string>
        </property>
       </widget>
      </widget>

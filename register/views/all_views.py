@@ -26,6 +26,9 @@ class MainAppView(QMainWindow, Ui_main_app_view):
         self.barcode_page_customertreeWidget.setColumnWidth(0, 300)
         self.barcode_page_customertreeWidget.setColumnWidth(1, 300)
 
+        self.lab_received_sample_treeWidget.setColumnWidth(0, 300)
+        self.lab_received_sample_treeWidget.setColumnWidth(1, 300)
+
     def disable_all_buttons(self):
         """Disable all buttons in the main page."""
         self.sign_out_pushButton.setEnabled(False)
@@ -42,6 +45,14 @@ class MainAppView(QMainWindow, Ui_main_app_view):
         self.update_prog_pushButton.setEnabled(False)
         self.sign_out_pushButton.setEnabled(False)
 
+        self.received_order_pushButton.setEnabled(False)
+
+        self.employee_pushButton.hide()
+        self.personal_info_pushButton.hide()
+        self.update_prog_pushButton.hide()
+        self.bill_pushButton.hide()
+        self.check_report_pushButton.hide()
+
     def enable_all_buttons(self):
         """Enable all buttons in the main page."""
         self.sign_out_pushButton.setEnabled(True)
@@ -55,6 +66,8 @@ class MainAppView(QMainWindow, Ui_main_app_view):
         self.employee_pushButton.setEnabled(True)
         self.personal_info_pushButton.setEnabled(True)
         self.update_prog_pushButton.setEnabled(True)
+
+        self.received_order_pushButton.setEnabled(True)
 
     def show_view(self):
         """Show the view."""
@@ -1960,6 +1973,155 @@ class MainAppView(QMainWindow, Ui_main_app_view):
 
         self.number_item_lineEdit.clear()
         self.cost_item_lineEdit.clear()
+
+    def clear_received_order_page(self):
+        """Clear received order page."""
+        self.lab_received_sample_search_employee_lineEdit.clear()
+        self.lab_received_sample_treeWidget.clear()
+        self.lab_received_sample_barcode_lineEdit.clear()
+        self.lab_received_sample_employee_lineEdit.clear()
+        self.lab_received_sample_personal_code_lineEdit.clear()
+
+    def show_received_order_page(self):
+        """Reload the specimen page."""
+        self.stackedWidget.setCurrentIndex(16)
+
+    def add_employee_info_to_lab_received_sample_page(self, data):
+        """Add employee information to lab received sample page."""
+        self.lab_received_sample_treeWidget.clear()
+        for row in data:
+            QTreeWidgetItem(self.lab_received_sample_treeWidget, row)
+
+    def clear_bacteria_biology_page(self):
+        """Clear bacteria biology page."""
+        self.swab_LT_checkBox.setChecked(False)
+        self.swab_LT_lineEdit.clear()
+        self.swab_RT_checkBox.setChecked(False)
+        self.swab_RT_lineEdit.clear()
+        self.wound_checkBox.setChecked(False)
+        self.wound_lineEdit.clear()
+        self.Aspirate_LT_checkBox.setChecked(False)
+        self.Aspirate_LT_lineEdit.clear()
+        self.Aspirate_RT_checkBox.setChecked(False)
+        self.Aspirate_RT_lineEdit.clear()
+        self.urine_checkBox.setChecked(False)
+        self.urine_lineEdit.clear()
+        self.Midstream_checkBox.setChecked(False)
+        self.Midstream_lineEdit.clear()
+        self.Catheterization_checkBox.setChecked(False)
+        self.Catheterization_lineEdit.clear()
+        self.Cystocentesis_checkBox.setChecked(False)
+        self.Cystocentesis_lineEdit.clear()
+        self.Tissues_LT_checkBox.setChecked(False)
+        self.Tissues_LT_lineEdit.clear()
+        self.Tissues_RT_checkBox.setChecked(False)
+        self.Tissues_RT_lineEdit.clear()
+        self.biopsy_LT_checkBox.setChecked(False)
+        self.biopsy_LT_lineEdit.clear()
+        self.biopsy_RT_checkBox.setChecked(False)
+        self.biopsy_RT_lineEdit.clear()
+        self.body_fluid_LT_checkBox.setChecked(False)
+        self.body_fluid_LT_lineEdit.clear()
+        self.body_fluid_RT_checkBox.setChecked(False)
+        self.body_fluid_RT_lineEdit.clear()
+        self.csf_checkBox.setChecked(False)
+        self.csf_lineEdit.clear()
+        self.feces_checkBox.setChecked(False)
+        self.feces_lineEdit.clear()
+        self.PUS_checkBox.setChecked(False)
+        self.PUS_lineEdit.clear()
+        self.Blood_checkBox.setChecked(False)
+        self.Blood_lineEdit.clear()
+        self.Blood_agar_checkBox.setChecked(False)
+        self.Blood_agar_lineEdit.clear()
+        self.Skin_scraping_checkBox.setChecked(False)
+        self.Skin_scraping_lineEdit.clear()
+
+        self.amikacin_AK_checkBox.setChecked(False)
+        self.Ampicillin_AMP_checkBox.setChecked(False)
+        self.Ceftazidime_CAZ_checkBox.setChecked(False)
+        self.Cephalexin_CL_checkBox.setChecked(False)
+        self.Chloramphenicol_C_checkBox.setChecked(False)
+        self.Cloxacillin_OB_checkBox.setChecked(False)
+        self.Enrofloxacin_ENR_checkBox.setChecked(False)
+        self.Gentamycin_CN_checkBox.setChecked(False)
+        self.Lincomycin_MY_checkBox.setChecked(False)
+        self.Norfloxacin_NOR_checkBox.setChecked(False)
+        self.Oxacillin_OX_checkBox.setChecked(False)
+        self.PolymyxcinB_PB_checkBox.setChecked(False)
+        self.Sulfa_trimetroprom_STX_checkBox.setChecked(False)
+        self.Vancomycin_VA_checkBox.setChecked(False)
+        self.Amoxycillin_AML_checkBox.setChecked(False)
+        self.Bactracin_B_checkBox.setChecked(False)
+        self.Ceftiofur_EFT_checkBox.setChecked(False)
+        self.Cephalothin_KF_checkBox.setChecked(False)
+        self.Ciprofloxacin_CIP_checkBox.setChecked(False)
+        self.Colistin_CT_checkBox.setChecked(False)
+        self.Erythromycin_E_checkBox.setChecked(False)
+        self.Imipenem_IPM_checkBox.setChecked(False)
+        self.Neomycin_N_checkBox.setChecked(False)
+        self.Novobiocin_NV_checkBox.setChecked(False)
+        self.Oxytetracycline_OT_checkBox.setChecked(False)
+        self.Rifampicin_RD_checkBox.setChecked(False)
+        self.Tetracycline_TE_checkBox.setChecked(False)
+        self.others_checkBox.setChecked(False)
+        self.bacteria_page_others_lineEdit.clear()
+        self.Amoxy_AMC_checkBox.setChecked(False)
+        self.Clav_AMC_checkBox.setChecked(False)
+        self.Ceftriaxone_cro_checkBox.setChecked(False)
+        self.Cephazolin_KZ_checkBox.setChecked(False)
+        self.Clindamicin_DA_checkBox.setChecked(False)
+        self.Doxycycline_DO_checkBox.setChecked(False)
+        self.Fosfomycin_FOS_checkBox.setChecked(False)
+        self.Kanamycin_K_checkBox.setChecked(False)
+        self.Nitrofurantoin_F_checkBox.setChecked(False)
+        self.Optocin_OP_checkBox.setChecked(False)
+        self.PeniciliinG_P_checkBox.setChecked(False)
+        self.Streptomycin_S_checkBox.setChecked(False)
+        self.Tobramycin_TOB_checkBox.setChecked(False)
+
+        self.Actinobacillus_checkBox.setChecked(False)
+        self.Corynebacterium_checkBox.setChecked(False)
+        self.Klebsiella_checkBox.setChecked(False)
+        self.Streptococus_checkBox.setChecked(False)
+        self.Aeromonas_checkBox.setChecked(False)
+        self.Enterobacter_checkBox.setChecked(False)
+        self.Pasteurella_checkBox.setChecked(False)
+        self.Staphylococcus_checkBox.setChecked(False)
+        self.Bordetella_checkBox.setChecked(False)
+        self.Escherichia_checkBox.setChecked(False)
+        self.Salmonella_checkBox.setChecked(False)
+        self.iden_others_checkBox.setChecked(False)
+        self.bacterial_others_lineEdit.clear()
+
+        self.Fungal_cul_checkBox.setChecked(False)
+        self.Bacterial_iden_checkBox.setChecked(False)
+        self.VITEK2_with_checkBox.setChecked(False)
+        self.VITEK2_iden_checkBox.setChecked(False)
+        self.MIC_checkBox.setChecked(False)
+
+        self.bacteria_page_remark_textEdit.clear()
+
+        self.bacteria_page_amount_lineEdit.clear()
+        self.bacteria_page_cost_lineEdit.clear()
+
+    def clear_parasite_page(self):
+        """Clear microbiology page."""
+        self.PCV_checkBox.setChecked(False)
+        self.Floatation_checkBox.setChecked(False)
+        self.Parasite_in_meat_checkBox.setChecked(False)
+        self.Parasite_iden_checkBox.setChecked(False)
+        self.Floatation_for_dog_checkBox.setChecked(False)
+        self.Stained_blood_smear_checkBox.setChecked(False)
+        self.Centrifugal_checkBox.setChecked(False)
+        self.Floatation_centrifugal_checkBox.setChecked(False)
+        self.Stained_checkBox.setChecked(False)
+        self.Sedimentation_checkBox.setChecked(False)
+        self.woo_s_checkBox.setChecked(False)
+        self.MC_master_checkBox.setChecked(False)
+
+        self.parasite_amount_lineEdit.clear()
+        self.parasite_cost_lineEdit.clear()
 
 
 if __name__ == '__main__':
