@@ -9,22 +9,26 @@ from reportlab.lib.pagesizes import A4
 from reportlab.lib.units import mm, inch
 from reportlab.lib import colors
 from reportlab.lib.styles import getSampleStyleSheet
-from reportlab.platypus import SimpleDocTemplate, Paragraph, Table, TableStyle, Image, Frame
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Table, TableStyle, Image, Frame, Spacer, HRFlowable
 from reportlab.lib.enums import TA_CENTER
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
-
+import numpy as np
 pdfmetrics.registerFont(TTFont('THNiramitAS', 'TH Niramit AS.ttf'))
 
 
-def create_hemato(sample_detail, data):
+def create_parasite_biology(sample_detail, data, output_file):
     """This function is used to create the hematology test detail."""
+    pass
+
+
+def create_bacteriology(sample_detail, data, output_file):
+    """This function is used to create the bacteriology test detail."""
     pass
 
 
 def create_molecular_biology(sample_detail, data, output_file):
     """This function is used to create the molecular biology test detail."""
-
     left_margin = 0.5 * inch
     right_margin = 0.5 * inch
     top_margin = 0.25 * inch
@@ -39,7 +43,7 @@ def create_molecular_biology(sample_detail, data, output_file):
     cvdtt_logo = os.path.join(os.path.dirname(__file__), "cvdtt_logo.png")
     title_data = [
         [Image(cvdtt_logo, width=1.5*inch, height=1*inch),
-         'ใบคำขอรับบริการทดสอบจุลพยาธิวิทยา/เซลล์วินิจฉัย', ''],
+         'ใบคำขอรับบริการทดสอบอณูชีววิทยา', ''],
         ['', Paragraph("ศูนย์ชันสูตรโรคสัตว์และถ่ายทอดเทคโนโลยี คณะสัตวแพทยศาสตร์ มหาวิทยาลัยเชียงใหม่ <br/> (Center of Veterinary Diagnosis and Technology Transfer) <br/> Tel. 053-948041 Mobile 094-6362641 <br/> E-mail vet_diag@cmu.ac.th", set_paragraph_style()), ''],
     ]
     col_widths = [120, 320, 100]  # Adjust the widths as needed
@@ -62,7 +66,7 @@ def create_molecular_biology(sample_detail, data, output_file):
         # zero padding
         ('PADDING', (0, 0), (-1, -1), 0),
         # show grid
-        ('GRID', (0, 0), (-1, -1), 1, colors.black)
+        # ('GRID', (0, 0), (-1, -1), 1, colors.black)
     ])
 
     table.setStyle(style)
@@ -70,37 +74,117 @@ def create_molecular_biology(sample_detail, data, output_file):
     # Add the table to the list of elements
     elements.append(table)
     # add space
-    elements.append(Paragraph("<br/><br/>", getSampleStyleSheet()['BodyText']))
+    elements.append(Spacer(1, 15))
+    elements.append(Paragraph("รายละเอียดสิ่งส่งตรวจ",
+                    set_paragraph_h1_style()))
+    elements.append(Spacer(1, 12))
+    # Add the sample detail
+    sample_detail = sample_detail[0]
+    # print(sample_detail)
+    sample_age_text = ""
+    if sample_detail[6] == "ไม่ทราบอายุ" or sample_detail[6] == "":
+        sample_age_text = "ไม่ทราบอายุ"
+    else:
+        sample_age_text = sample_detail[6] + " ปี " + \
+            sample_detail[7] + " เดือน " + sample_detail[8] + " วัน"
+    detail_info = [
+        ['ชื่อสัตว์', sample_detail[3], 'ชนิด', sample_detail[10]],
+        ['พันธุ์', sample_detail[11], 'เพศ', sample_detail[5]],
+        ['อายุ', sample_age_text, 'สาเหตุการตาย', sample_detail[9]],
+        ['วันที่รับตัวอย่าง', sample_detail[0], 'วันที่รับผล', 'ยังไม่ทรายบผล'],
+    ]
+    col_widths = [80, 170, 80, 170]  # Adjust the widths as needed
+    # Create sample detail table
+    sample_detail_table = Table(detail_info, colWidths=col_widths)
+    sample_detail_style = TableStyle([
+        ('FONTNAME', (0, 0), (-1, -1), 'THNiramitAS'),  # Specify the font name
+        ('FONTSIZE', (0, 0), (-1, -1), 14),
+        # Background color for the first row
+        ('BACKGROUND', (0, 0), (-1, -1), '#FFFFFF'),
+        # Center alignment for all cells
+        ('ALIGN', (0, 0), (-1, -1), 'LEFT'),
+        # Middle vertical alignment for all cells
+        ('VALIGN', (0, 0), (-1, -1), 'TOP'),
+        # show grid
+        ('GRID', (0, 0), (-1, -1), 1, colors.black)
+    ])
+    sample_detail_table.setStyle(sample_detail_style)
+    elements.append(sample_detail_table)
 
-    # Define the data for the table
-    data = [['Name', 'บ้าน', 'City'],
-            ['John Doe', '35', 'New York'],
-            ['Jane Smith', '28', 'Los Angeles'],
-            ['Bob Johnson', '42', 'Chicago']]
+    # add space
+    elements.append(Spacer(1, 10))
 
-    # Add the table
-    table = Table(data)
-    table_style = TableStyle([('BACKGROUND', (0, 0), (-1, 0), colors.grey),
-                              ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
-                              ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
-                              # Specify the font name
-                              ('FONTNAME', (0, 0), (-1, -1), 'THNiramitAS'),
-                              ('FONTSIZE', (0, 0), (-1, -1), 16),
-                              ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
-                              ('BACKGROUND', (0, 1), (-1, -1), colors.beige),
-                              ('GRID', (0, 0), (-1, -1), 1, colors.black)])
-    table.setStyle(table_style)
-    elements.append(table)
+    # add paragraph
+    elements.append(Paragraph("รายละเอียดการทดสอบ", set_paragraph_h1_style()))
+    elements.append(Spacer(1, 12))
+    # add test detail
 
-    # # Add an image
-    # image = Image('example_image.png', width=3*mm, height=2*mm)
-    # elements.append(image)
+    test_data = data[0][3:185]
 
-    # Build the PDF
+    # python reshape list from 1*183 to 61*3
+
+    test_detail = [test_data[i:i+3] for i in range(0, len(test_data), 3)]
+    test_list = []
+
+    for i, test in enumerate(test_detail):
+        if len(test) > 0 and test[1] != 0:
+            test_list.append([test[0], test[1]])
+
+    test_detail = test_list
+    test_list = []
+    for i, test in enumerate(test_detail):
+        if len(test) > 0 and test[1] != 0:
+            test_list.append([str(i+1), test[0], test[1]])
+
+    test_list.insert(0, ['ลำดับ', 'ชื่อการทดสอบ', 'จำนวนตัวอย่างที่ตรวจ'])
+    col_widths = [40, 230, 230]  # Adjust the widths as needed
+    # Create test detail table
+    test_detail_table = Table(test_list, colWidths=col_widths)
+    test_detail_style = TableStyle([
+        ('FONTNAME', (0, 0), (-1, -1), 'THNiramitAS'),  # Specify the font name
+        ('FONTSIZE', (0, 0), (-1, -1), 12),
+        # Background color for the first row
+        ('BACKGROUND', (0, 0), (-1, -1), '#FFFFFF'),
+        # Center alignment for all cells
+        ('ALIGN', (0, 1), (-1, 2), 'CENTER'),
+        ('ALIGN', (1, 0), (-1, -1), 'LEFT'),
+        # Middle vertical alignment for all cells
+        ('VALIGN', (0, 0), (-1, -1), 'TOP'),
+        # show grid
+        ('GRID', (0, 0), (-1, -1), 1, colors.black)
+    ])
+    test_detail_table.setStyle(test_detail_style)
+    elements.append(test_detail_table)
+
+    # add paragraph for signature and date at the bottom
+    # add horizontal line
+    elements.append(Spacer(1, 25))
+    line = HRFlowable(width="100%", thickness=1,
+                      color="black", spaceBefore=10, spaceAfter=10)
+    elements.append(line)
+    elements.append(Paragraph("สำหรับห้องปฏิบัติการ",
+                    set_paragraph_h1_style()))
+    elements.append(Spacer(1, 15))
+    elements.append(Paragraph(
+        "ลงชื่อ.................................................... ผู้รับสิ่งส่งตรวจ", set_paragraph_style()))
+    elements.append(Paragraph(
+        "วันที่............/............/............", set_paragraph_style()))
+    elements.append(line)
+    # # Build the PDF
     pdf_file.build(elements)
 
 
+def set_paragraph_h1_style():
+    """This function is used to set the paragraph style."""
+    styles = getSampleStyleSheet()
+    style = styles['BodyText']  # You can choose other styles as needed
+    style.fontName = 'THNiramitAS'  # Set the desired font name
+    style.fontSize = 16  # Set the desired font size
+    return style
+
+
 def set_paragraph_style():
+    """This function is used to set the paragraph style."""
     styles = getSampleStyleSheet()
     style = styles['BodyText']  # You can choose other styles as needed
     style.fontName = 'THNiramitAS'  # Set the desired font name
@@ -131,7 +215,7 @@ def select_data_from_db(sql_cmd, parameters):
     )
     cur = conn.cursor()
     # get data
-    cur.execute(sql_cmd, [parameters])
+    cur.execute(sql_cmd, [str(parameters)])
     data = cur.fetchall()
     conn.close()
     return data
@@ -142,9 +226,11 @@ if __name__ == "__main__":
     with open(sql_cmd_file, "r", encoding='utf-8') as ymlfile:
         sql_cmd = yaml.load(ymlfile, Loader=yaml.FullLoader)
     cmd = sql_cmd["get_sample_data"]
-    sample_data = select_data_from_db(cmd, "113")
+    sample_data = select_data_from_db(cmd, 179)
     cmd = sql_cmd["get_molecular_biology_tests"]
-    test_data = select_data_from_db(cmd, "113")
+    test_data = select_data_from_db(cmd, 179)
+
+    # print(test_data)
 
     # if run from script the path is relative to the script else it is relative to the exe file
     output_file = ""
@@ -152,9 +238,11 @@ if __name__ == "__main__":
         # frozen
         output_file = os.path.join(os.path.dirname(sys.executable),
                                    "molecular_biology_test_detail.pdf")
+
     else:
         # unfrozen
         output_file = os.path.join(os.path.dirname(
             __file__), "molecular_biology_test_detail.pdf")
 
-    create_molecular_biology(sample_data, test_data, output_file)
+    if len(test_data) > 0 or len(sample_data) > 0:
+        create_molecular_biology(sample_data, test_data, output_file)
