@@ -2116,7 +2116,7 @@ class MainAppView(QMainWindow, Ui_main_app_view):
         self.bacteria_page_amount_lineEdit.clear()
         self.bacteria_page_cost_lineEdit.clear()
 
-    def clear_parasite_page(self):
+    def clear_microbiology_page(self):
         """Clear microbiology page."""
         self.PCV_checkBox.setChecked(False)
         self.Floatation_checkBox.setChecked(False)

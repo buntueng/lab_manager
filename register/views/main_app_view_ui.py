@@ -3130,7 +3130,7 @@ class Ui_main_app_view(object):
 
         self.retranslateUi(main_app_view)
 
-        self.stackedWidget.setCurrentIndex(4)
+        self.stackedWidget.setCurrentIndex(2)
         self.molecular_biology_summary_pushButton.setDefault(False)
         self.molecular_biology_save_data_pushButton.setDefault(False)
         self.back_to_home_pushButton.setDefault(False)

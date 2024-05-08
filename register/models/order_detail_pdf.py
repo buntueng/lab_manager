@@ -18,13 +18,13 @@ import numpy as np
 font_path = ""
 if getattr(sys, 'frozen', False):
     # frozen
-    font_path = os.path.join(os.path.dirname(sys.executable), "TH Niramit AS.ttf")
+    font_path = os.path.join(os.path.dirname(
+        sys.executable), "TH Niramit AS.ttf")
 else:
     # unfrozen
     font_path = os.path.join(os.path.dirname(__file__), "TH Niramit AS.ttf")
 
 pdfmetrics.registerFont(TTFont('THNiramitAS', font_path))
-
 
 
 def create_parasite_biology(sample_detail, data, output_file):
@@ -80,7 +80,7 @@ def create_parasite_biology(sample_detail, data, output_file):
     elements.append(Spacer(1, 12))
     # Add the sample detail
     sample_detail = sample_detail[0]
-    print(sample_detail)
+    # print(sample_detail)
 
     sample_age_text = ""
     if sample_detail[6] == "ไม่ทราบอายุ" or sample_detail[6] == "":
@@ -92,8 +92,10 @@ def create_parasite_biology(sample_detail, data, output_file):
         ['ชื่อสัตว์', sample_detail[3], 'ชนิด', sample_detail[10]],
         ['พันธุ์', sample_detail[11], 'เพศ', sample_detail[5]],
         ['อายุ', sample_age_text, 'สาเหตุการตาย', sample_detail[9]],
-        ['วันที่รับตัวอย่าง', sample_detail[0], 'น้ำหนัก', sample_detail[13] + " กิโลกรัม"],
-        ['ความเร็วการส่งตรวจ', sample_detail[17], 'การเก็บรักษาตัวอย่าง', sample_detail[16]],
+        ['วันที่รับตัวอย่าง', sample_detail[0],
+            'น้ำหนัก', sample_detail[13] + " กิโลกรัม"],
+        ['ความเร็วการส่งตรวจ', sample_detail[17],
+            'การเก็บรักษาตัวอย่าง', sample_detail[16]],
     ]
     col_widths = [95, 155, 95, 155]  # Adjust the widths as needed
     # Create sample detail table
@@ -244,8 +246,10 @@ def create_bacteriology(sample_detail, data, output_file):
         ['ชื่อสัตว์', sample_detail[3], 'ชนิด', sample_detail[10]],
         ['พันธุ์', sample_detail[11], 'เพศ', sample_detail[5]],
         ['อายุ', sample_age_text, 'สาเหตุการตาย', sample_detail[9]],
-        ['วันที่รับตัวอย่าง', sample_detail[0], 'น้ำหนัก', sample_detail[13] + " กิโลกรัม"],
-        ['ความเร็วการส่งตรวจ', sample_detail[17], 'การเก็บรักษาตัวอย่าง', sample_detail[16]],
+        ['วันที่รับตัวอย่าง', sample_detail[0],
+            'น้ำหนัก', sample_detail[13] + " กิโลกรัม"],
+        ['ความเร็วการส่งตรวจ', sample_detail[17],
+            'การเก็บรักษาตัวอย่าง', sample_detail[16]],
     ]
     col_widths = [95, 155, 95, 155]  # Adjust the widths as needed
     # Create sample detail table
@@ -268,7 +272,7 @@ def create_bacteriology(sample_detail, data, output_file):
     # add space
     elements.append(Spacer(1, 10))
 
-      # add space
+    # add space
     elements.append(Spacer(1, 10))
 
     # add paragraph
@@ -283,7 +287,7 @@ def create_bacteriology(sample_detail, data, output_file):
 
     for i, test in enumerate(test_detail):
         if len(test) > 0 and test[1] != 0:
-            test_list.append([test[0], test[1],test[2]],)
+            test_list.append([test[0], test[1], test[2]],)
 
     test_detail = test_list
     test_list = []
@@ -319,7 +323,7 @@ def create_bacteriology(sample_detail, data, output_file):
     elements.append(Paragraph("ทดสอบความไวของยา",
                     set_paragraph_h1_style()))
     elements.append(Spacer(1, 15))
-    
+
     test_data = data[0][66:148]
 
     test_detail = [test_data[i:i+2] for i in range(0, len(test_data), 2)]
@@ -327,17 +331,18 @@ def create_bacteriology(sample_detail, data, output_file):
     for i, test in enumerate(test_detail):
         if len(test) > 0 and test[1] != 0:
             test_list.append([test[0], test[1]])
-    
+
     test_detail = test_list
     test_list = []
     for i, test in enumerate(test_detail):
         if len(test) > 0 and test[1] != 0:
             test_list.append([str(i+1), test[0],])
-    
+
     test_list.insert(0, ['ลำดับ', 'รายการ',])
     col_widths = [40, 150,]  # Adjust the widths as needed
     # Create test detail table
-    test_detail_table = Table(test_list, colWidths=col_widths, hAlign='LEFT', vAlign='TOP',)
+    test_detail_table = Table(
+        test_list, colWidths=col_widths, hAlign='LEFT', vAlign='TOP',)
     test_detail_style = TableStyle([
         ('FONTNAME', (0, 0), (-1, -1), 'THNiramitAS'),  # Specify the font name
         ('FONTSIZE', (0, 0), (-1, -1), 12),
@@ -350,17 +355,16 @@ def create_bacteriology(sample_detail, data, output_file):
         ('VALIGN', (0, 0), (-1, -1), 'TOP'),
         # show grid
         ('GRID', (0, 0), (-1, -1), 1, colors.black)
-        
+
     ])
 
     test_detail_table.setStyle(test_detail_style)
     elements.append(test_detail_table)
 
-
     elements.append(Paragraph("การระบุแบคทีเรีย",
                     set_paragraph_h1_style()))
     elements.append(Spacer(1, 15))
-    
+
     test_data = data[0][148:172]
 
     test_detail = [test_data[i:i+2] for i in range(0, len(test_data), 2)]
@@ -368,17 +372,18 @@ def create_bacteriology(sample_detail, data, output_file):
     for i, test in enumerate(test_detail):
         if len(test) > 0 and test[1] != 0:
             test_list.append([test[0], test[1]])
-    
+
     test_detail = test_list
     test_list = []
     for i, test in enumerate(test_detail):
         if len(test) > 0 and test[1] != 0:
             test_list.append([str(i+1), test[0],])
-    
+
     test_list.insert(0, ['ลำดับ', 'รายการ',])
     col_widths = [40, 150,]  # Adjust the widths as needed
     # Create test detail table
-    test_detail_table = Table(test_list, colWidths=col_widths, hAlign='LEFT', vAlign='TOP',)
+    test_detail_table = Table(
+        test_list, colWidths=col_widths, hAlign='LEFT', vAlign='TOP',)
     test_detail_style = TableStyle([
         ('FONTNAME', (0, 0), (-1, -1), 'THNiramitAS'),  # Specify the font name
         ('FONTSIZE', (0, 0), (-1, -1), 12),
@@ -406,7 +411,7 @@ def create_bacteriology(sample_detail, data, output_file):
     for i, test in enumerate(test_detail):
         if len(test) > 0 and test[1] != 0:
             test_list.append([test[0], test[1],])
-            
+
     test_detail = test_list
     test_list = []
     for i, test in enumerate(test_detail):
@@ -416,7 +421,8 @@ def create_bacteriology(sample_detail, data, output_file):
     test_list.insert(0, ['ลำดับ', 'รายการ',])
     col_widths = [40, 180,]  # Adjust the widths as needed
     # Create test detail table
-    test_detail_table = Table(test_list, colWidths=col_widths, hAlign='LEFT', vAlign='TOP',)
+    test_detail_table = Table(
+        test_list, colWidths=col_widths, hAlign='LEFT', vAlign='TOP',)
     test_detail_style = TableStyle([
         ('FONTNAME', (0, 0), (-1, -1), 'THNiramitAS'),  # Specify the font name
         ('FONTSIZE', (0, 0), (-1, -1), 12),
@@ -451,6 +457,7 @@ def create_bacteriology(sample_detail, data, output_file):
     pdf_file.build(elements)
 
 # ==================================================================================================================
+
 
 def create_molecular_biology(sample_detail, data, output_file):
     """This function is used to create the molecular biology test detail."""
@@ -516,8 +523,10 @@ def create_molecular_biology(sample_detail, data, output_file):
         ['ชื่อสัตว์', sample_detail[3], 'ชนิด', sample_detail[10]],
         ['พันธุ์', sample_detail[11], 'เพศ', sample_detail[5]],
         ['อายุ', sample_age_text, 'สาเหตุการตาย', sample_detail[9]],
-        ['วันที่รับตัวอย่าง', sample_detail[0], 'น้ำหนัก', sample_detail[13] + " กิโลกรัม"],
-        ['ความเร็วการส่งตรวจ', sample_detail[17], 'การเก็บรักษาตัวอย่าง', sample_detail[16]],
+        ['วันที่รับตัวอย่าง', sample_detail[0],
+            'น้ำหนัก', sample_detail[13] + " กิโลกรัม"],
+        ['ความเร็วการส่งตรวจ', sample_detail[17],
+            'การเก็บรักษาตัวอย่าง', sample_detail[16]],
     ]
     col_widths = [95, 155, 95, 155]  # Adjust the widths as needed
     # Create sample detail table

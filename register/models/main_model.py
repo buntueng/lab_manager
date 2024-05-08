@@ -279,15 +279,45 @@ class Main_Model:
             return True
         else:
             return False
-        
+
     def get_job_detail_in_check_job_progress_page(self) -> list:
         """Get job detail in check job progress page."""
         sql_cmd = self.sql_cmd["get_job_detail_in_check_job_progress_page"]
         data = self.select_data(sql_cmd, [])
         return data
-    
+
     def get_job_detail_in_check_job_progress_page_by_id(self, job_id) -> list:
         """Get job detail in check job progress page by date."""
         sql_cmd = self.sql_cmd["get_job_detail_in_check_job_progress_page_by_id"]
         data = self.select_data(sql_cmd, [job_id])
         return data
+
+    def get_sample_information_by_id(self, case_id):
+        """Get sample information by id."""
+        cmd = self.sql_cmd["get_sample_data"]
+        sample_data = self.select_data(cmd, [case_id])
+        return sample_data
+
+    def get_test_information_by_id(self, case_id):
+        """Get test information by id."""
+        cmd = self.sql_cmd["get_bacteria_biology_tests"]
+        test_data = self.select_data(cmd, [case_id])
+        return test_data
+    
+    def get_parasite_test_information_by_id(self, case_id):
+        """Get test information by id."""
+        cmd = self.sql_cmd["get_parasite_biology_tests"]
+        test_data = self.select_data(cmd, [case_id])
+        return test_data
+    
+    def get_bacteriology_test_information_by_id(self, case_id):
+        """Get test information by id."""
+        cmd = self.sql_cmd["get_bacteriology_biology_tests"]
+        test_data = self.select_data(cmd, [case_id])
+        return test_data
+    
+    def get_molecular_test_information_by_id(self, case_id):
+        """Get test information by id."""
+        cmd = self.sql_cmd["get_molecular_biology_tests"]
+        test_data = self.select_data(cmd, [case_id])
+        return test_data

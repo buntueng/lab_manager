@@ -4,6 +4,9 @@ from typing import Any
 import time
 from PySide6.QtWidgets import QMessageBox
 from models.barcode_generator import BarcodeGenerator
+from models.order_detail_pdf import create_parasite_biology, create_bacteriology, create_molecular_biology
+import tempfile
+import os
 
 
 class Main_Controller:
@@ -232,8 +235,59 @@ class Main_Controller:
         self.view.new_case_print_sticker_button.clicked.connect(
             self.print_barcode_in_new_case_page)
 
+        self.view.new_case_print_lab_report_button.clicked.connect(
+            self.print_lab_order_detail_in_new_case_page)
+
         self.view.new_case_delete_data_specimen_button.clicked.connect(
             self.delete_specimen_in_new_case_page)
+
+    def print_lab_order_detail_in_new_case_page(self):
+        """Print lab order detail in new case page"""
+        selected_item = self.view.new_case_detail_case_tree_view.selectedItems()
+        if selected_item == [] or len(selected_item) > 1:
+            QMessageBox.critical(self.view, "Error",
+                                 "กรุณาเลือกรายการเพื่อพิมพ์ใบส่งงาน")
+        else:
+            for row in selected_item:
+                case_id = int(row.text(1))
+                # get sample information
+                sample_info = self.model.get_sample_information_by_id(case_id)
+                # tempolary folder
+                temp_folder = tempfile.mkdtemp()
+                temp_pdf_file = os.path.join(temp_folder, "lab_order.pdf")
+                test_info = []
+                case_lab = row.text(3)
+                if case_lab == 'E304(Parasite)':
+                    # create parasite biology pdf
+                    test_info = self.model.get_parasite_test_information_by_id(
+                        case_id)
+                    # create parasite lab order in tempolary folder
+                    create_parasite_biology(
+                        sample_info, test_info, temp_pdf_file)
+                    # open pdf file using default pdf viewer
+                    os.system(f"start {temp_pdf_file}")
+
+                elif case_lab == 'D403(Fungal)':
+                    # create bacteriology pdf
+                    test_info = self.model.get_bacteriology_test_information_by_id(
+                        case_id)
+                    # create_bacteriology(case_detail)
+                    create_bacteriology(
+                        sample_info, test_info, temp_pdf_file)
+                    # open pdf file using default pdf viewer
+                    os.system(f"start {temp_pdf_file}")
+
+                elif case_lab == 'E410(PCR)':
+                    test_info = self.model.get_molecular_test_information_by_id(
+                        case_id)
+                    # create_molecular_biology(case_detail)
+                    create_molecular_biology(
+                        sample_info, test_info, temp_pdf_file)
+                    # open pdf file using default pdf viewer
+                    os.system(f"start {temp_pdf_file}")
+                else:
+                    QMessageBox.critical(self.view, "Error",
+                                         "ไม่สามารถพิมพ์ใบส่งงานได้")
 
     def delete_specimen_in_new_case_page(self):
         """Delete specimen in new case
@@ -302,12 +356,12 @@ class Main_Controller:
             self.view.show_Parasitology_page)
 
         self.view.specimen_page_Microbiology_pushButton.clicked.connect(
-            self.load_parasite_page)
+            self.load_microbiology_page)
 
-    def load_parasite_page(self):
+    def load_microbiology_page(self):
         """Load microbiology page"""
-        self.view.clear_parasite_page()
-        self.view.show_parasite_biology_page()
+        self.view.clear_microbiology_page()
+        self.view.show_Microbiology_page()
 
     def show_molecular_biology_page(self):
         """" Clear and show molecular biology page"""
