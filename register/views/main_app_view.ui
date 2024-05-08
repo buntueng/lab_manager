@@ -60,7 +60,7 @@
         <string>ระบบลงทะเบียน</string>
        </property>
        <property name="alignment">
-        <set>Qt::AlignCenter</set>
+        <set>Qt::AlignmentFlag::AlignCenter</set>
        </property>
       </widget>
      </item>
@@ -95,7 +95,7 @@
      <item>
       <spacer name="verticalSpacer_2">
        <property name="orientation">
-        <enum>Qt::Vertical</enum>
+        <enum>Qt::Orientation::Vertical</enum>
        </property>
        <property name="sizeHint" stdset="0">
         <size>
@@ -178,10 +178,10 @@
      <item>
       <spacer name="verticalSpacer">
        <property name="orientation">
-        <enum>Qt::Vertical</enum>
+        <enum>Qt::Orientation::Vertical</enum>
        </property>
        <property name="sizeType">
-        <enum>QSizePolicy::Expanding</enum>
+        <enum>QSizePolicy::Policy::Expanding</enum>
        </property>
        <property name="sizeHint" stdset="0">
         <size>
@@ -236,7 +236,7 @@
      <item>
       <spacer name="verticalSpacer_3">
        <property name="orientation">
-        <enum>Qt::Vertical</enum>
+        <enum>Qt::Orientation::Vertical</enum>
        </property>
        <property name="sizeHint" stdset="0">
         <size>
@@ -290,10 +290,10 @@
      </rect>
     </property>
     <property name="frameShape">
-     <enum>QFrame::StyledPanel</enum>
+     <enum>QFrame::Shape::StyledPanel</enum>
     </property>
     <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
+     <enum>QFrame::Shadow::Raised</enum>
     </property>
     <widget class="QStackedWidget" name="stackedWidget">
      <property name="geometry">
@@ -305,7 +305,7 @@
       </rect>
      </property>
      <property name="currentIndex">
-      <number>2</number>
+      <number>3</number>
      </property>
      <widget class="QWidget" name="login_page">
       <widget class="QLineEdit" name="username_lineEdit">
@@ -328,7 +328,7 @@
         </rect>
        </property>
        <property name="echoMode">
-        <enum>QLineEdit::Password</enum>
+        <enum>QLineEdit::EchoMode::Password</enum>
        </property>
       </widget>
       <widget class="QPushButton" name="login_pushButton">
@@ -1048,7 +1048,7 @@
         <number>18</number>
        </property>
        <property name="textElideMode">
-        <enum>Qt::ElideRight</enum>
+        <enum>Qt::TextElideMode::ElideRight</enum>
        </property>
        <property name="indentation">
         <number>15</number>
@@ -1655,16 +1655,16 @@
         <string>Specimen</string>
        </property>
        <property name="alignment">
-        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
        </property>
       </widget>
       <widget class="QFrame" name="info_sample_specimen_frame1">
        <property name="geometry">
         <rect>
-         <x>80</x>
+         <x>20</x>
          <y>50</y>
-         <width>1031</width>
-         <height>711</height>
+         <width>1151</width>
+         <height>761</height>
         </rect>
        </property>
        <property name="font">
@@ -1676,10 +1676,10 @@
         <string notr="true">background:qlineargradient(spread:reflect, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(197, 255, 225, 255), stop:0.55 rgba(224, 235, 188, 255), stop:0.98 rgba(204, 200, 127, 255), stop:1 rgba(0, 0, 0, 0))</string>
        </property>
        <property name="frameShape">
-        <enum>QFrame::Box</enum>
+        <enum>QFrame::Shape::Box</enum>
        </property>
        <property name="frameShadow">
-        <enum>QFrame::Plain</enum>
+        <enum>QFrame::Shadow::Plain</enum>
        </property>
        <property name="lineWidth">
         <number>2</number>
@@ -1689,8 +1689,8 @@
          <rect>
           <x>10</x>
           <y>10</y>
-          <width>1011</width>
-          <height>691</height>
+          <width>1131</width>
+          <height>741</height>
          </rect>
         </property>
         <property name="font">
@@ -1702,10 +1702,10 @@
          <string notr="true">background:rgb(239, 239, 239)</string>
         </property>
         <property name="frameShape">
-         <enum>QFrame::Box</enum>
+         <enum>QFrame::Shape::Box</enum>
         </property>
         <property name="frameShadow">
-         <enum>QFrame::Plain</enum>
+         <enum>QFrame::Shadow::Plain</enum>
         </property>
         <property name="lineWidth">
          <number>2</number>
@@ -1765,10 +1765,10 @@
           </font>
          </property>
          <property name="frameShape">
-          <enum>QFrame::Box</enum>
+          <enum>QFrame::Shape::Box</enum>
          </property>
          <property name="frameShadow">
-          <enum>QFrame::Plain</enum>
+          <enum>QFrame::Shadow::Plain</enum>
          </property>
          <widget class="QLabel" name="animal_type_label">
           <property name="geometry">
@@ -1953,7 +1953,7 @@
          <widget class="QLineEdit" name="another_type_animal_entry">
           <property name="geometry">
            <rect>
-            <x>450</x>
+            <x>460</x>
             <y>40</y>
             <width>211</width>
             <height>31</height>
@@ -2148,7 +2148,7 @@
           </font>
          </property>
          <property name="layoutDirection">
-          <enum>Qt::LeftToRight</enum>
+          <enum>Qt::LayoutDirection::LeftToRight</enum>
          </property>
          <property name="autoFillBackground">
           <bool>false</bool>
@@ -2166,7 +2166,7 @@
           <bool>false</bool>
          </property>
          <property name="buttonSymbols">
-          <enum>QAbstractSpinBox::NoButtons</enum>
+          <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
          </property>
          <property name="maximumTime">
           <time>
@@ -2176,7 +2176,7 @@
           </time>
          </property>
          <property name="currentSection">
-          <enum>QDateTimeEdit::DaySection</enum>
+          <enum>QDateTimeEdit::Section::DaySection</enum>
          </property>
          <property name="displayFormat">
           <string>d/M/yyyy h:mm </string>
@@ -2188,7 +2188,7 @@
           <number>0</number>
          </property>
          <property name="timeSpec">
-          <enum>Qt::LocalTime</enum>
+          <enum>Qt::TimeSpec::LocalTime</enum>
          </property>
         </widget>
         <widget class="QDateTimeEdit" name="specimen_page_day_keep_sample_dateTime">
@@ -2208,7 +2208,7 @@
           </font>
          </property>
          <property name="layoutDirection">
-          <enum>Qt::LeftToRight</enum>
+          <enum>Qt::LayoutDirection::LeftToRight</enum>
          </property>
          <property name="autoFillBackground">
           <bool>false</bool>
@@ -2226,7 +2226,7 @@
           <bool>false</bool>
          </property>
          <property name="buttonSymbols">
-          <enum>QAbstractSpinBox::NoButtons</enum>
+          <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
          </property>
          <property name="maximumTime">
           <time>
@@ -2236,7 +2236,7 @@
           </time>
          </property>
          <property name="currentSection">
-          <enum>QDateTimeEdit::DaySection</enum>
+          <enum>QDateTimeEdit::Section::DaySection</enum>
          </property>
          <property name="displayFormat">
           <string>d/M/yyyy h:mm </string>
@@ -2248,7 +2248,7 @@
           <number>0</number>
          </property>
          <property name="timeSpec">
-          <enum>Qt::LocalTime</enum>
+          <enum>Qt::TimeSpec::LocalTime</enum>
          </property>
         </widget>
         <widget class="QTextEdit" name="specimen_page_record_heal_textEdit">
@@ -2256,8 +2256,8 @@
           <rect>
            <x>160</x>
            <y>300</y>
-           <width>681</width>
-           <height>51</height>
+           <width>271</width>
+           <height>81</height>
           </rect>
          </property>
          <property name="font">
@@ -2554,8 +2554,8 @@
         <widget class="QCheckBox" name="specimen_page_unknow_age_animal_checkbox">
          <property name="geometry">
           <rect>
-           <x>890</x>
-           <y>60</y>
+           <x>880</x>
+           <y>55</y>
            <width>101</width>
            <height>20</height>
           </rect>
@@ -2636,7 +2636,7 @@
           <rect>
            <x>350</x>
            <y>220</y>
-           <width>491</width>
+           <width>501</width>
            <height>71</height>
           </rect>
          </property>
@@ -2646,18 +2646,18 @@
           </font>
          </property>
          <property name="frameShape">
-          <enum>QFrame::Box</enum>
+          <enum>QFrame::Shape::Box</enum>
          </property>
          <property name="frameShadow">
-          <enum>QFrame::Plain</enum>
+          <enum>QFrame::Shadow::Plain</enum>
          </property>
          <widget class="QLabel" name="keeping_specimen_label">
           <property name="geometry">
            <rect>
             <x>10</x>
-            <y>0</y>
+            <y>10</y>
             <width>161</width>
-            <height>31</height>
+            <height>21</height>
            </rect>
           </property>
           <property name="font">
@@ -2694,7 +2694,7 @@
          <widget class="QRadioButton" name="specimen_page_freeze_specimen_radioButton">
           <property name="geometry">
            <rect>
-            <x>130</x>
+            <x>140</x>
             <y>30</y>
             <width>141</width>
             <height>31</height>
@@ -2714,7 +2714,7 @@
          <widget class="QRadioButton" name="specimen_page_room_temp_specimen_radioButton">
           <property name="geometry">
            <rect>
-            <x>270</x>
+            <x>280</x>
             <y>30</y>
             <width>201</width>
             <height>31</height>
@@ -2735,8 +2735,8 @@
         <widget class="QFrame" name="speed_frame">
          <property name="geometry">
           <rect>
-           <x>860</x>
-           <y>90</y>
+           <x>995</x>
+           <y>10</y>
            <width>131</width>
            <height>111</height>
           </rect>
@@ -2747,10 +2747,10 @@
           </font>
          </property>
          <property name="frameShape">
-          <enum>QFrame::Box</enum>
+          <enum>QFrame::Shape::Box</enum>
          </property>
          <property name="frameShadow">
-          <enum>QFrame::Plain</enum>
+          <enum>QFrame::Shadow::Plain</enum>
          </property>
          <widget class="QLabel" name="speed_label">
           <property name="geometry">
@@ -2816,9 +2816,9 @@
         <widget class="QPushButton" name="specimen_page_save_pushButton">
          <property name="geometry">
           <rect>
-           <x>860</x>
-           <y>220</y>
-           <width>131</width>
+           <x>850</x>
+           <y>310</y>
+           <width>121</width>
            <height>51</height>
           </rect>
          </property>
@@ -2839,9 +2839,9 @@
         <widget class="QPushButton" name="specimen_page_back_pushButton">
          <property name="geometry">
           <rect>
-           <x>860</x>
-           <y>300</y>
-           <width>131</width>
+           <x>1000</x>
+           <y>310</y>
+           <width>121</width>
            <height>51</height>
           </rect>
          </property>
@@ -2862,9 +2862,9 @@
         <widget class="QPushButton" name="specimen_page_food_safty_pushButton">
          <property name="geometry">
           <rect>
-           <x>670</x>
-           <y>590</y>
-           <width>321</width>
+           <x>780</x>
+           <y>630</y>
+           <width>340</width>
            <height>41</height>
           </rect>
          </property>
@@ -2885,9 +2885,9 @@
         <widget class="QPushButton" name="specimen_page_Parasitology_pushButton">
          <property name="geometry">
           <rect>
-           <x>340</x>
-           <y>440</y>
-           <width>321</width>
+           <x>395</x>
+           <y>480</y>
+           <width>340</width>
            <height>41</height>
           </rect>
          </property>
@@ -2908,9 +2908,9 @@
         <widget class="QPushButton" name="specimen_page_histopatology_pushButton">
          <property name="geometry">
           <rect>
-           <x>670</x>
-           <y>540</y>
-           <width>321</width>
+           <x>780</x>
+           <y>580</y>
+           <width>340</width>
            <height>41</height>
           </rect>
          </property>
@@ -2932,15 +2932,15 @@
          <property name="geometry">
           <rect>
            <x>10</x>
-           <y>355</y>
-           <width>211</width>
+           <y>390</y>
+           <width>291</width>
            <height>31</height>
           </rect>
          </property>
          <property name="font">
           <font>
            <family>TH Niramit AS</family>
-           <pointsize>14</pointsize>
+           <pointsize>20</pointsize>
            <bold>true</bold>
           </font>
          </property>
@@ -2951,9 +2951,9 @@
         <widget class="QPushButton" name="specimen_page_cytology_pushButton">
          <property name="geometry">
           <rect>
-           <x>340</x>
-           <y>590</y>
-           <width>321</width>
+           <x>395</x>
+           <y>630</y>
+           <width>340</width>
            <height>41</height>
           </rect>
          </property>
@@ -2974,9 +2974,9 @@
         <widget class="QPushButton" name="specimen_page_surgical_pushButton">
          <property name="geometry">
           <rect>
-           <x>340</x>
-           <y>540</y>
-           <width>321</width>
+           <x>395</x>
+           <y>580</y>
+           <width>340</width>
            <height>41</height>
           </rect>
          </property>
@@ -2997,9 +2997,9 @@
         <widget class="QPushButton" name="virology_pushButton">
          <property name="geometry">
           <rect>
-           <x>670</x>
-           <y>390</y>
-           <width>321</width>
+           <x>780</x>
+           <y>430</y>
+           <width>340</width>
            <height>41</height>
           </rect>
          </property>
@@ -3020,9 +3020,9 @@
         <widget class="QPushButton" name="specimen_page_hematology_pushButton">
          <property name="geometry">
           <rect>
-           <x>670</x>
-           <y>490</y>
-           <width>321</width>
+           <x>780</x>
+           <y>530</y>
+           <width>340</width>
            <height>41</height>
           </rect>
          </property>
@@ -3043,9 +3043,9 @@
         <widget class="QPushButton" name="specimen_page_Microbiology_pushButton">
          <property name="geometry">
           <rect>
-           <x>340</x>
-           <y>390</y>
-           <width>321</width>
+           <x>395</x>
+           <y>430</y>
+           <width>340</width>
            <height>41</height>
           </rect>
          </property>
@@ -3066,9 +3066,9 @@
         <widget class="QPushButton" name="specimen_page_histopathology_research_pushButton">
          <property name="geometry">
           <rect>
-           <x>340</x>
-           <y>640</y>
-           <width>321</width>
+           <x>395</x>
+           <y>680</y>
+           <width>340</width>
            <height>41</height>
           </rect>
          </property>
@@ -3090,8 +3090,8 @@
          <property name="geometry">
           <rect>
            <x>10</x>
-           <y>440</y>
-           <width>321</width>
+           <y>480</y>
+           <width>340</width>
            <height>41</height>
           </rect>
          </property>
@@ -3113,8 +3113,8 @@
          <property name="geometry">
           <rect>
            <x>10</x>
-           <y>540</y>
-           <width>321</width>
+           <y>580</y>
+           <width>340</width>
            <height>41</height>
           </rect>
          </property>
@@ -3135,9 +3135,9 @@
         <widget class="QPushButton" name="specimen_page_molecular_pushButton">
          <property name="geometry">
           <rect>
-           <x>340</x>
-           <y>490</y>
-           <width>321</width>
+           <x>395</x>
+           <y>530</y>
+           <width>340</width>
            <height>41</height>
           </rect>
          </property>
@@ -3158,9 +3158,9 @@
         <widget class="QPushButton" name="specimen_page_feed_analysis_pushButton">
          <property name="geometry">
           <rect>
-           <x>670</x>
-           <y>440</y>
-           <width>321</width>
+           <x>780</x>
+           <y>480</y>
+           <width>340</width>
            <height>41</height>
           </rect>
          </property>
@@ -3182,8 +3182,8 @@
          <property name="geometry">
           <rect>
            <x>10</x>
-           <y>590</y>
-           <width>321</width>
+           <y>630</y>
+           <width>340</width>
            <height>41</height>
           </rect>
          </property>
@@ -3205,8 +3205,8 @@
          <property name="geometry">
           <rect>
            <x>10</x>
-           <y>640</y>
-           <width>321</width>
+           <y>680</y>
+           <width>340</width>
            <height>41</height>
           </rect>
          </property>
@@ -3228,8 +3228,8 @@
          <property name="geometry">
           <rect>
            <x>10</x>
-           <y>390</y>
-           <width>321</width>
+           <y>430</y>
+           <width>340</width>
            <height>41</height>
           </rect>
          </property>
@@ -3251,8 +3251,8 @@
          <property name="geometry">
           <rect>
            <x>10</x>
-           <y>490</y>
-           <width>321</width>
+           <y>530</y>
+           <width>340</width>
            <height>41</height>
           </rect>
          </property>
@@ -3270,6 +3270,437 @@
           <string>ตรวจคุณภาพน้ำ (Water quality)</string>
          </property>
         </widget>
+        <widget class="Line" name="line">
+         <property name="geometry">
+          <rect>
+           <x>2</x>
+           <y>380</y>
+           <width>1126</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+        </widget>
+        <widget class="QLabel" name="dosage_history_label">
+         <property name="geometry">
+          <rect>
+           <x>460</x>
+           <y>300</y>
+           <width>91</width>
+           <height>81</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>TH Niramit AS</family>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>ประวัติการ
+ให้ยาปฏิชีวนะ</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+        <widget class="QTextEdit" name="dosage_history_textEdit">
+         <property name="geometry">
+          <rect>
+           <x>570</x>
+           <y>300</y>
+           <width>271</width>
+           <height>81</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>TH Niramit AS</family>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:rgb(255, 255, 255)</string>
+         </property>
+        </widget>
+        <widget class="QFrame" name="sample_animal_inspection_frame">
+         <property name="geometry">
+          <rect>
+           <x>865</x>
+           <y>130</y>
+           <width>261</width>
+           <height>161</height>
+          </rect>
+         </property>
+         <property name="autoFillBackground">
+          <bool>false</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Shape::Box</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Shadow::Plain</enum>
+         </property>
+         <property name="lineWidth">
+          <number>2</number>
+         </property>
+         <widget class="QComboBox" name="sample_animal_inspection_combobox">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>60</y>
+            <width>241</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>TH Niramit AS</family>
+            <pointsize>16</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background:rgb(255, 255, 255)</string>
+          </property>
+          <property name="editable">
+           <bool>false</bool>
+          </property>
+          <property name="currentText">
+           <string>ซากสัตว์</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>ซากสัตว์</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ชิ้นเนื้อในน้ำยา 10% ฟอร์มาลิน</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>บล็อคพาราฟิน</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>น้ำในช่องท้อง</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>น้ำในช่องอก</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>FNA slide(s)</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Slide(s)</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ปัสสาวะ</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ของเหลวจากแผล</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>น้ำไขข้อกระดูก</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>น้ำไขสันหลัง</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ไขกระดูก</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>เลือด</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ปัสสาวะ (Cystocentesis)</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ปัสสาวะ (Catheterization)</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ปัสสาวะ (Voiding)</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ปลายสาย Catheter</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Ascitic fluid</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>น้ำถุงหุ้มหัวใจ</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Bronchiolar lavage</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Gastric lavage</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>หนอง</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Swab ใน Stuart transport medium</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>น้ำลาย</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>อุจจาระ</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ขน</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>เล็บ</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>กระดูก</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ชิ้นเนื้อ</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Isolate bacterial colony</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Agar plate</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>หนอนพยาธิ</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>น้ำ</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ขยะติดเชื้อ</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>อาหารสัตว์</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Semen</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ซีรัม</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>น้ำยาฆ่าเชื้อ</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>สารเคมี</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ปรสิต</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>อุปกรณ์</string>
+           </property>
+          </item>
+         </widget>
+         <widget class="QLabel" name="sample_animal_inspection_label">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>10</y>
+            <width>221</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>TH Niramit AS</family>
+            <pointsize>16</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>รายละเอียดตัวอย่างสิ่งส่งตรวจ
+(SAMPLE)</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignmentFlag::AlignCenter</set>
+          </property>
+         </widget>
+         <widget class="QRadioButton" name="sample_animal_inspection_othor_redioButton">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>110</y>
+            <width>61</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>TH Niramit AS</family>
+            <pointsize>16</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>อื่นๆ</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="sample_animal_inspection_othor_textEdit">
+          <property name="geometry">
+           <rect>
+            <x>68</x>
+            <y>110</y>
+            <width>181</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>TH Niramit AS</family>
+            <pointsize>16</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background:rgb(255, 255, 255)</string>
+          </property>
+         </widget>
+        </widget>
+        <zorder>line</zorder>
+        <zorder>name_animal_label</zorder>
+        <zorder>number_id_opd_label</zorder>
+        <zorder>animal_type_frame</zorder>
+        <zorder>breed_label</zorder>
+        <zorder>day_of_death_label</zorder>
+        <zorder>day_keep_sample_label</zorder>
+        <zorder>record_heal_label</zorder>
+        <zorder>specimen_page_name_animal_entry</zorder>
+        <zorder>specimen_page_number_id_opd_entry</zorder>
+        <zorder>specimen_page_breed_entry</zorder>
+        <zorder>specimen_page_day_of_death_dateTime</zorder>
+        <zorder>specimen_page_day_keep_sample_dateTime</zorder>
+        <zorder>specimen_page_record_heal_textEdit</zorder>
+        <zorder>sex_animal_label</zorder>
+        <zorder>specimen_page_sex_animal_comboBox</zorder>
+        <zorder>cause_of_death_label</zorder>
+        <zorder>specimen_page_cause_of_death_comboBox</zorder>
+        <zorder>age_animal_label</zorder>
+        <zorder>specimen_page_year_animal_entry</zorder>
+        <zorder>year_animal_label</zorder>
+        <zorder>month_animal_label</zorder>
+        <zorder>specimen_page_month_animal_entry</zorder>
+        <zorder>day_animal_label</zorder>
+        <zorder>specimen_page_day_animal_entry</zorder>
+        <zorder>specimen_page_unknow_age_animal_checkbox</zorder>
+        <zorder>specimen_page_weight_animal_entry</zorder>
+        <zorder>weight_animal_label</zorder>
+        <zorder>kilogram_animal_label</zorder>
+        <zorder>keeping_specimen_frame</zorder>
+        <zorder>speed_frame</zorder>
+        <zorder>specimen_page_save_pushButton</zorder>
+        <zorder>specimen_page_back_pushButton</zorder>
+        <zorder>specimen_page_food_safty_pushButton</zorder>
+        <zorder>specimen_page_Parasitology_pushButton</zorder>
+        <zorder>specimen_page_histopatology_pushButton</zorder>
+        <zorder>sample_lab_label</zorder>
+        <zorder>specimen_page_cytology_pushButton</zorder>
+        <zorder>specimen_page_surgical_pushButton</zorder>
+        <zorder>virology_pushButton</zorder>
+        <zorder>specimen_page_hematology_pushButton</zorder>
+        <zorder>specimen_page_Microbiology_pushButton</zorder>
+        <zorder>specimen_page_histopathology_research_pushButton</zorder>
+        <zorder>specimen_page_Serology_pushButton</zorder>
+        <zorder>specimen_page_Immunohistochemistry_pushButton</zorder>
+        <zorder>specimen_page_molecular_pushButton</zorder>
+        <zorder>specimen_page_feed_analysis_pushButton</zorder>
+        <zorder>specimen_page_Necropsy_pushButton</zorder>
+        <zorder>specimen_page_histopathology_research_recut_pushButton</zorder>
+        <zorder>specimen_page_Fungal_pushButton</zorder>
+        <zorder>specimen_page_water_quality_pushButton</zorder>
+        <zorder>dosage_history_label</zorder>
+        <zorder>dosage_history_textEdit</zorder>
+        <zorder>sample_animal_inspection_frame</zorder>
        </widget>
       </widget>
      </widget>
@@ -3431,10 +3862,10 @@
         <string notr="true">background-color: rgb(200, 200, 200)</string>
        </property>
        <property name="frameShape">
-        <enum>QFrame::Box</enum>
+        <enum>QFrame::Shape::Box</enum>
        </property>
        <property name="frameShadow">
-        <enum>QFrame::Plain</enum>
+        <enum>QFrame::Shadow::Plain</enum>
        </property>
        <property name="lineWidth">
         <number>2</number>
@@ -3453,10 +3884,10 @@
 </string>
         </property>
         <property name="frameShape">
-         <enum>QFrame::Box</enum>
+         <enum>QFrame::Shape::Box</enum>
         </property>
         <property name="frameShadow">
-         <enum>QFrame::Plain</enum>
+         <enum>QFrame::Shadow::Plain</enum>
         </property>
         <property name="lineWidth">
          <number>2</number>
@@ -3700,10 +4131,10 @@
 </string>
        </property>
        <property name="frameShape">
-        <enum>QFrame::Box</enum>
+        <enum>QFrame::Shape::Box</enum>
        </property>
        <property name="frameShadow">
-        <enum>QFrame::Plain</enum>
+        <enum>QFrame::Shadow::Plain</enum>
        </property>
        <property name="lineWidth">
         <number>2</number>
@@ -3727,10 +4158,10 @@
 </string>
         </property>
         <property name="frameShape">
-         <enum>QFrame::Box</enum>
+         <enum>QFrame::Shape::Box</enum>
         </property>
         <property name="frameShadow">
-         <enum>QFrame::Plain</enum>
+         <enum>QFrame::Shadow::Plain</enum>
         </property>
         <property name="lineWidth">
          <number>2</number>
@@ -4144,10 +4575,10 @@
           <string notr="true">background-color:rgb(255, 255, 255)</string>
          </property>
          <property name="frameShape">
-          <enum>QFrame::StyledPanel</enum>
+          <enum>QFrame::Shape::StyledPanel</enum>
          </property>
          <property name="frameShadow">
-          <enum>QFrame::Raised</enum>
+          <enum>QFrame::Shadow::Raised</enum>
          </property>
         </widget>
         <widget class="QPushButton" name="employee_edit_signature_button">
@@ -4668,10 +5099,10 @@
         <string notr="true">background:rgb(255, 255, 255)</string>
        </property>
        <property name="frameShape">
-        <enum>QFrame::Box</enum>
+        <enum>QFrame::Shape::Box</enum>
        </property>
        <property name="frameShadow">
-        <enum>QFrame::Plain</enum>
+        <enum>QFrame::Shadow::Plain</enum>
        </property>
        <property name="lineWidth">
         <number>2</number>
@@ -4696,7 +5127,7 @@
          <string notr="true">background:rgb(0, 255, 0)</string>
         </property>
         <property name="frameShape">
-         <enum>QFrame::Box</enum>
+         <enum>QFrame::Shape::Box</enum>
         </property>
         <property name="lineWidth">
          <number>2</number>
@@ -4705,7 +5136,7 @@
          <string>Blood parasite</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLabel" name="blood_1_sample_label">
@@ -4728,7 +5159,7 @@
          <string notr="true">background:rgb(0, 255, 0)</string>
         </property>
         <property name="frameShape">
-         <enum>QFrame::Box</enum>
+         <enum>QFrame::Shape::Box</enum>
         </property>
         <property name="lineWidth">
          <number>2</number>
@@ -4737,7 +5168,7 @@
          <string>SAMPLE</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QCheckBox" name="blood_1_ana_checkBox">
@@ -4923,7 +5354,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLineEdit" name="blood_1_babe_lineEdit">
@@ -4946,7 +5377,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLineEdit" name="blood_1_ehr_lineEdit">
@@ -4969,7 +5400,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLineEdit" name="blood_1_the_lineEdit">
@@ -4992,7 +5423,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLineEdit" name="blood_1_haem_lineEdit">
@@ -5015,7 +5446,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLineEdit" name="blood_1_ecanis_lineEdit">
@@ -5038,7 +5469,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLineEdit" name="blood_1_leis_lineEdit">
@@ -5061,7 +5492,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLineEdit" name="blood_1_try_lineEdit">
@@ -5084,7 +5515,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="Line" name="blood_1_line">
@@ -5103,7 +5534,7 @@
          </font>
         </property>
         <property name="orientation">
-         <enum>Qt::Vertical</enum>
+         <enum>Qt::Orientation::Vertical</enum>
         </property>
        </widget>
        <zorder>blood_1_line</zorder>
@@ -5145,10 +5576,10 @@
         <string notr="true">background:rgb(255, 255, 255)</string>
        </property>
        <property name="frameShape">
-        <enum>QFrame::Box</enum>
+        <enum>QFrame::Shape::Box</enum>
        </property>
        <property name="frameShadow">
-        <enum>QFrame::Plain</enum>
+        <enum>QFrame::Shadow::Plain</enum>
        </property>
        <property name="lineWidth">
         <number>2</number>
@@ -5173,7 +5604,7 @@
          <string notr="true">background:rgb(0, 255, 0)</string>
         </property>
         <property name="frameShape">
-         <enum>QFrame::Box</enum>
+         <enum>QFrame::Shape::Box</enum>
         </property>
         <property name="lineWidth">
          <number>2</number>
@@ -5182,7 +5613,7 @@
          <string>Feline</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLabel" name="feline_sample_label">
@@ -5205,7 +5636,7 @@
          <string notr="true">background:rgb(0, 255, 0)</string>
         </property>
         <property name="frameShape">
-         <enum>QFrame::Box</enum>
+         <enum>QFrame::Shape::Box</enum>
         </property>
         <property name="lineWidth">
          <number>2</number>
@@ -5214,7 +5645,7 @@
          <string>SAMPLE</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QCheckBox" name="feline_felv_checkBox">
@@ -5317,7 +5748,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLineEdit" name="feline_fip_lineEdit">
@@ -5340,7 +5771,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLineEdit" name="feline_fiv_lineEdit">
@@ -5363,7 +5794,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLineEdit" name="feline_panleukopenia_lineEdit">
@@ -5386,7 +5817,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="Line" name="feline_line">
@@ -5405,7 +5836,7 @@
          </font>
         </property>
         <property name="orientation">
-         <enum>Qt::Vertical</enum>
+         <enum>Qt::Orientation::Vertical</enum>
         </property>
        </widget>
        <zorder>feline_line</zorder>
@@ -5439,10 +5870,10 @@
         <string notr="true">background:rgb(255, 255, 255)</string>
        </property>
        <property name="frameShape">
-        <enum>QFrame::Box</enum>
+        <enum>QFrame::Shape::Box</enum>
        </property>
        <property name="frameShadow">
-        <enum>QFrame::Plain</enum>
+        <enum>QFrame::Shadow::Plain</enum>
        </property>
        <property name="lineWidth">
         <number>2</number>
@@ -5467,7 +5898,7 @@
          <string notr="true">background:rgb(0, 255, 0)</string>
         </property>
         <property name="frameShape">
-         <enum>QFrame::Box</enum>
+         <enum>QFrame::Shape::Box</enum>
         </property>
         <property name="lineWidth">
          <number>2</number>
@@ -5476,7 +5907,7 @@
          <string>Equine</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLabel" name="equine_saple_label">
@@ -5499,7 +5930,7 @@
          <string notr="true">background:rgb(0, 255, 0)</string>
         </property>
         <property name="frameShape">
-         <enum>QFrame::Box</enum>
+         <enum>QFrame::Shape::Box</enum>
         </property>
         <property name="lineWidth">
          <number>2</number>
@@ -5508,7 +5939,7 @@
          <string>SAMPLE</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QCheckBox" name="equine_ehv_checkBox">
@@ -5571,7 +6002,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLineEdit" name="equine_ahs_lineEdit">
@@ -5594,7 +6025,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="Line" name="equine_line">
@@ -5613,7 +6044,7 @@
          </font>
         </property>
         <property name="orientation">
-         <enum>Qt::Vertical</enum>
+         <enum>Qt::Orientation::Vertical</enum>
         </property>
        </widget>
        <zorder>equine_line</zorder>
@@ -5643,10 +6074,10 @@
         <string notr="true">background:rgb(255, 255, 255)</string>
        </property>
        <property name="frameShape">
-        <enum>QFrame::Box</enum>
+        <enum>QFrame::Shape::Box</enum>
        </property>
        <property name="frameShadow">
-        <enum>QFrame::Plain</enum>
+        <enum>QFrame::Shadow::Plain</enum>
        </property>
        <property name="lineWidth">
         <number>2</number>
@@ -5671,7 +6102,7 @@
          <string notr="true">background:rgb(0, 255, 0)</string>
         </property>
         <property name="frameShape">
-         <enum>QFrame::Box</enum>
+         <enum>QFrame::Shape::Box</enum>
         </property>
         <property name="lineWidth">
          <number>2</number>
@@ -5680,7 +6111,7 @@
          <string>Elephant</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLabel" name="elephant_sample_label">
@@ -5703,7 +6134,7 @@
          <string notr="true">background:rgb(0, 255, 0)</string>
         </property>
         <property name="frameShape">
-         <enum>QFrame::Box</enum>
+         <enum>QFrame::Shape::Box</enum>
         </property>
         <property name="lineWidth">
          <number>2</number>
@@ -5712,7 +6143,7 @@
          <string>SAMPLE</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QCheckBox" name="elephant_eehv1a_4_checkBox">
@@ -5838,7 +6269,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLineEdit" name="elephant_eehv1a_1_lineEdit">
@@ -5861,7 +6292,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLineEdit" name="elephant_eehv1a_2_lineEdit">
@@ -5884,7 +6315,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLineEdit" name="elephant_eehv4_1_lineEdit">
@@ -5907,7 +6338,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLineEdit" name="elephant_eehv4_2_lineEdit">
@@ -5930,7 +6361,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="Line" name="elephant_line">
@@ -5949,7 +6380,7 @@
          </font>
         </property>
         <property name="orientation">
-         <enum>Qt::Vertical</enum>
+         <enum>Qt::Orientation::Vertical</enum>
         </property>
        </widget>
        <zorder>elephant_line</zorder>
@@ -5985,10 +6416,10 @@
         <string notr="true">background:rgb(255, 255, 255)</string>
        </property>
        <property name="frameShape">
-        <enum>QFrame::Box</enum>
+        <enum>QFrame::Shape::Box</enum>
        </property>
        <property name="frameShadow">
-        <enum>QFrame::Plain</enum>
+        <enum>QFrame::Shadow::Plain</enum>
        </property>
        <property name="lineWidth">
         <number>2</number>
@@ -6010,7 +6441,7 @@
          </font>
         </property>
         <property name="contextMenuPolicy">
-         <enum>Qt::DefaultContextMenu</enum>
+         <enum>Qt::ContextMenuPolicy::DefaultContextMenu</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">
@@ -6069,7 +6500,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLabel" name="number_item_label2">
@@ -6152,7 +6583,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QPushButton" name="molecular_biology_save_data_pushButton">
@@ -6172,7 +6603,7 @@
          </font>
         </property>
         <property name="contextMenuPolicy">
-         <enum>Qt::DefaultContextMenu</enum>
+         <enum>Qt::ContextMenuPolicy::DefaultContextMenu</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">
@@ -6208,7 +6639,7 @@
          </font>
         </property>
         <property name="contextMenuPolicy">
-         <enum>Qt::DefaultContextMenu</enum>
+         <enum>Qt::ContextMenuPolicy::DefaultContextMenu</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">
@@ -6247,10 +6678,10 @@
         <string notr="true">background:rgb(255, 255, 255)</string>
        </property>
        <property name="frameShape">
-        <enum>QFrame::Box</enum>
+        <enum>QFrame::Shape::Box</enum>
        </property>
        <property name="frameShadow">
-        <enum>QFrame::Plain</enum>
+        <enum>QFrame::Shadow::Plain</enum>
        </property>
        <property name="lineWidth">
         <number>2</number>
@@ -6275,7 +6706,7 @@
          <string notr="true">background:rgb(0, 255, 0)</string>
         </property>
         <property name="frameShape">
-         <enum>QFrame::Box</enum>
+         <enum>QFrame::Shape::Box</enum>
         </property>
         <property name="lineWidth">
          <number>2</number>
@@ -6284,7 +6715,7 @@
          <string>Aquatic animal</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLabel" name="aquatic_animal_sample_label">
@@ -6307,7 +6738,7 @@
          <string notr="true">background:rgb(0, 255, 0)</string>
         </property>
         <property name="frameShape">
-         <enum>QFrame::Box</enum>
+         <enum>QFrame::Shape::Box</enum>
         </property>
         <property name="lineWidth">
          <number>2</number>
@@ -6316,7 +6747,7 @@
          <string>SAMPLE</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QCheckBox" name="aquatic_animal_khv_checkBox">
@@ -6399,7 +6830,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLineEdit" name="aquatic_animal_tilv_lineEdit">
@@ -6422,7 +6853,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLineEdit" name="aquatic_animal_cev_lineEdit">
@@ -6445,7 +6876,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="Line" name="aquatic_animal_line">
@@ -6464,7 +6895,7 @@
          </font>
         </property>
         <property name="orientation">
-         <enum>Qt::Vertical</enum>
+         <enum>Qt::Orientation::Vertical</enum>
         </property>
        </widget>
        <zorder>aquatic_animal_line</zorder>
@@ -6496,10 +6927,10 @@
         <string notr="true">background:rgb(255, 255, 255)</string>
        </property>
        <property name="frameShape">
-        <enum>QFrame::Box</enum>
+        <enum>QFrame::Shape::Box</enum>
        </property>
        <property name="frameShadow">
-        <enum>QFrame::Plain</enum>
+        <enum>QFrame::Shadow::Plain</enum>
        </property>
        <property name="lineWidth">
         <number>2</number>
@@ -6524,7 +6955,7 @@
          <string notr="true">background:rgb(0, 255, 0)</string>
         </property>
         <property name="frameShape">
-         <enum>QFrame::Box</enum>
+         <enum>QFrame::Shape::Box</enum>
         </property>
         <property name="lineWidth">
          <number>2</number>
@@ -6533,7 +6964,7 @@
          <string>AVIAN</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLabel" name="avian_sample_label">
@@ -6556,7 +6987,7 @@
          <string notr="true">background:rgb(0, 255, 0)</string>
         </property>
         <property name="frameShape">
-         <enum>QFrame::Box</enum>
+         <enum>QFrame::Shape::Box</enum>
         </property>
         <property name="lineWidth">
          <number>2</number>
@@ -6565,7 +6996,7 @@
          <string>SAMPLE</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QCheckBox" name="avian_AI_1_checkBox">
@@ -6825,7 +7256,7 @@
          </font>
         </property>
         <property name="inputMethodHints">
-         <set>Qt::ImhDigitsOnly</set>
+         <set>Qt::InputMethodHint::ImhDigitsOnly</set>
         </property>
         <property name="inputMask">
          <string/>
@@ -6834,7 +7265,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLineEdit" name="avian_AI_2_lineEdit">
@@ -6857,7 +7288,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLineEdit" name="avian_ibv_lineEdit">
@@ -6880,7 +7311,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLineEdit" name="avian_ibdv_lineEdit">
@@ -6903,7 +7334,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLineEdit" name="avian_ilt_lineEdit">
@@ -6926,7 +7357,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLineEdit" name="avian_ndv_lineEdit">
@@ -6949,7 +7380,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLineEdit" name="avian_ndv_2_lineEdit">
@@ -6972,7 +7403,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLineEdit" name="avian_pdd_lineEdit">
@@ -6995,7 +7426,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLineEdit" name="avian_pbfdv_lineEdit">
@@ -7018,7 +7449,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLineEdit" name="avian_chlamydia_lineEdit">
@@ -7041,7 +7472,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLineEdit" name="avian_pasteurella_lineEdit">
@@ -7064,7 +7495,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLineEdit" name="avian_mg_lineEdit">
@@ -7087,7 +7518,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="Line" name="avian_line">
@@ -7106,7 +7537,7 @@
          </font>
         </property>
         <property name="orientation">
-         <enum>Qt::Vertical</enum>
+         <enum>Qt::Orientation::Vertical</enum>
         </property>
        </widget>
        <zorder>avian_line</zorder>
@@ -7156,10 +7587,10 @@
         <string notr="true">background:rgb(255, 255, 255)</string>
        </property>
        <property name="frameShape">
-        <enum>QFrame::Box</enum>
+        <enum>QFrame::Shape::Box</enum>
        </property>
        <property name="frameShadow">
-        <enum>QFrame::Plain</enum>
+        <enum>QFrame::Shadow::Plain</enum>
        </property>
        <property name="lineWidth">
         <number>2</number>
@@ -7184,7 +7615,7 @@
          <string notr="true">background:rgb(0, 255, 0)</string>
         </property>
         <property name="frameShape">
-         <enum>QFrame::Box</enum>
+         <enum>QFrame::Shape::Box</enum>
         </property>
         <property name="lineWidth">
          <number>2</number>
@@ -7193,7 +7624,7 @@
          <string>Blood parasite</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLabel" name="blood_2_sample_label">
@@ -7216,7 +7647,7 @@
          <string notr="true">background:rgb(0, 255, 0)</string>
         </property>
         <property name="frameShape">
-         <enum>QFrame::Box</enum>
+         <enum>QFrame::Shape::Box</enum>
         </property>
         <property name="lineWidth">
          <number>2</number>
@@ -7225,7 +7656,7 @@
          <string>SAMPLE</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QCheckBox" name="blood_2_asf_1_checkBox">
@@ -7411,7 +7842,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLineEdit" name="blood_2_asf_2_lineEdit">
@@ -7434,7 +7865,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLineEdit" name="blood_2_asf_3_lineEdit">
@@ -7457,7 +7888,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLineEdit" name="blood_2_csf_lineEdit">
@@ -7480,7 +7911,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLineEdit" name="blood_2_hp_lineEdit">
@@ -7503,7 +7934,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLineEdit" name="blood_2_prrsv_lineEdit">
@@ -7526,7 +7957,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLineEdit" name="blood_2_pcv_lineEdit">
@@ -7549,7 +7980,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLineEdit" name="blood_2_ped_lineEdit">
@@ -7572,7 +8003,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="Line" name="blood_2_line">
@@ -7591,7 +8022,7 @@
          </font>
         </property>
         <property name="orientation">
-         <enum>Qt::Vertical</enum>
+         <enum>Qt::Orientation::Vertical</enum>
         </property>
        </widget>
        <zorder>blood_2_line</zorder>
@@ -7633,10 +8064,10 @@
         <string notr="true">background:rgb(255, 255, 255)</string>
        </property>
        <property name="frameShape">
-        <enum>QFrame::Box</enum>
+        <enum>QFrame::Shape::Box</enum>
        </property>
        <property name="frameShadow">
-        <enum>QFrame::Plain</enum>
+        <enum>QFrame::Shadow::Plain</enum>
        </property>
        <property name="lineWidth">
         <number>2</number>
@@ -7661,7 +8092,7 @@
          <string notr="true">background:rgb(0, 255, 0)</string>
         </property>
         <property name="frameShape">
-         <enum>QFrame::Box</enum>
+         <enum>QFrame::Shape::Box</enum>
         </property>
         <property name="lineWidth">
          <number>2</number>
@@ -7670,7 +8101,7 @@
          <string>Others</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLabel" name="others_sample_label">
@@ -7693,7 +8124,7 @@
          <string notr="true">background:rgb(0, 255, 0)</string>
         </property>
         <property name="frameShape">
-         <enum>QFrame::Box</enum>
+         <enum>QFrame::Shape::Box</enum>
         </property>
         <property name="lineWidth">
          <number>2</number>
@@ -7702,7 +8133,7 @@
          <string>SAMPLE</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QCheckBox" name="others_bird_1_checkBox">
@@ -7968,7 +8399,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLineEdit" name="others_bird_2_lineEdit">
@@ -7991,7 +8422,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLineEdit" name="others_clos_lineEdit">
@@ -8014,7 +8445,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLineEdit" name="others_lep_lineEdit">
@@ -8037,7 +8468,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLineEdit" name="others_toxo_lineEdit">
@@ -8060,7 +8491,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLineEdit" name="others_melio_lineEdit">
@@ -8083,7 +8514,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLineEdit" name="others_myco_lineEdit">
@@ -8106,7 +8537,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLineEdit" name="others_mavium_lineEdit">
@@ -8129,7 +8560,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLineEdit" name="others_mbovis_lineEdit">
@@ -8152,7 +8583,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLineEdit" name="others_mtube_lineEdit">
@@ -8175,7 +8606,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLineEdit" name="others_ahs_lineEdit">
@@ -8198,7 +8629,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLineEdit" name="others_others_1_lineEdit_2">
@@ -8221,7 +8652,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="Line" name="others_line">
@@ -8240,7 +8671,7 @@
          </font>
         </property>
         <property name="orientation">
-         <enum>Qt::Vertical</enum>
+         <enum>Qt::Orientation::Vertical</enum>
         </property>
        </widget>
        <widget class="QLineEdit" name="others_others_1_lineEdit">
@@ -8263,7 +8694,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLabel" name="others_others_1_price_label">
@@ -8306,7 +8737,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLabel" name="others_others_2_price_label">
@@ -8349,7 +8780,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLineEdit" name="others_others_2_price_lineEdit">
@@ -8372,7 +8803,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLineEdit" name="others_others_2_lineEdit_2">
@@ -8395,7 +8826,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QCheckBox" name="others_others_2_checkBox">
@@ -8473,10 +8904,10 @@
         <string notr="true">background:rgb(255, 255, 255)</string>
        </property>
        <property name="frameShape">
-        <enum>QFrame::Box</enum>
+        <enum>QFrame::Shape::Box</enum>
        </property>
        <property name="frameShadow">
-        <enum>QFrame::Plain</enum>
+        <enum>QFrame::Shadow::Plain</enum>
        </property>
        <property name="lineWidth">
         <number>2</number>
@@ -8501,7 +8932,7 @@
          <string notr="true">background:rgb(0, 255, 0)</string>
         </property>
         <property name="frameShape">
-         <enum>QFrame::Box</enum>
+         <enum>QFrame::Shape::Box</enum>
         </property>
         <property name="lineWidth">
          <number>2</number>
@@ -8510,7 +8941,7 @@
          <string>CANINE</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLabel" name="canine_sample_label">
@@ -8533,7 +8964,7 @@
          <string notr="true">background:rgb(0, 255, 0)</string>
         </property>
         <property name="frameShape">
-         <enum>QFrame::Box</enum>
+         <enum>QFrame::Shape::Box</enum>
         </property>
         <property name="lineWidth">
          <number>2</number>
@@ -8542,7 +8973,7 @@
          <string>SAMPLE</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QCheckBox" name="canine_cdv_checkBox">
@@ -8605,7 +9036,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLineEdit" name="canine_cpv_lineEdit">
@@ -8628,7 +9059,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="Line" name="canine_line">
@@ -8647,7 +9078,7 @@
          </font>
         </property>
         <property name="orientation">
-         <enum>Qt::Vertical</enum>
+         <enum>Qt::Orientation::Vertical</enum>
         </property>
        </widget>
       </widget>
@@ -8670,10 +9101,10 @@
         <string notr="true">background:rgb(255, 255, 255)</string>
        </property>
        <property name="frameShape">
-        <enum>QFrame::Box</enum>
+        <enum>QFrame::Shape::Box</enum>
        </property>
        <property name="frameShadow">
-        <enum>QFrame::Plain</enum>
+        <enum>QFrame::Shadow::Plain</enum>
        </property>
        <property name="lineWidth">
         <number>2</number>
@@ -8698,7 +9129,7 @@
          <string notr="true">background:rgb(255, 85, 0)</string>
         </property>
         <property name="frameShape">
-         <enum>QFrame::Box</enum>
+         <enum>QFrame::Shape::Box</enum>
         </property>
         <property name="lineWidth">
          <number>2</number>
@@ -8707,7 +9138,7 @@
          <string>Laboratory Request</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QCheckBox" name="laboratory_cpcr_checkBox">
@@ -8790,10 +9221,10 @@
         <string notr="true">background:rgb(255, 255, 255)</string>
        </property>
        <property name="frameShape">
-        <enum>QFrame::Box</enum>
+        <enum>QFrame::Shape::Box</enum>
        </property>
        <property name="frameShadow">
-        <enum>QFrame::Plain</enum>
+        <enum>QFrame::Shadow::Plain</enum>
        </property>
        <property name="lineWidth">
         <number>2</number>
@@ -8818,7 +9249,7 @@
          <string notr="true">background:rgb(0, 255, 0)</string>
         </property>
         <property name="frameShape">
-         <enum>QFrame::Box</enum>
+         <enum>QFrame::Shape::Box</enum>
         </property>
         <property name="lineWidth">
          <number>2</number>
@@ -8827,7 +9258,7 @@
          <string>Bovine</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLabel" name="bovine_sample_label">
@@ -8850,7 +9281,7 @@
          <string notr="true">background:rgb(0, 255, 0)</string>
         </property>
         <property name="frameShape">
-         <enum>QFrame::Box</enum>
+         <enum>QFrame::Shape::Box</enum>
         </property>
         <property name="lineWidth">
          <number>2</number>
@@ -8859,7 +9290,7 @@
          <string>SAMPLE</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QCheckBox" name="bovin_blv_checkBox">
@@ -8962,7 +9393,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLineEdit" name="bovin_fmdv_lineEdit">
@@ -8985,7 +9416,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLineEdit" name="bovin_lsdv_lineEdit">
@@ -9008,7 +9439,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLineEdit" name="bovin_bvd_lineEdit">
@@ -9031,7 +9462,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="Line" name="bovine_line">
@@ -9050,7 +9481,7 @@
          </font>
         </property>
         <property name="orientation">
-         <enum>Qt::Vertical</enum>
+         <enum>Qt::Orientation::Vertical</enum>
         </property>
        </widget>
        <zorder>bovine_line</zorder>
@@ -9099,10 +9530,10 @@
         <string notr="true">background:rgb(255, 236, 226)</string>
        </property>
        <property name="frameShape">
-        <enum>QFrame::Box</enum>
+        <enum>QFrame::Shape::Box</enum>
        </property>
        <property name="frameShadow">
-        <enum>QFrame::Raised</enum>
+        <enum>QFrame::Shadow::Raised</enum>
        </property>
        <property name="lineWidth">
         <number>2</number>
@@ -9123,10 +9554,10 @@
          </font>
         </property>
         <property name="frameShape">
-         <enum>QFrame::Box</enum>
+         <enum>QFrame::Shape::Box</enum>
         </property>
         <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
+         <enum>QFrame::Shadow::Raised</enum>
         </property>
         <property name="lineWidth">
          <number>3</number>
@@ -9135,7 +9566,7 @@
          <string>BACTERIAL IDENTIFICATION (250)</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QCheckBox" name="Actinobacillus_checkBox">
@@ -9385,7 +9816,7 @@
          <string notr="true">background:rgb(255, 255, 255)</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
       </widget>
@@ -9408,10 +9839,10 @@
         <string notr="true">background:rgb(255, 236, 226)</string>
        </property>
        <property name="frameShape">
-        <enum>QFrame::Box</enum>
+        <enum>QFrame::Shape::Box</enum>
        </property>
        <property name="frameShadow">
-        <enum>QFrame::Raised</enum>
+        <enum>QFrame::Shadow::Raised</enum>
        </property>
        <property name="lineWidth">
         <number>2</number>
@@ -9432,10 +9863,10 @@
          </font>
         </property>
         <property name="frameShape">
-         <enum>QFrame::Box</enum>
+         <enum>QFrame::Shape::Box</enum>
         </property>
         <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
+         <enum>QFrame::Shadow::Raised</enum>
         </property>
         <property name="lineWidth">
          <number>3</number>
@@ -9444,7 +9875,7 @@
          <string>LABORATORY REQUEST FOR</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QCheckBox" name="Fungal_cul_checkBox">
@@ -9562,10 +9993,10 @@
         <string notr="true">background:rgb(255, 236, 226)</string>
        </property>
        <property name="frameShape">
-        <enum>QFrame::Box</enum>
+        <enum>QFrame::Shape::Box</enum>
        </property>
        <property name="frameShadow">
-        <enum>QFrame::Raised</enum>
+        <enum>QFrame::Shadow::Raised</enum>
        </property>
        <property name="lineWidth">
         <number>2</number>
@@ -9589,10 +10020,10 @@
          <string notr="true">background:rgb(255, 255, 255)</string>
         </property>
         <property name="frameShape">
-         <enum>QFrame::Box</enum>
+         <enum>QFrame::Shape::Box</enum>
         </property>
         <property name="frameShadow">
-         <enum>QFrame::Plain</enum>
+         <enum>QFrame::Shadow::Plain</enum>
         </property>
         <property name="lineWidth">
          <number>2</number>
@@ -9614,10 +10045,10 @@
          </font>
         </property>
         <property name="frameShape">
-         <enum>QFrame::Box</enum>
+         <enum>QFrame::Shape::Box</enum>
         </property>
         <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
+         <enum>QFrame::Shadow::Raised</enum>
         </property>
         <property name="lineWidth">
          <number>2</number>
@@ -9626,7 +10057,7 @@
          <string>REMARK</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
       </widget>
@@ -9649,10 +10080,10 @@
         <string notr="true">background:rgb(255, 236, 226)</string>
        </property>
        <property name="frameShape">
-        <enum>QFrame::Box</enum>
+        <enum>QFrame::Shape::Box</enum>
        </property>
        <property name="frameShadow">
-        <enum>QFrame::Raised</enum>
+        <enum>QFrame::Shadow::Raised</enum>
        </property>
        <property name="lineWidth">
         <number>2</number>
@@ -9717,7 +10148,7 @@
          <string notr="true">background:rgb(255, 255, 255)</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLabel" name="list_label">
@@ -9777,7 +10208,7 @@
          <string notr="true">background:rgb(255, 255, 255)</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLabel" name="cost_unit_label">
@@ -9863,10 +10294,10 @@
         <string notr="true">background:rgb(255, 236, 226)</string>
        </property>
        <property name="frameShape">
-        <enum>QFrame::Box</enum>
+        <enum>QFrame::Shape::Box</enum>
        </property>
        <property name="frameShadow">
-        <enum>QFrame::Raised</enum>
+        <enum>QFrame::Shadow::Raised</enum>
        </property>
        <property name="lineWidth">
         <number>2</number>
@@ -9887,10 +10318,10 @@
          </font>
         </property>
         <property name="frameShape">
-         <enum>QFrame::Box</enum>
+         <enum>QFrame::Shape::Box</enum>
         </property>
         <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
+         <enum>QFrame::Shadow::Raised</enum>
         </property>
         <property name="lineWidth">
          <number>3</number>
@@ -9899,7 +10330,7 @@
          <string>DRUG SENSITIVITY (6-8 DRUGS)</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QCheckBox" name="amikacin_AK_checkBox">
@@ -10700,7 +11131,7 @@
          <string notr="true">background:rgb(255, 255, 255)</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
       </widget>
@@ -10723,10 +11154,10 @@
         <string notr="true">background:rgb(255, 236, 226)</string>
        </property>
        <property name="frameShape">
-        <enum>QFrame::Box</enum>
+        <enum>QFrame::Shape::Box</enum>
        </property>
        <property name="frameShadow">
-        <enum>QFrame::Raised</enum>
+        <enum>QFrame::Shadow::Raised</enum>
        </property>
        <property name="lineWidth">
         <number>2</number>
@@ -10747,10 +11178,10 @@
          </font>
         </property>
         <property name="frameShape">
-         <enum>QFrame::Box</enum>
+         <enum>QFrame::Shape::Box</enum>
         </property>
         <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
+         <enum>QFrame::Shadow::Raised</enum>
         </property>
         <property name="lineWidth">
          <number>3</number>
@@ -10759,7 +11190,7 @@
          <string>SAMPLE PREPARATION</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLabel" name="sample_label">
@@ -10778,10 +11209,10 @@
          </font>
         </property>
         <property name="frameShape">
-         <enum>QFrame::Box</enum>
+         <enum>QFrame::Shape::Box</enum>
         </property>
         <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
+         <enum>QFrame::Shadow::Raised</enum>
         </property>
         <property name="lineWidth">
          <number>3</number>
@@ -10790,7 +11221,7 @@
          <string>SAMPLE</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QCheckBox" name="swab_LT_checkBox">
@@ -10850,7 +11281,7 @@
          <string notr="true">background:rgb(255, 255, 255)</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLineEdit" name="swab_RT_lineEdit">
@@ -10872,7 +11303,7 @@
          <string notr="true">background:rgb(255, 255, 255)</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QCheckBox" name="wound_checkBox">
@@ -10913,7 +11344,7 @@
          <string notr="true">background:rgb(255, 255, 255)</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QCheckBox" name="Aspirate_LT_checkBox">
@@ -10954,7 +11385,7 @@
          <string notr="true">background:rgb(255, 255, 255)</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QCheckBox" name="Aspirate_RT_checkBox">
@@ -10995,7 +11426,7 @@
          <string notr="true">background:rgb(255, 255, 255)</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QCheckBox" name="urine_checkBox">
@@ -11036,7 +11467,7 @@
          <string notr="true">background:rgb(255, 255, 255)</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QCheckBox" name="Midstream_checkBox">
@@ -11077,7 +11508,7 @@
          <string notr="true">background:rgb(255, 255, 255)</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QCheckBox" name="Catheterization_checkBox">
@@ -11118,7 +11549,7 @@
          <string notr="true">background:rgb(255, 255, 255)</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLineEdit" name="Cystocentesis_lineEdit">
@@ -11140,7 +11571,7 @@
          <string notr="true">background:rgb(255, 255, 255)</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QCheckBox" name="Cystocentesis_checkBox">
@@ -11200,7 +11631,7 @@
          <string notr="true">background:rgb(255, 255, 255)</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QCheckBox" name="Tissues_RT_checkBox">
@@ -11241,7 +11672,7 @@
          <string notr="true">background:rgb(255, 255, 255)</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QCheckBox" name="biopsy_LT_checkBox">
@@ -11282,7 +11713,7 @@
          <string notr="true">background:rgb(255, 255, 255)</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QCheckBox" name="biopsy_RT_checkBox">
@@ -11323,7 +11754,7 @@
          <string notr="true">background:rgb(255, 255, 255)</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QCheckBox" name="body_fluid_LT_checkBox">
@@ -11364,7 +11795,7 @@
          <string notr="true">background:rgb(255, 255, 255)</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLineEdit" name="body_fluid_RT_lineEdit">
@@ -11386,7 +11817,7 @@
          <string notr="true">background:rgb(255, 255, 255)</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QCheckBox" name="body_fluid_RT_checkBox">
@@ -11446,7 +11877,7 @@
          <string notr="true">background:rgb(255, 255, 255)</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QCheckBox" name="feces_checkBox">
@@ -11487,7 +11918,7 @@
          <string notr="true">background:rgb(255, 255, 255)</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QCheckBox" name="PUS_checkBox">
@@ -11528,7 +11959,7 @@
          <string notr="true">background:rgb(255, 255, 255)</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QCheckBox" name="Blood_checkBox">
@@ -11569,7 +12000,7 @@
          <string notr="true">background:rgb(255, 255, 255)</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QCheckBox" name="Blood_agar_checkBox">
@@ -11610,7 +12041,7 @@
          <string notr="true">background:rgb(255, 255, 255)</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
        <widget class="QCheckBox" name="Skin_scraping_checkBox">
@@ -11651,7 +12082,7 @@
          <string notr="true">background:rgb(255, 255, 255)</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
       </widget>
@@ -11689,10 +12120,10 @@
         <string notr="true">background:rgb(255, 255, 255)</string>
        </property>
        <property name="frameShape">
-        <enum>QFrame::Box</enum>
+        <enum>QFrame::Shape::Box</enum>
        </property>
        <property name="frameShadow">
-        <enum>QFrame::Plain</enum>
+        <enum>QFrame::Shadow::Plain</enum>
        </property>
        <property name="lineWidth">
         <number>2</number>
@@ -11736,10 +12167,10 @@
          </font>
         </property>
         <property name="frameShape">
-         <enum>QFrame::Box</enum>
+         <enum>QFrame::Shape::Box</enum>
         </property>
         <property name="frameShadow">
-         <enum>QFrame::Plain</enum>
+         <enum>QFrame::Shadow::Plain</enum>
         </property>
         <property name="lineWidth">
          <number>2</number>
@@ -11781,7 +12212,7 @@
           </font>
          </property>
          <property name="alignment">
-          <set>Qt::AlignCenter</set>
+          <set>Qt::AlignmentFlag::AlignCenter</set>
          </property>
         </widget>
         <widget class="QLabel" name="parasite_number_amount_label">
@@ -11841,7 +12272,7 @@
           </font>
          </property>
          <property name="alignment">
-          <set>Qt::AlignCenter</set>
+          <set>Qt::AlignmentFlag::AlignCenter</set>
          </property>
         </widget>
         <widget class="QLabel" name="parasite_cost_unit_label">
@@ -11932,7 +12363,7 @@
         <string notr="true">background:rgb(170, 255, 255)</string>
        </property>
        <property name="frameShape">
-        <enum>QFrame::Box</enum>
+        <enum>QFrame::Shape::Box</enum>
        </property>
        <property name="lineWidth">
         <number>2</number>
@@ -11941,7 +12372,7 @@
         <string>TEST</string>
        </property>
        <property name="alignment">
-        <set>Qt::AlignCenter</set>
+        <set>Qt::AlignmentFlag::AlignCenter</set>
        </property>
       </widget>
       <widget class="QFrame" name="test_frame">
@@ -11963,10 +12394,10 @@
         <string notr="true">background:rgb(255, 255, 255)</string>
        </property>
        <property name="frameShape">
-        <enum>QFrame::Box</enum>
+        <enum>QFrame::Shape::Box</enum>
        </property>
        <property name="frameShadow">
-        <enum>QFrame::Plain</enum>
+        <enum>QFrame::Shadow::Plain</enum>
        </property>
        <property name="lineWidth">
         <number>2</number>
@@ -12522,7 +12953,7 @@
      <string/>
     </property>
     <property name="alignment">
-     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
     </property>
    </widget>
   </widget>

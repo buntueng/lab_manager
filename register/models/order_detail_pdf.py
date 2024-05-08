@@ -81,20 +81,12 @@ def create_parasite_biology(sample_detail, data, output_file):
     # Add the sample detail
     sample_detail = sample_detail[0]
     # print(sample_detail)
-
-    sample_age_text = ""
-    if sample_detail[6] == "ไม่ทราบอายุ" or sample_detail[6] == "":
-        sample_age_text = "ไม่ทราบอายุ"
-    else:
-        sample_age_text = sample_detail[6] + " ปี " + \
-            sample_detail[7] + " เดือน " + sample_detail[8] + " วัน"
     detail_info = [
-        ['ชื่อสัตว์', sample_detail[3], 'ชนิด', sample_detail[10]],
-        ['พันธุ์', sample_detail[11], 'เพศ', sample_detail[5]],
-        ['อายุ', sample_age_text, 'สาเหตุการตาย', sample_detail[9]],
         ['วันที่รับตัวอย่าง', sample_detail[0],
-            'น้ำหนัก', sample_detail[13] + " กิโลกรัม"],
-        ['ความเร็วการส่งตรวจ', sample_detail[17],
+            'Barcode', str(str(sample_detail[25]).zfill(10))],
+        ['สิ่งที่ส่งมาตรวจ', sample_detail[20],
+            'ประวัติการให้ยา', sample_detail[19]],
+        ['สถานะการตอบผล', sample_detail[17],
             'การเก็บรักษาตัวอย่าง', sample_detail[16]],
     ]
     col_widths = [95, 155, 95, 155]  # Adjust the widths as needed
@@ -234,21 +226,13 @@ def create_bacteriology(sample_detail, data, output_file):
     elements.append(Spacer(1, 12))
     # Add the sample detail
     sample_detail = sample_detail[0]
-    # print(sample_detail)
-
-    sample_age_text = ""
-    if sample_detail[6] == "ไม่ทราบอายุ" or sample_detail[6] == "":
-        sample_age_text = "ไม่ทราบอายุ"
-    else:
-        sample_age_text = sample_detail[6] + " ปี " + \
-            sample_detail[7] + " เดือน " + sample_detail[8] + " วัน"
+    print((sample_detail))
     detail_info = [
-        ['ชื่อสัตว์', sample_detail[3], 'ชนิด', sample_detail[10]],
-        ['พันธุ์', sample_detail[11], 'เพศ', sample_detail[5]],
-        ['อายุ', sample_age_text, 'สาเหตุการตาย', sample_detail[9]],
         ['วันที่รับตัวอย่าง', sample_detail[0],
-            'น้ำหนัก', sample_detail[13] + " กิโลกรัม"],
-        ['ความเร็วการส่งตรวจ', sample_detail[17],
+            'Barcode', str(str(sample_detail[25]).zfill(10))],
+        ['สิ่งที่ส่งมาตรวจ', sample_detail[20],
+            'ประวัติการให้ยา', sample_detail[19]],
+        ['สถานะการตอบผล', sample_detail[17],
             'การเก็บรักษาตัวอย่าง', sample_detail[16]],
     ]
     col_widths = [95, 155, 95, 155]  # Adjust the widths as needed
@@ -500,7 +484,6 @@ def create_molecular_biology(sample_detail, data, output_file):
         # show grid
         # ('GRID', (0, 0), (-1, -1), 1, colors.black)
     ])
-
     table.setStyle(style)
 
     # Add the table to the list of elements
@@ -512,20 +495,12 @@ def create_molecular_biology(sample_detail, data, output_file):
     elements.append(Spacer(1, 12))
     # Add the sample detail
     sample_detail = sample_detail[0]
-    # print(sample_detail)
-    sample_age_text = ""
-    if sample_detail[6] == "ไม่ทราบอายุ" or sample_detail[6] == "":
-        sample_age_text = "ไม่ทราบอายุ"
-    else:
-        sample_age_text = sample_detail[6] + " ปี " + \
-            sample_detail[7] + " เดือน " + sample_detail[8] + " วัน"
     detail_info = [
-        ['ชื่อสัตว์', sample_detail[3], 'ชนิด', sample_detail[10]],
-        ['พันธุ์', sample_detail[11], 'เพศ', sample_detail[5]],
-        ['อายุ', sample_age_text, 'สาเหตุการตาย', sample_detail[9]],
         ['วันที่รับตัวอย่าง', sample_detail[0],
-            'น้ำหนัก', sample_detail[13] + " กิโลกรัม"],
-        ['ความเร็วการส่งตรวจ', sample_detail[17],
+            'Barcode', str(str(sample_detail[25]).zfill(10))],
+        ['สิ่งที่ส่งมาตรวจ', sample_detail[20],
+            'ประวัติการให้ยา', sample_detail[19]],
+        ['สถานะการตอบผล', sample_detail[17],
             'การเก็บรักษาตัวอย่าง', sample_detail[16]],
     ]
     col_widths = [95, 155, 95, 155]  # Adjust the widths as needed
@@ -661,10 +636,9 @@ if __name__ == "__main__":
     with open(sql_cmd_file, "r", encoding='utf-8') as ymlfile:
         sql_cmd = yaml.load(ymlfile, Loader=yaml.FullLoader)
     cmd = sql_cmd["get_sample_data"]
-    sample_data = select_data_from_db(cmd, 194)
+    sample_data = select_data_from_db(cmd, 95)
     cmd = sql_cmd["get_bacteria_biology_tests"]
-    test_data = select_data_from_db(cmd, 194)
-
+    test_data = select_data_from_db(cmd, 268)
     # parasite test id number 191
 
     # morecular_biology_test_id = 185

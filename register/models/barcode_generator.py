@@ -29,8 +29,12 @@ class BarcodeGenerator:
 
     def generate_sticker_label(self, sample_code=" ", species=" ", date=" ", lab_name=" ", speed="ด่วนที่สุด", collect="ไม่แช่เย็น (Chill)"):
         """Generate barcode image with sample code, species, date, lab name, speed, collect"""
-        text_font = ImageFont.truetype(r'TH Niramit AS Bold.ttf', 120)
-        text_font_big = ImageFont.truetype(r'TH Niramit AS Bold.ttf', 135)
+        try:
+            text_font = ImageFont.truetype(r'TH Niramit AS Bold.ttf', 120)
+            text_font_big = ImageFont.truetype(r'TH Niramit AS Bold.ttf', 135)
+        except:
+            text_font = ImageFont.truetype(r'D:/project/lab_manager/register/models/TH Niramit AS Bold.ttf', 120)
+            text_font_big = ImageFont.truetype(r'D:/project/lab_manager/register/models/TH Niramit AS Bold.ttf', 135)
         background_layer = Image.new('RGB', (2000, 2000), "white")
         # ================ barcode layer ============================================
         barcode.base.Barcode.default_writer_options['write_text'] = False

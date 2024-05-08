@@ -520,17 +520,14 @@ class Main_Controller:
         # get data from the view
         specimen_data = []
         specimen_data.append(int(self.view.new_case_number_job_entry.text()))
-        specimen_data.append(
-            self.view.specimen_page_name_animal_entry.text())
-        specimen_data.append(
-            self.view.specimen_page_number_id_opd_entry.text())
-        specimen_data.append(
-            self.view.specimen_page_sex_animal_comboBox.currentText())
+        specimen_data.append(self.view.specimen_page_name_animal_entry.text())
+        specimen_data.append(self.view.specimen_page_number_id_opd_entry.text())
+        specimen_data.append(self.view.specimen_page_sex_animal_comboBox.currentText())
         specimen_data.append(self.view.specimen_page_year_animal_entry.text())
         specimen_data.append(self.view.specimen_page_month_animal_entry.text())
         specimen_data.append(self.view.specimen_page_day_animal_entry.text())
-        specimen_data.append(
-            self.view.specimen_page_cause_of_death_comboBox.currentText())
+        specimen_data.append(self.view.specimen_page_cause_of_death_comboBox.currentText())
+            
         species = ""
         if self.view.swine_radioButton.isChecked():
             species = self.view.swine_radioButton.text()
@@ -591,7 +588,18 @@ class Main_Controller:
 
         specimen_data.append(
             self.view.specimen_page_record_heal_textEdit.toPlainText())
+        
+        specimen_data.append(
+            self.view.dosage_history_textEdit.toPlainText())
+        
+        sample_inspection = ""
+        if self.view.sample_animal_inspection_othor_redioButton.isChecked():
+            sample_inspection = self.view.sample_animal_inspection_othor_textEdit.text()
+        else:
+            sample_inspection = self.view.sample_animal_inspection_combobox.currentText()
+        specimen_data.append(sample_inspection)    
 
+        
         specimen_data.append(int(self.user_login_info[0][1]))
         current_id = self.model.save_specimen_information(specimen_data)
         if current_id > 0:
@@ -806,6 +814,7 @@ class Main_Controller:
             data_item = []
             data_item.append(item[0].strftime("%d-%m-%Y %H:%M:%S"))
             data_item.append(str(item[1]).zfill(10))
+            # print(str(item[1]).zfill(10))
             data_item.append(item[2])
             lab_name = item[3] + "(" + item[4] + ")"
             data_item.append(lab_name)

@@ -1309,10 +1309,13 @@ class MainAppView(QMainWindow, Ui_main_app_view):
         self.specimen_page_month_animal_entry.clear()
         self.specimen_page_day_animal_entry.clear()
         self.another_type_animal_entry.clear()
+        self.dosage_history_textEdit.clear()
 
         self.swine_radioButton.setChecked(True)
         self.specimen_page_normal_radioButton.setChecked(True)
         self.specimen_page_chill_specimen_radioButton.setChecked(True)
+        self.sample_animal_inspection_othor_redioButton.setChecked(False)
+        
 
         self.specimen_page_record_heal_textEdit.clear()
 
@@ -1785,6 +1788,11 @@ class MainAppView(QMainWindow, Ui_main_app_view):
         self.specimen_page_room_temp_specimen_radioButton.setEnabled(False)
         self.specimen_page_record_heal_textEdit.setEnabled(False)
         self.specimen_page_save_pushButton.setEnabled(False)
+        self.sample_animal_inspection_othor_redioButton.setEnabled(False)
+        self.sample_animal_inspection_combobox.setEnabled(False)
+        self.sample_animal_inspection_othor_redioButton.setEnabled(False)
+        self.sample_animal_inspection_othor_textEdit.setEnabled(False)
+        self.dosage_history_textEdit.setEnabled(False)
 
     def enable_widgets_in_specimen_page(self):
         """Enable widgets in specimen page."""
@@ -1817,6 +1825,11 @@ class MainAppView(QMainWindow, Ui_main_app_view):
         self.specimen_page_room_temp_specimen_radioButton.setEnabled(True)
         self.specimen_page_record_heal_textEdit.setEnabled(True)
         self.specimen_page_save_pushButton.setEnabled(True)
+        self.sample_animal_inspection_othor_redioButton.setEnabled(True)
+        self.sample_animal_inspection_combobox.setEnabled(True)
+        self.sample_animal_inspection_othor_redioButton.setEnabled(True)
+        self.sample_animal_inspection_othor_textEdit.setEnabled(True)
+        self.dosage_history_textEdit.setEnabled(True)
 
     def add_customer_info_to_barcode_page(self, data):
         """Add customer information to barcode page."""
