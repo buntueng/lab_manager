@@ -509,3 +509,11 @@ class Ui_add_data_specimen(object):
         self.food_safty_pushButton.setText(QCoreApplication.translate("add_data_specimen", u"\u0e2b\u0e49\u0e2d\u0e07\u0e1b\u0e0f\u0e34\u0e1a\u0e31\u0e15\u0e34\u0e01\u0e32\u0e23\u0e2d\u0e32\u0e2b\u0e32\u0e23\u0e1b\u0e25\u0e2d\u0e14\u0e20\u0e31\u0e22 (Food safty)", None))
     # retranslateUi
 
+
+# if __name__ == "__main__":
+#     app = QApplication([])
+#     specimen_UI = QMainWindow()
+#     ui = Ui_add_data_specimen()
+#     ui.setupUi(specimen_UI)
+#     specimen_UI.show()
+#     app.exec()
