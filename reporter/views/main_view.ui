@@ -81,7 +81,7 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>140</y>
+       <y>710</y>
        <width>121</width>
        <height>41</height>
       </rect>
@@ -129,7 +129,7 @@
       </rect>
      </property>
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="login_page">
       <widget class="QLabel" name="login_username_label">
@@ -191,6 +191,31 @@
         <string>Login</string>
        </property>
       </widget>
+      <widget class="QFrame" name="frame">
+       <property name="geometry">
+        <rect>
+         <x>350</x>
+         <y>90</y>
+         <width>341</width>
+         <height>171</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(0,180, 0);</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+      </widget>
+      <zorder>frame</zorder>
+      <zorder>login_username_label</zorder>
+      <zorder>login_username_lineEdit</zorder>
+      <zorder>login_password_label</zorder>
+      <zorder>login_password_lineEdit</zorder>
+      <zorder>login_pushButton</zorder>
      </widget>
      <widget class="QWidget" name="cytology_page">
       <widget class="QLabel" name="cytology_page_label">
