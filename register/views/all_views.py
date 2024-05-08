@@ -29,6 +29,17 @@ class MainAppView(QMainWindow, Ui_main_app_view):
         self.lab_received_sample_treeWidget.setColumnWidth(0, 300)
         self.lab_received_sample_treeWidget.setColumnWidth(1, 300)
 
+        self.lab_report_page_printing_treeWidget.setColumnWidth(0, 200)
+        self.lab_report_page_printing_treeWidget.setColumnWidth(1, 200)
+        self.lab_report_page_printing_treeWidget.setColumnWidth(2, 300)
+
+        self.check_job_page_running_job_treeWidget.setColumnWidth(0, 200)
+        self.check_job_page_running_job_treeWidget.setColumnWidth(1, 200)
+
+        self.check_job_page_job_detail_treeWidget.setColumnWidth(0, 200)
+        self.check_job_page_job_detail_treeWidget.setColumnWidth(1, 200)
+        self.check_job_page_job_detail_treeWidget.setColumnWidth(2, 300)
+
     def disable_all_buttons(self):
         """Disable all buttons in the main page."""
         self.sign_out_pushButton.setEnabled(False)
@@ -2122,6 +2133,23 @@ class MainAppView(QMainWindow, Ui_main_app_view):
 
         self.parasite_amount_lineEdit.clear()
         self.parasite_cost_lineEdit.clear()
+
+    def add_job_detail_to_check_job_progress_page(self, data):
+        """Add job detail to check job progress page."""
+        self.check_job_page_running_job_treeWidget.clear()
+        for row in data:
+            list_detail = [str(row[0]), str(row[1]).zfill(10), str(row[2])]
+            QTreeWidgetItem(
+                self.check_job_page_running_job_treeWidget, list_detail)
+
+    def show_job_detail_in_progress_page(self, data):
+        """Show job detail in progress page."""
+        self.check_job_page_job_detail_treeWidget.clear()
+        for row in data:
+            list_detail = [str(row[0]), str(row[1]).zfill(
+                10), str(row[2]), str(row[3])]
+            QTreeWidgetItem(
+                self.check_job_page_job_detail_treeWidget, list_detail)
 
 
 if __name__ == '__main__':
