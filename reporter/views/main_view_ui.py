@@ -47,7 +47,7 @@ class Ui_MainWindow(object):
         self.nocropsy_pushButton.setGeometry(QRect(10, 90, 121, 41))
         self.check_report_pushButton = QPushButton(self.menu_frame)
         self.check_report_pushButton.setObjectName(u"check_report_pushButton")
-        self.check_report_pushButton.setGeometry(QRect(10, 140, 121, 41))
+        self.check_report_pushButton.setGeometry(QRect(10, 710, 121, 41))
         self.sign_out_pushButton = QPushButton(self.menu_frame)
         self.sign_out_pushButton.setObjectName(u"sign_out_pushButton")
         self.sign_out_pushButton.setGeometry(QRect(10, 810, 121, 41))
@@ -76,7 +76,19 @@ class Ui_MainWindow(object):
         self.login_pushButton = QPushButton(self.login_page)
         self.login_pushButton.setObjectName(u"login_pushButton")
         self.login_pushButton.setGeometry(QRect(540, 210, 101, 31))
+        self.frame = QFrame(self.login_page)
+        self.frame.setObjectName(u"frame")
+        self.frame.setGeometry(QRect(350, 90, 341, 171))
+        self.frame.setStyleSheet(u"background-color: rgb(0,180, 0);")
+        self.frame.setFrameShape(QFrame.StyledPanel)
+        self.frame.setFrameShadow(QFrame.Raised)
         self.stackedWidget.addWidget(self.login_page)
+        self.frame.raise_()
+        self.login_username_label.raise_()
+        self.login_username_lineEdit.raise_()
+        self.login_password_label.raise_()
+        self.login_password_lineEdit.raise_()
+        self.login_pushButton.raise_()
         self.cytology_page = QWidget()
         self.cytology_page.setObjectName(u"cytology_page")
         self.cytology_page_label = QLabel(self.cytology_page)
@@ -105,7 +117,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(1)
+        self.stackedWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)

@@ -12,7 +12,7 @@ class MainView(Ui_MainWindow, QMainWindow):
         super(MainView, self).__init__()
         self.setupUi(self)
         config_file = os.path.join(os.path.dirname(os.path.dirname(
-            __file__)), "config_files", "log_config.ini")
+            __file__)), "models", "log_config.ini")
         logging.config.fileConfig(config_file)  # load logging configuration
         self.logger = logging.getLogger('sLogger')
         self.login_password_lineEdit.setEchoMode(QLineEdit.EchoMode.Password)
