@@ -305,7 +305,7 @@
       </rect>
      </property>
      <property name="currentIndex">
-      <number>14</number>
+      <number>4</number>
      </property>
      <widget class="QWidget" name="login_page">
       <widget class="QLineEdit" name="username_lineEdit">
@@ -3277,7 +3277,7 @@
       <widget class="QLabel" name="label_6">
        <property name="geometry">
         <rect>
-         <x>10</x>
+         <x>1030</x>
          <y>10</y>
          <width>111</width>
          <height>16</height>
@@ -3285,6 +3285,135 @@
        </property>
        <property name="text">
         <string>Check Job progress</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="check_job_page_search_pushButton">
+       <property name="geometry">
+        <rect>
+         <x>1010</x>
+         <y>40</y>
+         <width>161</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>TH Niramit AS</family>
+         <pointsize>16</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>งานที่ยังอยู่ในระบบ</string>
+       </property>
+      </widget>
+      <widget class="QTreeWidget" name="check_job_page_running_job_treeWidget">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>40</y>
+         <width>981</width>
+         <height>361</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>TH Niramit AS</family>
+         <pointsize>16</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <column>
+        <property name="text">
+         <string>วันเวลาสถานะปัจจุบัน</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>หมายเลขบาร์โคด</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>สถานะปัจจุบัน</string>
+        </property>
+       </column>
+      </widget>
+      <widget class="QTreeWidget" name="check_job_page_job_detail_treeWidget">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>450</y>
+         <width>981</width>
+         <height>381</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>TH Niramit AS</family>
+         <pointsize>16</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <column>
+        <property name="text">
+         <string>เวลา</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>หมายเลขบาร์โคด</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>รายละเอียด</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>ผู้ดำเนินงาน</string>
+        </property>
+       </column>
+      </widget>
+      <widget class="QLabel" name="label_23">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>420</y>
+         <width>101</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>TH Niramit AS</family>
+         <pointsize>16</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>รายละเอียด</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="check_job_page_show_detail_pushButton">
+       <property name="geometry">
+        <rect>
+         <x>1010</x>
+         <y>350</y>
+         <width>161</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>TH Niramit AS</family>
+         <pointsize>16</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>แสดงรายละเอียด</string>
        </property>
       </widget>
      </widget>
@@ -4454,6 +4583,26 @@
          <string>ชื่อสัตว์</string>
         </property>
        </column>
+      </widget>
+      <widget class="QPushButton" name="lab_report_page_search_pushButton">
+       <property name="geometry">
+        <rect>
+         <x>424</x>
+         <y>10</y>
+         <width>101</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>TH Niramit AS</family>
+         <pointsize>16</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>ค้นหา</string>
+       </property>
       </widget>
      </widget>
      <widget class="QWidget" name="edit_personal_page">

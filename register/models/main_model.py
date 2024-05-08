@@ -279,3 +279,15 @@ class Main_Model:
             return True
         else:
             return False
+        
+    def get_job_detail_in_check_job_progress_page(self) -> list:
+        """Get job detail in check job progress page."""
+        sql_cmd = self.sql_cmd["get_job_detail_in_check_job_progress_page"]
+        data = self.select_data(sql_cmd, [])
+        return data
+    
+    def get_job_detail_in_check_job_progress_page_by_id(self, job_id) -> list:
+        """Get job detail in check job progress page by date."""
+        sql_cmd = self.sql_cmd["get_job_detail_in_check_job_progress_page_by_id"]
+        data = self.select_data(sql_cmd, [job_id])
+        return data

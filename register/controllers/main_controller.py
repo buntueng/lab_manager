@@ -63,6 +63,37 @@ class Main_Controller:
         self.bind_event_in_microbiology_page()
         self.bind_event_in_barcode_page()
         self.bind_event_in_lab_received_sample_page()
+        self.bind_event_in_check_job_progress_page()
+
+    def bind_event_in_check_job_progress_page(self):
+        """Bind event in check job progress page"""
+        self.view.check_job_page_search_pushButton.clicked.connect(
+            self.search_job_in_check_job_progress_page)
+        self.view.check_job_page_show_detail_pushButton.clicked.connect(
+            self.show_detail_job_progress_page)
+
+    def show_detail_job_progress_page(self):
+        """Show detail job progress page"""
+        selected_item = self.view.check_job_page_running_job_treeWidget.selectedItems()
+        if selected_item == [] or len(selected_item) > 1:
+            QMessageBox.critical(self.view, "Error",
+                                 "กรุณาเลือกงานเพื่อดูรายละเอียด")
+        else:
+            for row in selected_item:
+                job_id = int(row.text(1))
+                job_detail = self.model.get_job_detail_in_check_job_progress_page_by_id(
+                    job_id)
+                self.view.show_job_detail_in_progress_page(job_detail)
+
+    def search_job_in_check_job_progress_page(self):
+        """Search job in check job progress page"""
+        job_detail = self.model.get_job_detail_in_check_job_progress_page()
+        self.view.check_job_page_running_job_treeWidget.clear()
+        if job_detail == [] or job_detail == None:
+            QMessageBox.critical(self.view, "Error",
+                                 "ไม่พบข้อมูลงานในระบบ")
+        else:
+            self.view.add_job_detail_to_check_job_progress_page(job_detail)
 
     def bind_event_in_lab_received_sample_page(self):
         """Bind event in lab received sample page"""

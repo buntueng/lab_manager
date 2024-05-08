@@ -875,7 +875,27 @@ class Ui_main_app_view(object):
         self.check_job_page.setObjectName(u"check_job_page")
         self.label_6 = QLabel(self.check_job_page)
         self.label_6.setObjectName(u"label_6")
-        self.label_6.setGeometry(QRect(10, 10, 111, 16))
+        self.label_6.setGeometry(QRect(1030, 10, 111, 16))
+        self.check_job_page_search_pushButton = QPushButton(self.check_job_page)
+        self.check_job_page_search_pushButton.setObjectName(u"check_job_page_search_pushButton")
+        self.check_job_page_search_pushButton.setGeometry(QRect(1010, 40, 161, 51))
+        self.check_job_page_search_pushButton.setFont(font1)
+        self.check_job_page_running_job_treeWidget = QTreeWidget(self.check_job_page)
+        self.check_job_page_running_job_treeWidget.setObjectName(u"check_job_page_running_job_treeWidget")
+        self.check_job_page_running_job_treeWidget.setGeometry(QRect(20, 40, 981, 361))
+        self.check_job_page_running_job_treeWidget.setFont(font1)
+        self.check_job_page_job_detail_treeWidget = QTreeWidget(self.check_job_page)
+        self.check_job_page_job_detail_treeWidget.setObjectName(u"check_job_page_job_detail_treeWidget")
+        self.check_job_page_job_detail_treeWidget.setGeometry(QRect(20, 450, 981, 381))
+        self.check_job_page_job_detail_treeWidget.setFont(font1)
+        self.label_23 = QLabel(self.check_job_page)
+        self.label_23.setObjectName(u"label_23")
+        self.label_23.setGeometry(QRect(20, 420, 101, 21))
+        self.label_23.setFont(font1)
+        self.check_job_page_show_detail_pushButton = QPushButton(self.check_job_page)
+        self.check_job_page_show_detail_pushButton.setObjectName(u"check_job_page_show_detail_pushButton")
+        self.check_job_page_show_detail_pushButton.setGeometry(QRect(1010, 350, 161, 51))
+        self.check_job_page_show_detail_pushButton.setFont(font1)
         self.stackedWidget.addWidget(self.check_job_page)
         self.employee_page = QWidget()
         self.employee_page.setObjectName(u"employee_page")
@@ -1145,6 +1165,10 @@ class Ui_main_app_view(object):
         self.lab_report_page_printing_treeWidget.setObjectName(u"lab_report_page_printing_treeWidget")
         self.lab_report_page_printing_treeWidget.setGeometry(QRect(20, 60, 1001, 192))
         self.lab_report_page_printing_treeWidget.setFont(font1)
+        self.lab_report_page_search_pushButton = QPushButton(self.lab_report_page)
+        self.lab_report_page_search_pushButton.setObjectName(u"lab_report_page_search_pushButton")
+        self.lab_report_page_search_pushButton.setGeometry(QRect(424, 10, 101, 31))
+        self.lab_report_page_search_pushButton.setFont(font1)
         self.stackedWidget.addWidget(self.lab_report_page)
         self.edit_personal_page = QWidget()
         self.edit_personal_page.setObjectName(u"edit_personal_page")
@@ -3106,7 +3130,7 @@ class Ui_main_app_view(object):
 
         self.retranslateUi(main_app_view)
 
-        self.stackedWidget.setCurrentIndex(14)
+        self.stackedWidget.setCurrentIndex(4)
         self.molecular_biology_summary_pushButton.setDefault(False)
         self.molecular_biology_save_data_pushButton.setDefault(False)
         self.back_to_home_pushButton.setDefault(False)
@@ -3258,12 +3282,24 @@ class Ui_main_app_view(object):
         self.specimen_page_Fungal_pushButton.setText(QCoreApplication.translate("main_app_view", u"\u0e23\u0e32\u0e27\u0e34\u0e17\u0e22\u0e32 (Fungal)", None))
         self.specimen_page_water_quality_pushButton.setText(QCoreApplication.translate("main_app_view", u"\u0e15\u0e23\u0e27\u0e08\u0e04\u0e38\u0e13\u0e20\u0e32\u0e1e\u0e19\u0e49\u0e33 (Water quality)", None))
         self.label_6.setText(QCoreApplication.translate("main_app_view", u"Check Job progress", None))
+        self.check_job_page_search_pushButton.setText(QCoreApplication.translate("main_app_view", u"\u0e07\u0e32\u0e19\u0e17\u0e35\u0e48\u0e22\u0e31\u0e07\u0e2d\u0e22\u0e39\u0e48\u0e43\u0e19\u0e23\u0e30\u0e1a\u0e1a", None))
+        ___qtreewidgetitem2 = self.check_job_page_running_job_treeWidget.headerItem()
+        ___qtreewidgetitem2.setText(2, QCoreApplication.translate("main_app_view", u"\u0e2a\u0e16\u0e32\u0e19\u0e30\u0e1b\u0e31\u0e08\u0e08\u0e38\u0e1a\u0e31\u0e19", None));
+        ___qtreewidgetitem2.setText(1, QCoreApplication.translate("main_app_view", u"\u0e2b\u0e21\u0e32\u0e22\u0e40\u0e25\u0e02\u0e1a\u0e32\u0e23\u0e4c\u0e42\u0e04\u0e14", None));
+        ___qtreewidgetitem2.setText(0, QCoreApplication.translate("main_app_view", u"\u0e27\u0e31\u0e19\u0e40\u0e27\u0e25\u0e32\u0e2a\u0e16\u0e32\u0e19\u0e30\u0e1b\u0e31\u0e08\u0e08\u0e38\u0e1a\u0e31\u0e19", None));
+        ___qtreewidgetitem3 = self.check_job_page_job_detail_treeWidget.headerItem()
+        ___qtreewidgetitem3.setText(3, QCoreApplication.translate("main_app_view", u"\u0e1c\u0e39\u0e49\u0e14\u0e33\u0e40\u0e19\u0e34\u0e19\u0e07\u0e32\u0e19", None));
+        ___qtreewidgetitem3.setText(2, QCoreApplication.translate("main_app_view", u"\u0e23\u0e32\u0e22\u0e25\u0e30\u0e40\u0e2d\u0e35\u0e22\u0e14", None));
+        ___qtreewidgetitem3.setText(1, QCoreApplication.translate("main_app_view", u"\u0e2b\u0e21\u0e32\u0e22\u0e40\u0e25\u0e02\u0e1a\u0e32\u0e23\u0e4c\u0e42\u0e04\u0e14", None));
+        ___qtreewidgetitem3.setText(0, QCoreApplication.translate("main_app_view", u"\u0e40\u0e27\u0e25\u0e32", None));
+        self.label_23.setText(QCoreApplication.translate("main_app_view", u"\u0e23\u0e32\u0e22\u0e25\u0e30\u0e40\u0e2d\u0e35\u0e22\u0e14", None))
+        self.check_job_page_show_detail_pushButton.setText(QCoreApplication.translate("main_app_view", u"\u0e41\u0e2a\u0e14\u0e07\u0e23\u0e32\u0e22\u0e25\u0e30\u0e40\u0e2d\u0e35\u0e22\u0e14", None))
         self.employee_search_name_surename_label.setText(QCoreApplication.translate("main_app_view", u"\u0e0a\u0e37\u0e48\u0e2d\u0e2b\u0e23\u0e37\u0e2d\u0e19\u0e32\u0e21\u0e2a\u0e01\u0e38\u0e25\u0e17\u0e35\u0e48\u0e15\u0e49\u0e2d\u0e07\u0e01\u0e32\u0e23\u0e04\u0e49\u0e19\u0e2b\u0e32", None))
         self.employee_search_button.setText(QCoreApplication.translate("main_app_view", u"\u0e04\u0e49\u0e19\u0e2b\u0e32", None))
-        ___qtreewidgetitem2 = self.employee_result_search_treeview.headerItem()
-        ___qtreewidgetitem2.setText(2, QCoreApplication.translate("main_app_view", u"\u0e19\u0e32\u0e21\u0e2a\u0e01\u0e38\u0e25", None));
-        ___qtreewidgetitem2.setText(1, QCoreApplication.translate("main_app_view", u"\u0e0a\u0e37\u0e48\u0e2d", None));
-        ___qtreewidgetitem2.setText(0, QCoreApplication.translate("main_app_view", u"\u0e04\u0e33\u0e19\u0e33\u0e2b\u0e19\u0e49\u0e32\u0e0a\u0e37\u0e48\u0e2d", None));
+        ___qtreewidgetitem4 = self.employee_result_search_treeview.headerItem()
+        ___qtreewidgetitem4.setText(2, QCoreApplication.translate("main_app_view", u"\u0e19\u0e32\u0e21\u0e2a\u0e01\u0e38\u0e25", None));
+        ___qtreewidgetitem4.setText(1, QCoreApplication.translate("main_app_view", u"\u0e0a\u0e37\u0e48\u0e2d", None));
+        ___qtreewidgetitem4.setText(0, QCoreApplication.translate("main_app_view", u"\u0e04\u0e33\u0e19\u0e33\u0e2b\u0e19\u0e49\u0e32\u0e0a\u0e37\u0e48\u0e2d", None));
         self.employee_new_employee_button.setText(QCoreApplication.translate("main_app_view", u"\u0e1a\u0e38\u0e04\u0e25\u0e32\u0e01\u0e23\u0e43\u0e2b\u0e21\u0e48", None))
         self.employee_edit_data_button.setText(QCoreApplication.translate("main_app_view", u"\u0e41\u0e01\u0e49\u0e44\u0e02\u0e02\u0e49\u0e2d\u0e21\u0e39\u0e25", None))
         self.employee_back_to_home_button.setText(QCoreApplication.translate("main_app_view", u"\u0e01\u0e25\u0e31\u0e1a\u0e2b\u0e19\u0e49\u0e32\u0e2b\u0e25\u0e31\u0e01", None))
@@ -3306,29 +3342,30 @@ class Ui_main_app_view(object):
         self.label_5.setText(QCoreApplication.translate("main_app_view", u"Bill page", None))
         self.label_4.setText(QCoreApplication.translate("main_app_view", u"Barcode page", None))
         self.label_11.setText(QCoreApplication.translate("main_app_view", u"\u0e0a\u0e37\u0e48\u0e2d\u0e1c\u0e39\u0e49\u0e19\u0e33\u0e2a\u0e48\u0e07", None))
-        ___qtreewidgetitem3 = self.sticker_search_treeWidget.headerItem()
-        ___qtreewidgetitem3.setText(6, QCoreApplication.translate("main_app_view", u"\u0e02\u0e49\u0e2d\u0e21\u0e39\u0e25\u0e40\u0e1e\u0e34\u0e48\u0e21\u0e40\u0e15\u0e34\u0e21", None));
-        ___qtreewidgetitem3.setText(5, QCoreApplication.translate("main_app_view", u"\u0e23\u0e30\u0e14\u0e31\u0e1a\u0e04\u0e27\u0e32\u0e21\u0e14\u0e48\u0e27\u0e19", None));
-        ___qtreewidgetitem3.setText(4, QCoreApplication.translate("main_app_view", u"\u0e01\u0e32\u0e23\u0e40\u0e01\u0e47\u0e1a\u0e23\u0e31\u0e01\u0e29\u0e32", None));
-        ___qtreewidgetitem3.setText(3, QCoreApplication.translate("main_app_view", u"\u0e2b\u0e49\u0e2d\u0e07\u0e1b\u0e0f\u0e34\u0e1a\u0e31\u0e15\u0e34\u0e01\u0e32\u0e23", None));
-        ___qtreewidgetitem3.setText(2, QCoreApplication.translate("main_app_view", u"\u0e0a\u0e19\u0e34\u0e14\u0e2a\u0e31\u0e15\u0e27\u0e4c", None));
-        ___qtreewidgetitem3.setText(1, QCoreApplication.translate("main_app_view", u"\u0e2b\u0e21\u0e32\u0e22\u0e40\u0e25\u0e02\u0e01\u0e32\u0e23\u0e15\u0e23\u0e27\u0e08", None));
-        ___qtreewidgetitem3.setText(0, QCoreApplication.translate("main_app_view", u"\u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e23\u0e31\u0e1a\u0e40\u0e04\u0e2a", None));
+        ___qtreewidgetitem5 = self.sticker_search_treeWidget.headerItem()
+        ___qtreewidgetitem5.setText(6, QCoreApplication.translate("main_app_view", u"\u0e02\u0e49\u0e2d\u0e21\u0e39\u0e25\u0e40\u0e1e\u0e34\u0e48\u0e21\u0e40\u0e15\u0e34\u0e21", None));
+        ___qtreewidgetitem5.setText(5, QCoreApplication.translate("main_app_view", u"\u0e23\u0e30\u0e14\u0e31\u0e1a\u0e04\u0e27\u0e32\u0e21\u0e14\u0e48\u0e27\u0e19", None));
+        ___qtreewidgetitem5.setText(4, QCoreApplication.translate("main_app_view", u"\u0e01\u0e32\u0e23\u0e40\u0e01\u0e47\u0e1a\u0e23\u0e31\u0e01\u0e29\u0e32", None));
+        ___qtreewidgetitem5.setText(3, QCoreApplication.translate("main_app_view", u"\u0e2b\u0e49\u0e2d\u0e07\u0e1b\u0e0f\u0e34\u0e1a\u0e31\u0e15\u0e34\u0e01\u0e32\u0e23", None));
+        ___qtreewidgetitem5.setText(2, QCoreApplication.translate("main_app_view", u"\u0e0a\u0e19\u0e34\u0e14\u0e2a\u0e31\u0e15\u0e27\u0e4c", None));
+        ___qtreewidgetitem5.setText(1, QCoreApplication.translate("main_app_view", u"\u0e2b\u0e21\u0e32\u0e22\u0e40\u0e25\u0e02\u0e01\u0e32\u0e23\u0e15\u0e23\u0e27\u0e08", None));
+        ___qtreewidgetitem5.setText(0, QCoreApplication.translate("main_app_view", u"\u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e23\u0e31\u0e1a\u0e40\u0e04\u0e2a", None));
         self.sticker_search_pushButton.setText(QCoreApplication.translate("main_app_view", u"\u0e04\u0e49\u0e19\u0e2b\u0e32\u0e14\u0e49\u0e27\u0e22\u0e0a\u0e37\u0e48\u0e2d\u0e25\u0e39\u0e01\u0e04\u0e49\u0e32", None))
         self.today_sticker_search_pushButton.setText(QCoreApplication.translate("main_app_view", u"\u0e04\u0e49\u0e19\u0e2b\u0e32\u0e40\u0e04\u0e2a\u0e43\u0e19\u0e27\u0e31\u0e19\u0e19\u0e35\u0e49", None))
         self.print_barcode_pushButton.setText(QCoreApplication.translate("main_app_view", u"\u0e1e\u0e34\u0e21\u0e1e\u0e4c\u0e1a\u0e32\u0e23\u0e4c\u0e42\u0e04\u0e14", None))
-        ___qtreewidgetitem4 = self.barcode_page_customertreeWidget.headerItem()
-        ___qtreewidgetitem4.setText(2, QCoreApplication.translate("main_app_view", u"\u0e2b\u0e21\u0e32\u0e22\u0e40\u0e25\u0e02\u0e1c\u0e39\u0e49\u0e40\u0e2a\u0e35\u0e22\u0e20\u0e32\u0e29\u0e35", None));
-        ___qtreewidgetitem4.setText(1, QCoreApplication.translate("main_app_view", u"\u0e2a\u0e01\u0e38\u0e25", None));
-        ___qtreewidgetitem4.setText(0, QCoreApplication.translate("main_app_view", u"\u0e0a\u0e37\u0e48\u0e2d", None));
+        ___qtreewidgetitem6 = self.barcode_page_customertreeWidget.headerItem()
+        ___qtreewidgetitem6.setText(2, QCoreApplication.translate("main_app_view", u"\u0e2b\u0e21\u0e32\u0e22\u0e40\u0e25\u0e02\u0e1c\u0e39\u0e49\u0e40\u0e2a\u0e35\u0e22\u0e20\u0e32\u0e29\u0e35", None));
+        ___qtreewidgetitem6.setText(1, QCoreApplication.translate("main_app_view", u"\u0e2a\u0e01\u0e38\u0e25", None));
+        ___qtreewidgetitem6.setText(0, QCoreApplication.translate("main_app_view", u"\u0e0a\u0e37\u0e48\u0e2d", None));
         self.label_10.setText(QCoreApplication.translate("main_app_view", u"Lab report", None))
         self.label_16.setText(QCoreApplication.translate("main_app_view", u"\u0e2b\u0e21\u0e32\u0e22\u0e40\u0e25\u0e02\u0e1a\u0e32\u0e23\u0e4c\u0e42\u0e04\u0e14", None))
         self.lab_report_page_print_pushButton.setText(QCoreApplication.translate("main_app_view", u"\u0e1e\u0e34\u0e21\u0e1e\u0e4c\u0e43\u0e1a\u0e2a\u0e48\u0e07\u0e41\u0e25\u0e1b", None))
-        ___qtreewidgetitem5 = self.lab_report_page_printing_treeWidget.headerItem()
-        ___qtreewidgetitem5.setText(3, QCoreApplication.translate("main_app_view", u"\u0e0a\u0e37\u0e48\u0e2d\u0e2a\u0e31\u0e15\u0e27\u0e4c", None));
-        ___qtreewidgetitem5.setText(2, QCoreApplication.translate("main_app_view", u"\u0e0a\u0e37\u0e48\u0e2d\u0e1c\u0e39\u0e49\u0e2a\u0e48\u0e07", None));
-        ___qtreewidgetitem5.setText(1, QCoreApplication.translate("main_app_view", u"\u0e2b\u0e21\u0e32\u0e22\u0e40\u0e25\u0e02\u0e1a\u0e32\u0e23\u0e4c\u0e42\u0e04\u0e14", None));
-        ___qtreewidgetitem5.setText(0, QCoreApplication.translate("main_app_view", u"\u0e27\u0e31\u0e19\u0e40\u0e14\u0e37\u0e2d\u0e19\u0e1b\u0e35\u0e17\u0e35\u0e48\u0e23\u0e31\u0e1a\u0e07\u0e32\u0e19", None));
+        ___qtreewidgetitem7 = self.lab_report_page_printing_treeWidget.headerItem()
+        ___qtreewidgetitem7.setText(3, QCoreApplication.translate("main_app_view", u"\u0e0a\u0e37\u0e48\u0e2d\u0e2a\u0e31\u0e15\u0e27\u0e4c", None));
+        ___qtreewidgetitem7.setText(2, QCoreApplication.translate("main_app_view", u"\u0e0a\u0e37\u0e48\u0e2d\u0e1c\u0e39\u0e49\u0e2a\u0e48\u0e07", None));
+        ___qtreewidgetitem7.setText(1, QCoreApplication.translate("main_app_view", u"\u0e2b\u0e21\u0e32\u0e22\u0e40\u0e25\u0e02\u0e1a\u0e32\u0e23\u0e4c\u0e42\u0e04\u0e14", None));
+        ___qtreewidgetitem7.setText(0, QCoreApplication.translate("main_app_view", u"\u0e27\u0e31\u0e19\u0e40\u0e14\u0e37\u0e2d\u0e19\u0e1b\u0e35\u0e17\u0e35\u0e48\u0e23\u0e31\u0e1a\u0e07\u0e32\u0e19", None));
+        self.lab_report_page_search_pushButton.setText(QCoreApplication.translate("main_app_view", u"\u0e04\u0e49\u0e19\u0e2b\u0e32", None))
         self.label_8.setText(QCoreApplication.translate("main_app_view", u"edit_personal_page", None))
         self.label_13.setText(QCoreApplication.translate("main_app_view", u"Update page", None))
         self.label_9.setText(QCoreApplication.translate("main_app_view", u"Molecular Biology", None))
@@ -3616,10 +3653,10 @@ class Ui_main_app_view(object):
         self.label_17.setText(QCoreApplication.translate("main_app_view", u"Lab Received sample", None))
         self.label_18.setText(QCoreApplication.translate("main_app_view", u"\u0e23\u0e2b\u0e31\u0e2a\u0e1a\u0e32\u0e23\u0e4c\u0e42\u0e04\u0e14\u0e2a\u0e34\u0e48\u0e07\u0e2a\u0e48\u0e07\u0e15\u0e23\u0e27\u0e08", None))
         self.label_19.setText(QCoreApplication.translate("main_app_view", u"\u0e04\u0e49\u0e19\u0e2b\u0e32\u0e0a\u0e37\u0e48\u0e2d\u0e40\u0e08\u0e49\u0e32\u0e2b\u0e19\u0e49\u0e32\u0e17\u0e35\u0e48", None))
-        ___qtreewidgetitem6 = self.lab_received_sample_treeWidget.headerItem()
-        ___qtreewidgetitem6.setText(2, QCoreApplication.translate("main_app_view", u"\u0e2b\u0e21\u0e32\u0e22\u0e40\u0e25\u0e02\u0e1b\u0e23\u0e30\u0e08\u0e33\u0e15\u0e31\u0e27", None));
-        ___qtreewidgetitem6.setText(1, QCoreApplication.translate("main_app_view", u"\u0e19\u0e32\u0e21\u0e2a\u0e01\u0e38\u0e25", None));
-        ___qtreewidgetitem6.setText(0, QCoreApplication.translate("main_app_view", u"\u0e0a\u0e37\u0e48\u0e2d", None));
+        ___qtreewidgetitem8 = self.lab_received_sample_treeWidget.headerItem()
+        ___qtreewidgetitem8.setText(2, QCoreApplication.translate("main_app_view", u"\u0e2b\u0e21\u0e32\u0e22\u0e40\u0e25\u0e02\u0e1b\u0e23\u0e30\u0e08\u0e33\u0e15\u0e31\u0e27", None));
+        ___qtreewidgetitem8.setText(1, QCoreApplication.translate("main_app_view", u"\u0e19\u0e32\u0e21\u0e2a\u0e01\u0e38\u0e25", None));
+        ___qtreewidgetitem8.setText(0, QCoreApplication.translate("main_app_view", u"\u0e0a\u0e37\u0e48\u0e2d", None));
         self.lab_received_sample_select_pushButton.setText(QCoreApplication.translate("main_app_view", u"\u0e40\u0e25\u0e37\u0e2d\u0e01\u0e23\u0e32\u0e22\u0e0a\u0e37\u0e48\u0e2d", None))
         self.label_20.setText(QCoreApplication.translate("main_app_view", u"\u0e27\u0e31\u0e19\u0e40\u0e27\u0e32\u0e25\u0e32\u0e17\u0e35\u0e48\u0e23\u0e31\u0e1a\u0e2a\u0e34\u0e48\u0e07\u0e2a\u0e48\u0e07\u0e15\u0e23\u0e27\u0e08", None))
         self.label_21.setText(QCoreApplication.translate("main_app_view", u"\u0e1c\u0e39\u0e49\u0e23\u0e31\u0e1a\u0e2a\u0e34\u0e48\u0e07\u0e2a\u0e48\u0e07\u0e15\u0e23\u0e27\u0e08", None))
