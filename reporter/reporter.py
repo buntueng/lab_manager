@@ -23,6 +23,6 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     main_view = MainView()
     main_model = ReportModel()
-    main_controller = ReportController(main_view, main_model, logger)
+    main_controller = ReportController(main_view, main_model,logger)
     main_view.show()
     sys.exit(app.exec())

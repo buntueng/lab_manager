@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1341</width>
+    <width>1342</width>
     <height>885</height>
    </rect>
   </property>
@@ -19,7 +19,7 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>141</width>
+      <width>201</width>
       <height>861</height>
      </rect>
     </property>
@@ -34,60 +34,78 @@
       <rect>
        <x>10</x>
        <y>10</y>
-       <width>121</width>
+       <width>91</width>
        <height>20</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>12</pointsize>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
        <bold>true</bold>
       </font>
      </property>
      <property name="text">
-      <string>Main Menu</string>
+      <string>สร้างรายงาน</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
-    <widget class="QPushButton" name="cytology_pushButton">
+    <widget class="QPushButton" name="serum_pushButton">
      <property name="geometry">
       <rect>
        <x>10</x>
        <y>40</y>
-       <width>121</width>
+       <width>181</width>
        <height>41</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
      <property name="text">
-      <string>New Cytology</string>
+      <string>ซีรัมวิทยา</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="nocropsy_pushButton">
+    <widget class="QPushButton" name="bacteria_pushButton">
      <property name="geometry">
       <rect>
        <x>10</x>
        <y>90</y>
-       <width>121</width>
+       <width>181</width>
        <height>41</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
      <property name="text">
-      <string>New Nocropsy</string>
+      <string>แบคทีเรียวิทยา</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="check_report_pushButton">
+    <widget class="QPushButton" name="approve_report_pushButton">
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>710</y>
-       <width>121</width>
+       <y>750</y>
+       <width>181</width>
        <height>41</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(170, 255, 255);</string>
+     </property>
      <property name="text">
-      <string>Check reports</string>
+      <string>Approve รายงาน</string>
      </property>
     </widget>
     <widget class="QPushButton" name="sign_out_pushButton">
@@ -95,21 +113,204 @@
       <rect>
        <x>10</x>
        <y>810</y>
-       <width>121</width>
+       <width>181</width>
        <height>41</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 170, 127);</string>
+     </property>
      <property name="text">
       <string>Sign Out</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="molecularBio_pushButton">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>190</y>
+       <width>181</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>อณูชีววิทยา</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="parasite_pushButton">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>240</y>
+       <width>181</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>ปรสิตวิทยา</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="water_quality_pushButton">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>290</y>
+       <width>181</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>วิเคราะห์คุณภาพน้ำ</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="bacteriaVirtek_pushButton">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>140</y>
+       <width>181</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>แบคทีเรียวิทยา Virtek</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="food_quality_pushButton">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>340</y>
+       <width>181</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>คุณภาพอาหารสัตว์</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="sperm_pushButton">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>390</y>
+       <width>181</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>คุณภาพน้ำเชื้อ</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="virus_pushButton">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>440</y>
+       <width>181</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>ไวรัสวิทยา</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="chemical_pushButton">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>490</y>
+       <width>181</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>ตรวจวิเคราะห์เคมี</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pathology_pushButton">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>540</y>
+       <width>181</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>พยาธิวิทยา</string>
      </property>
     </widget>
    </widget>
    <widget class="QFrame" name="working_frame">
     <property name="geometry">
      <rect>
-      <x>160</x>
+      <x>220</x>
       <y>10</y>
-      <width>1171</width>
+      <width>1111</width>
       <height>861</height>
      </rect>
     </property>
@@ -122,14 +323,14 @@
     <widget class="QStackedWidget" name="stackedWidget">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>10</y>
-       <width>1151</width>
-       <height>841</height>
+       <x>0</x>
+       <y>150</y>
+       <width>1101</width>
+       <height>711</height>
       </rect>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="login_page">
       <widget class="QLabel" name="login_username_label">
@@ -217,68 +418,384 @@
       <zorder>login_password_lineEdit</zorder>
       <zorder>login_pushButton</zorder>
      </widget>
-     <widget class="QWidget" name="cytology_page">
-      <widget class="QLabel" name="cytology_page_label">
+     <widget class="QWidget" name="serum_page">
+      <widget class="QLabel" name="serum_page_label">
        <property name="geometry">
         <rect>
-         <x>10</x>
-         <y>6</y>
-         <width>101</width>
-         <height>20</height>
+         <x>0</x>
+         <y>0</y>
+         <width>131</width>
+         <height>41</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <pointsize>10</pointsize>
+         <family>TH Niramit AS</family>
+         <pointsize>16</pointsize>
          <bold>true</bold>
         </font>
        </property>
        <property name="text">
-        <string>Cytology Report</string>
+        <string>รายงานซีรัมวิทยา</string>
        </property>
       </widget>
-     </widget>
-     <widget class="QWidget" name="nocropsy_page">
-      <widget class="QLabel" name="label">
+      <widget class="QLabel" name="label_11">
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>10</y>
-         <width>101</width>
-         <height>16</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>10</pointsize>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>Nocropsy report</string>
-       </property>
-      </widget>
-     </widget>
-     <widget class="QWidget" name="check_report_page">
-      <widget class="QLabel" name="check_report_page_label">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>10</y>
+         <y>70</y>
          <width>91</width>
          <height>16</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <pointsize>10</pointsize>
+         <family>TH Niramit AS</family>
+         <pointsize>16</pointsize>
          <bold>true</bold>
         </font>
        </property>
        <property name="text">
-        <string>Check report</string>
+        <string>ผลการตรวจ </string>
        </property>
       </widget>
+     </widget>
+     <widget class="QWidget" name="bactria_page">
+      <widget class="QLabel" name="label">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>161</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>TH Niramit AS</family>
+         <pointsize>16</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>รายงานแบคทีเรียวิทยา</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="bacteria_virtek_page">
+      <widget class="QLabel" name="label_2">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>171</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>TH Niramit AS</family>
+         <pointsize>16</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>รายงานแบคทีเรีย Virtek</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="micro_bio_page">
+      <widget class="QLabel" name="label_3">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>141</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>TH Niramit AS</family>
+         <pointsize>16</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>รายงานอณูชีววิทยา</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="parasite_page">
+      <widget class="QLabel" name="label_4">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>131</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>TH Niramit AS</family>
+         <pointsize>16</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>รายงานปรสิตวิทยา</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="water_quality_page">
+      <widget class="QLabel" name="label_5">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>191</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>TH Niramit AS</family>
+         <pointsize>16</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>รายงานวิเคราะห์คุณภาพน้ำ</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="food_quality_page">
+      <widget class="QLabel" name="label_6">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>211</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>TH Niramit AS</family>
+         <pointsize>16</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>รายงานคุณภาพอาหารสัตว์</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="sperm_quality_page">
+      <widget class="QLabel" name="label_7">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>171</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>TH Niramit AS</family>
+         <pointsize>16</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>รายงานคุณภาพน้ำเชื้อ</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="virus_page">
+      <widget class="QLabel" name="label_8">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>141</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>TH Niramit AS</family>
+         <pointsize>16</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>รายงานไวรัสวิทยา</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="chemical_page">
+      <widget class="QLabel" name="label_9">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>211</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>TH Niramit AS</family>
+         <pointsize>16</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>รายงานตรวจวิเคราะห์เคมี</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="pathology_page">
+      <widget class="QLabel" name="label_10">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>191</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>TH Niramit AS</family>
+         <pointsize>16</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>รายงานพยาธิวิทยา</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="approve_report_page">
+      <widget class="QLabel" name="approve_report_page_label">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>141</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>TH Niramit AS</family>
+         <pointsize>16</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Approve รายงาน</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QLabel" name="user_info_label">
+     <property name="geometry">
+      <rect>
+       <x>888</x>
+       <y>10</y>
+       <width>211</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QFrame" name="search_frame">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>30</y>
+       <width>1101</width>
+       <height>111</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QLabel" name="label_12">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>151</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>TH Niramit AS</family>
+        <pointsize>16</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>รหัสบาร์โคดสิ่งส่งตรวจ</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>10</y>
+        <width>251</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Times New Roman</family>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton">
+      <property name="geometry">
+       <rect>
+        <x>440</x>
+        <y>10</y>
+        <width>131</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>TH Niramit AS</family>
+        <pointsize>16</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>ค้นหา</string>
+      </property>
      </widget>
     </widget>
    </widget>

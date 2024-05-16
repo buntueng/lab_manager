@@ -11,52 +11,111 @@ class MainView(Ui_MainWindow, QMainWindow):
     def __init__(self):
         super(MainView, self).__init__()
         self.setupUi(self)
-        config_file = os.path.join(os.path.dirname(os.path.dirname(
-            __file__)), "models", "log_config.ini")
-        logging.config.fileConfig(config_file)  # load logging configuration
-        self.logger = logging.getLogger('sLogger')
         self.login_password_lineEdit.setEchoMode(QLineEdit.EchoMode.Password)
         self.reset_widgets_state()
-
-        self.logger.info("MainView initialized")
+        self.search_frame.hide()
+        
 
     def reset_widgets_state(self):
         """ Reset widgets state """
         self.login_username_lineEdit.clear()
         self.login_password_lineEdit.clear()
-
-        self.cytology_pushButton.setEnabled(False)
-        self.nocropsy_pushButton.setEnabled(False)
-        self.check_report_pushButton.setEnabled(False)
+        self.serum_pushButton.setEnabled(False)
+        self.bacteria_pushButton.setEnabled(False)
+        self.bacteriaVirtek_pushButton.setEnabled(False)
+        self.molecularBio_pushButton.setEnabled(False)
+        self.parasite_pushButton.setEnabled(False)
+        self.water_quality_pushButton.setEnabled(False)
+        self.food_quality_pushButton.setEnabled(False)
+        self.sperm_pushButton.setEnabled(False)
+        self.virus_pushButton.setEnabled(False)
+        self.chemical_pushButton.setEnabled(False)
+        self.pathology_pushButton.setEnabled(False)
+        self.approve_report_pushButton.setEnabled(False)
         self.sign_out_pushButton.setEnabled(False)
-
-    def on_login_pushButton_clicked(self):
-        """ Event handler for login button clicked """
-        self.logger.info("Login button clicked")
-        self.cytology_pushButton.setEnabled(True)
-        self.nocropsy_pushButton.setEnabled(True)
-        self.check_report_pushButton.setEnabled(True)
+        
+    def enable_main_menu_buttons(self):
+        """ Enable main menu buttons """
+        self.serum_pushButton.setEnabled(True)
+        self.bacteria_pushButton.setEnabled(True)
+        self.bacteriaVirtek_pushButton.setEnabled(True)
+        self.molecularBio_pushButton.setEnabled(True)
+        self.parasite_pushButton.setEnabled(True)
+        self.water_quality_pushButton.setEnabled(True)
+        self.food_quality_pushButton.setEnabled(True)
+        self.sperm_pushButton.setEnabled(True)
+        self.virus_pushButton.setEnabled(True)
+        self.chemical_pushButton.setEnabled(True)
+        self.pathology_pushButton.setEnabled(True)
+        self.approve_report_pushButton.setEnabled(True)
         self.sign_out_pushButton.setEnabled(True)
 
-    def on_cytology_pushButton_clicked(self):
-        """ Event handler for cytology button clicked """
-        self.logger.info("Cytology button clicked")
-
-    def on_nocropsy_pushButton_clicked(self):
-        """ Event handler for necropsy button clicked """
-        self.logger.info("Necropsy button clicked")
-
-    def on_check_report_pushButton_clicked(self):
-        """ Event handler for check report button clicked """
-        self.logger.info("Check report button clicked")
-
-    def on_sign_out_pushButton_clicked(self):
-        """ Event handler for sign out button clicked """
-        self.logger.info("Sign out button clicked")
-
+    def clear_all_forms(self):
+        """ Clear all forms """
+        self.serum_clear_form()
+        self.bacteria_clear_form()
+        self.bacteria_virtek_clear_form()
+        self.micro_bio_clear_form()
+        self.parasite_clear_form()
+        self.water_quality_clear_form()
+        self.food_quality_clear_form()
+        self.sperm_quality_clear_form()
+        self.virus_clear_form()
+        self.chemical_clear_form()
+        self.pathology_clear_form()
+        self.approve_report_clear_form()
+        
+    def serum_clear_form(self):
+        """ Clear serum form """
+        pass
+    
+    def bacteria_clear_form(self):
+        """ Clear bacteria form """
+        pass
+    
+    def bacteria_virtek_clear_form(self):
+        """ Clear bacteria virtek form """
+        pass
+    
+    def micro_bio_clear_form(self):
+        """ Clear micro bio form """
+        pass
+    
+    def parasite_clear_form(self):
+        """ Clear parasite form """
+        pass
+    
+    def water_quality_clear_form(self):
+        """ Clear water quality form """
+        pass
+    
+    def food_quality_clear_form(self):
+        """ Clear food quality form """
+        pass
+    
+    def sperm_quality_clear_form(self):
+        """ Clear sperm quality form """
+        pass
+    
+    def virus_clear_form(self):
+        """ Clear virus form """
+        pass
+    
+    def chemical_clear_form(self):
+        """ Clear chemical form """
+        pass
+    
+    def pathology_clear_form(self):
+        """ Clear pathology form """
+        pass
+    
+    def approve_report_clear_form(self):
+        """ Clear approve report form """
+        pass
+    
+    
     def closeEvent(self, event):
         """ Event handler for close event """
-        self.logger.info("Close event")
         reply = QMessageBox.question(
             self, 'Message', "Are you sure to quit?", QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
         if reply == QMessageBox.Yes:

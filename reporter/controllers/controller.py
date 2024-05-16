@@ -14,30 +14,91 @@ class ReportController:
         self.view = report_view
         self.model = report_model
         self.current_user_info = []
+        
+        self.view.user_info_label.clear()
+        # onload go to login page
+        self.view.stackedWidget.setCurrentIndex(0)
+        self.view.reset_widgets_state()
 
         # add handler to buttons in main Menu
-        self.view.cytology_pushButton.clicked.connect(
-            self.view.on_cytology_pushButton_clicked)
+        self.bind_event_in_main_menu()
+        self.bind_events_in_login_page()
+        self.bind_event_in_bacteria_page()
+        self.bind_event_in_bacteria_virtek_page()
+        self.bind_event_in_micro_bio_page()
+        self.bind_event_in_parasite_page()
+        self.bind_event_in_water_quality_page()
+        self.bind_event_in_food_quality_page()
+        self.bind_event_in_sperm_quality_page()
+        self.bind_event_in_virus_page()
+        self.bind_event_in_chemical_page()
+        self.bind_event_in_pathology_page()
+        self.bind_event_in_approve_report_page()
 
-        self.view.nocropsy_pushButton.clicked.connect(
-            self.view.on_nocropsy_pushButton_clicked)
-
-        self.view.check_report_pushButton.clicked.connect(
-            self.view.on_check_report_pushButton_clicked)
-
+    def bind_event_in_main_menu(self):
+        self.view.serum_pushButton.clicked.connect(
+            lambda: self.view.stackedWidget.setCurrentIndex(1))
+        self.view.bacteria_pushButton.clicked.connect(
+            lambda: self.view.stackedWidget.setCurrentIndex(2))
+        self.view.bacteriaVirtek_pushButton.clicked.connect(
+            lambda: self.view.stackedWidget.setCurrentIndex(3))
+        self.view.molecularBio_pushButton.clicked.connect(
+            lambda: self.view.stackedWidget.setCurrentIndex(4))
+        self.view.parasite_pushButton.clicked.connect(
+            lambda: self.view.stackedWidget.setCurrentIndex(5))
+        self.view.water_quality_pushButton.clicked.connect(
+            lambda: self.view.stackedWidget.setCurrentIndex(6))
+        self.view.food_quality_pushButton.clicked.connect(
+            lambda: self.view.stackedWidget.setCurrentIndex(7))
+        self.view.sperm_pushButton.clicked.connect(
+            lambda: self.view.stackedWidget.setCurrentIndex(8))
+        self.view.virus_pushButton.clicked.connect(
+            lambda: self.view.stackedWidget.setCurrentIndex(9))
+        self.view.chemical_pushButton.clicked.connect(
+            lambda: self.view.stackedWidget.setCurrentIndex(10))
+        self.view.pathology_pushButton.clicked.connect(
+            lambda: self.view.stackedWidget.setCurrentIndex(11))
+        self.view.approve_report_pushButton.clicked.connect(
+            lambda: self.view.stackedWidget.setCurrentIndex(12))
         self.view.sign_out_pushButton.clicked.connect(
-            self.view.on_sign_out_pushButton_clicked)
+            self.sign_out_button_clicked)
 
-        # add handler to login page
-        self.event_handler_login_page()
+    def bind_events_in_login_page(self):
+        """ Bind events in login page """
+        self.view.login_pushButton.clicked.connect(self.login_button_clicked)
 
-    def event_handler_login_page(self):
-        """ Method to handle the login page events. """
-        self.view.login_pushButton.clicked.connect(
-            self.login_button_clicked)
-        # add handler to login password lineEdit returnPressed event
-        self.view.login_password_lineEdit.returnPressed.connect(
-            self.login_button_clicked)
+    def bind_event_in_bacteria_page(self):
+        pass
+
+    def bind_event_in_bacteria_virtek_page(self):
+        pass
+
+    def bind_event_in_micro_bio_page(self):
+        pass
+
+    def bind_event_in_parasite_page(self):
+        pass
+
+    def bind_event_in_water_quality_page(self):
+        pass
+
+    def bind_event_in_food_quality_page(self):
+        pass
+
+    def bind_event_in_sperm_quality_page(self):
+        pass
+
+    def bind_event_in_virus_page(self):
+        pass
+
+    def bind_event_in_chemical_page(self):
+        pass
+
+    def bind_event_in_pathology_page(self):
+        pass
+
+    def bind_event_in_approve_report_page(self):
+        pass
 
     def login_button_clicked(self):
         """ Method to handle the login button click event. """
@@ -53,11 +114,18 @@ class ReportController:
                 self.current_user_info = current_user_info[0]
                 if self.current_user_info[0] < 4:   # addmin and vet-med
                     self.view.stackedWidget.setCurrentIndex(1)
-                    print(self.current_user_info)
-                    # enable all buttons in main menu
+                    self.view.user_info_label.setText(f"{self.current_user_info[2]}{self.current_user_info[3]} {self.current_user_info[4]}")
+                    self.view.enable_main_menu_buttons()
                 else:
                     QMessageBox.critical(self.view, "Warning",
                                          "คุณไม่ได้รับอนุญาตให้ใช้งานระบบนี้")
             else:
                 QMessageBox.critical(
                     self.view, "Warning", "Invalid username or password")
+
+    def sign_out_button_clicked(self):
+        self.view.stackedWidget.setCurrentIndex(0)
+        self.view.reset_widgets_state()
+        self.view.user_info_label.clear()
+        self.current_user_info = []
+        self.view.clear_all_forms()

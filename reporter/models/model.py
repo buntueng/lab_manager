@@ -13,6 +13,7 @@ class ReportModel:
         # load database configuration
         self.db_config = self.load_yaml_file("server_config.yml")
         self.sql_cmd = self.load_yaml_file("sql_cmd.yml")
+        
 
     def load_yaml_file(self, file_name):
         """ Method to load yaml file. """
