@@ -946,10 +946,10 @@ class Ui_Service_after_death(object):
         self.note_label.setText(QCoreApplication.translate("Service_after_death", u"NOTE", None))
     # retranslateUi
 
-if __name__ == "__main__":
-    app = QApplication([])
-    specimen_UI = QMainWindow()
-    ui = Ui_Service_after_death()
-    ui.setupUi(specimen_UI)
-    specimen_UI.show()
-    app.exec()
+# if __name__ == "__main__":
+#     app = QApplication([])
+#     specimen_UI = QMainWindow()
+#     ui = Ui_Service_after_death()
+#     ui.setupUi(specimen_UI)
+#     specimen_UI.show()
+#     app.exec()

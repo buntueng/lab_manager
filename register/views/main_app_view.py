@@ -3277,7 +3277,7 @@ class Ui_main_app_view(object):
     # setupUi
 
     def retranslateUi(self, main_app_view):
-        main_app_view.setWindowTitle(QCoreApplication.translate("main_app_view", u"Report generator", None))
+        main_app_view.setWindowTitle(QCoreApplication.translate("main_app_view", u"Register", None))
         self.actionCytology_Report.setText(QCoreApplication.translate("main_app_view", u"Cytology Report", None))
         self.actionNecropsy_Report.setText(QCoreApplication.translate("main_app_view", u"Necropsy Report", None))
         self.actionSave_on_This_PC.setText(QCoreApplication.translate("main_app_view", u"Save on This PC", None))
