@@ -79,8 +79,12 @@ class Main_Controller:
         """Save after death information"""
         # get data from the view
         after_death_data = self.view.get_after_death_data()
-        print(len(after_death_data))
         # save data to the database
+        if self.model.save_after_death_information(after_death_data):
+            QMessageBox.information(self.view, "Success",
+                                    "บันทึกข้อมูลเรียบร้อย")
+            self.view.clear_after_death_page()
+            self.reload_new_job_page()
         
     def after_death_cancel_button_clicked(self):
         self.view.clear_after_death_page()

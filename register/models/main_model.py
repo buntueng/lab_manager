@@ -321,3 +321,19 @@ class Main_Model:
         cmd = self.sql_cmd["get_molecular_biology_tests"]
         test_data = self.select_data(cmd, [case_id])
         return test_data
+
+    def save_after_death_information(self,after_death_data):
+        sql_cmd = self.sql_cmd["insert_info_to_after_death"]
+        data = ['10','1'] 
+        for item in after_death_data:
+            data.append(item)
+        
+        print(len(data))
+        
+        
+        if self.insert_data(sql_cmd, data):
+            print("inserted")
+        else:
+            print("failed to insert")
+        return False
+            
