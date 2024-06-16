@@ -67,6 +67,24 @@ class Main_Controller:
         self.bind_event_in_barcode_page()
         self.bind_event_in_lab_received_sample_page()
         self.bind_event_in_check_job_progress_page()
+        self.bind_event_in_after_death_page()
+        
+    def bind_event_in_after_death_page(self):
+        self.view.after_death_cancel_button.clicked.connect(
+            self.after_death_cancel_button_clicked)
+        self.view.service_after_death_save_button.clicked.connect(
+            self.save_after_death_information)
+    
+    def save_after_death_information(self):
+        """Save after death information"""
+        # get data from the view
+        after_death_data = self.view.get_after_death_data()
+        print(len(after_death_data))
+        # save data to the database
+        
+    def after_death_cancel_button_clicked(self):
+        self.view.clear_after_death_page()
+        self.view.show_specimen_page()
 
     def bind_event_in_check_job_progress_page(self):
         """Bind event in check job progress page"""
@@ -357,6 +375,14 @@ class Main_Controller:
 
         self.view.specimen_page_Microbiology_pushButton.clicked.connect(
             self.load_microbiology_page)
+        
+        self.view.after_death_pushButton.clicked.connect(
+            self.load_after_death_page)
+        
+    def load_after_death_page(self):
+        """Load after death page"""
+        self.view.clear_after_death_page()
+        self.view.show_after_death_page()
 
     def load_microbiology_page(self):
         """Load microbiology page"""

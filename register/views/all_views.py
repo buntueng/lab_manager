@@ -123,7 +123,8 @@ class MainAppView(QMainWindow, Ui_main_app_view):
     # ==================== login page ====================
     def show_login_page(self):
         """Show the login page."""
-        self.stackedWidget.setCurrentIndex(0)
+        # self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(17) # test only
 
     # ==================== customer register page ====================
     def show_customer_register_page(self):
@@ -203,7 +204,305 @@ class MainAppView(QMainWindow, Ui_main_app_view):
     def show_Microbiology_page(self):
         """Show the Molecular biology page."""
         self.stackedWidget.setCurrentIndex(13)
+    # ==================== after death page ====================
+    def show_after_death_page(self):
+        """Show the after death page."""
+        self.stackedWidget.setCurrentIndex(17)
+        
+    def clear_after_death_page(self):
+        """Clear information in the after death page."""
+        self.select_infectioun.setChecked(True)
+        self.select_daimond.setChecked(False)
+        self.select_carcass.setChecked(False)
+        
+        self.laboratory_request_incineration_checkBox.setChecked(False)
+        self.weight_tissues_lineEdit_2.clear()
+        self.laboratory_request_bone_checkBox.setChecked(False)
+        self.laboratory_request_cremation_checkBox.setChecked(False)
+        self.laboratory_dateEdit.clear()
+        self.laboratory_timeEdit.clear()
+        self.laboratory_request_daimond_checkBox.setChecked(False)
+        self.laboratory_carcass_fresh_checkBox.setChecked(False)
+        self.laboratory_carcass_aytolysus_checkBox.setChecked(False)
+        self.laboratory_carcass_unknow_checkBox.setChecked(False)
+        self.laboratory_carcass_other_checkBox.setChecked(False)
+        self.laboratory_carcass_other_lineEdit.clear()
+        self.laboratory_place_necropy_checkBox_2.setChecked(False)
+        self.laboratory_place_other1_checkBox_2.setChecked(False)
+        self.laboratory_place_other1_lineEdit_2.clear()
+        self.laboratory_place_other2_checkBox_2.setChecked(False)
+        self.laboratory_place_other2_lineEdit_2.clear()
+        self.note_textEdit.clear()
+        
+        self.infectioun_tissues_checkBox_2.setChecked(False)
+        self.number_pack_tissues_lineEdit.clear()
+        self.weight_tissues_lineEdit.clear()
+        self.infectioun_neddle_checkBox_2.setChecked(False)
+        self.number_pack_needle_lineEdit.clear()   
+        self.weight_needle_lineEdit.clear()
+        
+        self.infectioun_syringe_checkBox_2.setChecked(False)
+        self.number_pack_syringe_lineEdit.clear()
+        self.weight_syringe_lineEdit.clear()
+        self.infectioun_other1_checkBox_2.setChecked(False)
+        self.infectioun_other1_lineEdit_2.clear()
+        self.number_pack_other1_lineEdit.clear()
+        self.weight_other1_lineEdit.clear()
+        self.infectioun_other2_checkBox_2.setChecked(False)
+        self.infectioun_other2_lineEdit_2.clear()
+        self.number_pack_other2_lineEdit.clear()
+        self.weight_other2_lineEdit.clear()
+        self.infectioun_remark_textEdit.clear()
+        
+        self.daimond_carcass_checkBox.setChecked(False)
+        self.daimond_number_carcass_lineEdit.clear()
+        self.daimond_weight_carcass_lineEdit.clear()
+        self.daimond_bone_checkBox.setChecked(False)
+        self.daimond_number_bone_lineEdit.clear()
+        self.daimond_weight_bone_lineEdit.clear()
+        self.daimond_hair_checkBox.setChecked(False)
+        self.daimond_number_hair_lineEdit.clear()
+        self.daimond_weight_hair_lineEdit.clear()
+        self.daimond_other1_checkBox.setChecked(False)
+        self.daimond_other1_lineEdit.clear()
+        self.daimond_number_other1_lineEdit.clear()
+        self.daimond_weight_other1_lineEdit.clear()
+        self.daimond_other2_checkBox.setChecked(False)
+        self.daimond_other2_lineEdit.clear()
+        self.daimond_number_other2_lineEdit.clear()
+        self.daimond_weight_other2_lineEdit.clear()
+        
+        self.daimond_min_1carat_checkBox.setChecked(False)
+        self.daimond_1carat_checkBox.setChecked(False)
+        self.daimond_2carat_checkBox.setChecked(False)
+        self.daimond_3carat_checkBox.setChecked(False)
+        self.daimond_4carat_checkBox.setChecked(False)
+        self.daimond_5carat_checkBox.setChecked(False)
+        self.daimond_round_checkBox.setChecked(False)
+        self.daimond_oval_checkBox.setChecked(False)
+        self.daimond_cushion_checkBox.setChecked(False)
+        self.daimond_princess_checkBox.setChecked(False)
+        self.daimond_radiant_checkBox.setChecked(False)
+        self.daimond_marquise_checkBox.setChecked(False)
+        self.daimond_cutting_other_checkBox.setChecked(False)
+        self.daimond_cutting_other_lineEdit.clear()
+        self.daimond_ring_checkBox.setChecked(False)
+        self.daimond_code_ring_lineEdit.clear()
+        self.daimond_necklace_checkBox.setChecked(False)
+        self.daimond_code_necklace_lineEdit.clear()
+        self.daimond_earing_checkBox.setChecked(False)
+        self.daimond_code_earing_lineEdit.clear()
+        self.daimond_color_textEdit.clear()
+        self.daimond_price_textEdit.clear()
+        self.daimond_remark_textEdit.clear()
+        
+        
+    def get_after_death_data(self)  -> list:
+        data = []
+        if self.select_infectioun.isChecked():
+            data.append(self.select_infectioun.text())
+        elif self.select_daimond.isChecked():
+            data.append(self.select_daimond.text())
+        elif self.select_carcass.isChecked():
+            data.append(self.select_carcass.text())
+        else:
+            data.append('None')
+        # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+        # data.append(self.laboratory_request_incineration_checkBox.isChecked())
+        data.append(self.laboratory_request_incineration_checkBox.text())
+        data.append(self.weight_tissues_lineEdit_2.text())
+        # data.append(self.laboratory_request_bone_checkBox.isChecked())
+        if self.laboratory_request_bone_checkBox.isChecked():
+            data.append(self.laboratory_request_bone_checkBox.text())
+        else:
+            data.append('')
+        # data.append(self.laboratory_request_cremation_checkBox.isChecked())
+        if self.laboratory_request_cremation_checkBox.isChecked():
+            data.append(self.laboratory_request_cremation_checkBox.text())
+        else:
+            data.append('')
+        data.append(self.laboratory_dateEdit.text())
+        data.append(self.laboratory_timeEdit.text())
+        # data.append(self.laboratory_request_daimond_checkBox.isChecked())
+        if self.laboratory_request_daimond_checkBox.isChecked():
+            data.append(self.laboratory_request_daimond_checkBox.text())
+        else:
+            data.append('')
+        # data.append(self.laboratory_carcass_fresh_checkBox.isChecked())  
+        if self.laboratory_carcass_fresh_checkBox.isChecked():
+            data.append(self.laboratory_carcass_fresh_checkBox.text())
+        else:
+            data.append('')
+        # data.append(self.laboratory_carcass_aytolysus_checkBox.isChecked())
+        if self.laboratory_carcass_aytolysus_checkBox.isChecked():
+            data.append(self.laboratory_carcass_aytolysus_checkBox.text())
+        else:
+            data.append('')
+        # data.append(self.laboratory_carcass_unknow_checkBox.isChecked())
+        if self.laboratory_carcass_unknow_checkBox.isChecked():
+            data.append(self.laboratory_carcass_unknow_checkBox.text())
+        else:
+            data.append('')
+        # data.append(self.laboratory_carcass_other_checkBox.isChecked())
+        data.append(self.laboratory_carcass_other_lineEdit.text())
+        # data.append(self.laboratory_place_necropy_checkBox_2.isChecked())
+        if self.laboratory_place_necropy_checkBox_2.isChecked():
+            data.append(self.laboratory_place_necropy_checkBox_2.text())
+        else:
+            data.append('')
+        # data.append(self.laboratory_place_other1_checkBox_2.isChecked())
+        data.append(self.laboratory_place_other1_lineEdit_2.text())
+        # data.append(self.laboratory_place_other2_checkBox_2.isChecked())
+        data.append(self.laboratory_place_other2_lineEdit_2.text())
+        data.append(self.note_textEdit.toPlainText())
+        
+        # data.append(self.infectioun_tissues_checkBox_2.isChecked())
+        if self.infectioun_tissues_checkBox_2.isChecked():
+            data.append(self.infectioun_tissues_checkBox_2.text())
+        else:
+            data.append('')
+        data.append(self.number_pack_tissues_lineEdit.text())
+        data.append(self.weight_tissues_lineEdit.text())
+        # data.append(self.infectioun_neddle_checkBox_2.isChecked())
+        if self.infectioun_neddle_checkBox_2.isChecked():
+            data.append(self.infectioun_neddle_checkBox_2.text())
+        else:
+            data.append('')
+        data.append(self.number_pack_needle_lineEdit.text())
+        data.append(self.weight_needle_lineEdit.text())
+        # data.append(self.infectioun_syringe_checkBox_2.isChecked())
+        if self.infectioun_syringe_checkBox_2.isChecked():
+            data.append(self.infectioun_syringe_checkBox_2.text())
+        else:
+            data.append('')
+        data.append(self.number_pack_syringe_lineEdit.text())
+        data.append(self.weight_syringe_lineEdit.text())
+        # data.append(self.infectioun_other1_checkBox_2.isChecked())
+        data.append(self.infectioun_other1_lineEdit_2.text())
+        data.append(self.number_pack_other1_lineEdit.text())
+        data.append(self.weight_other1_lineEdit.text())
+        # data.append(self.infectioun_other2_checkBox_2.isChecked())
+        data.append(self.infectioun_other2_lineEdit_2.text())
+        data.append(self.number_pack_other2_lineEdit.text())
+        data.append(self.weight_other2_lineEdit.text())
+        data.append(self.infectioun_remark_textEdit.toPlainText())
+        
+        # data.append(self.daimond_carcass_checkBox.isChecked())
+        if self.daimond_carcass_checkBox.isChecked():
+            data.append(self.daimond_carcass_checkBox.text())
+        else:
+            data.append('')
+        data.append(self.daimond_number_carcass_lineEdit.text())
+        data.append(self.daimond_weight_carcass_lineEdit.text())
+        # data.append(self.daimond_bone_checkBox.isChecked())
+        if self.daimond_bone_checkBox.isChecked():
+            data.append(self.daimond_bone_checkBox.text())
+        else:
+            data.append('')
+        data.append(self.daimond_number_bone_lineEdit.text())
+        data.append(self.daimond_weight_bone_lineEdit.text())
+        # data.append(self.daimond_hair_checkBox.isChecked())
+        if self.daimond_hair_checkBox.isChecked():
+            data.append(self.daimond_hair_checkBox.text())
+        else:
+            data.append('')
+        data.append(self.daimond_number_hair_lineEdit.text())
+        data.append(self.daimond_weight_hair_lineEdit.text())
+        # data.append(self.daimond_other1_checkBox.isChecked())
+        data.append(self.daimond_other1_lineEdit.text())
+        data.append(self.daimond_number_other1_lineEdit.text())
+        data.append(self.daimond_weight_other1_lineEdit.text())
+        data.append(self.daimond_other2_lineEdit.text())
+        # data.append(self.daimond_other2_checkBox.isChecked())
+        data.append(self.daimond_number_other2_lineEdit.text())
+        data.append(self.daimond_weight_other2_lineEdit.text())
+        # data.append(self.daimond_min_1carat_checkBox.isChecked())
+        if self.daimond_min_1carat_checkBox.isChecked():
+            data.append(self.daimond_min_1carat_checkBox.text())
+        else:
+            data.append('')
+        # data.append(self.daimond_1carat_checkBox.isChecked())
+        if self.daimond_1carat_checkBox.isChecked():
+            data.append(self.daimond_1carat_checkBox.text())
+        else:
+            data.append('')
+        # data.append(self.daimond_2carat_checkBox.isChecked())
+        if self.daimond_2carat_checkBox.isChecked():
+            data.append(self.daimond_2carat_checkBox.text())
+        else:
+            data.append('')
+        # data.append(self.daimond_3carat_checkBox.isChecked())
+        if self.daimond_3carat_checkBox.isChecked():
+            data.append(self.daimond_3carat_checkBox.text())
+        else:
+            data.append('')
+        # data.append(self.daimond_4carat_checkBox.isChecked())
+        if self.daimond_4carat_checkBox.isChecked():
+            data.append(self.daimond_4carat_checkBox.text())
+        else:
+            data.append('')
+        # data.append(self.daimond_5carat_checkBox.isChecked())
+        if self.daimond_5carat_checkBox.isChecked():
+            data.append(self.daimond_5carat_checkBox.text())
+        else:
+            data.append('')
+        # data.append(self.daimond_round_checkBox.isChecked())
+        if self.daimond_round_checkBox.isChecked():
+            data.append(self.daimond_round_checkBox.text())
+        else:
+            data.append('')
+        # data.append(self.daimond_oval_checkBox.isChecked())
+        if self.daimond_oval_checkBox.isChecked():
+            data.append(self.daimond_oval_checkBox.text())
+        else:
+            data.append('')
+        # data.append(self.daimond_cushion_checkBox.isChecked())
+        if self.daimond_cushion_checkBox.isChecked():
+            data.append(self.daimond_cushion_checkBox.text())
+        else:
+            data.append('')
+        # data.append(self.daimond_princess_checkBox.isChecked())
+        if self.daimond_princess_checkBox.isChecked():
+            data.append(self.daimond_princess_checkBox.text())
+        else:
+            data.append('')
+        # data.append(self.daimond_radiant_checkBox.isChecked())
+        if self.daimond_radiant_checkBox.isChecked():
+            data.append(self.daimond_radiant_checkBox.text())
+        else:
+            data.append('')
+        # data.append(self.daimond_marquise_checkBox.isChecked())
+        if self.daimond_marquise_checkBox.isChecked():
+            data.append(self.daimond_marquise_checkBox.text())
+        else:
+            data.append('')
+        # data.append(self.daimond_cutting_other_checkBox.isChecked())
+        data.append(self.daimond_cutting_other_lineEdit.text())
+        
+        # data.append(self.daimond_ring_checkBox.isChecked())
+        if self.daimond_ring_checkBox.isChecked():
+            data.append(self.daimond_ring_checkBox.text())
+        else:
+            data.append('')
+        data.append(self.daimond_code_ring_lineEdit.text())
+        # data.append(self.daimond_necklace_checkBox.isChecked())
+        if self.daimond_necklace_checkBox.isChecked():
+            data.append(self.daimond_necklace_checkBox.text())
+        else:
+            data.append('')
+        data.append(self.daimond_code_necklace_lineEdit.text())
+        # data.append(self.daimond_earing_checkBox.isChecked())
+        if self.daimond_earing_checkBox.isChecked():
+            data.append(self.daimond_earing_checkBox.text())
+        else:
+            data.append('')
+        data.append(self.daimond_code_earing_lineEdit.text())
+        data.append(self.daimond_color_textEdit.toPlainText())
+        data.append(self.daimond_price_textEdit.toPlainText())
+        data.append(self.daimond_remark_textEdit.toPlainText())
+        return data
     # =======================================================
+    
 
     def reload_new_job_page(self):
         """Reload the new job page."""
