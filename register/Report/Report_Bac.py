@@ -7,10 +7,20 @@ from PyPDF2 import PdfReader, PdfWriter
 from io import BytesIO 
 import os
 from ftplib import FTP
+import sys
 
-font_path = os.path.join(os.path.dirname(__file__), "models", "TH Niramit AS Bold.ttf")
-template_path = os.path.join(os.path.dirname(__file__), "Report","PDF","Bac_from.pdf")
-output_pdf_path = os.path.join(os.path.dirname(__file__), "Report","OUTPUT","BacReport.pdf")
+font_path = ""
+if getattr(sys, 'frozen', False):
+    # frozen
+    font_path = os.path.join(os.path.dirname(
+        sys.executable), "TH Niramit AS Bold.ttf")
+else:
+    # unfrozen
+    font_path = os.path.join(os.path.dirname(__file__), "TH Niramit AS Bold.ttf")
+pdfmetrics.registerFont(TTFont('TH Niramit AS Bold.ttf', font_path))
+
+template_path = os.path.join(os.path.dirname(__file__), "PDF","Bac_from.pdf")
+output_pdf_path = os.path.join(os.path.dirname(__file__), "OUTPUT","BacReport.pdf")
 
 ftp_username = "cvdtt"
 ftp_password = "cvdtt123"
@@ -130,23 +140,4 @@ def gen_pdf_output():
     # close the packet
     packet.close()
 
-
-# gen_pdf_output()
-
-# def upload_signature_to_server(self,file_path = ""):
-# if file_path != "":
-#     file_name = os.path.basename(file_path)
-# server_path = r"/home/cvdtt/CVDTT_Data/user_info/signature/"
-# server_signature_path = os.path.join(server_path,)
-session = FTP(main_ip,ftp_username,ftp_password)
-status = session.getwelcome()
-if "220" in status:
-    print("FTP connection is open")
-else:
-    print("FTP connection is closed")
-# print(session.getwelcome())   
-#         # file = open(file_path,'rb')                  # file to send
-#         # session.storbinary('STOR '+server_signature_path, file)     # send the file
-#         # file.close()                                    # close file and FTP
-#         # session.quit()
-
+gen_pdf_output()
