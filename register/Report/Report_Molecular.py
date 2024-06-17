@@ -19,8 +19,8 @@ else:
     font_path = os.path.join(os.path.dirname(__file__), "TH Niramit AS Bold.ttf")
 pdfmetrics.registerFont(TTFont('TH Niramit AS Bold.ttf', font_path))
 
-template_path = os.path.join(os.path.dirname(__file__), "PDF","Parasite_from.pdf")
-output_pdf_path = os.path.join(os.path.dirname(__file__), "OUTPUT","Parasite_Report.pdf")
+template_path = os.path.join(os.path.dirname(__file__), "PDF","Molecular_from.pdf")
+output_pdf_path = os.path.join(os.path.dirname(__file__), "OUTPUT","Molecular_Report.pdf")
 
 ftp_username = "cvdtt"
 ftp_password = "cvdtt123"
@@ -48,17 +48,16 @@ sex = "test_sex"
 sample_type = "test_sample_type"
 aeg = "test_aeg"
 result_page1 = "test result of sample 1234567890-12345678901234567890-234567890-"
-note_page1 = "test note page 1 0987654320987654321098765421"
 # page 2
 date_of_regiter_sample = "2021-01-01"
 date_of_test = "2021-01-02"
 date_of_report = "2021-01-03"
 result_page2 = "test result of sample 1234567890-12345678901234567890-234567890-"
-note_page2 = "test note page 2 0987654320987654321098765421"
-name_of_reporter = "(นาย ทดสอบ รายงาน)"
-position_of_reporter = "นักทดสอบรายงาน"
+description = "test description "
+resule_test = "test result"
 name_of_approve_reporter = "(นาย รับรอง รายงาน)"
 position_of_approve_reporter = "นักรับรองรายงาน"
+
 
 def create_canvas_for_page0():
     # Extract the customer information from the database
@@ -83,8 +82,6 @@ def create_canvas_for_page0():
     c.drawString(460, 565,sex)
     c.drawString(110, 543, sample_type)
     c.drawString(460, 543, aeg)
-    c.drawString(90, 500, result_page1)
-    c.drawString(90, 155, note_page1)
     c.save()
     packet.seek(0)
     return packet
@@ -102,11 +99,11 @@ def create_canvas_for_page1():
     c.drawString(300, 684, date_of_test)
     c.drawString(460, 684, date_of_report)
     c.drawString(90, 641, result_page2)
-    c.drawString(90, 293, note_page2)
-    c.drawString(112, 133, name_of_reporter)
-    c.drawString(123, 117, position_of_reporter)
-    c.drawString(375, 133, name_of_approve_reporter)
-    c.drawString(385, 117, position_of_approve_reporter)
+    c.drawString(90, 485, description)
+    c.drawString(90, 300, resule_test)
+    c.drawString(360, 105, name_of_approve_reporter)
+    c.drawString(370, 90, position_of_approve_reporter)
+
     c.save()
     packet.seek(0)
     return packet
