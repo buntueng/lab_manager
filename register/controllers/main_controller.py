@@ -22,6 +22,7 @@ class Main_Controller:
 
         self.all_customer_names = []
         self.all_employee_names = []
+        self.user_sign_out()
 
     def event_bindings(self):
         """Event bindings for the main view"""
