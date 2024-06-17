@@ -123,8 +123,8 @@ class MainAppView(QMainWindow, Ui_main_app_view):
     # ==================== login page ====================
     def show_login_page(self):
         """Show the login page."""
-        # self.stackedWidget.setCurrentIndex(0)
-        self.stackedWidget.setCurrentIndex(17) # test only
+        self.stackedWidget.setCurrentIndex(0)
+        # self.stackedWidget.setCurrentIndex(17) # test only
 
     # ==================== customer register page ====================
     def show_customer_register_page(self):
