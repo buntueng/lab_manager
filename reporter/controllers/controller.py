@@ -1,15 +1,16 @@
 import logging
-import logging.config
 from PySide6.QtWidgets import QMessageBox
 import os
 import yaml
+from controllers.parasite_page_controller import bind_event_parasite_page
+
 
 
 class ReportController:
     """ Report controller class. This class is responsible for handling the report view events. """
 
-    def __init__(self, report_view, report_model, logger) -> None:
-        self.logger = logger
+    def __init__(self, report_view, report_model) -> None:
+        self.logger = logging.getLogger(self.__class__.__name__)
 
         self.view = report_view
         self.model = report_model
@@ -26,7 +27,7 @@ class ReportController:
         self.bind_event_in_bacteria_page()
         self.bind_event_in_bacteria_virtek_page()
         self.bind_event_in_micro_bio_page()
-        self.bind_event_in_parasite_page()
+        bind_event_parasite_page(self)
         self.bind_event_in_water_quality_page()
         self.bind_event_in_food_quality_page()
         self.bind_event_in_sperm_quality_page()
@@ -66,9 +67,10 @@ class ReportController:
     def bind_events_in_login_page(self):
         """ Bind events in login page """
         self.view.login_pushButton.clicked.connect(self.login_button_clicked)
+        self.view.login_password_lineEdit.returnPressed.connect(self.login_button_clicked)
 
     def bind_event_in_bacteria_page(self):
-        pass
+        self.logger.debug("Bind event in bacteria page")
 
     def bind_event_in_bacteria_virtek_page(self):
         pass

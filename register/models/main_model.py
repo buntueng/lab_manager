@@ -6,7 +6,6 @@ import time
 import mariadb
 from PySide6.QtWidgets import QMessageBox
 
-
 class Main_Model:
     """Main Model class"""
 
@@ -41,13 +40,6 @@ class Main_Model:
         # today_sticker = [["24-03-2024 10:00:00", "660000000001", "Avine",
         #                  "D304(BAC)", "ไม่แช่เย็น (Chill)", "ด่วนที่สุด", "หมายเหตุ"]]
         return today_sticker
-
-    def user_sign_in(self, username, password):
-        # select user_info from the database in talbe employee where username and password are equal to the given username and password
-        sql_cmd = self.sql_cmd["user_sign_in"]
-        data = (username, password)
-        login_info = self.select_login_data(sql_cmd, data)
-        return login_info
 
     def select_data(self, sql_cmd, info) -> list:
         """Select data from the database"""

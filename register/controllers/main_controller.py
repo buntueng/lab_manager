@@ -8,6 +8,8 @@ from models.order_detail_pdf import create_parasite_biology, create_bacteriology
 import tempfile
 import os
 
+from controllers.login_page_controller import login_page_event_bindings, user_sign_out
+
 
 class Main_Controller:
     """Main Controller class"""
@@ -22,14 +24,11 @@ class Main_Controller:
 
         self.all_customer_names = []
         self.all_employee_names = []
-        self.user_sign_out()
+        user_sign_out(self)
 
     def event_bindings(self):
+        login_page_event_bindings(self)
         """Event bindings for the main view"""
-        self.view.login_pushButton.clicked.connect(self.user_sign_in)
-        # bind enter key in login page
-        self.view.password_lineEdit.returnPressed.connect(self.user_sign_in)
-        self.view.sign_out_pushButton.clicked.connect(self.user_sign_out)
 
         self.view.customer_reg_pushButton.clicked.connect(
             self.view.show_customer_register_page)
@@ -917,52 +916,7 @@ class Main_Controller:
 
         # generate barcode
 
-    def user_sign_in(self):
-        """User sign in method"""
-        # get username and password from the view
-        username = self.view.username_lineEdit.text()
-        password = self.view.password_lineEdit.text()
-
-        # if username and password are not empty
-        if username != "" and password != "":
-            self.view.clear_user_and_password()
-            login_info = self.model.user_sign_in(username, password)
-            if login_info:
-                self.user_login_info = login_info
-                current_name = login_info[0][3] + " " + \
-                    login_info[0][4] + " " + login_info[0][5]
-                self.view.show_current_user_information(current_name)
-                self.view.enable_all_buttons()
-                # self.view.show_molecular_biology_page()
-                self.all_customer_names = self.model.get_all_customer_names()
-                self.view.show_job_register_page()
-
-        elif username == "" and password != "":
-            self.view.username_lineEdit.setFocus()
-            QMessageBox.critical(self.view, "Error",
-                                 "Username cannot be empty")
-            # show message
-        elif username != "" and password == "":
-            self.view.password_lineEdit.setFocus()
-            # show message
-            QMessageBox.critical(self.view, "Error",
-                                 "Password cannot be empty")
-        else:
-            self.view.username_lineEdit.setFocus()
-            # show message
-            QMessageBox.critical(self.view, "Error",
-                                 "Username and Password cannot be empty")
-
-    def user_sign_out(self):
-        """User sign out method"""
-        self.view.clear_user_and_password()
-        self.view.clear_information()
-        self.user_login_info = []
-        # disable all buttons
-        self.view.disable_all_buttons()
-        self.view.show_login_page()
-        # clear user information on top right corner
-        self.view.clear_current_user_information()
+    
 
     def reload_new_job_page(self):
         """Reload specimen page"""

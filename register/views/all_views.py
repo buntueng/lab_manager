@@ -6,6 +6,9 @@ from PySide6.QtWidgets import QTreeWidgetItem
 import re
 
 
+from views.login_page_view import clear_user_and_password
+
+
 class MainAppView(QMainWindow, Ui_main_app_view):
     """"Main application view. Inherits from QMainWindow and Ui_main_app_view."""
 
@@ -98,15 +101,9 @@ class MainAppView(QMainWindow, Ui_main_app_view):
 
     def clear_information(self):
         """Clear information in the main page."""
-        self.clear_user_and_password()
+        clear_user_and_password(self)
 
     # ==================== login page ====================
-
-    def clear_user_and_password(self):
-        """Clear username and password in login page."""
-        self.username_lineEdit.clear()
-        self.password_lineEdit.clear()
-
     # page order follow the order in the stacked widget
     # Index0 - login page
     # Index1 - new customer page

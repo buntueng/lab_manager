@@ -19,15 +19,15 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>201</width>
+      <width>191</width>
       <height>861</height>
      </rect>
     </property>
     <property name="frameShape">
-     <enum>QFrame::StyledPanel</enum>
+     <enum>QFrame::Shape::StyledPanel</enum>
     </property>
     <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
+     <enum>QFrame::Shadow::Raised</enum>
     </property>
     <widget class="QLabel" name="main_menu_label">
      <property name="geometry">
@@ -49,7 +49,7 @@
       <string>สร้างรายงาน</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignCenter</set>
+      <set>Qt::AlignmentFlag::AlignCenter</set>
      </property>
     </widget>
     <widget class="QPushButton" name="serum_pushButton">
@@ -57,7 +57,7 @@
       <rect>
        <x>10</x>
        <y>40</y>
-       <width>181</width>
+       <width>171</width>
        <height>41</height>
       </rect>
      </property>
@@ -77,7 +77,7 @@
       <rect>
        <x>10</x>
        <y>90</y>
-       <width>181</width>
+       <width>171</width>
        <height>41</height>
       </rect>
      </property>
@@ -97,7 +97,7 @@
       <rect>
        <x>10</x>
        <y>750</y>
-       <width>181</width>
+       <width>171</width>
        <height>41</height>
       </rect>
      </property>
@@ -113,7 +113,7 @@
       <rect>
        <x>10</x>
        <y>810</y>
-       <width>181</width>
+       <width>171</width>
        <height>41</height>
       </rect>
      </property>
@@ -129,7 +129,7 @@
       <rect>
        <x>10</x>
        <y>190</y>
-       <width>181</width>
+       <width>171</width>
        <height>41</height>
       </rect>
      </property>
@@ -149,7 +149,7 @@
       <rect>
        <x>10</x>
        <y>240</y>
-       <width>181</width>
+       <width>171</width>
        <height>41</height>
       </rect>
      </property>
@@ -169,7 +169,7 @@
       <rect>
        <x>10</x>
        <y>290</y>
-       <width>181</width>
+       <width>171</width>
        <height>41</height>
       </rect>
      </property>
@@ -189,7 +189,7 @@
       <rect>
        <x>10</x>
        <y>140</y>
-       <width>181</width>
+       <width>171</width>
        <height>41</height>
       </rect>
      </property>
@@ -209,7 +209,7 @@
       <rect>
        <x>10</x>
        <y>340</y>
-       <width>181</width>
+       <width>171</width>
        <height>41</height>
       </rect>
      </property>
@@ -229,7 +229,7 @@
       <rect>
        <x>10</x>
        <y>390</y>
-       <width>181</width>
+       <width>171</width>
        <height>41</height>
       </rect>
      </property>
@@ -249,7 +249,7 @@
       <rect>
        <x>10</x>
        <y>440</y>
-       <width>181</width>
+       <width>171</width>
        <height>41</height>
       </rect>
      </property>
@@ -269,7 +269,7 @@
       <rect>
        <x>10</x>
        <y>490</y>
-       <width>181</width>
+       <width>171</width>
        <height>41</height>
       </rect>
      </property>
@@ -289,7 +289,7 @@
       <rect>
        <x>10</x>
        <y>540</y>
-       <width>181</width>
+       <width>171</width>
        <height>41</height>
       </rect>
      </property>
@@ -308,29 +308,32 @@
    <widget class="QFrame" name="working_frame">
     <property name="geometry">
      <rect>
-      <x>220</x>
+      <x>200</x>
       <y>10</y>
-      <width>1111</width>
+      <width>1141</width>
       <height>861</height>
      </rect>
     </property>
     <property name="frameShape">
-     <enum>QFrame::StyledPanel</enum>
+     <enum>QFrame::Shape::StyledPanel</enum>
     </property>
     <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
+     <enum>QFrame::Shadow::Raised</enum>
     </property>
     <widget class="QStackedWidget" name="stackedWidget">
      <property name="geometry">
       <rect>
-       <x>0</x>
-       <y>150</y>
-       <width>1101</width>
-       <height>711</height>
+       <x>10</x>
+       <y>40</y>
+       <width>1131</width>
+       <height>821</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
      <property name="currentIndex">
-      <number>1</number>
+      <number>5</number>
      </property>
      <widget class="QWidget" name="login_page">
       <widget class="QLabel" name="login_username_label">
@@ -405,10 +408,10 @@
         <string notr="true">background-color: rgb(0,180, 0);</string>
        </property>
        <property name="frameShape">
-        <enum>QFrame::StyledPanel</enum>
+        <enum>QFrame::Shape::StyledPanel</enum>
        </property>
        <property name="frameShadow">
-        <enum>QFrame::Raised</enum>
+        <enum>QFrame::Shadow::Raised</enum>
        </property>
       </widget>
       <zorder>frame</zorder>
@@ -508,7 +511,7 @@
       <widget class="QLabel" name="label_3">
        <property name="geometry">
         <rect>
-         <x>0</x>
+         <x>20</x>
          <y>0</y>
          <width>141</width>
          <height>41</height>
@@ -525,15 +528,62 @@
         <string>รายงานอณูชีววิทยา</string>
        </property>
       </widget>
-     </widget>
-     <widget class="QWidget" name="parasite_page">
-      <widget class="QLabel" name="label_4">
+      <widget class="QTreeWidget" name="treeWidget_2">
        <property name="geometry">
         <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>131</width>
-         <height>41</height>
+         <x>20</x>
+         <y>50</y>
+         <width>941</width>
+         <height>181</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>TH Niramit AS</family>
+         <pointsize>16</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <column>
+        <property name="text">
+         <string>วันที่รับเคส</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>หมายเลขการตรวจ</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>ชนิดสัตว์</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>ห้องปฏิบัติการ</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>การเก็บรักษา</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>ระดับความเร่งด่วน</string>
+        </property>
+       </column>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="parasite_page">
+      <widget class="QLabel" name="parasitePageLabel">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>190</y>
+         <width>281</width>
+         <height>31</height>
         </rect>
        </property>
        <property name="font">
@@ -544,7 +594,242 @@
         </font>
        </property>
        <property name="text">
-        <string>รายงานปรสิตวิทยา</string>
+        <string>ผลการตรวจทางห้องปฏิบัติการปรสิตวิทยา</string>
+       </property>
+      </widget>
+      <widget class="QTreeWidget" name="parasiteTreeWidget">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>20</y>
+         <width>951</width>
+         <height>111</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>TH Niramit AS</family>
+         <pointsize>14</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+       <column>
+        <property name="text">
+         <string>วันที่รับเคส</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>หมายเลขการตรวจ</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>ชนิดสัตว์</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>ห้องปฏิบัติการ</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>การเก็บรักษา</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>ระดับความเร่งด่วน</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>สถานะ</string>
+        </property>
+       </column>
+      </widget>
+      <widget class="QPushButton" name="parasiteSearchPushButton">
+       <property name="geometry">
+        <rect>
+         <x>980</x>
+         <y>20</y>
+         <width>141</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>TH Niramit AS</family>
+         <pointsize>16</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>ค้นหา</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="parasiteSelectPushButton">
+       <property name="geometry">
+        <rect>
+         <x>980</x>
+         <y>80</y>
+         <width>141</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>TH Niramit AS</family>
+         <pointsize>16</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>เลือกเคส</string>
+       </property>
+      </widget>
+      <widget class="QTextEdit" name="parasiteCaseIDTextEdit">
+       <property name="geometry">
+        <rect>
+         <x>170</x>
+         <y>140</y>
+         <width>271</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="parasiteCaseNumberLabel">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>150</y>
+         <width>121</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>TH Niramit AS</family>
+         <pointsize>16</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>หมายเลขการตรวจ</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="parasiteSavePushButton">
+       <property name="geometry">
+        <rect>
+         <x>980</x>
+         <y>300</y>
+         <width>141</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>TH Niramit AS</family>
+         <pointsize>16</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>บันทึกข้อมูล</string>
+       </property>
+      </widget>
+      <widget class="QTextEdit" name="parasiteResultTextEdit">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>230</y>
+         <width>941</width>
+         <height>451</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>TH Sarabun New</family>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="commentLabel">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>700</y>
+         <width>91</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>TH Niramit AS</family>
+         <pointsize>16</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>หมายเหตุ</string>
+       </property>
+      </widget>
+      <widget class="QTextEdit" name="parasiteCommentTextEdit">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>730</y>
+         <width>941</width>
+         <height>71</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="parasiteInsertImagePushButton">
+       <property name="geometry">
+        <rect>
+         <x>980</x>
+         <y>230</y>
+         <width>141</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>TH Niramit AS</family>
+         <pointsize>16</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>เพิ่มรูป</string>
        </property>
       </widget>
      </widget>
@@ -723,80 +1008,8 @@
       <string>TextLabel</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
-    </widget>
-    <widget class="QFrame" name="search_frame">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>30</y>
-       <width>1101</width>
-       <height>111</height>
-      </rect>
-     </property>
-     <property name="frameShape">
-      <enum>QFrame::StyledPanel</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Raised</enum>
-     </property>
-     <widget class="QLabel" name="label_12">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>10</y>
-        <width>151</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>TH Niramit AS</family>
-        <pointsize>16</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="text">
-       <string>รหัสบาร์โคดสิ่งส่งตรวจ</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lineEdit">
-      <property name="geometry">
-       <rect>
-        <x>170</x>
-        <y>10</y>
-        <width>251</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Times New Roman</family>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton">
-      <property name="geometry">
-       <rect>
-        <x>440</x>
-        <y>10</y>
-        <width>131</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>TH Niramit AS</family>
-        <pointsize>16</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="text">
-       <string>ค้นหา</string>
-      </property>
-     </widget>
     </widget>
    </widget>
   </widget>

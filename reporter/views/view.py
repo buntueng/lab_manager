@@ -1,20 +1,25 @@
 from PySide6.QtWidgets import QMainWindow, QLineEdit, QMessageBox
 from views.main_view import Ui_MainWindow
 import logging
-import logging.config
 import os
+from views.parasite_form_view import initial_parasite_form, parasite_clear_form
 
 
 class MainView(Ui_MainWindow, QMainWindow):
     """ Main UI class: Handle the main UI of the reporter application """
 
     def __init__(self):
+        self.logger = logging.getLogger(self.__class__.__name__)
         super(MainView, self).__init__()
         self.setupUi(self)
         self.login_password_lineEdit.setEchoMode(QLineEdit.EchoMode.Password)
         self.reset_widgets_state()
-        self.search_frame.hide()
         
+        self.logger.info("MainView initialized")
+        
+        # ========= detail in parasite_form_handler.py ===================
+        initial_parasite_form(self)
+        # ================================================================
 
     def reset_widgets_state(self):
         """ Reset widgets state """
@@ -56,7 +61,7 @@ class MainView(Ui_MainWindow, QMainWindow):
         self.bacteria_clear_form()
         self.bacteria_virtek_clear_form()
         self.micro_bio_clear_form()
-        self.parasite_clear_form()
+        parasite_clear_form(self)
         self.water_quality_clear_form()
         self.food_quality_clear_form()
         self.sperm_quality_clear_form()
@@ -79,10 +84,6 @@ class MainView(Ui_MainWindow, QMainWindow):
     
     def micro_bio_clear_form(self):
         """ Clear micro bio form """
-        pass
-    
-    def parasite_clear_form(self):
-        """ Clear parasite form """
         pass
     
     def water_quality_clear_form(self):
@@ -122,3 +123,4 @@ class MainView(Ui_MainWindow, QMainWindow):
             event.accept()
         else:
             event.ignore()
+    

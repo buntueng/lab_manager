@@ -1,0 +1,2869 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Service_after_death</class>
+ <widget class="QMainWindow" name="Service_after_death">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1560</width>
+    <height>770</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1560</width>
+    <height>770</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1560</width>
+    <height>770</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background:rgb(135, 255, 191)</string>
+  </property>
+  <widget class="QWidget" name="Service_after_death_window">
+   <widget class="QLabel" name="Main_header_label">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>5</y>
+      <width>1031</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>TH Niramit AS</family>
+      <pointsize>20</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgb(255, 255, 255)</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::Box</enum>
+    </property>
+    <property name="lineWidth">
+     <number>3</number>
+    </property>
+    <property name="text">
+     <string>งานบริการหลังความตาย</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QFrame" name="select_frame">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>60</y>
+      <width>1031</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgb(255, 255, 255)</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::Box</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Plain</enum>
+    </property>
+    <property name="lineWidth">
+     <number>3</number>
+    </property>
+    <widget class="QRadioButton" name="select_carcass">
+     <property name="geometry">
+      <rect>
+       <x>461</x>
+       <y>10</y>
+       <width>161</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>18</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>เผาซาก</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="select_daimond">
+     <property name="geometry">
+      <rect>
+       <x>800</x>
+       <y>10</y>
+       <width>161</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>18</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>อัญมณี</string>
+     </property>
+    </widget>
+    <widget class="Line" name="select_line1">
+     <property name="geometry">
+      <rect>
+       <x>343</x>
+       <y>0</y>
+       <width>3</width>
+       <height>67</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:rgb(0, 0, 0)</string>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="select_infectioun">
+     <property name="geometry">
+      <rect>
+       <x>81</x>
+       <y>10</y>
+       <width>181</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>18</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>ขยะติดเชื้อ</string>
+     </property>
+    </widget>
+    <widget class="Line" name="select_line2">
+     <property name="geometry">
+      <rect>
+       <x>686</x>
+       <y>0</y>
+       <width>3</width>
+       <height>67</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:rgb(0, 0, 0)</string>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="infectioun_frame">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>140</y>
+      <width>1031</width>
+      <height>211</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgb(255, 255, 255)</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::Box</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Plain</enum>
+    </property>
+    <property name="lineWidth">
+     <number>3</number>
+    </property>
+    <widget class="QCheckBox" name="infectioun_tissues_checkBox">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>50</y>
+       <width>251</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>เนื้อเยื้อติดเชื้อ(Infectioun Tissues)</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="infectioun_neddle_checkBox">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>80</y>
+       <width>231</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>เข็มติดเชื้อ(Infectioun Needle)</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="infectioun_syringe_checkBox">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>110</y>
+       <width>251</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>ไซริงค์ติดเชื้อ(Infectioun Syringe)</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="infectioun_other1_checkBox">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>140</y>
+       <width>21</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>14</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="infectioun_other2_checkBox">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>170</y>
+       <width>21</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>14</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="infectioun_other1_lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>140</y>
+       <width>221</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="infectioun_other2_lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>170</y>
+       <width>221</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+    </widget>
+    <widget class="Line" name="infectioun_line1">
+     <property name="geometry">
+      <rect>
+       <x>2</x>
+       <y>40</y>
+       <width>1026</width>
+       <height>3</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:rgb(0, 0, 0)</string>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="infectioun_type_label">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>5</y>
+       <width>171</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>ประเภทขยะติดเชื้อ</string>
+     </property>
+    </widget>
+    <widget class="Line" name="infectioun_line2">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>0</y>
+       <width>3</width>
+       <height>210</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:rgb(0, 0, 0)</string>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="infectioun_line3">
+     <property name="geometry">
+      <rect>
+       <x>470</x>
+       <y>0</y>
+       <width>3</width>
+       <height>210</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:rgb(0, 0, 0)</string>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="infectioun_number_of_pack_label">
+     <property name="geometry">
+      <rect>
+       <x>370</x>
+       <y>5</y>
+       <width>81</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>จำนวนถุง</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="infectioun_weight_label">
+     <property name="geometry">
+      <rect>
+       <x>483</x>
+       <y>5</y>
+       <width>101</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>น้ำหนัก(KG)</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="number_pack_tissues_lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>370</x>
+       <y>50</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="number_pack_needle_lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>370</x>
+       <y>80</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="number_pack_syringe_lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>370</x>
+       <y>110</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="number_pack_other1_lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>370</x>
+       <y>140</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="number_pack_other2_lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>370</x>
+       <y>170</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="Line" name="infectioun_line4">
+     <property name="geometry">
+      <rect>
+       <x>585</x>
+       <y>0</y>
+       <width>3</width>
+       <height>210</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:rgb(0, 0, 0)</string>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="weight_tissues_lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>490</x>
+       <y>50</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="weight_needle_lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>490</x>
+       <y>80</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="weight_syringe_lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>490</x>
+       <y>110</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="weight_other1_lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>490</x>
+       <y>140</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="weight_other2_lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>490</x>
+       <y>170</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="infectioun_remark_label">
+     <property name="geometry">
+      <rect>
+       <x>760</x>
+       <y>5</y>
+       <width>81</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>REMARK</string>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="infectioun_remark_textEdit">
+     <property name="geometry">
+      <rect>
+       <x>592</x>
+       <y>45</y>
+       <width>431</width>
+       <height>161</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>20</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Shape::Box</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Shadow::Plain</enum>
+     </property>
+    </widget>
+    <zorder>infectioun_remark_label</zorder>
+    <zorder>infectioun_weight_label</zorder>
+    <zorder>infectioun_number_of_pack_label</zorder>
+    <zorder>infectioun_type_label</zorder>
+    <zorder>infectioun_tissues_checkBox</zorder>
+    <zorder>infectioun_neddle_checkBox</zorder>
+    <zorder>infectioun_syringe_checkBox</zorder>
+    <zorder>infectioun_other1_checkBox</zorder>
+    <zorder>infectioun_other2_checkBox</zorder>
+    <zorder>infectioun_other1_lineEdit</zorder>
+    <zorder>infectioun_other2_lineEdit</zorder>
+    <zorder>infectioun_line1</zorder>
+    <zorder>infectioun_line2</zorder>
+    <zorder>infectioun_line3</zorder>
+    <zorder>number_pack_tissues_lineEdit</zorder>
+    <zorder>number_pack_needle_lineEdit</zorder>
+    <zorder>number_pack_syringe_lineEdit</zorder>
+    <zorder>number_pack_other1_lineEdit</zorder>
+    <zorder>number_pack_other2_lineEdit</zorder>
+    <zorder>infectioun_line4</zorder>
+    <zorder>weight_tissues_lineEdit</zorder>
+    <zorder>weight_needle_lineEdit</zorder>
+    <zorder>weight_syringe_lineEdit</zorder>
+    <zorder>weight_other1_lineEdit</zorder>
+    <zorder>weight_other2_lineEdit</zorder>
+    <zorder>infectioun_remark_textEdit</zorder>
+   </widget>
+   <widget class="QLabel" name="infectioun_label">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>110</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>TH Niramit AS</family>
+      <pointsize>18</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>ขยะติดเชื้อ</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="daimond_label">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>380</y>
+      <width>61</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>TH Niramit AS</family>
+      <pointsize>16</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>อัญมณี</string>
+    </property>
+   </widget>
+   <widget class="QFrame" name="daimond_frame">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>420</y>
+      <width>1031</width>
+      <height>351</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgb(255, 255, 255)</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::Box</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Plain</enum>
+    </property>
+    <property name="lineWidth">
+     <number>3</number>
+    </property>
+    <widget class="Line" name="daimond_line1">
+     <property name="geometry">
+      <rect>
+       <x>2</x>
+       <y>40</y>
+       <width>1026</width>
+       <height>3</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:rgb(0, 0, 0)</string>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="daimond_type_label">
+     <property name="geometry">
+      <rect>
+       <x>65</x>
+       <y>5</y>
+       <width>141</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>ประเภทตัวอย่าง</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="daimond_carcass_checkBox">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>50</y>
+       <width>161</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>ซากสัตว์(Carcass)</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="daimond_bone_checkBox">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>80</y>
+       <width>161</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>กระดูกสัตว์(Bone)</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="daimond_hair_checkBox">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>110</y>
+       <width>161</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>ขนสัตว์(Hair/feather)</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="daimond_other1_checkBox">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>140</y>
+       <width>21</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>14</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="daimond_other1_lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>140</y>
+       <width>161</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="daimond_other2_checkBox">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>170</y>
+       <width>21</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>14</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="daimond_other2_lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>170</y>
+       <width>161</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+    </widget>
+    <widget class="Line" name="daimond_line3">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>0</y>
+       <width>3</width>
+       <height>210</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:rgb(0, 0, 0)</string>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="daimond_line4">
+     <property name="geometry">
+      <rect>
+       <x>360</x>
+       <y>0</y>
+       <width>3</width>
+       <height>210</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:rgb(0, 0, 0)</string>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="daimond_line5">
+     <property name="geometry">
+      <rect>
+       <x>470</x>
+       <y>0</y>
+       <width>3</width>
+       <height>210</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:rgb(0, 0, 0)</string>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="daimond_number_label">
+     <property name="geometry">
+      <rect>
+       <x>285</x>
+       <y>5</y>
+       <width>61</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>จำนวน</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="daimond_weight_label">
+     <property name="geometry">
+      <rect>
+       <x>366</x>
+       <y>5</y>
+       <width>101</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>น้ำหนัก(KG)</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="daimond_number_carcass_lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>50</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="daimond_number_bone_lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>80</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="daimond_number_hair_lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>110</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="daimond_number_other1_lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>140</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="daimond_number_other2_lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>170</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="daimond_weight_carcass_lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>375</x>
+       <y>50</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="daimond_weight_bone_lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>375</x>
+       <y>80</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="daimond_weight_hair_lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>375</x>
+       <y>110</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="daimond_weight_other1_lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>375</x>
+       <y>140</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="daimond_weight_other2_lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>375</x>
+       <y>170</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="Line" name="daimond_line2">
+     <property name="geometry">
+      <rect>
+       <x>3</x>
+       <y>210</y>
+       <width>470</width>
+       <height>3</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:rgb(0, 0, 0)</string>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="daimond_option_selection_label">
+     <property name="geometry">
+      <rect>
+       <x>480</x>
+       <y>5</y>
+       <width>541</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>งานบริการจากความรักสู่อัญมณี(Daimond of the memory)</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="daimond_size_label">
+     <property name="geometry">
+      <rect>
+       <x>480</x>
+       <y>40</y>
+       <width>51</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>ขนาด</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="daimond_min_1carat_checkBox">
+     <property name="geometry">
+      <rect>
+       <x>480</x>
+       <y>80</y>
+       <width>161</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>14</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>&lt;1 carat (4700)</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="daimond_1carat_checkBox">
+     <property name="geometry">
+      <rect>
+       <x>660</x>
+       <y>80</y>
+       <width>161</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>14</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>1 carat 6.4 mm (5800)</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="daimond_2carat_checkBox">
+     <property name="geometry">
+      <rect>
+       <x>850</x>
+       <y>80</y>
+       <width>161</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>14</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>2 carat 8.1 mm (6800)</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="daimond_3carat_checkBox">
+     <property name="geometry">
+      <rect>
+       <x>480</x>
+       <y>110</y>
+       <width>181</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>14</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>3 carat 9.3 mm (7900)</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="daimond_4carat_checkBox">
+     <property name="geometry">
+      <rect>
+       <x>660</x>
+       <y>110</y>
+       <width>171</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>14</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>4 carat 10.2 mm (9000)</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="daimond_5carat_checkBox">
+     <property name="geometry">
+      <rect>
+       <x>850</x>
+       <y>110</y>
+       <width>171</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>14</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>5 carat 11.0 mm (10100)</string>
+     </property>
+    </widget>
+    <widget class="Line" name="daimond_line6">
+     <property name="geometry">
+      <rect>
+       <x>470</x>
+       <y>70</y>
+       <width>70</width>
+       <height>3</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:rgb(0, 0, 0)</string>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="daimond_line7">
+     <property name="geometry">
+      <rect>
+       <x>540</x>
+       <y>40</y>
+       <width>3</width>
+       <height>33</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:rgb(0, 0, 0)</string>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="daimond_line11">
+     <property name="geometry">
+      <rect>
+       <x>470</x>
+       <y>140</y>
+       <width>558</width>
+       <height>3</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:rgb(0, 0, 0)</string>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="daimond_cutting_label">
+     <property name="geometry">
+      <rect>
+       <x>480</x>
+       <y>140</y>
+       <width>61</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>รูปทรง</string>
+     </property>
+    </widget>
+    <widget class="Line" name="daimond_line9">
+     <property name="geometry">
+      <rect>
+       <x>470</x>
+       <y>170</y>
+       <width>70</width>
+       <height>3</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:rgb(0, 0, 0)</string>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="daimond_line8">
+     <property name="geometry">
+      <rect>
+       <x>540</x>
+       <y>140</y>
+       <width>3</width>
+       <height>33</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:rgb(0, 0, 0)</string>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="daimond_round_checkBox">
+     <property name="geometry">
+      <rect>
+       <x>560</x>
+       <y>150</y>
+       <width>101</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>14</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>กลม(round)</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="daimond_oval_checkBox">
+     <property name="geometry">
+      <rect>
+       <x>670</x>
+       <y>150</y>
+       <width>71</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>14</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>รี(oval)</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="daimond_princess_checkBox">
+     <property name="geometry">
+      <rect>
+       <x>750</x>
+       <y>150</y>
+       <width>141</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>14</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>สี่เหลี่ยม(princess)</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="daimond_radiant_checkBox">
+     <property name="geometry">
+      <rect>
+       <x>480</x>
+       <y>180</y>
+       <width>161</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>14</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>สี่เหลี่ยมผืนผ้า(radiant)</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="daimond_cushion_checkBox">
+     <property name="geometry">
+      <rect>
+       <x>890</x>
+       <y>150</y>
+       <width>137</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>14</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>ทรงหมอน(cushion)</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="daimond_marquise_checkBox">
+     <property name="geometry">
+      <rect>
+       <x>650</x>
+       <y>180</y>
+       <width>161</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>14</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>ทรงมาร์คีย์(marquise)</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="daimond_cutting_other_checkBox">
+     <property name="geometry">
+      <rect>
+       <x>810</x>
+       <y>180</y>
+       <width>51</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>14</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>อื่นๆ</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="daimond_cutting_other_lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>860</x>
+       <y>175</y>
+       <width>161</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>14</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="Line" name="daimond_line10">
+     <property name="geometry">
+      <rect>
+       <x>470</x>
+       <y>210</y>
+       <width>558</width>
+       <height>3</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:rgb(0, 0, 0)</string>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="daimond_line16">
+     <property name="geometry">
+      <rect>
+       <x>360</x>
+       <y>210</y>
+       <width>3</width>
+       <height>36</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:rgb(0, 0, 0)</string>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="daimond_line15">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>243</y>
+       <width>1028</width>
+       <height>3</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:rgb(0, 0, 0)</string>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="daimond_accessories_label">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>215</y>
+       <width>231</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>เครื่องประดับ(Accessories)</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="daimond_ring_checkBox">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>260</y>
+       <width>231</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>14</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>แหวน (ring)               รหัส(CODE)</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="daimond_necklace_checkBox">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>290</y>
+       <width>231</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>14</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>สร้อนคอ (necklace)    รหัส(CODE)</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="daimond_earing_checkBox">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>320</y>
+       <width>231</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>14</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>ต่างหู (earing)            รหัส(CODE)</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="daimond_code_ring_lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>250</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="daimond_code_necklace_lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>280</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="daimond_code_earing_lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>310</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="Line" name="daimond_line12">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>245</y>
+       <width>3</width>
+       <height>105</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:rgb(0, 0, 0)</string>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="daimond_line13">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>245</y>
+       <width>3</width>
+       <height>105</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:rgb(0, 0, 0)</string>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="daimond_line14">
+     <property name="geometry">
+      <rect>
+       <x>360</x>
+       <y>245</y>
+       <width>3</width>
+       <height>105</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:rgb(0, 0, 0)</string>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="daimond_color_label">
+     <property name="geometry">
+      <rect>
+       <x>380</x>
+       <y>215</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>สี(color)</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="daimond_price_label">
+     <property name="geometry">
+      <rect>
+       <x>490</x>
+       <y>215</y>
+       <width>101</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>ราคา(price)</string>
+     </property>
+    </widget>
+    <widget class="Line" name="daimond_line19">
+     <property name="geometry">
+      <rect>
+       <x>470</x>
+       <y>210</y>
+       <width>3</width>
+       <height>140</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:rgb(0, 0, 0)</string>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="daimond_line18">
+     <property name="geometry">
+      <rect>
+       <x>600</x>
+       <y>210</y>
+       <width>3</width>
+       <height>140</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:rgb(0, 0, 0)</string>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="daimond_color_textEdit">
+     <property name="geometry">
+      <rect>
+       <x>363</x>
+       <y>246</y>
+       <width>107</width>
+       <height>103</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Shape::Box</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Shadow::Plain</enum>
+     </property>
+     <property name="lineWidth">
+      <number>3</number>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="daimond_price_textEdit">
+     <property name="geometry">
+      <rect>
+       <x>473</x>
+       <y>246</y>
+       <width>127</width>
+       <height>103</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>20</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Shape::Box</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Shadow::Plain</enum>
+     </property>
+     <property name="lineWidth">
+      <number>3</number>
+     </property>
+    </widget>
+    <widget class="QLabel" name="daimond_remark_label">
+     <property name="geometry">
+      <rect>
+       <x>610</x>
+       <y>215</y>
+       <width>411</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>REMARK</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="daimond_remark_textEdit">
+     <property name="geometry">
+      <rect>
+       <x>603</x>
+       <y>246</y>
+       <width>426</width>
+       <height>103</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>20</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Shape::Box</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Shadow::Plain</enum>
+     </property>
+     <property name="lineWidth">
+      <number>3</number>
+     </property>
+    </widget>
+    <zorder>daimond_remark_label</zorder>
+    <zorder>daimond_price_label</zorder>
+    <zorder>daimond_color_label</zorder>
+    <zorder>daimond_accessories_label</zorder>
+    <zorder>daimond_line15</zorder>
+    <zorder>daimond_line16</zorder>
+    <zorder>daimond_cutting_label</zorder>
+    <zorder>daimond_size_label</zorder>
+    <zorder>daimond_option_selection_label</zorder>
+    <zorder>daimond_weight_label</zorder>
+    <zorder>daimond_number_label</zorder>
+    <zorder>daimond_type_label</zorder>
+    <zorder>daimond_line1</zorder>
+    <zorder>daimond_carcass_checkBox</zorder>
+    <zorder>daimond_bone_checkBox</zorder>
+    <zorder>daimond_hair_checkBox</zorder>
+    <zorder>daimond_other1_checkBox</zorder>
+    <zorder>daimond_other1_lineEdit</zorder>
+    <zorder>daimond_other2_checkBox</zorder>
+    <zorder>daimond_other2_lineEdit</zorder>
+    <zorder>daimond_line3</zorder>
+    <zorder>daimond_line4</zorder>
+    <zorder>daimond_line5</zorder>
+    <zorder>daimond_number_carcass_lineEdit</zorder>
+    <zorder>daimond_number_bone_lineEdit</zorder>
+    <zorder>daimond_number_hair_lineEdit</zorder>
+    <zorder>daimond_number_other1_lineEdit</zorder>
+    <zorder>daimond_number_other2_lineEdit</zorder>
+    <zorder>daimond_weight_carcass_lineEdit</zorder>
+    <zorder>daimond_weight_bone_lineEdit</zorder>
+    <zorder>daimond_weight_hair_lineEdit</zorder>
+    <zorder>daimond_weight_other1_lineEdit</zorder>
+    <zorder>daimond_weight_other2_lineEdit</zorder>
+    <zorder>daimond_line2</zorder>
+    <zorder>daimond_min_1carat_checkBox</zorder>
+    <zorder>daimond_1carat_checkBox</zorder>
+    <zorder>daimond_2carat_checkBox</zorder>
+    <zorder>daimond_3carat_checkBox</zorder>
+    <zorder>daimond_4carat_checkBox</zorder>
+    <zorder>daimond_5carat_checkBox</zorder>
+    <zorder>daimond_line6</zorder>
+    <zorder>daimond_line7</zorder>
+    <zorder>daimond_line11</zorder>
+    <zorder>daimond_line9</zorder>
+    <zorder>daimond_line8</zorder>
+    <zorder>daimond_round_checkBox</zorder>
+    <zorder>daimond_oval_checkBox</zorder>
+    <zorder>daimond_princess_checkBox</zorder>
+    <zorder>daimond_radiant_checkBox</zorder>
+    <zorder>daimond_cushion_checkBox</zorder>
+    <zorder>daimond_marquise_checkBox</zorder>
+    <zorder>daimond_cutting_other_checkBox</zorder>
+    <zorder>daimond_cutting_other_lineEdit</zorder>
+    <zorder>daimond_line10</zorder>
+    <zorder>daimond_ring_checkBox</zorder>
+    <zorder>daimond_necklace_checkBox</zorder>
+    <zorder>daimond_earing_checkBox</zorder>
+    <zorder>daimond_code_ring_lineEdit</zorder>
+    <zorder>daimond_code_necklace_lineEdit</zorder>
+    <zorder>daimond_code_earing_lineEdit</zorder>
+    <zorder>daimond_line12</zorder>
+    <zorder>daimond_line13</zorder>
+    <zorder>daimond_line14</zorder>
+    <zorder>daimond_line19</zorder>
+    <zorder>daimond_line18</zorder>
+    <zorder>daimond_color_textEdit</zorder>
+    <zorder>daimond_price_textEdit</zorder>
+    <zorder>daimond_remark_textEdit</zorder>
+   </widget>
+   <widget class="QFrame" name="laboratory_request_frame">
+    <property name="geometry">
+     <rect>
+      <x>1040</x>
+      <y>10</y>
+      <width>511</width>
+      <height>541</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgb(255, 255, 255)</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::Box</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Plain</enum>
+    </property>
+    <property name="lineWidth">
+     <number>3</number>
+    </property>
+    <widget class="QLabel" name="laboratory_request_frame_label">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>491</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>20</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>LABORATORY REQUEST</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="Line" name="laboratory_line1">
+     <property name="geometry">
+      <rect>
+       <x>3</x>
+       <y>35</y>
+       <width>505</width>
+       <height>3</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:rgb(0, 0, 0)</string>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="laboratory_request_incineration_checkBox">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>50</y>
+       <width>491</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>เผาซาก(Incineration) ราคา 400/40x                   KG</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="weight_tissues_lineEdit_2">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>50</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="laboratory_request_bone_checkBox">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>80</y>
+       <width>491</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>เก็บกระดูก (Incineration and bone/ash storage)(200)</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="laboratory_request_cremation_checkBox">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>110</y>
+       <width>491</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>ทำพิธีทางศาสนา(Cremation ceramony)</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="laboratory_date_and_time_label">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>140</y>
+       <width>321</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>วันที่(DATE)                            เวลา(TIME)</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QDateEdit" name="laboratory_dateEdit">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>130</y>
+       <width>111</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="dateTime">
+      <datetime>
+       <hour>0</hour>
+       <minute>0</minute>
+       <second>0</second>
+       <year>2019</year>
+       <month>12</month>
+       <day>31</day>
+      </datetime>
+     </property>
+     <property name="displayFormat">
+      <string>d/M/yyyy</string>
+     </property>
+     <property name="calendarPopup">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QTimeEdit" name="laboratory_timeEdit">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>130</y>
+       <width>131</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="currentSection">
+      <enum>QDateTimeEdit::Section::HourSection</enum>
+     </property>
+     <property name="timeSpec">
+      <enum>Qt::TimeSpec::UTC</enum>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="laboratory_request_daimond_checkBox">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>160</y>
+       <width>491</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>ทำอัญมณี (Daimond of memory)</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="laboratory_carcass_label">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>200</y>
+       <width>491</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>20</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>CARCASS CONDITION</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="Line" name="laboratory_line3">
+     <property name="geometry">
+      <rect>
+       <x>3</x>
+       <y>260</y>
+       <width>505</width>
+       <height>3</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:rgb(0, 0, 0)</string>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="laboratory_carcass_fresh_checkBox">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>270</y>
+       <width>131</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>ซากสด (Fresh)</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="laboratory_carcass_aytolysus_checkBox">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>270</y>
+       <width>151</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>ซากเน่า (Autolysis)</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="laboratory_carcass_unknow_checkBox">
+     <property name="geometry">
+      <rect>
+       <x>350</x>
+       <y>270</y>
+       <width>151</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>ไม่ทราบ (Unknown)</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="laboratory_carcass_other_checkBox">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>310</y>
+       <width>131</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>อื่นๆ</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="laboratory_carcass_other_lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>305</y>
+       <width>421</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="laboratory_place_label">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>357</y>
+       <width>491</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>20</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>PLACE OF CARCASS</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="Line" name="laboratory_line4">
+     <property name="geometry">
+      <rect>
+       <x>3</x>
+       <y>350</y>
+       <width>505</width>
+       <height>3</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:rgb(0, 0, 0)</string>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="laboratory_line5">
+     <property name="geometry">
+      <rect>
+       <x>3</x>
+       <y>380</y>
+       <width>505</width>
+       <height>3</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:rgb(0, 0, 0)</string>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="laboratory_place_necropy_checkBox">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>400</y>
+       <width>311</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>เก็บซากที่ห้องผ่าซาก (-20 Necropsy Hall)</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="laboratory_place_other1_checkBox">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>440</y>
+       <width>131</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="laboratory_place_other1_lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>440</y>
+       <width>471</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="laboratory_place_other2_lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>490</y>
+       <width>471</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="laboratory_place_other2_checkBox">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>490</y>
+       <width>121</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <zorder>laboratory_place_other2_checkBox</zorder>
+    <zorder>laboratory_place_other1_checkBox</zorder>
+    <zorder>laboratory_request_frame_label</zorder>
+    <zorder>laboratory_line1</zorder>
+    <zorder>laboratory_request_incineration_checkBox</zorder>
+    <zorder>weight_tissues_lineEdit_2</zorder>
+    <zorder>laboratory_request_bone_checkBox</zorder>
+    <zorder>laboratory_request_cremation_checkBox</zorder>
+    <zorder>laboratory_date_and_time_label</zorder>
+    <zorder>laboratory_dateEdit</zorder>
+    <zorder>laboratory_timeEdit</zorder>
+    <zorder>laboratory_request_daimond_checkBox</zorder>
+    <zorder>laboratory_carcass_label</zorder>
+    <zorder>laboratory_line3</zorder>
+    <zorder>laboratory_carcass_fresh_checkBox</zorder>
+    <zorder>laboratory_carcass_aytolysus_checkBox</zorder>
+    <zorder>laboratory_carcass_unknow_checkBox</zorder>
+    <zorder>laboratory_carcass_other_checkBox</zorder>
+    <zorder>laboratory_carcass_other_lineEdit</zorder>
+    <zorder>laboratory_place_label</zorder>
+    <zorder>laboratory_line4</zorder>
+    <zorder>laboratory_line5</zorder>
+    <zorder>laboratory_place_necropy_checkBox</zorder>
+    <zorder>laboratory_place_other1_lineEdit</zorder>
+    <zorder>laboratory_place_other2_lineEdit</zorder>
+   </widget>
+   <widget class="QPushButton" name="service_after_death_save_button">
+    <property name="geometry">
+     <rect>
+      <x>1390</x>
+      <y>580</y>
+      <width>161</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>TH Niramit AS</family>
+      <pointsize>30</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgb(255, 255, 255)</string>
+    </property>
+    <property name="text">
+     <string>บันทึก</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="service_after_death_cancle_button">
+    <property name="geometry">
+     <rect>
+      <x>1390</x>
+      <y>680</y>
+      <width>161</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>TH Niramit AS</family>
+      <pointsize>30</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgb(255, 255, 255)</string>
+    </property>
+    <property name="text">
+     <string>ยกเลิก</string>
+    </property>
+   </widget>
+   <widget class="QFrame" name="note_frame">
+    <property name="geometry">
+     <rect>
+      <x>1045</x>
+      <y>550</y>
+      <width>331</width>
+      <height>215</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgb(255, 255, 255)</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::Box</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Plain</enum>
+    </property>
+    <property name="lineWidth">
+     <number>3</number>
+    </property>
+    <widget class="QLabel" name="note_label">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>311</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>20</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>NOTE</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="Line" name="note_line">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>35</y>
+       <width>330</width>
+       <height>3</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:rgb(0, 0, 0)</string>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="note_textEdit">
+     <property name="geometry">
+      <rect>
+       <x>3</x>
+       <y>37</y>
+       <width>325</width>
+       <height>174</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>TH Niramit AS</family>
+       <pointsize>18</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Shape::Box</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Shadow::Plain</enum>
+     </property>
+     <property name="lineWidth">
+      <number>3</number>
+     </property>
+    </widget>
+   </widget>
+   <zorder>daimond_label</zorder>
+   <zorder>infectioun_label</zorder>
+   <zorder>Main_header_label</zorder>
+   <zorder>select_frame</zorder>
+   <zorder>infectioun_frame</zorder>
+   <zorder>daimond_frame</zorder>
+   <zorder>laboratory_request_frame</zorder>
+   <zorder>service_after_death_save_button</zorder>
+   <zorder>service_after_death_cancle_button</zorder>
+   <zorder>note_frame</zorder>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

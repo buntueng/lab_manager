@@ -1,5 +1,4 @@
 import mariadb
-import logging.config
 import logging
 import os
 import yaml
@@ -9,6 +8,7 @@ class ReportModel:
     """ Class to handle the model of the application."""
 
     def __init__(self):
+        self.logger = logging.getLogger(self.__class__.__name__)
         self.current_user = []
         # load database configuration
         self.db_config = self.load_yaml_file("server_config.yml")
