@@ -14,12 +14,13 @@ def bind_event_parasite_page(controller):
     controller.view.parasiteSavePushButton.clicked.connect(lambda: save_report_clicked(controller))
     
 def search_parasite_clicked(controller):
-    print("search OK")
+    # controller.model.load_parasite_wait_report()
+    pass
 
 def save_report_clicked(controller):
     report_content = get_parasite_report_content(controller.view)
     current_user_id = controller.current_user_info
-    print(current_user_id)
+    # print(current_user_id)
     if save_parasite_data(report_content):
         print("OK")
     else:

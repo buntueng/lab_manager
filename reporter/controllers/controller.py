@@ -104,7 +104,7 @@ class ReportController:
 
     def login_button_clicked(self):
         """ Method to handle the login button click event. """
-        self.logger.debug("Login button clicked")
+        # self.logger.debug("Login button clicked")
         username = self.view.login_username_lineEdit.text()
         password = self.view.login_password_lineEdit.text()
         if username == "" or password == "":

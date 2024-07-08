@@ -3,7 +3,6 @@
 *.yml
 *.log
 *.ini
-*.conf
 *.exe
 *.pyd
 *.dll
@@ -17,3 +16,10 @@
 *.pkg
 *.pdf
 *.docx
+build/
+dist/
+__pycache__/
+*.toc
+*.pkg
+*.zip
+*.html
